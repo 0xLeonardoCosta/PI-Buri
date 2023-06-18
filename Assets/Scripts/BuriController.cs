@@ -4,49 +4,77 @@ using UnityEngine;
 
 public class BuriController : MonoBehaviour
 {
-    [SerializeField] string _nome;
+    [SerializeField] CharacterController _controller;
 
-    [SerializeField] float _velocidade;
     [SerializeField] Vector3 _posicao;
 
-    [SerializeField] float _moveV;
-    [SerializeField] float _moveH;
+    [SerializeField] float _jumpForce;
+    [SerializeField] float _forceGravity;
+    [SerializeField] float _velocidade;
+
+    [SerializeField] bool _isGrounded;
 
     void Start()
     {
-             
+        _controller = GetComponent<CharacterController>();
     }
 
     void Update()
     {
-        Andar();
-        Pular();
-        Atirar();
-        Trepar();
+        //_posicao = transform.position;
+        Mover();
+        if (_controller.isGrounded)
+        {
+            Pular();
+        }
+        if (_controller.isGrounded == false)
+        {
+            Gravity();
+        }
+        //Atirar();
+        //Trepar();
     }
 
-    void Andar()
+    void Mover()
     {
-        _moveH = Input.GetAxisRaw("Horizontal");
-        _moveV = Input.GetAxisRaw("Vertical");
+        float _moveH = Input.GetAxisRaw("Horizontal");
+        float _moveV = Input.GetAxisRaw("Vertical");
 
-        _posicao = new Vector3 (_moveH, 0,_moveV);
-
-        transform.Translate(_posicao * _velocidade * Time.deltaTime);
+        _controller.Move(Vector3.right * _moveH * _velocidade * Time.deltaTime);
+        _controller.Move(Vector3.forward * _moveV * _velocidade * Time.deltaTime);
     }
 
     void Pular()
     {
-
+        bool _space = Input.GetButton("Jump");
+        if (_space == true) //&& _isGrounded)
+        {
+            _posicao.y += Mathf.Sqrt(_jumpForce * -3.0f *_forceGravity);
+        }
+        else if (_space == false) //&& _isGrounded)
+        {
+            Debug.Log("CanJump");
+        }
+    }
+    void Gravity()
+    {
+        _posicao.y += _forceGravity * Time.deltaTime;
+        _controller.Move(_posicao * Time.deltaTime);
     }
 
-    void Atirar()
+    void OnTriggerEnter(Collider collision)
     {
-
+        if (collision.gameObject.tag == "Ground")
+        {
+            _isGrounded = true;
+            Debug.Log(collision.gameObject.tag);
+        }
     }
-
-    void Trepar()
+    void OnTriggerExit(Collider collision)
     {
-
+        if (collision.gameObject.tag == "Ground")
+        {
+            _isGrounded = false;
+        }
     }
 }
