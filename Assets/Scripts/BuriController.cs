@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class BuriController : MonoBehaviour
 {
@@ -11,12 +13,20 @@ public class BuriController : MonoBehaviour
     [SerializeField] float _jumpForce;
     [SerializeField] float _forceGravity;
     [SerializeField] float _velocidade;
+    [SerializeField] float _speedAnim;
+    [SerializeField] float _speedY;
+    [SerializeField] float _girarSpeed;
+    [SerializeField] float _rot;
+
+    [SerializeField] Animator _anim;
+    [SerializeField] Vector3 _moveDirection;
+    
 
     [SerializeField] bool _isGrounded;
 
     void Start()
     {
-        _controller = GetComponent<CharacterController>();
+        _controller = GetComponent<CharacterController>( );
     }
 
     void Update()
@@ -33,15 +43,29 @@ public class BuriController : MonoBehaviour
         }
         //Atirar();
         //Trepar();
+        girar();
     }
 
     void Mover()
     {
-        float _moveH = Input.GetAxisRaw("Horizontal");
+      //  float _moveH = Input.GetAxisRaw("Horizontal");
         float _moveV = Input.GetAxisRaw("Vertical");
 
-        _controller.Move(Vector3.right * _moveH * _velocidade * Time.deltaTime);
-        _controller.Move(Vector3.forward * _moveV * _velocidade * Time.deltaTime);
+      //  _controller.Move(Vector3.right * _moveH * _velocidade * Time.deltaTime);
+        _controller.Move(transform.forward * _moveV * _velocidade * Time.deltaTime);
+
+      //  float _horizontalmoveH = Input.GetAxisRaw("Horizontal");
+        float _verticalalmoveZ = Input.GetAxisRaw("Vertical");
+       // _moveDirection = new Vector3(_horizontalmoveH, 0);
+        _moveDirection = new Vector3 (_moveDirection.x * _velocidade, _moveDirection.y);
+
+        _speedY = _moveDirection.y;
+        _speedAnim = Mathf.Abs(_moveV);
+        _anim.SetFloat("Andar", _speedAnim);
+       // _anim.SetFloat("VelocidadeY", _speedY);
+       // _anim.SetBool("groundCheck", _isGrounded);
+
+        
     }
 
     void Pular()
@@ -62,19 +86,10 @@ public class BuriController : MonoBehaviour
         _controller.Move(_posicao * Time.deltaTime);
     }
 
-    void OnTriggerEnter(Collider collision)
+    void girar()
     {
-        if (collision.gameObject.tag == "Ground")
-        {
-            _isGrounded = true;
-            Debug.Log(collision.gameObject.tag);
-        }
+        _rot -= Input.GetAxis("Horizontal") * _girarSpeed;
+        transform.localEulerAngles = new Vector3(0, -_rot, 0);
     }
-    void OnTriggerExit(Collider collision)
-    {
-        if (collision.gameObject.tag == "Ground")
-        {
-            _isGrounded = false;
-        }
-    }
+
 }
