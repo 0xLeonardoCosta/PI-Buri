@@ -11,7 +11,7 @@ public class BuriController : MonoBehaviour
     [SerializeField] Vector3 _posicao;
 
     [SerializeField] float _jumpForce;
-     float _forceGravity = -9.81f;
+    [SerializeField] float _forceGravity = -9.81f;
     [SerializeField] float _velocidade;
     [SerializeField] float _speedAnim;
     [SerializeField] float _speedY;
@@ -36,6 +36,7 @@ public class BuriController : MonoBehaviour
     {
         _isGrounded = _controller.isGrounded;
         Mover();
+        Gravity();
         jump();
         girar();
 
@@ -69,11 +70,8 @@ public class BuriController : MonoBehaviour
 
     void jump()
     {
-        if (_isGrounded == false)
-        {
-            Gravity();
-        }
-        else if (_isGrounded == true && Input.GetAxisRaw("Jump") > 0)
+       
+        if (Input.GetAxisRaw("Jump") > 0 && _isGrounded == true)
         {
             Debug.Log(_moveDirection.y);
             _moveDirection.y += Mathf.Sqrt(_jumpHeight * -3.0f * _forceGravity);
@@ -84,8 +82,8 @@ public class BuriController : MonoBehaviour
 
     void Gravity()
     {
-        _posicao.y += _forceGravity * Time.deltaTime;
-        _controller.Move(_posicao * Time.deltaTime);
+        _moveDirection.y = _moveDirection.y + _forceGravity * Time.deltaTime;
+        _controller.Move(_moveDirection * Time.deltaTime);
     }
 
     void girar()
