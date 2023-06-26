@@ -11,18 +11,21 @@ public class BuriController : MonoBehaviour
     [SerializeField] Vector3 _posicao;
 
     [SerializeField] float _jumpForce;
-    [SerializeField] float _forceGravity;
+     float _forceGravity = -9.81f;
     [SerializeField] float _velocidade;
     [SerializeField] float _speedAnim;
     [SerializeField] float _speedY;
     [SerializeField] float _girarSpeed;
     [SerializeField] float _rot;
+    [SerializeField] float _jumpHeight;
 
     [SerializeField] Animator _anim;
     [SerializeField] Vector3 _moveDirection;
-    
+    [SerializeField] Rigidbody _rb;
+
 
     [SerializeField] bool _isGrounded;
+    
 
     void Start()
     {
@@ -31,19 +34,12 @@ public class BuriController : MonoBehaviour
 
     void Update()
     {
-        //_posicao = transform.position;
+        _isGrounded = _controller.isGrounded;
         Mover();
-        if (_controller.isGrounded)
-        {
-            Pular();
-        }
-        if (_controller.isGrounded == false)
-        {
-            Gravity();
-        }
-        //Atirar();
-        //Trepar();
+        jump();
         girar();
+
+        
     }
 
     void Mover()
@@ -55,31 +51,37 @@ public class BuriController : MonoBehaviour
         _controller.Move(transform.forward * _moveV * _velocidade * Time.deltaTime);
 
       //  float _horizontalmoveH = Input.GetAxisRaw("Horizontal");
-        float _verticalalmoveZ = Input.GetAxisRaw("Vertical");
+        //float _verticalalmoveZ = Input.GetAxisRaw("Vertical");
        // _moveDirection = new Vector3(_horizontalmoveH, 0);
         _moveDirection = new Vector3 (_moveDirection.x * _velocidade, _moveDirection.y);
 
         _speedY = _moveDirection.y;
-        _speedAnim = Mathf.Abs(_moveV);
+        _speedAnim = _moveV;
         _anim.SetFloat("Andar", _speedAnim);
-       // _anim.SetFloat("VelocidadeY", _speedY);
-       // _anim.SetBool("groundCheck", _isGrounded);
+        _anim.SetFloat("VelocidadeY", _speedY);
+        _anim.SetBool("groundCheck", _isGrounded);
 
-        
+        // _anim.SetFloat("VelocidadeY", _speedY);
+        // _anim.SetBool("groundCheck", _isGrounded);
+
+
     }
 
-    void Pular()
+    void jump()
     {
-        bool _space = Input.GetButton("Jump");
-        if (_space == true) //&& _isGrounded)
+        if (_isGrounded == false)
         {
-            _posicao.y += Mathf.Sqrt(_jumpForce * -3.0f *_forceGravity);
+            Gravity();
         }
-        else if (_space == false) //&& _isGrounded)
+        else if (_isGrounded == true && Input.GetAxisRaw("Jump") > 0)
         {
-            Debug.Log("CanJump");
+            Debug.Log(_moveDirection.y);
+            _moveDirection.y += Mathf.Sqrt(_jumpHeight * -3.0f * _forceGravity);
         }
+       //_anim.SetFloat("Pular", _rb.velocity.y);
+
     }
+
     void Gravity()
     {
         _posicao.y += _forceGravity * Time.deltaTime;
