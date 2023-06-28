@@ -6,9 +6,8 @@ using UnityEngine.EventSystems;
 
 public class BuriController : MonoBehaviour
 {
-    [SerializeField] CharacterController _controller;
 
-    [SerializeField] Vector3 _posicao;
+    [SerializeField] CharacterController _controller;
 
     [SerializeField] float _jumpForce;
     [SerializeField] float _forceGravity = -9.81f;
@@ -21,6 +20,7 @@ public class BuriController : MonoBehaviour
 
     [SerializeField] Animator _anim;
     [SerializeField] Vector3 _moveDirection;
+    [SerializeField] Vector3 _posicao;
     [SerializeField] Rigidbody _rb;
 
 
@@ -40,7 +40,20 @@ public class BuriController : MonoBehaviour
         jump();
         girar();
 
-        
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            _velocidade = 10f;
+            _anim.SetLayerWeight(0, 0); //correndo
+            _anim.SetLayerWeight(1, 1); //andando
+        }
+        if (Input.GetKey(KeyCode.Alpha2))
+        {
+            _velocidade = 5f;
+            _anim.SetLayerWeight(0, 0); //correndo
+            _anim.SetLayerWeight(1, 0); //andando
+        }
+
+
     }
 
     void Mover()
@@ -62,9 +75,6 @@ public class BuriController : MonoBehaviour
         _anim.SetFloat("VelocidadeY", _speedY);
         _anim.SetBool("groundCheck", _isGrounded);
 
-        // _anim.SetFloat("VelocidadeY", _speedY);
-        // _anim.SetBool("groundCheck", _isGrounded);
-
 
     }
 
@@ -76,7 +86,8 @@ public class BuriController : MonoBehaviour
             Debug.Log(_moveDirection.y);
             _moveDirection.y += Mathf.Sqrt(_jumpHeight * -3.0f * _forceGravity);
         }
-       //_anim.SetFloat("Pular", _rb.velocity.y);
+       
+        _anim.SetFloat("Pular", _rb.velocity.y);
 
     }
 
