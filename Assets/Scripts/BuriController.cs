@@ -35,11 +35,13 @@ public class BuriController : MonoBehaviour
 
     void Update()
     {
+        _anim.SetFloat("y", _controller.velocity.y);
         _isGrounded = _controller.isGrounded;
         Mover();
         Gravity();
         jump();
         girar();
+
 
         if (Input.GetKey(KeyCode.Alpha1))
         {
@@ -74,6 +76,7 @@ public class BuriController : MonoBehaviour
         _speedAnim = _moveV;
         _anim.SetFloat("Andar", _speedAnim);
         _anim.SetFloat("VelocidadeY", _speedY);
+      
         _anim.SetBool("groundCheck", _isGrounded);
 
 
