@@ -17,6 +17,7 @@ public class BuriController : MonoBehaviour
     [SerializeField] float _girarSpeed;
     [SerializeField] float _rot;
     [SerializeField] float _jumpHeight;
+    [SerializeField] float _multiplicadorGravidade;
 
     [SerializeField] Animator _anim;
     [SerializeField] Vector3 _moveDirection;
@@ -93,7 +94,7 @@ public class BuriController : MonoBehaviour
 
     void Gravity()
     {
-        _moveDirection.y = _moveDirection.y + _forceGravity * Time.deltaTime;
+        _moveDirection.y = _moveDirection.y + _forceGravity * Time.deltaTime * _multiplicadorGravidade;
         _controller.Move(_moveDirection * Time.deltaTime);
     }
 
