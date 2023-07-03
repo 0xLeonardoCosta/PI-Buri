@@ -55,7 +55,7 @@ public class Buricontrolleandro : MonoBehaviour
 
     void Mover()
     {
-        //  float _moveH = Input.GetAxisRaw("Horizontal");
+        //float _moveH = Input.GetAxisRaw("Horizontal");
         float _moveV = Input.GetAxisRaw("Vertical");
 
         //  _controller.Move(Vector3.right * _moveH * _velocidade * Time.deltaTime);
