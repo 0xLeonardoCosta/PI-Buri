@@ -24,6 +24,9 @@ ModelImporter:
   - first:
       74: -7615027146827095572
     second: Armature - Buri|Subindo
+  - first:
+      74: 1363186028442862594
+    second: Armature - Buri|Parado
   externalObjects: {}
   materials:
     materialImportMode: 2
