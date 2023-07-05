@@ -69,8 +69,8 @@ public class Buricontrolleandro : MonoBehaviour
         _speedY = _moveDirection.y;
         _speedAnim = _moveV;
         _anim.SetFloat("Andar", _speedAnim);
-        _anim.SetFloat("VelocidadeY", _speedY);
-        _anim.SetFloat("y", _controller.velocity.y);
+        //_anim.SetFloat("VelocidadeY", _speedY);
+        _anim.SetFloat("VelocidadeY", _controller.velocity.y);
 
         _anim.SetBool("groundCheck", _isGrounded);
 
@@ -86,7 +86,7 @@ public class Buricontrolleandro : MonoBehaviour
             _moveDirection.y += Mathf.Sqrt(_jumpHeight * -3.0f * _forceGravity);
         }
 
-        _anim.SetFloat("Pular", _rb.velocity.y);
+        _anim.SetFloat("VelocidadeY", _rb.velocity.y);
 
     }
 

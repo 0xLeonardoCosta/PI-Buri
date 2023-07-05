@@ -160,7 +160,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: andando
-  m_Speed: 3
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5227567474575764607}
@@ -173,7 +173,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 34be597f3dbd4c24babd26951da316b8, type: 2}
+  m_Motion: {fileID: 7400000, guid: 9cd85df82e7af5a4799e65b2a4ac0fc8, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -314,7 +314,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1074354809035741935, guid: a28f6036444417a40833ded145ac58a1, type: 3}
+  m_Motion: {fileID: 7400000, guid: 1ba66792f6fbcd94b945867c5a1124df, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -480,7 +480,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
+  m_Motion: {fileID: 7400000, guid: 22f1865fd8313d842931867e626d8304, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -507,7 +507,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 9bd1474beba9b4b479723dcbe2fa5e31, type: 2}
+  m_Motion: {fileID: 7400000, guid: 5930f9e971bd54f4e85ae8a93e86619c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
