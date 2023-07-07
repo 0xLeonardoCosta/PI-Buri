@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Leonardo/TesteLeo.unity
+    guid: 1985d379cddc13a469815ffe61c96e83
   m_configObjects: {}
