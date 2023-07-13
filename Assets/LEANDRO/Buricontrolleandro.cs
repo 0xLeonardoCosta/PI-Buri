@@ -17,34 +17,28 @@ public class Buricontrolleandro : MonoBehaviour
     [SerializeField] float _jumpHeight;
     [SerializeField] float _multiplicadorGravidade;
 
+    private bool _rotacao;
+
     [SerializeField] Animator _anim;
     [SerializeField] Vector3 _moveDirection;
     [SerializeField] Vector3 _posicao;
     [SerializeField] Rigidbody _rb;
-
 
     [SerializeField] bool _isGrounded;
 
 
     void Start()
     {
-        _controller = GetComponent<CharacterController>();
         AndarN();
     }
 
     void Update()
     {
-        
         _isGrounded = _controller.isGrounded;
         Mover();
         Gravity();
         jump();
         girar();
-
-
-     
-
-
     }
 
     void AndarN()//andando normal
@@ -55,26 +49,27 @@ public class Buricontrolleandro : MonoBehaviour
 
     void Mover()
     {
-        //float _moveH = Input.GetAxisRaw("Horizontal");
         float _moveV = Input.GetAxisRaw("Vertical");
+        float _moveH = Input.GetAxisRaw("Horizontal");
 
-        //  _controller.Move(Vector3.right * _moveH * _velocidade * Time.deltaTime);
-        _controller.Move(transform.forward * _moveV * _velocidade * Time.deltaTime);
-
-        //  float _horizontalmoveH = Input.GetAxisRaw("Horizontal");
-        //float _verticalalmoveZ = Input.GetAxisRaw("Vertical");
-        // _moveDirection = new Vector3(_horizontalmoveH, 0);
-        //_moveDirection = new Vector3(_moveDirection.x * _velocidade, _moveDirection.y);
+        _controller.Move((transform.right * _moveH) * _velocidade * Time.deltaTime);
+        _controller.Move((transform.forward * _moveV) * _velocidade * Time.deltaTime);
 
         _speedY = _moveDirection.y;
         _speedAnim = _moveV;
         _anim.SetFloat("Andar", _speedAnim);
-        //_anim.SetFloat("VelocidadeY", _speedY);
         _anim.SetFloat("VelocidadeY", _controller.velocity.y);
 
         _anim.SetBool("groundCheck", _isGrounded);
 
-
+        if (_moveH > 0 && _rotacao)
+        {
+            Flip();
+        }
+        else if (_moveV > 0 && _rotacao)
+        {
+            Flip();
+        }
     }
 
     void jump()
@@ -87,7 +82,6 @@ public class Buricontrolleandro : MonoBehaviour
         }
 
         _anim.SetFloat("VelocidadeY", _rb.velocity.y);
-
     }
 
     void Gravity()
@@ -102,4 +96,11 @@ public class Buricontrolleandro : MonoBehaviour
         transform.localEulerAngles = new Vector3(0, -_rot, 0);
     }
 
+    void Flip()
+    {
+        _rotacao = !_rotacao;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
 }
