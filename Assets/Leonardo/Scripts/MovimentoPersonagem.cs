@@ -18,6 +18,8 @@ public class MovimentoPersonagem : MonoBehaviour
     [SerializeField] float _speed = 5;
     [SerializeField] float _jump = 5;
 
+    public float _var;
+
     [SerializeField] bool _isGrounded;
 
     void Start()
@@ -77,7 +79,7 @@ public class MovimentoPersonagem : MonoBehaviour
     }
     void Gravity()
     {
-        _playerVelocity.y += _gravityValue * Time.deltaTime;
+        _playerVelocity.y += _var + _gravityValue + Time.deltaTime;
         _controller.Move(_playerVelocity * Time.deltaTime);
     }
 }
