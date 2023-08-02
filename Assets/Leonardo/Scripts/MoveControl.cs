@@ -12,13 +12,17 @@ public class MoveControl : MonoBehaviour
     private CharacterController _controller;
     private Animator _anim;
 
+    [SerializeField] LayerMask _groundMask;
+    private float _raycastLenght = 1.15f; //Raio para identificar Ground, saindo do centro do gameObject
+
     private bool _inputPulo; //Input de pulo
     [SerializeField] bool _checkGround; //Verificador se o player está encostando no chão
 
-    [SerializeField] float _gravityValue = -9.81f;
+    private float _gravityValue = -9.81f;
+    private float _gravityMultiplier;
     [SerializeField] float _speed = 5;
     [SerializeField] float _jump = 5;
-    [SerializeField] float _timer;
+    [SerializeField] float _timer; // Contador para input de pulo, útil se tiver problema de pulo duplo
     private float _timerValue;
 
     void Start()
@@ -31,13 +35,18 @@ public class MoveControl : MonoBehaviour
 
     void Update()
     {
-        _checkGround = _controller.isGrounded; // VERIFICAR NECESSIDADE DESSA LINHA
-        Debug.Log(_checkGround);
         Move();
         LookAtMovementDirection();
-        Pulo();
+        if (_inputPulo && _checkGround)
+        {
+            Pulo();
+        }
         Gravity();
         CheckPulo();
+        {
+            //Debugando   
+            Debug.Log("Estou no chão? " + _checkGround);
+        }
     }
     void AndarN()// Sincronizar animações - Andar movimento de perna/Andar movimento de braço
     {
@@ -46,7 +55,7 @@ public class MoveControl : MonoBehaviour
     }
     void Move()
     {
-        _movement = new Vector3(_input.x, 0f, _input.y) * _speed * Time.deltaTime;
+        _movement = new Vector3(_input.x, 0f, _input.y).normalized * _speed * Time.deltaTime;
         _controller.Move(_movement);
         // Linhas abaixo feitas para animação do personagem
         //_speedY = _moveDirection.y;
@@ -64,8 +73,19 @@ public class MoveControl : MonoBehaviour
             transform.rotation = targetRotation;
         }
     }
-    void CheckPulo()
+    void Pulo()
     {
+        _inputPulo = false;
+        _playerVelocity.y = Mathf.Sqrt(0);
+        _playerVelocity.y = Mathf.Sqrt(_jump * -3.0f * _gravityValue);
+        Debug.Log("Pular Acionado");
+        //_anim.SetFloat("VelocidadeY", _rb.velocity.y);
+    }
+    void CheckPulo() // Timer para negativar inputPulo corretamente
+    {
+        // ^^Raycast para idendificar terreno do tipo Ground
+        _checkGround = Physics.Raycast(transform.position, Vector3.down, _raycastLenght, _groundMask);
+        //_checkGround = _controller.isGrounded;
         if (_inputPulo==true)
         {
             _timer -= Time.deltaTime;
@@ -76,31 +96,18 @@ public class MoveControl : MonoBehaviour
             }
         }
     }
-    void Pulo()
+    void Gravity() // Se estiver encostando no chão zerar o vector.Down que no caso é o gravity multiplier
     {
-        if (_inputPulo == true && _checkGround == true)
+        if (_checkGround == true)
         {
-            _inputPulo = false;
-            _playerVelocity.y = Mathf.Sqrt(0);
-            _playerVelocity.y = Mathf.Sqrt(_jump * -3.0f * _gravityValue);
-            //Debug.Log("Pular " + _playerVelocity.y);
-            //_anim.SetFloat("VelocidadeY", _movement.velocity.y);
-        }
-    }
-    void Gravity()
-    {
-        _playerVelocity.y += _gravityValue * 2 * Time.deltaTime;
-        _controller.Move(_playerVelocity * Time.deltaTime);
-    
-        /*if (_checkGround == true)
-        {
-            _checkGround = true;
+            _gravityMultiplier = 0;
         }
         else if (_checkGround == false)
         {
-            _playerVelocity.y += _gravityValue * Time.deltaTime;
-            _controller.Move(_playerVelocity * Time.deltaTime);
-        }*/
+            _gravityMultiplier = 2;
+        }
+        _playerVelocity.y += _gravityValue * _gravityMultiplier * Time.deltaTime;
+        _controller.Move(_playerVelocity * Time.deltaTime);
     }
     public void SetMove(InputAction.CallbackContext value) //Input direcional X e Z (Input System)
     {
@@ -110,18 +117,4 @@ public class MoveControl : MonoBehaviour
     {
         _inputPulo = true;
     }
-    /*private void OnCollisionEnter(Collision coll) // Se estiver encostando em um gameobject com a tag "Ground" marcará true
-    {
-        if (coll.gameObject.CompareTag("Ground"))
-        {
-            _checkGround = true;
-        }
-    }
-    private void OnCollisionExit(Collision coll) // Se não estiver encostando em um gameobject com a tag "Ground" marcará falso
-    {
-        if (coll.gameObject.CompareTag("Ground"))
-        {
-            _checkGround = false;
-        }
-    }*/
 }
