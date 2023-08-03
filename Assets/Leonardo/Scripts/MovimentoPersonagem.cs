@@ -54,7 +54,7 @@ public class MovimentoPersonagem : MonoBehaviour
 
         //_speedY = _moveDirection.y;
         //_speedAnim = _moveV;
-        //_anim.SetFloat("Andar", _speedAnim);
+        //_anim.SetFloat("Andar", _input.x + _input.y);
         //_anim.SetFloat("VelocidadeY", _controller.velocity.y);
         //_anim.SetBool("groundCheck", _isGrounded);
     }

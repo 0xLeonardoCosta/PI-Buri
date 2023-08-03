@@ -11,6 +11,7 @@ public class MoveControl : MonoBehaviour
 
     private CharacterController _controller;
     private Animator _anim;
+    private Rigidbody _rb;
 
     [SerializeField] LayerMask _groundMask;
     private float _raycastLenght = 1.15f; //Raio para identificar Ground, saindo do centro do gameObject
@@ -30,6 +31,7 @@ public class MoveControl : MonoBehaviour
         _timer = _timerValue;
         _controller = GetComponent<CharacterController>();
         _anim = GetComponent<Animator>();
+        _rb = GetComponent<Rigidbody>();
         AndarN();
     }
 
@@ -50,19 +52,19 @@ public class MoveControl : MonoBehaviour
     }
     void AndarN()// Sincronizar animações - Andar movimento de perna/Andar movimento de braço
     {
-        //_anim.SetLayerWeight(0, 1); //perna
-        //_anim.SetLayerWeight(1, 1); //braco
+        _anim.SetLayerWeight(0, 1); //perna
+        _anim.SetLayerWeight(1, 1); //braco
     }
     void Move()
     {
         _movement = new Vector3(_input.x, 0f, _input.y).normalized * _speed * Time.deltaTime;
         _controller.Move(_movement);
         // Linhas abaixo feitas para animação do personagem
-        //_speedY = _moveDirection.y;
-        //_speedAnim = _moveV;
-        //_anim.SetFloat("Andar", _speedAnim);
-        //_anim.SetFloat("VelocidadeY", _controller.velocity.y);
-        //_anim.SetBool("groundCheck", _checkGround);
+        float _andar = Mathf.Abs(_input.x) + Mathf.Abs(_input.y);
+        Debug.Log(_controller.velocity.y);
+        _anim.SetFloat("Andar", _andar);
+        _anim.SetFloat("VelocidadeY", _controller.velocity.y);
+        _anim.SetBool("groundCheck", _checkGround);
     }
     void LookAtMovementDirection() //Script para virar a frente do personagem voltada a orientação do movimento
     {
@@ -79,7 +81,7 @@ public class MoveControl : MonoBehaviour
         _playerVelocity.y = Mathf.Sqrt(0);
         _playerVelocity.y = Mathf.Sqrt(_jump * -3.0f * _gravityValue);
         Debug.Log("Pular Acionado");
-        //_anim.SetFloat("VelocidadeY", _rb.velocity.y);
+        _anim.SetFloat("VelocidadeY", _controller.velocity.y);
     }
     void CheckPulo() // Timer para negativar inputPulo corretamente
     {
