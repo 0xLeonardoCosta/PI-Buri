@@ -57,11 +57,11 @@ public class MoveControl : MonoBehaviour
     }
     void Move()
     {
-        _movement = new Vector3(_input.x, 0f, _input.y).normalized * _speed * Time.deltaTime;
+        _movement = new Vector3(_input.x, _controller.velocity.y, _input.y).normalized * _speed * Time.deltaTime;
         _controller.Move(_movement);
         // Linhas abaixo feitas para animação do personagem
         float _andar = Mathf.Abs(_input.x) + Mathf.Abs(_input.y);
-        Debug.Log(_controller.velocity.y);
+        
         _anim.SetFloat("Andar", _andar);
         _anim.SetFloat("VelocidadeY", _controller.velocity.y);
         _anim.SetBool("groundCheck", _checkGround);
