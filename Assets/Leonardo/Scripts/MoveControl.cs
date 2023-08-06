@@ -22,6 +22,7 @@ public class MoveControl : MonoBehaviour
     private float _gravityValue = -9.81f;
     private float _gravityMultiplier;
     [SerializeField] float _speed = 5;
+    [SerializeField] float _speedRotation = 15;
     [SerializeField] float _jump = 5;
     [SerializeField] float _timer; // Contador para input de pulo, útil se tiver problema de pulo duplo
     private float _timerValue;
@@ -44,7 +45,7 @@ public class MoveControl : MonoBehaviour
             Pulo();
         }
         Gravity();
-        CheckPulo();
+        CheckPulo(); // Checa se está encostando no chão e função de timer para normalizar pulo
         {
             //Debugando   
             Debug.Log("Estou no chão? " + _checkGround);
@@ -72,7 +73,7 @@ public class MoveControl : MonoBehaviour
         {
             float targetAngle = Mathf.Atan2(_input.x, _input.y) * Mathf.Rad2Deg;
             Quaternion targetRotation = Quaternion.Euler(0f, targetAngle, 0f);
-            transform.rotation = targetRotation;
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _speedRotation * Time.deltaTime);
         }
     }
     void Pulo()
