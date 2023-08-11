@@ -11,10 +11,9 @@ public class MoveControl : MonoBehaviour
 
     private CharacterController _controller;
     private Animator _anim;
-    private Rigidbody _rb;
 
-    [SerializeField] LayerMask _groundMask;
-    private float _raycastLenght = 1.15f; //Raio para identificar Ground, saindo do centro do gameObject
+    //[SerializeField] LayerMask _groundMask;
+    //[SerializeField] private float _raycastLenght = 1.15f; //Raio para identificar Ground, saindo do centro do gameObject
 
     private bool _inputPulo; //Input de pulo
     [SerializeField] bool _checkGround; //Verificador se o player está encostando no chão
@@ -32,7 +31,6 @@ public class MoveControl : MonoBehaviour
         _timer = _timerValue;
         _controller = GetComponent<CharacterController>();
         _anim = GetComponent<Animator>();
-        _rb = GetComponent<Rigidbody>();
         AndarN();
     }
 
@@ -48,7 +46,7 @@ public class MoveControl : MonoBehaviour
         CheckPulo(); // Checa se está encostando no chão e função de timer para normalizar pulo
         {
             //Debugando   
-            Debug.Log("Estou no chão? " + _checkGround);
+            //Debug.Log("Estou no chão? " + _checkGround);
         }
     }
     void AndarN()// Sincronizar animações - Andar movimento de perna/Andar movimento de braço
@@ -87,8 +85,8 @@ public class MoveControl : MonoBehaviour
     void CheckPulo() // Timer para negativar inputPulo corretamente
     {
         // ^^Raycast para idendificar terreno do tipo Ground
-        _checkGround = Physics.Raycast(transform.position, Vector3.down, _raycastLenght, _groundMask);
-        //_checkGround = _controller.isGrounded;
+        //_checkGround = Physics.Raycast(transform.position, Vector3.down, _raycastLenght, _groundMask);
+        _checkGround = _controller.isGrounded;
         if (_inputPulo==true)
         {
             _timer -= Time.deltaTime;
