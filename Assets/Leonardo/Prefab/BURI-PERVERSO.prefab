@@ -67,10 +67,10 @@ PrefabInstance:
     - target: {fileID: -5905956238499492617, guid: d3dac4531e7b62d4886e8f2132121fd7, type: 3}
       propertyPath: m_Materials.Array.data[5]
       value: 
-      objectReference: {fileID: 2100000, guid: 0ae81e0bcb3f0ef4bb872f5fe13a23e5, type: 2}
+      objectReference: {fileID: 8188195164994645970, guid: d3dac4531e7b62d4886e8f2132121fd7, type: 3}
     - target: {fileID: 919132149155446097, guid: d3dac4531e7b62d4886e8f2132121fd7, type: 3}
       propertyPath: m_Name
-      value: BURI3-RENEGADO Variant
+      value: BURI-PERVERSO
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
