@@ -19,7 +19,7 @@ public class MoveMonstrinho : MonoBehaviour
     [SerializeField] bool _isplayer;
     [SerializeField] bool _stopPlayer;
     bool _isFacingRight;
-    [SerializeField] bool _ataqueOn;
+    bool _ataqueOn;
 
     Animator _animator;
 
