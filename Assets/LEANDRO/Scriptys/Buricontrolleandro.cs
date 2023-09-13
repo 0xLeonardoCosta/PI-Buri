@@ -26,10 +26,13 @@ public class Buricontrolleandro : MonoBehaviour
 
     [SerializeField] bool _isGrounded;
 
+    [SerializeField] Hits _hit;
+
 
     void Start()
     {
         AndarN();
+        _hit = GetComponent<Hits>();
     }
 
     void Update()
@@ -59,8 +62,8 @@ public class Buricontrolleandro : MonoBehaviour
         _speedAnim = _moveV;
         _anim.SetFloat("Andar", _speedAnim);
         _anim.SetFloat("VelocidadeY", _controller.velocity.y);
-
         _anim.SetBool("groundCheck", _isGrounded);
+        _anim.SetBool("hit", _hit._isHit);
 
         if (_moveH > 0 && _rotacao)
         {

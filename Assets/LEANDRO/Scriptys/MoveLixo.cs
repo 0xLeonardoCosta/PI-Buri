@@ -25,6 +25,8 @@ public class MoveLixo : MonoBehaviour
 
     Animator _animator;
 
+    [SerializeField] Hits _hit;
+
     bool _seguirPlayer;
     [SerializeField] bool _isPlayer;
     [SerializeField] bool _ataqueOn;
@@ -35,6 +37,7 @@ public class MoveLixo : MonoBehaviour
     {
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
+        _hit = GetComponent<Hits>();
     }
 
     // Update is called once per frame
@@ -69,6 +72,7 @@ public class MoveLixo : MonoBehaviour
         _animator.SetFloat("Speed", _speedAnim);
         _animator.SetBool("isPlayer", _isPlayer);
         _animator.SetBool("Ataque", _ataqueOn);
+        _animator.SetBool("hit", _hit._isHit);
     }
 
     void Movimento()
@@ -113,8 +117,12 @@ public class MoveLixo : MonoBehaviour
     {
         //_controller.velocity = new Vector2(0, _controller.velocity.y);
     }
+    void Morte()
+    {
 
-    
+    }
+
+
 
     private void OnTriggerEnter(Collider other)
     {

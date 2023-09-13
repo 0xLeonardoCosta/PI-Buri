@@ -32,6 +32,7 @@ public class MoveControl : MonoBehaviour
         _controller = GetComponent<CharacterController>();
         _anim = GetComponent<Animator>();
         AndarN();
+        
     }
 
     void Update()
