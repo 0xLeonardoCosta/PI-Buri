@@ -29,10 +29,13 @@ public class InimigoSeMove : MonoBehaviour
 
     //---------------------------------------------
 
+    Hit _hit;
+
     void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
+        _hit = GetComponent<Hit>();
     }
 
 
@@ -95,5 +98,6 @@ public class InimigoSeMove : MonoBehaviour
         _speedAgent = _agent.velocity;
         _speedAnim = Mathf.Abs(_speedAgent.x) + Mathf.Abs(_speedAgent.z);
         _animator.SetFloat("Speed", _speedAnim);
+        _animator.SetBool("Hit", _hit._foiHit);
     }
 }

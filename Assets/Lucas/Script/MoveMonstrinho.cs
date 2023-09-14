@@ -125,7 +125,7 @@ public class MoveMonstrinho : MonoBehaviour
         _rb.velocity = new Vector3(0, _rb.velocity.y);
     }
 
-    private void OnTriggerEnter(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
@@ -133,7 +133,7 @@ public class MoveMonstrinho : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider2D other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
