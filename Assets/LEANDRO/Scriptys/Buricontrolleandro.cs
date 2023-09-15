@@ -25,6 +25,7 @@ public class Buricontrolleandro : MonoBehaviour
     [SerializeField] Rigidbody _rb;
 
     [SerializeField] bool _isGrounded;
+    public bool _morte;
 
     [SerializeField] Hits _hit;
 
@@ -42,6 +43,8 @@ public class Buricontrolleandro : MonoBehaviour
         Gravity();
         jump();
         girar();
+
+        
     }
 
     void AndarN()//andando normal
@@ -105,5 +108,10 @@ public class Buricontrolleandro : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
     }
 }

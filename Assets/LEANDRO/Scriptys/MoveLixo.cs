@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem.XR;
@@ -18,8 +19,10 @@ public class MoveLixo : MonoBehaviour
 
     float _distancia;
     float _distanciaPlayer;
+    float _checktime;
     [SerializeField] float _distancePatrulhar;
     [SerializeField] float _speedAnim;
+    [SerializeField] float _timeLimit;
 
     Vector3 _speedAgent;
 
@@ -28,6 +31,8 @@ public class MoveLixo : MonoBehaviour
     [SerializeField] Hits _hit;
 
     bool _seguirPlayer;
+    public bool _hitCheck;
+
     [SerializeField] bool _isPlayer;
     [SerializeField] bool _ataqueOn;
     [SerializeField] bool _stopPlayer;
@@ -38,16 +43,40 @@ public class MoveLixo : MonoBehaviour
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
         _hit = GetComponent<Hits>();
+        _checktime = _timeLimit;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Movimento();
-        Animacao();
+        
+       
         Ataque();
+        if (!_hitCheck)
+        {
+            Movimento();
+        }
+        else
+        {
+            Hit(true);
+        }
         _speedAgent = _agent.velocity;
         _ataqueOn = _controller;
+
+        Animacao();
+
+        if (_hitCheck)
+        {
+            _checktime -= Time.deltaTime;
+            if (_checktime < 0) 
+            {
+                Hit(false);
+                _hitCheck = false;
+                _checktime = _timeLimit;
+            }
+        }
+
+
 
     }
 
@@ -72,7 +101,8 @@ public class MoveLixo : MonoBehaviour
         _animator.SetFloat("Speed", _speedAnim);
         _animator.SetBool("isPlayer", _isPlayer);
         _animator.SetBool("Ataque", _ataqueOn);
-        _animator.SetBool("hit", _hit._isHit);
+        _animator.SetBool("hitmorte", _hitCheck);
+       // _animator.SetBool ("Morte", _hitCheck);
     }
 
     void Movimento()
@@ -121,23 +151,39 @@ public class MoveLixo : MonoBehaviour
     {
 
     }
+    void Hit(bool on) // bool on = função que tem valor de retorno
+    {
+        if (on) // quando tiver on ta sofrendo hit
+        { 
+        _agent.velocity = new Vector3(0, 0, 0);
+        gameObject.GetComponent<CapsuleCollider>().enabled = false; // desativando gameobject capsule collider
+        GetComponent<Rigidbody>().isKinematic = true; // acessando o rigidbody sem variavel e ativando o iskinematic
+        }
+        else
+        {
+            gameObject.GetComponent<CapsuleCollider>().enabled = true;
+            GetComponent<Rigidbody>().isKinematic = false;
+        }
+    }
 
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("AtaqueMili"))
         {
-            
+            _hitCheck = true;
         }
+        
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("AtaqueMili"))
         {
            
         }
     }
 
+   
 }
