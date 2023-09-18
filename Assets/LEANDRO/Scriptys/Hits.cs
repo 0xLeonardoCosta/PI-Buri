@@ -7,12 +7,15 @@ public class Hits : MonoBehaviour
 {
     Animator _ani;
     public bool _isHit = false;
-    [SerializeField] GameObject _pai;
+    [SerializeField] public GameObject _pai;
+    [SerializeField] Cooontrol_inimigos _inimigos;
+
 
     // Start is called before the first frame update
     void Start()
     {
         _ani = GetComponent<Animator>();
+        _inimigos=Camera.main.GetComponent<Cooontrol_inimigos>();
     }
 
     // Update is called once per frame
@@ -26,7 +29,7 @@ public class Hits : MonoBehaviour
         {
 
             _isHit = true;
-           // Morte();
+           Morte();
         }
     }
     private void OnTriggerExit(Collider other)
@@ -35,12 +38,13 @@ public class Hits : MonoBehaviour
         {
 
             _isHit = false;
-            // Morte();
+            
         }
     }
     void Morte()
     {
-        _pai.gameObject.SetActive(false); // desativar pai
-        //transform.parent.gameObject.SetActive(false); // desativar pai
+        //_pai.gameObject.SetActive(false); // desativar pai
+        transform.parent.gameObject.SetActive(false); // desativar pai
+        _inimigos.ZerarTime();
     }
 }

@@ -32,10 +32,13 @@ public class MoveLixo : MonoBehaviour
 
     bool _seguirPlayer;
     public bool _hitCheck;
+ 
 
     [SerializeField] bool _isPlayer;
     [SerializeField] bool _ataqueOn;
     [SerializeField] bool _stopPlayer;
+    [SerializeField] GaaameController _gameControler;
+  
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +47,8 @@ public class MoveLixo : MonoBehaviour
         _animator = GetComponent<Animator>();
         _hit = GetComponent<Hits>();
         _checktime = _timeLimit;
+        _gameControler = Camera.main.GetComponent<GaaameController>();
+        _player = _gameControler._player;
     }
 
     // Update is called once per frame
@@ -147,10 +152,7 @@ public class MoveLixo : MonoBehaviour
     {
         //_controller.velocity = new Vector2(0, _controller.velocity.y);
     }
-    void Morte()
-    {
-
-    }
+   
     void Hit(bool on) // bool on = função que tem valor de retorno
     {
         if (on) // quando tiver on ta sofrendo hit
