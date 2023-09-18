@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 325827887}
   m_Layer: 0
   m_Name: AtackCol
-  m_TagString: Untagged
+  m_TagString: AtaqueMili
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -736,8 +736,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8054f02712427d429a0cc4459fdaa6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isHit: 0
-  _pai: {fileID: 0}
 --- !u!1 &878887418 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 69e2fea9b56acf049ab8f4d85fe302fc, type: 3}
@@ -1732,7 +1730,9 @@ MonoBehaviour:
   _player: {fileID: 829532484}
   _distancePatrulhar: 5
   _speedAnim: 0
+  _timeLimit: 0
   _hit: {fileID: 0}
+  _hitCheck: 0
   _isPlayer: 0
   _ataqueOn: 0
   _stopPlayer: 0
@@ -2675,7 +2675,9 @@ MonoBehaviour:
   _player: {fileID: 829532484}
   _distancePatrulhar: 5
   _speedAnim: 0
+  _timeLimit: 2
   _hit: {fileID: 0}
+  _hitCheck: 0
   _isPlayer: 0
   _ataqueOn: 0
   _stopPlayer: 0
