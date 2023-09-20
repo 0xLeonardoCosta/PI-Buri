@@ -44,6 +44,16 @@ public class Cooontrol_inimigos : MonoBehaviour
             //bullet.transform.position = new Vector3(0,0,0);
             bullet.SetActive(true);
         }
+        GameObject konga = InimigoooPoool_2.SharedInstance.GetPooledObject();
+        if (konga != null)
+        {
+            _numerPos = Random.Range(0, 3);
+            //_numerPos = Random.Range(0, _posIni.Length);
+            konga.transform.localPosition = _posIni[_numerPos].transform.position;
+            //bullet.transform.SetParent(_posIni[0]);
+            //bullet.transform.position = new Vector3(0,0,0);
+            konga.SetActive(true);
+        }
     }
 
     public void ZerarTime()

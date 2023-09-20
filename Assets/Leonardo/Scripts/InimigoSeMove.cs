@@ -13,6 +13,10 @@ public class InimigoSeMove : MonoBehaviour
 
     //---------------------------------------------
 
+    [SerializeField] GaaameController _gameControler;
+
+    //---------------------------------------------
+
     float _distancia;
     float _distanciaPlayer;
     [SerializeField] float _distanciaPatrulhar;
@@ -36,6 +40,9 @@ public class InimigoSeMove : MonoBehaviour
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
         _hit = GetComponent<Hit>();
+
+        _gameControler = Camera.main.GetComponent<GaaameController>();
+        _player = _gameControler._player;
     }
 
 

@@ -29,7 +29,7 @@ public class Hits : MonoBehaviour
         {
 
             _isHit = true;
-           Morte();
+           //Morte();
         }
     }
     private void OnTriggerExit(Collider other)

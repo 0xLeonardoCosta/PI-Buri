@@ -66,7 +66,7 @@ public class MoveLixo : MonoBehaviour
             Hit(true);
         }
         _speedAgent = _agent.velocity;
-        _ataqueOn = _controller;
+        //_ataqueOn = _controller;
 
         Animacao();
 
@@ -120,6 +120,7 @@ public class MoveLixo : MonoBehaviour
         if (_distanciaPlayer < 8) // se a distancia player for menor que 8
         {
             _seguirPlayer = true;
+            _agent.speed = 6;
         }
         else
         {
@@ -136,7 +137,7 @@ public class MoveLixo : MonoBehaviour
         {
 
             _agent.SetDestination(_player.position);
-            if (_distanciaPlayer < 3) // se a distancia player for menor que 8
+            if (_distanciaPlayer < 5) // se a distancia player for menor que 8
             {
                 _ataqueOn = true;
             }
