@@ -9,9 +9,16 @@ public class Hit : MonoBehaviour
     public bool _foiHit = false;
     public GameObject _parent;
 
+    Transform _player;
+
+    [SerializeField] GaaameController _gameControler;
+
     void Start()
     {
         _anim = GetComponent<Animator>();
+
+        _gameControler = Camera.main.GetComponent<GaaameController>();
+        _player = _gameControler._player;
     }
 
     void Update()
@@ -24,7 +31,7 @@ public class Hit : MonoBehaviour
         {
 
             _foiHit = true;
-            // Morre();
+            Morre();
         }
     }
     private void OnTriggerExit(Collider col)
@@ -33,12 +40,18 @@ public class Hit : MonoBehaviour
         {
 
             _foiHit = false;
-            // Morre();
+            //Invoke("Revive", 5f);
         }
     }
     void Morre()
     {
-        _parent.gameObject.SetActive(false); // desativar pai
+        
+        //_player.gameObject.SetActive(false); // desativar pai
         //transform.parent.gameObject.SetActive(false); // desativar pai
+    }
+
+    void Revive()
+    { 
+        _player.gameObject.SetActive(true);
     }
 }

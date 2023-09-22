@@ -10,7 +10,7 @@ public class MonstrinhoMove : MonoBehaviour
     [SerializeField] Transform _alvo;
     [SerializeField] Transform _player;
     [SerializeField] Transform[] _pos;
-    [SerializeField] GameControler  _gameControler;
+    [SerializeField] GaaameController  _gameControler;
 
     //---------------------------------------------
 
@@ -49,8 +49,8 @@ public class MonstrinhoMove : MonoBehaviour
         _animator = GetComponent<Animator>();
         _hit = GetComponent<Hit>();
         //_checktime = _timeLimit;
-        _gameControler = Camera.main.GetComponent<GameControler>();
-        _player = _gameControler.player;
+        _gameControler = Camera.main.GetComponent<GaaameController>();
+        _player = _gameControler._player;
     }
 
 

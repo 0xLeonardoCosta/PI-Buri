@@ -17,6 +17,8 @@ public class MoveControl : MonoBehaviour
 
     private bool _inputPulo; //Input de pulo
     [SerializeField] bool _checkGround; //Verificador se o player está encostando no chão
+    public bool _recebeuDano;
+
 
     private float _gravityValue = -9.81f;
     private float _gravityMultiplier;
@@ -39,6 +41,7 @@ public class MoveControl : MonoBehaviour
     {
         Move();
         LookAtMovementDirection();
+        Dano();
         if (_inputPulo && _checkGround)
         {
             Pulo();
@@ -98,6 +101,21 @@ public class MoveControl : MonoBehaviour
             }
         }
     }
+    void Dano()
+    {
+        if (_recebeuDano == true)
+        {
+            _anim.SetBool("hit", _recebeuDano);
+            Invoke("DanoTime", 3f);
+            Debug.Log("RecebeuDano");
+        }
+    }
+
+    void DanoTime()
+    {
+        _recebeuDano = false;
+        _anim.SetBool("hit", _recebeuDano);
+    }
     void Gravity() // Se estiver encostando no chão zerar o vector.Down que no caso é o gravity multiplier
     {
         if (_checkGround == true)
@@ -118,5 +136,20 @@ public class MoveControl : MonoBehaviour
     public void SetPular(InputAction.CallbackContext value) //Pulo: true ou false
     {
         _inputPulo = true;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("AtaqueIni"))
+        {
+            _recebeuDano = true;
+          
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("AtaqueIni"))
+        {
+            _recebeuDano = false;
+        }
     }
 }

@@ -36,6 +36,7 @@ public class MoveLixo : MonoBehaviour
 
     [SerializeField] bool _isPlayer;
     [SerializeField] bool _ataqueOn;
+    [SerializeField] bool _hitAtaque;
     [SerializeField] bool _stopPlayer;
     [SerializeField] GaaameController _gameControler;
   
@@ -65,7 +66,10 @@ public class MoveLixo : MonoBehaviour
         {
             Hit(true);
         }
-        _speedAgent = _agent.velocity;
+        if (_agent != null)
+        {
+            _speedAgent = _agent.velocity;
+        }
         //_ataqueOn = _controller;
 
         Animacao();
@@ -103,10 +107,14 @@ public class MoveLixo : MonoBehaviour
     void Animacao()
     {
         _speedAnim = MathF.Abs(_speedAgent.x + _speedAgent.z);
-        _animator.SetFloat("Speed", _speedAnim);
-        _animator.SetBool("isPlayer", _isPlayer);
-        _animator.SetBool("Ataque", _ataqueOn);
-        _animator.SetBool("hitmorte", _hitCheck);
+        if (_animator != null)
+        {
+            _animator.SetFloat("Speed", _speedAnim);
+            _animator.SetBool("isPlayer", _isPlayer);
+            _animator.SetBool("Ataque", _ataqueOn);
+            _animator.SetBool("hit", _hitAtaque);
+            _animator.SetBool("hitmorte", _hitCheck);
+        }
        // _animator.SetBool ("Morte", _hitCheck);
     }
 
@@ -114,38 +122,42 @@ public class MoveLixo : MonoBehaviour
     {
 
         //_agent.destination = _alvo.position;
-        _distancia = _agent.remainingDistance;
-        _distanciaPlayer = Vector3.Distance(transform.position, _player.position);
+        if (_agent != null)
+        {
+            _distancia = _agent.remainingDistance;
+            _distanciaPlayer = Vector3.Distance(transform.position, _player.position);
 
-        if (_distanciaPlayer < 8) // se a distancia player for menor que 8
-        {
-            _seguirPlayer = true;
-            _agent.speed = 6;
-        }
-        else
-        {
-            _seguirPlayer = false;
-        }
 
-        if (!_seguirPlayer) // ! falsa
-        {
-            Patrulhar();
-            _agent.SetDestination(_alvo.position); // setar destino / enviar destino
-            _ataqueOn = false;
-        }
-        else
-        {
-
-            _agent.SetDestination(_player.position);
-            if (_distanciaPlayer < 5) // se a distancia player for menor que 8
+            if (_distanciaPlayer < 8) // se a distancia player for menor que 8
             {
-                _ataqueOn = true;
+                _seguirPlayer = true;
+                _agent.speed = 6;
             }
             else
             {
-                _ataqueOn = false;
+                _seguirPlayer = false;
             }
 
+            if (!_seguirPlayer) // ! falsa
+            {
+                Patrulhar();
+                _agent.SetDestination(_alvo.position); // setar destino / enviar destino
+                _ataqueOn = false;
+            }
+            else
+            {
+
+                _agent.SetDestination(_player.position);
+                if (_distanciaPlayer < 5) // se a distancia player for menor que 8
+                {
+                    _ataqueOn = true;
+                }
+                else
+                {
+                    _ataqueOn = false;
+                }
+
+            }
         }
     }
 
@@ -177,15 +189,12 @@ public class MoveLixo : MonoBehaviour
         {
             _hitCheck = true;
         }
-        
+       
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("AtaqueMili"))
-        {
-           
-        }
+        
     }
 
    
