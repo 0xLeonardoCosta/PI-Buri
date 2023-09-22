@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Leonardo/BuriApresentacao.unity
     guid: 1985d379cddc13a469815ffe61c96e83
+  - enabled: 1
+    path: Assets/Leonardo/BuriXimba.unity
+    guid: f234363583ddafc4583b435a1f01396d
   m_configObjects: {}
