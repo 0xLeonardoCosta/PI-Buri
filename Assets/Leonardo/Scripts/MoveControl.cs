@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class MoveControl : MonoBehaviour
 {
     private Vector2 _input; //Input system, axis: X,Z. 
-    private Vector3 _playerVelocity;
+    [SerializeField] Vector3 _playerVelocity;
     private Vector3 _movement;
 
     private CharacterController _controller;
@@ -83,6 +83,12 @@ public class MoveControl : MonoBehaviour
         _inputPulo = false;
         _playerVelocity.y = Mathf.Sqrt(0);
         _playerVelocity.y = Mathf.Sqrt(_jump * -3.0f * _gravityValue);
+        _playerVelocity.x = Mathf.Sqrt(_jump);
+        if (_checkGround)
+        {
+            _playerVelocity.x = 0;
+        }
+        
         Debug.Log("Pular Acionado");
         _anim.SetFloat("VelocidadeY", _controller.velocity.y);
     }
