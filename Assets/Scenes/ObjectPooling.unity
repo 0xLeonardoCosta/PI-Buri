@@ -453,6 +453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1336430375}
   - component: {fileID: 1336430374}
+  - component: {fileID: 1336430376}
   m_Layer: 0
   m_Name: Inimigos
   m_TagString: Untagged
@@ -490,6 +491,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1336430376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336430373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 796aa922d842f1a4eb95ca6641ef9db5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 1112499236703352392, guid: a7068f2c98d50d84cbd0e8a939d2a6f9, type: 3}
+  amountToPool: 5
 --- !u!1001 &1597337147
 PrefabInstance:
   m_ObjectHideFlags: 0
