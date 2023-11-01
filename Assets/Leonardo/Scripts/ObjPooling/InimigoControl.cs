@@ -46,6 +46,7 @@ public class InimigoControl : MonoBehaviour
             bullet.GetComponent<SeguirPlayer33>()._player = _gameControl._player;
             bullet.transform.SetParent(_gameControl._inimigos);
             _ini_VivoL.Add(bullet);
+            _ini_MortoL.Remove(bullet);
             bullet.SetActive(true);
             bullet.transform.position = _spawn.position;
         }
@@ -58,6 +59,7 @@ public class InimigoControl : MonoBehaviour
             bullet.GetComponent<SeguirPlayer33>()._player = _gameControl._player;
             bullet.transform.SetParent(_gameControl._inimigos);
             _ini_VivoL.Add(bullet);
+            _ini_MortoL.Remove(bullet);
             bullet.SetActive(true);
             bullet.transform.position = _spawn.position;
         }
