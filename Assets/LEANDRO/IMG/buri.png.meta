@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: abb789d64d6c7414898afa3cc3fdfbf1
+guid: 1f517f1caf0220048883976fcf65f345
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,30 +106,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: projectBuri_PSP_0
+      name: buri_0
       rect:
         serializedVersion: 2
-        x: 63
-        y: 36
-        width: 1128
-        height: 644
+        x: 99
+        y: 53
+        width: 545
+        height: 460
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a3d7be5571ef2a4c9cb738d353b8462
-      internalID: -303189555
+      spriteID: a05ebb9c9d33bdb4293caa4eefe60d41
+      internalID: 896502615
       vertices: []
       indices: 
       edges: []
@@ -154,7 +141,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      projectBuri_PSP_0: -303189555
+      buri_0: 896502615
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
