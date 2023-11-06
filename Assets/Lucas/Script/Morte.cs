@@ -15,8 +15,8 @@ public class Morte : MonoBehaviour
       
         if (other.gameObject.CompareTag("Player"))
         {
-            _control._ini_MortoL.Add(gameObject);
-            _control._ini_VivoL.Remove(gameObject);
+            //_control._ini_MortoL.Add(gameObject);
+            //_control._ini_VivoL.Remove(gameObject);
             gameObject.SetActive(false);
         }
     }
