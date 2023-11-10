@@ -8,8 +8,6 @@ using UnityEngine.InputSystem.XR;
 
 public class MoveLixo : MonoBehaviour
 {
-    [SerializeField] CharacterController _controller;
-
     NavMeshAgent _agent;
     [SerializeField] Transform _alvo;
     [SerializeField] Transform[] _pos;
@@ -26,7 +24,7 @@ public class MoveLixo : MonoBehaviour
 
     Vector3 _speedAgent;
 
-    Animator _animator;
+    [SerializeField] Animator _animator;
 
     [SerializeField] Hits _hit;
 
@@ -45,7 +43,7 @@ public class MoveLixo : MonoBehaviour
     void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
-        _animator = GetComponent<Animator>();
+      //  _animator = GetComponent<Animator>();
         _hit = GetComponent<Hits>();
         _checktime = _timeLimit;
         _gameControler = Camera.main.GetComponent<GaaameController>();
@@ -55,8 +53,6 @@ public class MoveLixo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-       
         Ataque();
         if (!_hitCheck)
         {
@@ -84,9 +80,6 @@ public class MoveLixo : MonoBehaviour
                 _checktime = _timeLimit;
             }
         }
-
-
-
     }
 
     void Patrulhar()
@@ -120,7 +113,6 @@ public class MoveLixo : MonoBehaviour
 
     void Movimento()
     {
-
         //_agent.destination = _alvo.position;
         if (_agent != null)
         {
@@ -181,8 +173,6 @@ public class MoveLixo : MonoBehaviour
         }
     }
 
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("AtaqueMili"))
@@ -191,11 +181,4 @@ public class MoveLixo : MonoBehaviour
         }
        
     }
-
-    private void OnTriggerExit(Collider other)
-    {
-        
-    }
-
-   
 }
