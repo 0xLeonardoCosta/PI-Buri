@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
@@ -91,4 +92,11 @@ public class Menu : MonoBehaviour
         _LogoBuri.SetActive(true);
         _LogoKidney.SetActive(true);
     }
+
+    public void Scene() {
+
+        SceneManager.LoadScene("BuriXimba");
+
+    }
+
 }
