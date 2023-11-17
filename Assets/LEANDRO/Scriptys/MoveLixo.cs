@@ -43,7 +43,8 @@ public class MoveLixo : MonoBehaviour
     void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
-      //  _animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
+        _animator = GetComponentInChildren<Animator>();
         _hit = GetComponent<Hits>();
         _checktime = _timeLimit;
         _gameControler = Camera.main.GetComponent<GaaameController>();

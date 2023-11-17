@@ -27,6 +27,7 @@ public class ControladorInimigos : MonoBehaviour
             //Preencher aqui o que se deve executar após contagem
             InimigoOn1();
             InimigoOn2();
+            InimigoOn3();
             _checkTime = _timeLimit;
         }
     }
@@ -48,6 +49,19 @@ public class ControladorInimigos : MonoBehaviour
     {
         GameObject bullet = InimigoPool2._SharedInstance.GetPooledObject();
         if (bullet != null )
+        {
+            _numberPos = Random.Range(0, 3);
+
+            bullet.transform.localPosition = _posIni[_numberPos].transform.position;
+
+            bullet.transform.SetParent(_grupo);
+            bullet.SetActive(true);
+        }
+    }
+    void InimigoOn3()
+    {
+        GameObject bullet = InimigoPool3._SharedInstance.GetPooledObject();
+        if (bullet != null)
         {
             _numberPos = Random.Range(0, 3);
 

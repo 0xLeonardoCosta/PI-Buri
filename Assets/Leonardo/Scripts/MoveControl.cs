@@ -87,7 +87,6 @@ public class MoveControl : MonoBehaviour
                 _playerVelocity.x = 0;
             }
 
-            Debug.Log("Pular Acionado");
             _anim.SetFloat("VelocidadeY", _controller.velocity.y);
         }
         
