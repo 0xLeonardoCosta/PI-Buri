@@ -8,7 +8,7 @@ using UnityEngine.InputSystem.XR;
 
 public class MoveLixo : MonoBehaviour
 {
-    NavMeshAgent _agent;
+    [SerializeField] NavMeshAgent _agent;
     [SerializeField] Transform _alvo;
     [SerializeField] Transform[] _pos;
     [SerializeField] Transform _player;
@@ -30,6 +30,7 @@ public class MoveLixo : MonoBehaviour
 
     bool _seguirPlayer;
     public bool _hitCheck;
+    public bool _checkMove;
  
 
     [SerializeField] bool _isPlayer;
@@ -37,6 +38,8 @@ public class MoveLixo : MonoBehaviour
     [SerializeField] bool _hitAtaque;
     [SerializeField] bool _stopPlayer;
     [SerializeField] GaaameController _gameControler;
+    public bool _checkMorte;
+
   
 
     // Start is called before the first frame update
@@ -49,13 +52,23 @@ public class MoveLixo : MonoBehaviour
         _checktime = _timeLimit;
         _gameControler = Camera.main.GetComponent<GaaameController>();
         _player = _gameControler._player;
+        _checkMove = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (_checkMove == true)
+        {
+            _agent.SetDestination(_player.position);
+        }
+        else
+        {
+            _agent.velocity = new Vector3(0, 0, 0);
+        }
+
         Ataque();
-        if (!_hitCheck)
+        if (!_checkMorte)
         {
             Movimento();
         }

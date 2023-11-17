@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Menu : MonoBehaviour
 {
@@ -15,8 +16,12 @@ public class Menu : MonoBehaviour
 
     [SerializeField] GameObject _menuPressione, _menuPrincipal, _menuJogar, _menuOpicoes;
     //public List<Transform> menu2 = new List<Transform>();
+    [SerializeField] EventSystem _eventSystem;
+    public GameObject _btIni;
 
-    
+
+
+
     void Start()
     {
         _buriLogo.localScale = new Vector2(0,0);
@@ -29,6 +34,7 @@ public class Menu : MonoBehaviour
         {
             _BuriGroup[i].localScale = new Vector2(0, 0);
         }
+        StartCoroutine(TimeONMenu());
     }
 
     void Update()
@@ -64,6 +70,7 @@ public class Menu : MonoBehaviour
         _menuJogar.SetActive(true);
         _menuOpicoes.SetActive(false);
         _menuPrincipal.SetActive(false);
+        _eventSystem.firstSelectedGameObject = _btIni;
     }
     public void AbrirMenuOpcoes()
     {

@@ -74,6 +74,7 @@ public class InimigoControl33 : MonoBehaviour
             _ini_MortoL.Remove(bullet);
             bullet.SetActive(true);
             bullet.transform.position = _posIni.position;
+            bullet.GetComponent<HitInimigos>().Restart();
         }
     }
 }
