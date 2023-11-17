@@ -1,0 +1,844 @@
+fileFormatVersion: 2
+guid: 9512c9affd184924aa9d12539ed25983
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_0
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 4117
+        width: 1258
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8157b4bda7efdc4393b926f4281157e
+      internalID: -2041843791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_1
+      rect:
+        serializedVersion: 2
+        x: 2167
+        y: 4227
+        width: 1096
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d1a0d13e7a99384b9a078cea6d7c5b4
+      internalID: -1066944506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_2
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 3817
+        width: 1258
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f0637ddafea41542a5c493e27b319ac
+      internalID: -1890137955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_3
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 3668
+        width: 1336
+        height: 364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fffdc786452a9043a71b9e2f1829b23
+      internalID: -640106765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_4
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 3368
+        width: 1258
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faeb890628d44074187daf889b7085c0
+      internalID: -1039078971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_5
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 3248
+        width: 1345
+        height: 364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4f048b9a4bbeb2479aaeaa2dc315a87
+      internalID: 225772637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_6
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 3068
+        width: 1258
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4e9f657e3a6b6a4a94322d7fa3b0dfe
+      internalID: -1326689912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_7
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 2697
+        width: 1616
+        height: 527
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a15a4d50db4909d4a9aaa67f6c0d8972
+      internalID: 1930950051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_8
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 2457
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc98aabefe764254189828ab62d19af2
+      internalID: 633759013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_9
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 2457
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a700b8051f5d4f04eb5bab8e2774aaf6
+      internalID: 291827959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_10
+      rect:
+        serializedVersion: 2
+        x: 1747
+        y: 2457
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51f71b667082dd24d88cb8a96238f5af
+      internalID: -1921252527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_11
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 2147
+        width: 1616
+        height: 525
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 894a3d61a70608840a4b907b0133cd7f
+      internalID: 403095330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_12
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 1857
+        width: 525
+        height: 527
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b00537e1a004a9c41808fa4760001c4c
+      internalID: 223332166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_13
+      rect:
+        serializedVersion: 2
+        x: 1168
+        y: 1857
+        width: 525
+        height: 527
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb915381cf32d6842a7045e73d7bf38c
+      internalID: -820913757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_14
+      rect:
+        serializedVersion: 2
+        x: 1747
+        y: 1857
+        width: 525
+        height: 527
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c08f5259cb619e24786300a8a79bf82c
+      internalID: 48853505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_15
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 1598
+        width: 1616
+        height: 525
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 897940cba8e86d349b570d86a920b69c
+      internalID: 109182349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_16
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 1437
+        width: 325
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 281aa3c10c2180d4e8075cc9eebfb819
+      internalID: -455133822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_17
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 1437
+        width: 327
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b11a9f954d1f864f9dc4fa32dbe2a89
+      internalID: 291511497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_18
+      rect:
+        serializedVersion: 2
+        x: 1469
+        y: 1168
+        width: 605
+        height: 606
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50b799c487d8b2747ae6a9df8d71df8a
+      internalID: 280828546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_19
+      rect:
+        serializedVersion: 2
+        x: 2186
+        y: 1266
+        width: 266
+        height: 366
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e43537733b6618c408e11d0faa9da62d
+      internalID: -582436953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_20
+      rect:
+        serializedVersion: 2
+        x: 2516
+        y: 1417
+        width: 137
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6734e89ec8ae34e4e99da4a4b2f404da
+      internalID: -176770193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_21
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 1046
+        width: 1616
+        height: 527
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d1352c9d0d7bf040b6c9fc9d39b33cd
+      internalID: -148570031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_22
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 1097
+        width: 325
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dedb35ea95fee7843b7aef4984580fa9
+      internalID: 991972623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_23
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 1097
+        width: 327
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ba1171a9ad2f71438b5867f6dac60db
+      internalID: 1681725684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_24
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 758
+        width: 325
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daac2ed6a3856214c8db6a8baa067b6d
+      internalID: -1837417419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_25
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 758
+        width: 327
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faf5cfc0ec2bef143b86e7fc66272559
+      internalID: -1667983916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_26
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 568
+        width: 527
+        height: 525
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e577b5344d67341ae6866bcf1dbf52
+      internalID: -751511127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_27
+      rect:
+        serializedVersion: 2
+        x: 2018
+        y: 626
+        width: 405
+        height: 405
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a90404cc35a9a41b7f9b40e7f31455
+      internalID: -2055386153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_28
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 448
+        width: 527
+        height: 525
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ecacedc361dcc49a6576e8312d2e33
+      internalID: -768430402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_29
+      rect:
+        serializedVersion: 2
+        x: 3397
+        y: 448
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1dc97e20ecfc0c49ae9042e85ceb94f
+      internalID: -2140199933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_30
+      rect:
+        serializedVersion: 2
+        x: 3978
+        y: 448
+        width: 525
+        height: 525
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a32962b4056937a4682e8c87f28f35bb
+      internalID: -147029597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui2d-buri-bottons_31
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 177
+        width: 525
+        height: 527
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5465d4b1d49a71342ac3d2d9c956929a
+      internalID: -1981284870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0c8dcf2a51e4a2e4996fa1510e513905
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ui2d-buri-bottons_0: -2041843791
+      ui2d-buri-bottons_1: -1066944506
+      ui2d-buri-bottons_10: -1921252527
+      ui2d-buri-bottons_11: 403095330
+      ui2d-buri-bottons_12: 223332166
+      ui2d-buri-bottons_13: -820913757
+      ui2d-buri-bottons_14: 48853505
+      ui2d-buri-bottons_15: 109182349
+      ui2d-buri-bottons_16: -455133822
+      ui2d-buri-bottons_17: 291511497
+      ui2d-buri-bottons_18: 280828546
+      ui2d-buri-bottons_19: -582436953
+      ui2d-buri-bottons_2: -1890137955
+      ui2d-buri-bottons_20: -176770193
+      ui2d-buri-bottons_21: -148570031
+      ui2d-buri-bottons_22: 991972623
+      ui2d-buri-bottons_23: 1681725684
+      ui2d-buri-bottons_24: -1837417419
+      ui2d-buri-bottons_25: -1667983916
+      ui2d-buri-bottons_26: -751511127
+      ui2d-buri-bottons_27: -2055386153
+      ui2d-buri-bottons_28: -768430402
+      ui2d-buri-bottons_29: -2140199933
+      ui2d-buri-bottons_3: -640106765
+      ui2d-buri-bottons_30: -147029597
+      ui2d-buri-bottons_31: -1981284870
+      ui2d-buri-bottons_4: -1039078971
+      ui2d-buri-bottons_5: 225772637
+      ui2d-buri-bottons_6: -1326689912
+      ui2d-buri-bottons_7: 1930950051
+      ui2d-buri-bottons_8: 633759013
+      ui2d-buri-bottons_9: 291827959
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

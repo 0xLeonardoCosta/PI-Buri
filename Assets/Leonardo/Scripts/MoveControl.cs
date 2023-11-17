@@ -42,10 +42,6 @@ public class MoveControl : MonoBehaviour
         Move();
         LookAtMovementDirection();
         Dano();
-        if (_inputPulo && _checkGround)
-        {
-            Pulo();
-        }
         Gravity();
         CheckPulo(); // Checa se está encostando no chão e função de timer para normalizar pulo
         {
@@ -78,19 +74,23 @@ public class MoveControl : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _speedRotation * Time.deltaTime);
         }
     }
-    void Pulo()
+    public void Pulo()
     {
-        _inputPulo = false;
-        _playerVelocity.y = Mathf.Sqrt(0);
-        _playerVelocity.y = Mathf.Sqrt(_jump * -3.0f * _gravityValue);
-        _playerVelocity.x = Mathf.Sqrt(_jump);
         if (_checkGround)
         {
-            _playerVelocity.x = 0;
+            _inputPulo = false;
+            _playerVelocity.y = Mathf.Sqrt(0);
+            _playerVelocity.y = Mathf.Sqrt(_jump * -3.0f * _gravityValue);
+            _playerVelocity.x = Mathf.Sqrt(_jump);
+            if (_checkGround)
+            {
+                _playerVelocity.x = 0;
+            }
+
+            Debug.Log("Pular Acionado");
+            _anim.SetFloat("VelocidadeY", _controller.velocity.y);
         }
         
-        Debug.Log("Pular Acionado");
-        _anim.SetFloat("VelocidadeY", _controller.velocity.y);
     }
     void CheckPulo() // Timer para negativar inputPulo corretamente
     {
@@ -141,7 +141,7 @@ public class MoveControl : MonoBehaviour
     }
     public void SetPular(InputAction.CallbackContext value) //Pulo: true ou false
     {
-        _inputPulo = true;
+        Pulo();
     }
     private void OnTriggerEnter(Collider other)
     {
