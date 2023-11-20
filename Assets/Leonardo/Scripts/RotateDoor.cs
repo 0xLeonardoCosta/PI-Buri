@@ -9,6 +9,10 @@ public class RotateDoor : MonoBehaviour
 
     void Update()
     {
+        AbrirFechar();
+    }
+    void AbrirFechar()
+    {
         if (_girarZ && !_isOpen)
         {
             AbrirPorta();
@@ -21,7 +25,6 @@ public class RotateDoor : MonoBehaviour
             _rotZ = Mathf.Clamp(_rotZ, 0, 110);
             transform.localRotation = Quaternion.Euler(0, 0, _rotZ);
         }
-        
     }
     void AbrirPorta()
     {

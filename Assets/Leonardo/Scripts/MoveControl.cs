@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -28,13 +29,18 @@ public class MoveControl : MonoBehaviour
     [SerializeField] float _timer; // Contador para input de pulo, útil se tiver problema de pulo duplo
     private float _timerValue;
 
+    //---------------------Camera-----------------------
+    [SerializeField] GameObject _Camera;
+    [SerializeField] Transform _pivotCamera;
+    [SerializeField] Vector3 _offset;
+
     void Start()
     {
         _timer = _timerValue;
         _controller = GetComponent<CharacterController>();
         _anim = GetComponent<Animator>();
         AndarN();
-        
+        _Camera = Camera.main.gameObject;        
     }
 
     void Update()
@@ -44,6 +50,7 @@ public class MoveControl : MonoBehaviour
         Dano();
         Gravity();
         CheckPulo(); // Checa se está encostando no chão e função de timer para normalizar pulo
+        CameraControl();
         {
             //Debugando   
             //Debug.Log("Estou no chão? " + _checkGround);
@@ -60,7 +67,6 @@ public class MoveControl : MonoBehaviour
         _controller.Move(_movement);
         // Linhas abaixo feitas para animação do personagem
         float _andar = Mathf.Abs(_input.x) + Mathf.Abs(_input.y);
-        
         _anim.SetFloat("Andar", _andar);
         _anim.SetFloat("VelocidadeY", _controller.velocity.y);
         _anim.SetBool("groundCheck", _checkGround);
@@ -85,11 +91,9 @@ public class MoveControl : MonoBehaviour
             if (_checkGround)
             {
                 _playerVelocity.x = 0;
-            }
-
+            }   
             _anim.SetFloat("VelocidadeY", _controller.velocity.y);
         }
-        
     }
     void CheckPulo() // Timer para negativar inputPulo corretamente
     {
@@ -115,7 +119,6 @@ public class MoveControl : MonoBehaviour
             Debug.Log("RecebeuDano");
         }
     }
-
     void DanoTime()
     {
         _recebeuDano = false;
@@ -134,6 +137,11 @@ public class MoveControl : MonoBehaviour
         _playerVelocity.y += _gravityValue * _gravityMultiplier * Time.deltaTime;
         _controller.Move(_playerVelocity * Time.deltaTime);
     }
+    void CameraControl()
+    {
+        //_Camera.transform.localPosition = _pivotCamera.transform.position + _offset;
+        _Camera.transform.localPosition = Vector3.Lerp(_Camera.transform.position, _pivotCamera.transform.position + _offset, 5f * Time.deltaTime);
+    }
     public void SetMove(InputAction.CallbackContext value) //Input direcional X e Z (Input System)
     {
         _input = value.ReadValue<Vector2>();
@@ -147,7 +155,6 @@ public class MoveControl : MonoBehaviour
         if (other.gameObject.CompareTag("AtaqueIni"))
         {
             _recebeuDano = true;
-          
         }
     }
     private void OnTriggerExit(Collider other)
