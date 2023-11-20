@@ -76,9 +76,12 @@ public class MoveCaipora : MonoBehaviour
         if (_animator != null)
         {
             //_animator.SetFloat("Speed", _speedAnim);
-            _animator.SetBool("Andando", _estaSeguindo);
+           
             _animator.SetBool("Correndo", _estaSeguindoCorrendo);
         }
+
+        float _andar = _agent.velocity.x + _agent.velocity.y;
+        _animator.SetFloat("Andando",Math.Abs(_andar));
         // _animator.SetBool ("Morte", _hitCheck);
     }
 }
