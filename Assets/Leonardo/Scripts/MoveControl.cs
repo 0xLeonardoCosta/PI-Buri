@@ -23,16 +23,22 @@ public class MoveControl : MonoBehaviour
 
     private float _gravityValue = -9.81f;
     private float _gravityMultiplier;
-    [SerializeField] float _speed = 5;
+    [SerializeField] float _speed;
+    [SerializeField] float _speedMin = 3;
+    [SerializeField] float _speedMax = 9;
     [SerializeField] float _speedRotation = 15;
     [SerializeField] float _jump = 5;
+    [SerializeField] float _amplitudeAnalogico;
     [SerializeField] float _timer; // Contador para input de pulo, útil se tiver problema de pulo duplo
     private float _timerValue;
 
     //---------------------Camera-----------------------
-    [SerializeField] GameObject _Camera;
+    [SerializeField] GameObject _camera;
     [SerializeField] Transform _pivotCamera;
-    [SerializeField] Vector3 _offset;
+    [SerializeField] Vector3 _cameraOffset = new (0f,9f,-9f);
+
+    //------------------Teste---------------------
+
 
     void Start()
     {
@@ -40,7 +46,7 @@ public class MoveControl : MonoBehaviour
         _controller = GetComponent<CharacterController>();
         _anim = GetComponent<Animator>();
         AndarN();
-        _Camera = Camera.main.gameObject;        
+        _camera = Camera.main.gameObject;        
     }
 
     void Update()
@@ -140,11 +146,13 @@ public class MoveControl : MonoBehaviour
     void CameraControl()
     {
         //_Camera.transform.localPosition = _pivotCamera.transform.position + _offset;
-        _Camera.transform.localPosition = Vector3.Lerp(_Camera.transform.position, _pivotCamera.transform.position + _offset, 5f * Time.deltaTime);
+        _camera.transform.localPosition = Vector3.Lerp(_camera.transform.position, _pivotCamera.transform.position + _cameraOffset, 5f * Time.deltaTime);
     }
     public void SetMove(InputAction.CallbackContext value) //Input direcional X e Z (Input System)
     {
         _input = value.ReadValue<Vector2>();
+        _amplitudeAnalogico = _input.magnitude;
+        _speed = Mathf.Lerp(_speedMin, _speedMax, _amplitudeAnalogico);
     }
     public void SetPular(InputAction.CallbackContext value) //Pulo: true ou false
     {

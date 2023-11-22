@@ -215,7 +215,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Analogico"",
                     ""id"": ""28ce32ff-6c7d-47c5-b9c8-27d4cdb70fa3"",
-                    ""path"": ""2DVector"",
+                    ""path"": ""2DVector(mode=2)"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
