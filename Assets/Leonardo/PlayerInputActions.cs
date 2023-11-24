@@ -44,6 +44,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SetCameraAnalogico"",
+                    ""type"": ""Value"",
+                    ""id"": ""fee44496-399c-415a-89aa-b14b75e074e7"",
+                    ""expectedControlType"": ""Analog"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -288,6 +297,39 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Pular"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""1bee629f-15df-49b1-b6ea-3d4ba41817af"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetCameraAnalogico"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""6cc69f2c-215e-48d4-ad91-f0ebb70f23ba"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetCameraAnalogico"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""3da4952a-afd5-4134-b66e-01871d09bdfb"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetCameraAnalogico"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -298,6 +340,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Buri = asset.FindActionMap("Buri", throwIfNotFound: true);
         m_Buri_Movimento = m_Buri.FindAction("Movimento", throwIfNotFound: true);
         m_Buri_Pular = m_Buri.FindAction("Pular", throwIfNotFound: true);
+        m_Buri_SetCameraAnalogico = m_Buri.FindAction("SetCameraAnalogico", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -361,12 +404,14 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private List<IBuriActions> m_BuriActionsCallbackInterfaces = new List<IBuriActions>();
     private readonly InputAction m_Buri_Movimento;
     private readonly InputAction m_Buri_Pular;
+    private readonly InputAction m_Buri_SetCameraAnalogico;
     public struct BuriActions
     {
         private @PlayerInputActions m_Wrapper;
         public BuriActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movimento => m_Wrapper.m_Buri_Movimento;
         public InputAction @Pular => m_Wrapper.m_Buri_Pular;
+        public InputAction @SetCameraAnalogico => m_Wrapper.m_Buri_SetCameraAnalogico;
         public InputActionMap Get() { return m_Wrapper.m_Buri; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -382,6 +427,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Pular.started += instance.OnPular;
             @Pular.performed += instance.OnPular;
             @Pular.canceled += instance.OnPular;
+            @SetCameraAnalogico.started += instance.OnSetCameraAnalogico;
+            @SetCameraAnalogico.performed += instance.OnSetCameraAnalogico;
+            @SetCameraAnalogico.canceled += instance.OnSetCameraAnalogico;
         }
 
         private void UnregisterCallbacks(IBuriActions instance)
@@ -392,6 +440,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Pular.started -= instance.OnPular;
             @Pular.performed -= instance.OnPular;
             @Pular.canceled -= instance.OnPular;
+            @SetCameraAnalogico.started -= instance.OnSetCameraAnalogico;
+            @SetCameraAnalogico.performed -= instance.OnSetCameraAnalogico;
+            @SetCameraAnalogico.canceled -= instance.OnSetCameraAnalogico;
         }
 
         public void RemoveCallbacks(IBuriActions instance)
@@ -413,5 +464,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     {
         void OnMovimento(InputAction.CallbackContext context);
         void OnPular(InputAction.CallbackContext context);
+        void OnSetCameraAnalogico(InputAction.CallbackContext context);
     }
 }

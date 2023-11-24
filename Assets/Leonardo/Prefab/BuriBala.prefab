@@ -367,14 +367,14 @@ GameObject:
   - component: {fileID: 2220881329535388367}
   - component: {fileID: 2989823183224178026}
   - component: {fileID: 1051884158887850400}
-  - component: {fileID: 6485647370943164371}
+  - component: {fileID: 4205141105844426941}
   m_Layer: 0
   m_Name: VaraDePesca
   m_TagString: AtaquePlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2220881329535388367
 Transform:
   m_ObjectHideFlags: 0
@@ -440,7 +440,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6485647370943164371
+--- !u!65 &4205141105844426941
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -747,6 +747,37 @@ Transform:
   - {fileID: 2833638713372845041}
   m_Father: {fileID: 4248284559792297019}
   m_LocalEulerAnglesHint: {x: -60.433994, y: 84.29186, z: -173.44429}
+--- !u!1 &2524774645357314154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2710980541637601166}
+  m_Layer: 0
+  m_Name: Pivete(pivot)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2710980541637601166
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2524774645357314154}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.309017, y: 0, z: 0, w: 0.95105654}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4024881704661362417}
+  m_LocalEulerAnglesHint: {x: 36, y: 0, z: 0}
 --- !u!1 &2613206715103224280
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,7 +1013,7 @@ GameObject:
   - component: {fileID: 7319128459469999396}
   - component: {fileID: 605809969574668766}
   m_Layer: 0
-  m_Name: Player 2
+  m_Name: BuriBala
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1004,6 +1035,7 @@ Transform:
   - {fileID: 3574192272541158360}
   - {fileID: 410780191201776935}
   - {fileID: 1403559537720281340}
+  - {fileID: 2710980541637601166}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 93.06, z: 0}
 --- !u!143 &7296833154116524271
@@ -1047,10 +1079,17 @@ MonoBehaviour:
   _playerVelocity: {x: 0, y: 0, z: 0}
   _checkGround: 0
   _recebeuDano: 0
-  _speed: 9
+  _speed: 0
+  _speedMin: 3
+  _speedMax: 9
   _speedRotation: 15
   _jump: 1.5
+  _amplitudeAnalogico: 0
+  _inputAnalogicoCam: 0
   _timer: 0
+  _camera: {fileID: 0}
+  _pivotCamera: {fileID: 2710980541637601166}
+  _cameraOffset: {x: 0, y: 9, z: -9}
 --- !u!95 &7319128459469999396
 Animator:
   serializedVersion: 5
@@ -1129,6 +1168,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8aa5ce6c-9f59-443e-8cc4-9bf2845550f7
     m_ActionName: Buri/Pular[/Keyboard/space,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1408726958621508097}
+        m_TargetAssemblyTypeName: MoveControl, Assembly-CSharp
+        m_MethodName: SetCameraAnalogico
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fee44496-399c-415a-89aa-b14b75e074e7
+    m_ActionName: Buri/SetCameraAnalogico[/XInputControllerWindows/rightStick/left,/XInputControllerWindows/rightStick/right]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Buri
@@ -1419,13 +1474,14 @@ GameObject:
   - component: {fileID: 6417141405843508200}
   - component: {fileID: 7578193626462856101}
   - component: {fileID: 5678988252508477295}
+  - component: {fileID: 6626353600013844092}
   m_Layer: 0
   m_Name: Baladeira
-  m_TagString: Untagged
+  m_TagString: AtaquePlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6417141405843508200
 Transform:
   m_ObjectHideFlags: 0
@@ -1491,6 +1547,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6626353600013844092
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6183211159358666426}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.80000025, y: 0.6000002, z: 0.89999986}
+  m_Center: {x: -0.100000046, y: -0.20000772, z: 0.44996938}
 --- !u!1 &6203993880365172756
 GameObject:
   m_ObjectHideFlags: 0

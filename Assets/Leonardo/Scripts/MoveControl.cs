@@ -29,6 +29,7 @@ public class MoveControl : MonoBehaviour
     [SerializeField] float _speedRotation = 15;
     [SerializeField] float _jump = 5;
     [SerializeField] float _amplitudeAnalogico;
+    [SerializeField] float _inputAnalogicoCam;
     [SerializeField] float _timer; // Contador para input de pulo, útil se tiver problema de pulo duplo
     private float _timerValue;
 
@@ -38,7 +39,7 @@ public class MoveControl : MonoBehaviour
     [SerializeField] Vector3 _cameraOffset = new (0f,9f,-9f);
 
     //------------------Teste---------------------
-
+    public float testando;
 
     void Start()
     {
@@ -146,17 +147,37 @@ public class MoveControl : MonoBehaviour
     void CameraControl()
     {
         //_Camera.transform.localPosition = _pivotCamera.transform.position + _offset;
-        _camera.transform.localPosition = Vector3.Lerp(_camera.transform.position, _pivotCamera.transform.position + _cameraOffset, 5f * Time.deltaTime);
+        _camera.transform.localPosition =
+        Vector3.Lerp(_camera.transform.position, _pivotCamera.transform.position + _cameraOffset, 5f * Time.deltaTime);
+        //_camera.transform.localRotation = Quaternion.Lerp(_camera.transform.rotation, _pivotCamera.transform.rotation, _inputAnalogicoCam).normalized;
+        float maxRotationCameraAngle = 45f;
+        float normalizedInput = Mathf.Clamp(_inputAnalogicoCam, -1f, 1f);
+        float targetRotationY = normalizedInput * maxRotationCameraAngle;
+        Quaternion targetRotation = Quaternion.Euler(36f, targetRotationY, 0f);
+        _camera.transform.localRotation = Quaternion.Lerp(_camera.transform.localRotation, targetRotation, Mathf.Abs(normalizedInput)).normalized;
+        if (_inputAnalogicoCam == 0)
+        {
+            _camera.transform.localRotation = Quaternion.Lerp(_camera.transform.localRotation, Quaternion.Euler(36f, 0f, 0f), testando); //Quaternion.Euler(36f, 0f, 0f);
+        }
     }
     public void SetMove(InputAction.CallbackContext value) //Input direcional X e Z (Input System)
     {
         _input = value.ReadValue<Vector2>();
         _amplitudeAnalogico = _input.magnitude;
         _speed = Mathf.Lerp(_speedMin, _speedMax, _amplitudeAnalogico);
+
     }
     public void SetPular(InputAction.CallbackContext value) //Pulo: true ou false
     {
         Pulo();
+    }
+    public void SetCameraAnalogico(InputAction.CallbackContext value) //Pulo: true ou false
+    {
+        _inputAnalogicoCam = value.ReadValue<float>();
+        //if (_inputAnalogicoCam < 0)
+        {
+          //  _pivotCamera
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
