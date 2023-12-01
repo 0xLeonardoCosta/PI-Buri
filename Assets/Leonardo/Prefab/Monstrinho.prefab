@@ -5356,7 +5356,6 @@ GameObject:
   - component: {fileID: 1391713921266238846}
   - component: {fileID: 3483801145393802726}
   - component: {fileID: 8980256050813778167}
-  - component: {fileID: 8106716440008464791}
   - component: {fileID: 8732299764946681562}
   - component: {fileID: 4026405319108847702}
   - component: {fileID: 2117291055261921545}
@@ -5477,28 +5476,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8106716440008464791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1638190409962380566}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe0e3916cc44c38428702260fcf2e420, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _alvo: {fileID: 2230185293565658469}
-  _player: {fileID: 0}
-  _pos:
-  - {fileID: 2230185293565658469}
-  - {fileID: 3055438073390108421}
-  _gameControler: {fileID: 0}
-  _distanciaPatrulhar: 5
-  _speedPatrulha: 3.5
-  _speedPerseguicao: 6
-  _speedAnim: 0
 --- !u!114 &8732299764946681562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5530,6 +5507,7 @@ MonoBehaviour:
   _stopPlayer: 0
   _gameControler: {fileID: 0}
   _checkMorte: 0
+  _posInicial: {fileID: 0}
 --- !u!95 &4026405319108847702
 Animator:
   serializedVersion: 5
@@ -6226,6 +6204,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4873740855614925119}
+  - component: {fileID: 6175300550582827137}
   m_Layer: 0
   m_Name: Monstrinho
   m_TagString: Untagged
@@ -6251,6 +6230,19 @@ Transform:
   - {fileID: 3055438073390108421}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6175300550582827137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6064552018030837920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9886a71d2a507941804121c3910f802, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveLixo: {fileID: 8732299764946681562}
 --- !u!1 &6195185702214409625
 GameObject:
   m_ObjectHideFlags: 0

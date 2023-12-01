@@ -12,10 +12,13 @@ public class ControladorInimigos : MonoBehaviour
     public Transform[] _posIni;
     public Transform _grupo;
 
+    MoveControl _buriControl;
+
+    public bool _seguirPlayer;
 
     void Start()
     {
-        
+        _buriControl = GetComponent<MoveControl>();
     }
 
     
@@ -40,6 +43,8 @@ public class ControladorInimigos : MonoBehaviour
             _numberPos = Random.Range(0, 3);
 
             bullet.transform.localPosition = _posIni[_numberPos].transform.position;
+
+            bullet.GetComponent<InimigoPai>()._moveLixo._posInicial = _posIni[_numberPos];
 
             bullet.transform.SetParent(_grupo);
             bullet.SetActive(true);
@@ -66,7 +71,7 @@ public class ControladorInimigos : MonoBehaviour
             _numberPos = Random.Range(0, 3);
 
             bullet.transform.localPosition = _posIni[_numberPos].transform.position;
-
+            bullet.GetComponent<MoveLixo>()._posInicial = _posIni[_numberPos];
             bullet.transform.SetParent(_grupo);
             bullet.SetActive(true);
         }

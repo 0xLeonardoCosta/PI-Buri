@@ -18,6 +18,7 @@ public class MoveControl : MonoBehaviour
 
     private bool _inputPulo; //Input de pulo
     [SerializeField] bool _checkGround; //Verificador se o player está encostando no chão
+    [SerializeField] public bool _checkMover; //Verificador se o player vai poder se mexer ou não
     public bool _recebeuDano;
 
 
@@ -47,7 +48,8 @@ public class MoveControl : MonoBehaviour
         _controller = GetComponent<CharacterController>();
         _anim = GetComponent<Animator>();
         AndarN();
-        _camera = Camera.main.gameObject;        
+        _camera = Camera.main.gameObject;
+        _checkMover = true;
     }
 
     void Update()
@@ -70,7 +72,14 @@ public class MoveControl : MonoBehaviour
     }
     void Move()
     {
-        _movement = new Vector3(_input.x, _controller.velocity.y, _input.y).normalized * _speed * Time.deltaTime;
+        if (_checkMover)
+        {
+            _movement = new Vector3(_input.x, _controller.velocity.y, _input.y).normalized * _speed * Time.deltaTime;
+        }
+        else
+        {
+            _movement = Vector3.zero;
+        }
         _controller.Move(_movement);
         // Linhas abaixo feitas para animação do personagem
         float _andar = Mathf.Abs(_input.x) + Mathf.Abs(_input.y);
@@ -80,7 +89,7 @@ public class MoveControl : MonoBehaviour
     }
     void LookAtMovementDirection() //Script para virar a frente do personagem voltada a orientação do movimento
     {
-        if (_input != Vector2.zero)
+        if (_input != Vector2.zero && _checkMover)
         {
             float targetAngle = Mathf.Atan2(_input.x, _input.y) * Mathf.Rad2Deg;
             Quaternion targetRotation = Quaternion.Euler(0f, targetAngle, 0f);
@@ -119,8 +128,9 @@ public class MoveControl : MonoBehaviour
     }
     void Dano()
     {
-        if (_recebeuDano == true)
+        if (_recebeuDano == true && _checkMover)
         {
+            _checkMover = false;
             _anim.SetBool("hit", _recebeuDano);
             Invoke("DanoTime", 3f);
             Debug.Log("RecebeuDano");
@@ -130,6 +140,7 @@ public class MoveControl : MonoBehaviour
     {
         _recebeuDano = false;
         _anim.SetBool("hit", _recebeuDano);
+        _checkMover= true;
     }
     void Gravity() // Se estiver encostando no chão zerar o vector.Down que no caso é o gravity multiplier
     {

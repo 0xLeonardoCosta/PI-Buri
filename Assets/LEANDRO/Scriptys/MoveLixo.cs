@@ -40,7 +40,10 @@ public class MoveLixo : MonoBehaviour
     [SerializeField] GaaameController _gameControler;
     public bool _checkMorte;
 
-  
+    public Transform _posInicial;
+    MoveControl _buriControl;
+    ControladorInimigos _controladorInimigos;
+
 
     // Start is called before the first frame update
     void Start()
@@ -51,20 +54,27 @@ public class MoveLixo : MonoBehaviour
         _hit = GetComponent<Hits>();
         _checktime = _timeLimit;
         _gameControler = Camera.main.GetComponent<GaaameController>();
+        _controladorInimigos = Camera.main.GetComponent<ControladorInimigos>();
         _player = _gameControler._player;
+        _buriControl = _player.GetComponent<MoveControl>();
+        //_posInicial = transform.position;
         _checkMove = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_checkMove == true)
+
+        _controladorInimigos._seguirPlayer = _buriControl._checkMover;
+        if (_controladorInimigos._seguirPlayer)
         {
             _agent.SetDestination(_player.position);
+           // Debug.Log("SeguirPlayer");
         }
         else
         {
-            _agent.velocity = new Vector3(0, 0, 0);
+           _agent.SetDestination(_posInicial.position);
+           // Debug.Log("Voltar para:" + _posInicial);
         }
 
         Ataque();
@@ -147,13 +157,23 @@ public class MoveLixo : MonoBehaviour
             if (!_seguirPlayer) // ! falsa
             {
                 Patrulhar();
-                _agent.SetDestination(_alvo.position); // setar destino / enviar destino
+                if (_controladorInimigos._seguirPlayer)
+                {
+                    _agent.SetDestination(_alvo.position); // setar destino / enviar destino
+                }
+                   // _agent.SetDestination(_alvo.position); // setar destino / enviar destino
                 _ataqueOn = false;
             }
             else
             {
 
-                _agent.SetDestination(_player.position);
+              
+                if (_controladorInimigos._seguirPlayer)
+                {
+                    _agent.SetDestination(_player.position);
+                }
+
+                //_agent.SetDestination(_player.position);
                 if (_distanciaPlayer < 5) // se a distancia player for menor que 8
                 {
                     _ataqueOn = true;
