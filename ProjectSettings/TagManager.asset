@@ -8,6 +8,7 @@ TagManager:
   - AtaqueMili
   - AtaqueIni
   - AtaquePlayer
+  - frutacoletar
   layers:
   - Default
   - TransparentFX
