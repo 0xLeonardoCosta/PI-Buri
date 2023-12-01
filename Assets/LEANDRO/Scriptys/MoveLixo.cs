@@ -69,12 +69,12 @@ public class MoveLixo : MonoBehaviour
         if (_controladorInimigos._seguirPlayer)
         {
             _agent.SetDestination(_player.position);
-           // Debug.Log("SeguirPlayer");
+            Debug.Log("SeguirPlayer");
         }
         else
         {
            _agent.SetDestination(_posInicial.position);
-           // Debug.Log("Voltar para:" + _posInicial);
+           Debug.Log("Voltar para:" + _posInicial);
         }
 
         Ataque();

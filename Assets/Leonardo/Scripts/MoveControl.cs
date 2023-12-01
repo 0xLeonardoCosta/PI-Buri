@@ -139,7 +139,7 @@ public class MoveControl : MonoBehaviour
     void DanoTime()
     {
         _recebeuDano = false;
-        _anim.SetBool("hit", _recebeuDano);
+        _anim.SetBool("hit", _recebeuDano);//
         _checkMover= true;
     }
     void Gravity() // Se estiver encostando no chão zerar o vector.Down que no caso é o gravity multiplier

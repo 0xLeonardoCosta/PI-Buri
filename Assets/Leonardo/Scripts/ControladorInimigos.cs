@@ -15,7 +15,7 @@ public class ControladorInimigos : MonoBehaviour
     MoveControl _buriControl;
 
     public bool _seguirPlayer;
-
+    //
     void Start()
     {
         _buriControl = GetComponent<MoveControl>();
