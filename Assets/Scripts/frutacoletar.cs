@@ -30,12 +30,23 @@ public class frutacoletar : MonoBehaviour
         _meshRenderer.enabled = false;
         _collider.enabled = false;
         yield return new WaitForSeconds(1);
+        _partColetar.SetActive(false);
         gameObject.SetActive(false);
         
     }
 
-    void Restart ()
+    IEnumerator RestartTime2 ()
     {
+        yield return new WaitForSeconds(1);
+        _meshRenderer.enabled = true;
+        _collider.enabled = true;
+        yield return new WaitForSeconds(0.5f);
 
+
+    }
+
+    public void Restart2 ()
+    {
+        StartCoroutine (RestartTime2());
     }
 }

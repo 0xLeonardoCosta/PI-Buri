@@ -51,6 +51,7 @@ public class frutacontrol : MonoBehaviour
             //bullet.transform.rotation = turret.transform.rotation;
             bullet.transform.SetParent(_grupoFrutas.transform);
             bullet.SetActive(true);
+            bullet.GetComponent<frutacoletar>().Restart2();
         }
     }
 }

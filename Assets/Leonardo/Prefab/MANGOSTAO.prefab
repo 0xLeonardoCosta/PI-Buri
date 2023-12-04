@@ -19724,7 +19724,6 @@ GameObject:
   - component: {fileID: 3044133835058161285}
   - component: {fileID: 2451839325792480768}
   - component: {fileID: -4899013499096188446}
-  - component: {fileID: -1771811806181385817}
   m_Layer: 0
   m_Name: MANGOSTAO
   m_TagString: Untagged
@@ -19860,25 +19859,4 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.012999998
-  m_Center: {x: -9.800591e-18, y: 0, z: 0.0013793104}
---- !u!65 &-1771811806181385817
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5027997181591062165}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.02, y: 0.019999996, z: 0.025999997}
   m_Center: {x: -9.800591e-18, y: 0, z: 0.0013793104}
