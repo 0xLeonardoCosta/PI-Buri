@@ -12,6 +12,11 @@ public class ControladorInimigos : MonoBehaviour
     public Transform[] _posIni;
     public Transform _grupo;
 
+    public List<GameObject> _inimigosLista1 = new List<GameObject>();
+    public List<GameObject> _inimigosListaGeral = new List<GameObject>();
+
+    public List<Transform> _inimigosTrans = new List<Transform>();
+
     MoveControl _buriControl;
 
     public bool _seguirPlayer;

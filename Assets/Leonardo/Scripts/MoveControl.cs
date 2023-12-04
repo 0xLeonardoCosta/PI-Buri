@@ -168,7 +168,7 @@ public class MoveControl : MonoBehaviour
         _camera.transform.localRotation = Quaternion.Lerp(_camera.transform.localRotation, targetRotation, Mathf.Abs(normalizedInput)).normalized;
         if (_inputAnalogicoCam == 0)
         {
-            _camera.transform.localRotation = Quaternion.Lerp(_camera.transform.localRotation, Quaternion.Euler(36f, 0f, 0f), testando); //Quaternion.Euler(36f, 0f, 0f);
+            _camera.transform.localRotation = Quaternion.Lerp(_camera.transform.localRotation, Quaternion.Euler(36f, 0f, 0f), 0.3f); //Quaternion.Euler(36f, 0f, 0f);
         }
     }
     public void SetMove(InputAction.CallbackContext value) //Input direcional X e Z (Input System)

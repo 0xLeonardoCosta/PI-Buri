@@ -9,12 +9,16 @@ public class InimigoPool3 : MonoBehaviour
     public GameObject _objectsToPool;
     public int _amountToPool;
 
+    ControladorInimigos _control;
+
     void Awake()
     {
         _SharedInstance = this;
     }
     void Start()
     {
+        _control = Camera.main.GetComponent<ControladorInimigos>();
+
         _pooledObjects = new List<GameObject>();
         GameObject tmp;
         for (int i = 0; i < _amountToPool; i++)
@@ -22,6 +26,9 @@ public class InimigoPool3 : MonoBehaviour
             tmp = Instantiate(_objectsToPool);
             tmp.SetActive(false);
             _pooledObjects.Add(tmp);
+            _control._inimigosLista1.Add(tmp);
+            _control._inimigosListaGeral.Add(tmp);
+            _control._inimigosTrans.Add(tmp.transform);
         }
     }
 
