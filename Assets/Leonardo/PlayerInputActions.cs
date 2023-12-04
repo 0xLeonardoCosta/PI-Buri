@@ -53,6 +53,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""UsarBaladeira"",
+                    ""type"": ""Button"",
+                    ""id"": ""01eb7908-3b59-4e54-8412-d71e58cc214a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -330,6 +339,28 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""SetCameraAnalogico"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b0fc2a54-bc7f-4373-9537-cbbd93217513"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UsarBaladeira"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ba06a5e1-e139-434e-a2d1-223681e04cd8"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UsarBaladeira"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -341,6 +372,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Buri_Movimento = m_Buri.FindAction("Movimento", throwIfNotFound: true);
         m_Buri_Pular = m_Buri.FindAction("Pular", throwIfNotFound: true);
         m_Buri_SetCameraAnalogico = m_Buri.FindAction("SetCameraAnalogico", throwIfNotFound: true);
+        m_Buri_UsarBaladeira = m_Buri.FindAction("UsarBaladeira", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -405,6 +437,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Buri_Movimento;
     private readonly InputAction m_Buri_Pular;
     private readonly InputAction m_Buri_SetCameraAnalogico;
+    private readonly InputAction m_Buri_UsarBaladeira;
     public struct BuriActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -412,6 +445,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Movimento => m_Wrapper.m_Buri_Movimento;
         public InputAction @Pular => m_Wrapper.m_Buri_Pular;
         public InputAction @SetCameraAnalogico => m_Wrapper.m_Buri_SetCameraAnalogico;
+        public InputAction @UsarBaladeira => m_Wrapper.m_Buri_UsarBaladeira;
         public InputActionMap Get() { return m_Wrapper.m_Buri; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -430,6 +464,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @SetCameraAnalogico.started += instance.OnSetCameraAnalogico;
             @SetCameraAnalogico.performed += instance.OnSetCameraAnalogico;
             @SetCameraAnalogico.canceled += instance.OnSetCameraAnalogico;
+            @UsarBaladeira.started += instance.OnUsarBaladeira;
+            @UsarBaladeira.performed += instance.OnUsarBaladeira;
+            @UsarBaladeira.canceled += instance.OnUsarBaladeira;
         }
 
         private void UnregisterCallbacks(IBuriActions instance)
@@ -443,6 +480,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @SetCameraAnalogico.started -= instance.OnSetCameraAnalogico;
             @SetCameraAnalogico.performed -= instance.OnSetCameraAnalogico;
             @SetCameraAnalogico.canceled -= instance.OnSetCameraAnalogico;
+            @UsarBaladeira.started -= instance.OnUsarBaladeira;
+            @UsarBaladeira.performed -= instance.OnUsarBaladeira;
+            @UsarBaladeira.canceled -= instance.OnUsarBaladeira;
         }
 
         public void RemoveCallbacks(IBuriActions instance)
@@ -465,5 +505,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnMovimento(InputAction.CallbackContext context);
         void OnPular(InputAction.CallbackContext context);
         void OnSetCameraAnalogico(InputAction.CallbackContext context);
+        void OnUsarBaladeira(InputAction.CallbackContext context);
     }
 }

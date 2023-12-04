@@ -171,6 +171,10 @@ public class MoveControl : MonoBehaviour
             _camera.transform.localRotation = Quaternion.Lerp(_camera.transform.localRotation, Quaternion.Euler(36f, 0f, 0f), 0.3f); //Quaternion.Euler(36f, 0f, 0f);
         }
     }
+    void AtirarBaladeira()
+    {
+        
+    }
     public void SetMove(InputAction.CallbackContext value) //Input direcional X e Z (Input System)
     {
         _input = value.ReadValue<Vector2>();
@@ -181,6 +185,10 @@ public class MoveControl : MonoBehaviour
     public void SetPular(InputAction.CallbackContext value) //Pulo: true ou false
     {
         Pulo();
+    }
+    public void SetBaladeira(InputAction.CallbackContext value)
+    {
+        AtirarBaladeira();
     }
     public void SetCameraAnalogico(InputAction.CallbackContext value) //Pulo: true ou false
     {

@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "UsarBaladeira",
+                    "type": "Button",
+                    "id": "01eb7908-3b59-4e54-8412-d71e58cc214a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -308,6 +317,28 @@
                     "action": "SetCameraAnalogico",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "b0fc2a54-bc7f-4373-9537-cbbd93217513",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UsarBaladeira",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ba06a5e1-e139-434e-a2d1-223681e04cd8",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UsarBaladeira",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
