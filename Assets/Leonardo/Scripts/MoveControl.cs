@@ -17,6 +17,16 @@ public class MoveControl : MonoBehaviour
     //[SerializeField] private float _raycastLenght = 1.15f; //Raio para identificar Ground, saindo do centro do gameObject
 
     private bool _inputPulo; //Input de pulo
+
+    //--------------------------Baladeira--------------------------------
+    [SerializeField] GameObject _projetil;
+    Ball _projetilBala;
+    [SerializeField] bool _inputBaladeira; //Input de baladeira
+    //--------------------------TimerBala---------------------------------
+    [SerializeField] float _timerBala; // Contador para input de bala
+                                       //--------------------------TimerBala---------------------------------
+    [SerializeField] private float _timerValueBala;
+
     [SerializeField] bool _checkGround; //Verificador se o player está encostando no chão
     [SerializeField] public bool _checkMover; //Verificador se o player vai poder se mexer ou não
     public bool _recebeuDano;
@@ -34,6 +44,8 @@ public class MoveControl : MonoBehaviour
     [SerializeField] float _timer; // Contador para input de pulo, útil se tiver problema de pulo duplo
     private float _timerValue;
 
+    
+
     //---------------------Camera-----------------------
     [SerializeField] GameObject _camera;
     [SerializeField] Transform _pivotCamera;
@@ -50,6 +62,8 @@ public class MoveControl : MonoBehaviour
         AndarN();
         _camera = Camera.main.gameObject;
         _checkMover = true;
+        _projetilBala = _projetil.GetComponent<Ball>();
+        _timerBala = _timerValueBala;
     }
 
     void Update()
@@ -60,9 +74,15 @@ public class MoveControl : MonoBehaviour
         Gravity();
         CheckPulo(); // Checa se está encostando no chão e função de timer para normalizar pulo
         CameraControl();
+        if (_inputBaladeira == true)
         {
-            //Debugando   
-            //Debug.Log("Estou no chão? " + _checkGround);
+            _timerBala -= Time.deltaTime;
+            if (_timerBala < 0)
+            {
+                _inputBaladeira = false;
+                _anim.SetBool("TiroBaladeira", _inputBaladeira);
+                _timerBala = _timerValueBala;
+            }
         }
     }
     void AndarN()// Sincronizar animações - Andar movimento de perna/Andar movimento de braço
@@ -173,8 +193,19 @@ public class MoveControl : MonoBehaviour
     }
     void AtirarBaladeira()
     {
-        
+        _inputBaladeira = true;
+        _anim.SetBool("TiroBaladeira", _inputBaladeira);
+       
+        //timer
+      
+      
     }
+
+    public void Atirar()
+    {
+        _projetilBala.Lancar();
+    } 
+
     public void SetMove(InputAction.CallbackContext value) //Input direcional X e Z (Input System)
     {
         _input = value.ReadValue<Vector2>();
