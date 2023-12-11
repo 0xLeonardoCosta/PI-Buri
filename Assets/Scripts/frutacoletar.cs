@@ -22,6 +22,7 @@ public class frutacoletar : MonoBehaviour
         {
             StartCoroutine(Coletar());
         }
+
     }
 
     IEnumerator Coletar ()

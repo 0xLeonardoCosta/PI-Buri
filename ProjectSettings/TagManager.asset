@@ -9,7 +9,11 @@ TagManager:
   - AtaqueIni
   - AtaquePlayer
   - frutacoletar
+<<<<<<< Updated upstream
   - Canoa
+=======
+  - Item
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
