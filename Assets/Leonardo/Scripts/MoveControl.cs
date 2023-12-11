@@ -44,7 +44,8 @@ public class MoveControl : MonoBehaviour
     [SerializeField] float _timer; // Contador para input de pulo, útil se tiver problema de pulo duplo
     private float _timerValue;
 
-    
+    //===================SistemaDeVida===================
+    VidaControler _vidaControler;
 
     //---------------------Camera-----------------------
     [SerializeField] GameObject _camera;
@@ -64,6 +65,7 @@ public class MoveControl : MonoBehaviour
         _checkMover = true;
         _projetilBala = _projetil.GetComponent<Ball>();
         _timerBala = _timerValueBala;
+        _vidaControler = Camera.main.GetComponent<VidaControler>();
     }
 
     void Update()
@@ -158,6 +160,7 @@ public class MoveControl : MonoBehaviour
     }
     void DanoTime()
     {
+        _vidaControler.RecebeuDano();
         _recebeuDano = false;
         _anim.SetBool("hit", _recebeuDano);//
         _checkMover= true;

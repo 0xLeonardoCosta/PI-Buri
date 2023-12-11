@@ -70,7 +70,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -126,10 +126,10 @@ TextureImporter:
       name: ui2d-buri-bottons_0
       rect:
         serializedVersion: 2
-        x: 626
+        x: 629
         y: 4117
-        width: 1258
-        height: 267
+        width: 1252
+        height: 264
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: ui2d-buri-bottons_1
       rect:
         serializedVersion: 2
-        x: 2167
+        x: 2169
         y: 4227
-        width: 1096
-        height: 147
+        width: 1091
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: ui2d-buri-bottons_2
       rect:
         serializedVersion: 2
-        x: 626
+        x: 629
         y: 3817
-        width: 1258
-        height: 266
+        width: 1252
+        height: 264
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,7 +191,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1998
         y: 3668
-        width: 1336
+        width: 1333
         height: 364
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -210,10 +210,10 @@ TextureImporter:
       name: ui2d-buri-bottons_4
       rect:
         serializedVersion: 2
-        x: 626
+        x: 629
         y: 3368
-        width: 1258
-        height: 266
+        width: 1252
+        height: 264
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,7 +233,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1998
         y: 3248
-        width: 1345
+        width: 1343
         height: 364
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -252,10 +252,10 @@ TextureImporter:
       name: ui2d-buri-bottons_6
       rect:
         serializedVersion: 2
-        x: 626
+        x: 629
         y: 3068
-        width: 1258
-        height: 266
+        width: 1252
+        height: 263
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,10 +273,10 @@ TextureImporter:
       name: ui2d-buri-bottons_7
       rect:
         serializedVersion: 2
-        x: 2816
-        y: 2697
-        width: 1616
-        height: 527
+        x: 2819
+        y: 2699
+        width: 1613
+        height: 522
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -317,7 +317,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1168
         y: 2457
-        width: 525
+        width: 523
         height: 525
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -336,9 +336,9 @@ TextureImporter:
       name: ui2d-buri-bottons_10
       rect:
         serializedVersion: 2
-        x: 1747
+        x: 1749
         y: 2457
-        width: 525
+        width: 523
         height: 525
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -357,9 +357,9 @@ TextureImporter:
       name: ui2d-buri-bottons_11
       rect:
         serializedVersion: 2
-        x: 2816
+        x: 2819
         y: 2147
-        width: 1616
+        width: 1613
         height: 525
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -379,9 +379,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 577
-        y: 1857
+        y: 1859
         width: 525
-        height: 527
+        height: 523
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -400,9 +400,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1168
-        y: 1857
-        width: 525
-        height: 527
+        y: 1859
+        width: 523
+        height: 523
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -420,10 +420,10 @@ TextureImporter:
       name: ui2d-buri-bottons_14
       rect:
         serializedVersion: 2
-        x: 1747
-        y: 1857
-        width: 525
-        height: 527
+        x: 1749
+        y: 1859
+        width: 523
+        height: 523
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -441,9 +441,9 @@ TextureImporter:
       name: ui2d-buri-bottons_15
       rect:
         serializedVersion: 2
-        x: 2816
+        x: 2819
         y: 1598
-        width: 1616
+        width: 1613
         height: 525
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -462,10 +462,10 @@ TextureImporter:
       name: ui2d-buri-bottons_16
       rect:
         serializedVersion: 2
-        x: 658
-        y: 1437
-        width: 325
-        height: 305
+        x: 659
+        y: 1441
+        width: 321
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -483,10 +483,10 @@ TextureImporter:
       name: ui2d-buri-bottons_17
       rect:
         serializedVersion: 2
-        x: 1027
-        y: 1437
-        width: 327
-        height: 305
+        x: 1030
+        y: 1440
+        width: 320
+        height: 301
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -506,8 +506,8 @@ TextureImporter:
         serializedVersion: 2
         x: 1469
         y: 1168
-        width: 605
-        height: 606
+        width: 603
+        height: 603
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -525,10 +525,10 @@ TextureImporter:
       name: ui2d-buri-bottons_19
       rect:
         serializedVersion: 2
-        x: 2186
-        y: 1266
-        width: 266
-        height: 366
+        x: 2189
+        y: 1268
+        width: 263
+        height: 364
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -546,9 +546,9 @@ TextureImporter:
       name: ui2d-buri-bottons_20
       rect:
         serializedVersion: 2
-        x: 2516
+        x: 2518
         y: 1417
-        width: 137
+        width: 135
         height: 186
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -567,10 +567,10 @@ TextureImporter:
       name: ui2d-buri-bottons_21
       rect:
         serializedVersion: 2
-        x: 2816
-        y: 1046
-        width: 1616
-        height: 527
+        x: 2819
+        y: 1049
+        width: 1613
+        height: 522
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -588,10 +588,10 @@ TextureImporter:
       name: ui2d-buri-bottons_22
       rect:
         serializedVersion: 2
-        x: 658
-        y: 1097
-        width: 325
-        height: 306
+        x: 659
+        y: 1101
+        width: 320
+        height: 299
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -609,10 +609,10 @@ TextureImporter:
       name: ui2d-buri-bottons_23
       rect:
         serializedVersion: 2
-        x: 1027
-        y: 1097
-        width: 327
-        height: 306
+        x: 1030
+        y: 1101
+        width: 320
+        height: 299
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -630,10 +630,10 @@ TextureImporter:
       name: ui2d-buri-bottons_24
       rect:
         serializedVersion: 2
-        x: 658
-        y: 758
-        width: 325
-        height: 305
+        x: 659
+        y: 759
+        width: 320
+        height: 301
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -651,10 +651,10 @@ TextureImporter:
       name: ui2d-buri-bottons_25
       rect:
         serializedVersion: 2
-        x: 1027
-        y: 758
-        width: 327
-        height: 305
+        x: 1030
+        y: 760
+        width: 320
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -672,9 +672,9 @@ TextureImporter:
       name: ui2d-buri-bottons_26
       rect:
         serializedVersion: 2
-        x: 1427
+        x: 1429
         y: 568
-        width: 527
+        width: 523
         height: 525
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -694,9 +694,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2018
-        y: 626
-        width: 405
-        height: 405
+        y: 629
+        width: 403
+        height: 402
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -714,10 +714,10 @@ TextureImporter:
       name: ui2d-buri-bottons_28
       rect:
         serializedVersion: 2
-        x: 2816
+        x: 2819
         y: 448
-        width: 527
-        height: 525
+        width: 522
+        height: 522
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -738,7 +738,7 @@ TextureImporter:
         x: 3397
         y: 448
         width: 525
-        height: 525
+        height: 522
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -758,8 +758,8 @@ TextureImporter:
         serializedVersion: 2
         x: 3978
         y: 448
-        width: 525
-        height: 525
+        width: 523
+        height: 522
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -778,9 +778,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 568
-        y: 177
+        y: 179
         width: 525
-        height: 527
+        height: 523
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

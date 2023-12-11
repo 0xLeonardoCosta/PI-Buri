@@ -9,6 +9,7 @@ TagManager:
   - AtaqueIni
   - AtaquePlayer
   - frutacoletar
+  - Canoa
   layers:
   - Default
   - TransparentFX
