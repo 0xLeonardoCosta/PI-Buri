@@ -5,11 +5,16 @@ using UnityEngine;
 public class Playpontos : MonoBehaviour
 {
     [SerializeField] int _pontos;
+    VidaControler _vidaControler;
 
-    // Start is called before the first frame update
+    void Start()
+    {
+        _vidaControler = Camera.main.GetComponent<VidaControler>();    
+    }
 
     public void SomarPontos(int value)
     {
         _pontos += value; // é a mesma coisa que isso _pontos = _pontos + value 
+        _vidaControler._vidaAtual += value;
     }
 }

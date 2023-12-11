@@ -51,6 +51,7 @@ public class MoveControl : MonoBehaviour
     [SerializeField] GameObject _camera;
     [SerializeField] Transform _pivotCamera;
     [SerializeField] Vector3 _cameraOffset = new (0f,9f,-9f);
+    Playpontos _playerPontos;
 
     //------------------Teste---------------------
     public float testando;
@@ -66,6 +67,7 @@ public class MoveControl : MonoBehaviour
         _projetilBala = _projetil.GetComponent<Ball>();
         _timerBala = _timerValueBala;
         _vidaControler = Camera.main.GetComponent<VidaControler>();
+        _playerPontos = Camera.main.GetComponent<Playpontos>();
     }
 
     void Update()
@@ -155,12 +157,12 @@ public class MoveControl : MonoBehaviour
             _checkMover = false;
             _anim.SetBool("hit", _recebeuDano);
             Invoke("DanoTime", 3f);
+            _vidaControler.RecebeuDano();
             Debug.Log("RecebeuDano");
         }
     }
     void DanoTime()
     {
-        _vidaControler.RecebeuDano();
         _recebeuDano = false;
         _anim.SetBool("hit", _recebeuDano);//
         _checkMover= true;
@@ -234,6 +236,11 @@ public class MoveControl : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.CompareTag("Item"))
+        {
+            _playerPontos.SomarPontos(1);
+        }
+
         if (other.gameObject.CompareTag("AtaqueIni"))
         {
             _recebeuDano = true;
