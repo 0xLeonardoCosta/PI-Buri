@@ -31,6 +31,11 @@ public class VidaControler : MonoBehaviour
 
     void VidaCheck()
     {
+
+        if (_vidaAtual > 6)
+        {
+            _vidaAtual = _vidaMaxima;
+        }
         if (_vidaAtual == 6)
         {
             _slotVida[0].SetActive(false);
@@ -117,13 +122,5 @@ public class VidaControler : MonoBehaviour
     public void GanhouVida()
     {
         _vidaAtual += 1;
-
-        if (_vidaMaxima >= 6)
-        {
-            _vidaAtual = 6;
-            Debug.Log("VidaMaxima");
-        }
-
-        Debug.Log("VidaAtual: "+_vidaAtual);
     }
 }
