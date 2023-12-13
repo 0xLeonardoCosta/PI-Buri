@@ -24717,11 +24717,10 @@ GameObject:
   - component: {fileID: 6063205589281828139}
   - component: {fileID: 3565808769876924906}
   - component: {fileID: 3544076680997423920}
-  - component: {fileID: 1181521180792982323}
   - component: {fileID: 3679380832524253144}
   - component: {fileID: 2378657393781886575}
   - component: {fileID: 8079200132485243595}
-  - component: {fileID: -312104139452990317}
+  - component: {fileID: 8110678196159470562}
   m_Layer: 0
   m_Name: MANGOSTAOG
   m_TagString: Item
@@ -24796,27 +24795,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1181521180792982323
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3800936333306678021}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.012999998
-  m_Center: {x: -9.800591e-18, y: 0, z: 0.0013793104}
 --- !u!114 &3679380832524253144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24831,7 +24809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nome: 
   _tipo: 1
-  _valor: 3
+  _valor: 1
   _textura: {fileID: 3544076680997423920}
   _partSaida: {fileID: 1566142253387683979}
 --- !u!65 &2378657393781886575
@@ -24853,7 +24831,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.028398437, y: 0.022107758, z: 0.025999997}
+  m_Size: {x: 0.029, y: 0.023, z: 0.028}
   m_Center: {x: -0.000676865, y: 0.0010538793, z: 0.0013793098}
 --- !u!54 &8079200132485243595
 Rigidbody:
@@ -24882,7 +24860,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &-312104139452990317
+--- !u!135 &8110678196159470562
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -24901,8 +24879,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.012999998
-  m_Center: {x: -9.800591e-18, y: 0, z: 0.0013793104}
+  m_Radius: 0.003
+  m_Center: {x: -9.800591e-18, y: 0, z: -0.01}
 --- !u!1 &7775224604278840397
 GameObject:
   m_ObjectHideFlags: 0

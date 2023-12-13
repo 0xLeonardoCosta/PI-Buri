@@ -1,6 +1,8 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VidaControler : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class VidaControler : MonoBehaviour
     public int _vidaMaxima;
     public int _vidaAtual;
     public int _valorAnterior;
+    public Color[] _cor;
+    public Image _corPanel;
 
 
     void Start()
@@ -112,10 +116,12 @@ public class VidaControler : MonoBehaviour
     {
         _vidaAtual -= 1;
         Debug.Log("PerdeuVida");
+        StartCoroutine(TimeHit());
 
         if (_vidaAtual <= 0)
         {
             Debug.Log("Game Over");
+           // StartCoroutine(TimeGameOver());
         }
     }
 
@@ -123,4 +129,21 @@ public class VidaControler : MonoBehaviour
     {
         _vidaAtual += 1;
     }
+
+    IEnumerator TimeHit()
+    {
+        //yield return new WaitForSeconds(.25f);
+        _corPanel.DOColor(_cor[0], 0.25f);
+        yield return new WaitForSeconds(1f);
+        _corPanel.DOColor(_cor[1], 0.25f);
+        yield return new WaitForSeconds(.1f);
+    }
+    /*IEnumerator TimeHit()
+    {
+        yield return new WaitForSeconds(.25f);
+        _corPanel.DOColor(_cor[0], 0.25f);
+        yield return new WaitForSeconds(.25f);
+        _corPanel.DOColor(_cor[1], 0.25f);
+        yield return new WaitForSeconds(.1f);
+    }*/
 }

@@ -20,7 +20,7 @@ public class MoveControl : MonoBehaviour
 
     //--------------------------Baladeira--------------------------------
     [SerializeField] GameObject _projetil;
-    Ball _projetilBala;
+    [SerializeField] Ball _projetilBala;
     [SerializeField] bool _inputBaladeira; //Input de baladeira
     //--------------------------TimerBala---------------------------------
     [SerializeField] float _timerBala; // Contador para input de bala
@@ -55,6 +55,8 @@ public class MoveControl : MonoBehaviour
 
     //------------------Teste---------------------
     public float testando;
+
+    public bool _hitFruta;
 
     void Start()
     {
@@ -225,6 +227,7 @@ public class MoveControl : MonoBehaviour
     public void SetBaladeira(InputAction.CallbackContext value)
     {
         AtirarBaladeira();
+        Debug.Log("InputBala");
     }
     public void SetCameraAnalogico(InputAction.CallbackContext value) //Pulo: true ou false
     {
@@ -236,11 +239,14 @@ public class MoveControl : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Item"))
+        if (other.gameObject.CompareTag("Item") && !_hitFruta)
         {
+            _hitFruta = true;
             int valorPontos = other.GetComponent<Item>().Valor;
             _playerPontos.SomarPontos(valorPontos);
             other.GetComponent<Item>().DestroyItem();
+            Invoke("HitFruta", 1);
+         
         }
 
         if (other.gameObject.CompareTag("AtaqueIni"))
@@ -254,5 +260,10 @@ public class MoveControl : MonoBehaviour
         {
             _recebeuDano = false;
         }
+    }
+
+    private void HitFruta()
+    {
+        _hitFruta = false;
     }
 }

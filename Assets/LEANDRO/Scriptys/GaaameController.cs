@@ -6,6 +6,9 @@ public class GaaameController : MonoBehaviour
 {
     public Transform _player;
     public Transform _playerArm;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
