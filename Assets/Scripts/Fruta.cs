@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class Fruta : Item
 {
-    // Start is called before the first frame update
-    
+    public override void DestroyItem()
+    {
+        StartCoroutine (DestruirTime());
+    }
 
-    // Update is called once per frame
+    IEnumerator DestruirTime()
+    {
+        Textura.enabled = false;
+        PartSaida.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        gameObject.SetActive(false);
+    }
     
 }

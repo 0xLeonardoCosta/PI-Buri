@@ -238,7 +238,9 @@ public class MoveControl : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Item"))
         {
-            _playerPontos.SomarPontos(1);
+            int valorPontos = other.GetComponent<Item>().Valor;
+            _playerPontos.SomarPontos(valorPontos);
+            other.GetComponent<Item>().DestroyItem();
         }
 
         if (other.gameObject.CompareTag("AtaqueIni"))

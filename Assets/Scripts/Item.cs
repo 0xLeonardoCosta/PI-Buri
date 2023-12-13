@@ -17,7 +17,7 @@ public class Item : MonoBehaviour
         _textura = GetComponent<MeshRenderer>();
     }
 
-    protected virtual void DestroyItem()
+    public virtual void DestroyItem()
     {
 
     }
