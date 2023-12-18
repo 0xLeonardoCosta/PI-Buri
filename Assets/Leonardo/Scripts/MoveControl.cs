@@ -201,11 +201,11 @@ public class MoveControl : MonoBehaviour
     void AtirarBaladeira()
     {
         _inputBaladeira = true;
-        _anim.SetBool("TiroBaladeira", _inputBaladeira);
-       
+        _anim.SetBool("TiroBaladeira", true);
+        Debug.Log(_inputBaladeira + " TiroBaladeira");
         //timer
-      
-      
+
+
     }
 
     public void Atirar()
@@ -227,7 +227,7 @@ public class MoveControl : MonoBehaviour
     public void SetBaladeira(InputAction.CallbackContext value)
     {
         AtirarBaladeira();
-        Debug.Log("InputBala");
+
     }
     public void SetCameraAnalogico(InputAction.CallbackContext value) //Pulo: true ou false
     {

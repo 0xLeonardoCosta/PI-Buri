@@ -209,10 +209,10 @@ public class MoveLixo : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("AtaqueMili"))
-        {
-            _hitCheck = true;
-        }
+        //if (other.gameObject.CompareTag("AtaqueMili"))
+       // {
+          //  _hitCheck = true;
+        //}
        
     }
 }
