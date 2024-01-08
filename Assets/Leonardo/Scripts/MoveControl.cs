@@ -58,6 +58,8 @@ public class MoveControl : MonoBehaviour
 
     public bool _hitFruta;
 
+    public TargetLocation _targetLocation;
+
     void Start()
     {
         _timer = _timerValue;

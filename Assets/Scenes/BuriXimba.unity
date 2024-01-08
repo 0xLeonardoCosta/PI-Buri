@@ -12386,7 +12386,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 9, y: 9, z: 9}
-  m_Center: {x: 0, y: 5.4, z: 0}
+  m_Center: {x: 0, y: 12, z: 0}
 --- !u!1 &1083504275109957880
 GameObject:
   m_ObjectHideFlags: 0
@@ -12575,6 +12575,7 @@ MonoBehaviour:
   _cameraOffset: {x: 0, y: 9, z: -9}
   testando: 3
   _hitFruta: 0
+  _targetLocation: {fileID: 4842770875703945917}
 --- !u!224 &1409246660622196248
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14803,7 +14804,6 @@ GameObject:
   - component: {fileID: 1408726960354940711}
   - component: {fileID: 7319128460196534274}
   - component: {fileID: 605809970260049144}
-  - component: {fileID: 7319128460196534275}
   m_Layer: 0
   m_Name: BuriBala
   m_TagString: Player
@@ -16613,22 +16613,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7319128460196534275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4364146613889886573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19ee62b58e75ce94eb70bac0ca4f4b2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listaDeTransforms: []
-  seuGameObject: {fileID: 0}
-  velocidadeMovimento: 5
-  _timer: 1
 --- !u!1 &7347624022446775618
 GameObject:
   m_ObjectHideFlags: 0

@@ -73,7 +73,10 @@ public class MoveLixo : MonoBehaviour
         }
         else
         {
-           _agent.SetDestination(_posInicial.position);
+            if (_posInicial != null) {
+                _agent.SetDestination(_posInicial.position);
+            }
+        
            //Debug.Log("Voltar para:" + _posInicial);
         }
 
