@@ -25500,7 +25500,7 @@ GameObject:
   - component: {fileID: -8880446442457372457}
   m_Layer: 0
   m_Name: MonstraoGmelee
-  m_TagString: Untagged
+  m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25556,6 +25556,7 @@ MonoBehaviour:
   _stopPlayer: 0
   _gameControler: {fileID: 0}
   _checkMorte: 0
+  _posInicial: {fileID: 0}
 --- !u!114 &8673166423665508112
 MonoBehaviour:
   m_ObjectHideFlags: 0

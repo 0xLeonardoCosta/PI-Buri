@@ -5359,12 +5359,11 @@ GameObject:
   - component: {fileID: 8732299764946681562}
   - component: {fileID: 4026405319108847702}
   - component: {fileID: 2117291055261921545}
-  - component: {fileID: 2951504580331859545}
   - component: {fileID: 7796976879882181077}
   - component: {fileID: 8865849872189765481}
   m_Layer: 0
   m_Name: lixo
-  m_TagString: Untagged
+  m_TagString: Inimigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5544,21 +5543,6 @@ MonoBehaviour:
   _foiHit: 0
   _parent: {fileID: 0}
   _gameControler: {fileID: 0}
---- !u!114 &2951504580331859545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1638190409962380566}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e86e8a9c2a917fa4481b0fc092198337, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isHit: 0
-  _pai: {fileID: 0}
-  _inimigos: {fileID: 0}
 --- !u!54 &7796976879882181077
 Rigidbody:
   m_ObjectHideFlags: 0
