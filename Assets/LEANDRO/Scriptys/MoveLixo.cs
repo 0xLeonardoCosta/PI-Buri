@@ -13,6 +13,8 @@ public class MoveLixo : MonoBehaviour
     [SerializeField] Transform[] _pos;
     [SerializeField] Transform _player;
 
+    
+
     int _numberM;
 
     float _distancia;
@@ -59,6 +61,7 @@ public class MoveLixo : MonoBehaviour
         _buriControl = _player.GetComponent<MoveControl>();
         //_posInicial = transform.position;
         _checkMove = true;
+        
     }
 
     // Update is called once per frame
@@ -105,6 +108,8 @@ public class MoveLixo : MonoBehaviour
                 Hit(false);
                 _hitCheck = false;
                 _checktime = _timeLimit;
+                
+                
             }
         }
     }

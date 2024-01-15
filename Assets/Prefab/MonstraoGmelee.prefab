@@ -25659,6 +25659,7 @@ MonoBehaviour:
   _partMorte: {fileID: 223251925725291254}
   _partRestart: {fileID: 6054001769362766589}
   _meshRenderer: {fileID: 3100675172535004715}
+  _porreteMesh: {fileID: 8773939915588517738}
   _collider: {fileID: 0}
 --- !u!1 &4878935082187417501
 GameObject:
