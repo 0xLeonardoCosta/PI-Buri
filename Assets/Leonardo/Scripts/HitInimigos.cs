@@ -11,6 +11,7 @@ public class HitInimigos : MonoBehaviour
     public GameObject _porreteMesh;
 
     public Collider _collider;
+    Transform _transform;
 
 
 
@@ -30,12 +31,28 @@ public class HitInimigos : MonoBehaviour
             StartCoroutine(Morte());
            
         }
+        if (other.gameObject.CompareTag("BuriTriguuer"))
+        {
+            other.GetComponent<TargetLocation>()._targetList.Add(transform);
+            _transform = other.transform;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("BuriTriguuer"))
+        {
+            other.GetComponent<TargetLocation>()._targetList.Remove(transform);
+            _transform = other.transform;
+
+        }
     }
 
-   
+
+
 
     IEnumerator Morte()
     {
+        _transform.GetComponent<TargetLocation>()._targetList.Remove(transform);
         _moveLixo._checkMove = false;
         _partRestart.SetActive(true);
         _meshRenderer.gameObject.SetActive(false);
@@ -69,4 +86,6 @@ public class HitInimigos : MonoBehaviour
     {
         StartCoroutine(RestartTime());
     }
+
+
 }

@@ -59,6 +59,7 @@ public class MoveControl : MonoBehaviour
     public bool _hitFruta;
 
     public TargetLocation _targetLocation;
+    public float speed = 1.0f;
 
     void Start()
     {
@@ -77,7 +78,8 @@ public class MoveControl : MonoBehaviour
     void Update()
     {
         Move();
-        LookAtMovementDirection();
+        LookAtMovementDirection();// pausar na mira
+        RotIni();// so quando mirar
         Dano();
         Gravity();
         CheckPulo(); // Checa se está encostando no chão e função de timer para normalizar pulo
@@ -117,11 +119,32 @@ public class MoveControl : MonoBehaviour
     }
     void LookAtMovementDirection() //Script para virar a frente do personagem voltada a orientação do movimento
     {
-        if (_input != Vector2.zero && _checkMover)
+        if (_input != Vector2.zero && _checkMover && !_inputBaladeira)
         {
             float targetAngle = Mathf.Atan2(_input.x, _input.y) * Mathf.Rad2Deg;
             Quaternion targetRotation = Quaternion.Euler(0f, targetAngle, 0f);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, _speedRotation * Time.deltaTime);
+        }
+    }
+
+    void RotIni()
+    {
+        if (_targetLocation.inimigoMaisProximo != null)
+        {
+            // Determine which direction to rotate towards
+            Vector3 targetDirection = _targetLocation.inimigoMaisProximo.position - transform.position;
+
+            // The step size is equal to speed times frame time.
+            float singleStep = speed * Time.deltaTime;
+
+            // Rotate the forward vector towards the target direction by one step
+            Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
+
+            // Draw a ray pointing at our target in
+            Debug.DrawRay(transform.position, newDirection, Color.red);
+
+            // Calculate a rotation a step closer to the target and applies rotation to this object
+            transform.rotation = Quaternion.LookRotation(newDirection);
         }
     }
     public void Pulo()

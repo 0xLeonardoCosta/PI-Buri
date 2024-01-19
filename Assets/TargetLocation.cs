@@ -42,18 +42,5 @@ public class TargetLocation : MonoBehaviour
         return inimigoMaisProximo;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Inimigo"))
-        {
-            _targetList.Add(other.transform);
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Inimigo"))
-        {
-            _targetList.Remove(other.transform);
-        }
-    }
+   
 }

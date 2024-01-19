@@ -9,6 +9,7 @@ TagManager:
   - FxTemporaire
   - AtaqueIni
   - Inimigo
+  - BuriTriguuer
   layers:
   - Default
   - TransparentFX
