@@ -45,6 +45,7 @@ public class MoveLixo : MonoBehaviour
     public Transform _posInicial;
     MoveControl _buriControl;
     ControladorInimigos _controladorInimigos;
+   
 
 
     // Start is called before the first frame update
@@ -67,49 +68,52 @@ public class MoveLixo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        _controladorInimigos._seguirPlayer = _buriControl._checkMover;
-        if (_controladorInimigos._seguirPlayer)
+        if (_checkMove)
         {
-            _agent.SetDestination(_player.position);
-            //Debug.Log("SeguirPlayer");
-        }
-        else
-        {
-            if (_posInicial != null) {
-                _agent.SetDestination(_posInicial.position);
-            }
-        
-           //Debug.Log("Voltar para:" + _posInicial);
-        }
-
-        Ataque();
-        if (!_checkMorte)
-        {
-            Movimento();
-        }
-        else
-        {
-            Hit(true);
-        }
-        if (_agent != null)
-        {
-            _speedAgent = _agent.velocity;
-        }
-        //_ataqueOn = _controller;
-
-        Animacao();
-
-        if (_hitCheck)
-        {
-            _checktime -= Time.deltaTime;
-            if (_checktime < 0) 
+            _controladorInimigos._seguirPlayer = _buriControl._checkMover;
+            if (_player.position != null && _controladorInimigos._seguirPlayer )
             {
-                Hit(false);
-                _hitCheck = false;
-                _checktime = _timeLimit;
-                
-                
+                _agent.SetDestination(_player.position);
+                //Debug.Log("SeguirPlayer");
+            }
+            else
+            {
+                if (_posInicial != null)
+                {
+                    _agent.SetDestination(_posInicial.position);
+                }
+
+                //Debug.Log("Voltar para:" + _posInicial);
+            }
+
+            Ataque();
+            if (!_checkMorte)
+            {
+                Movimento();
+            }
+            else
+            {
+                Hit(true);
+            }
+            if (_agent != null)
+            {
+                _speedAgent = _agent.velocity;
+            }
+            //_ataqueOn = _controller;
+
+            Animacao();
+
+            if (_hitCheck)
+            {
+                _checktime -= Time.deltaTime;
+                if (_checktime < 0)
+                {
+                    Hit(false);
+                    _hitCheck = false;
+                    _checktime = _timeLimit;
+
+
+                }
             }
         }
     }

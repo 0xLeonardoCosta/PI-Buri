@@ -129,7 +129,7 @@ public class MoveControl : MonoBehaviour
 
     void RotIni()
     {
-        if (_targetLocation.inimigoMaisProximo != null)
+        if (_targetLocation.inimigoMaisProximo != null && _inputBaladeira)
         {
             // Determine which direction to rotate towards
             Vector3 targetDirection = _targetLocation.inimigoMaisProximo.position - transform.position;

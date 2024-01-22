@@ -21,10 +21,6 @@ public class Hit : MonoBehaviour
         _player = _gameControler._player;
     }
 
-    void Update()
-    {
-
-    }
     private void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.name == "BuriTrigger") // se

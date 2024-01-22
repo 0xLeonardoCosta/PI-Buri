@@ -60,7 +60,9 @@ public class HitInimigos : MonoBehaviour
         Camera.main.GetComponent<GaaameController>()._player.GetComponent<MoveControl>()._targetLocation._targetList.Remove(transform.parent);
         _moveLixo._checkMorte = true;
         yield return new WaitForSeconds(1);
+        if(_porreteMesh!=null)
         _porreteMesh.SetActive(false);
+
         yield return new WaitForSeconds(1);
         _partMorte.SetActive(false);
         yield return new WaitForSeconds(1.5f);
@@ -74,11 +76,12 @@ public class HitInimigos : MonoBehaviour
         _partRestart.SetActive(true);   
         yield return new WaitForSeconds(1);
         _meshRenderer.gameObject.SetActive(true);
-        _collider.enabled = true;
         yield return new WaitForSeconds(0.5f);
         _moveLixo._checkMove = true;
         _moveLixo._checkMorte = true;
-        
+        yield return new WaitForSeconds(0.5f);
+        _collider.enabled = true;
+
 
     }
 
