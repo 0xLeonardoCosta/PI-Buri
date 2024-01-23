@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class MoveControl : MonoBehaviour
 {
-    private Vector2 _input; //Input system, axis: X,Z. 
+    public Vector2 _input; //Input system, axis: X,Z. 
     [SerializeField] Vector3 _playerVelocity;
     private Vector3 _movement;
 
@@ -21,19 +21,13 @@ public class MoveControl : MonoBehaviour
     //--------------------------Baladeira--------------------------------
     [SerializeField] GameObject _projetil;
     [SerializeField] Ball _projetilBala;
-    [SerializeField] bool _inputBaladeira; //Input de baladeira
     //--------------------------TimerBala---------------------------------
     [SerializeField] float _timerBala; // Contador para input de bala
-                                       //--------------------------TimerBala---------------------------------
+    //--------------------------TimerBala---------------------------------
     [SerializeField] private float _timerValueBala;
 
-    [SerializeField] bool _checkGround; //Verificador se o player está encostando no chão
-    [SerializeField] public bool _checkMover; //Verificador se o player vai poder se mexer ou não
-    public bool _recebeuDano;
-
-
     private float _gravityValue = -9.81f;
-    private float _gravityMultiplier;
+    public float _gravityMultiplier;
     [SerializeField] float _speed;
     [SerializeField] float _speedMin = 3;
     [SerializeField] float _speedMax = 9;
@@ -49,8 +43,8 @@ public class MoveControl : MonoBehaviour
 
     //---------------------Camera-----------------------
     [SerializeField] GameObject _camera;
-    [SerializeField] Transform _pivotCamera;
-    [SerializeField] Vector3 _cameraOffset = new (0f,9f,-9f);
+    [SerializeField] public Transform _pivotCamera;
+    [SerializeField] public Vector3 _cameraOffset = new (0f,9f,-9f);
     Playpontos _playerPontos;
 
     //------------------Teste---------------------
@@ -60,6 +54,15 @@ public class MoveControl : MonoBehaviour
 
     public TargetLocation _targetLocation;
     public float speed = 1.0f;
+
+    [Header("Gatilhos da animação")]
+    [SerializeField] public float _variacaoVelocidadeAndar;
+    [SerializeField] public float _variacaoAltura;
+    [SerializeField] public bool _checkGround; //Verificador se o player está encostando no chão
+    [SerializeField] public bool _checkMover; //Verificador se o player vai poder se mexer ou não
+    [SerializeField] public bool _recebeuDano;
+    [SerializeField] public bool _inputBaladeira; //Input de baladeira
+
 
     void Start()
     {
@@ -112,9 +115,11 @@ public class MoveControl : MonoBehaviour
         }
         _controller.Move(_movement);
         // Linhas abaixo feitas para animação do personagem
-        float _andar = Mathf.Abs(_input.x) + Mathf.Abs(_input.y);
-        _anim.SetFloat("Andar", _andar);
-        _anim.SetFloat("VelocidadeY", _controller.velocity.y);
+        _variacaoVelocidadeAndar = Mathf.Abs(_input.x) + Mathf.Abs(_input.y);
+        _variacaoAltura = _controller.velocity.y;
+
+        _anim.SetFloat("Andar", _variacaoVelocidadeAndar);
+        _anim.SetFloat("VelocidadeY", _variacaoAltura);
         _anim.SetBool("groundCheck", _checkGround);
     }
     void LookAtMovementDirection() //Script para virar a frente do personagem voltada a orientação do movimento
@@ -211,7 +216,7 @@ public class MoveControl : MonoBehaviour
     {
         //_Camera.transform.localPosition = _pivotCamera.transform.position + _offset;
         _camera.transform.localPosition =
-        Vector3.Lerp(_camera.transform.position, _pivotCamera.transform.position + _cameraOffset, 5f * Time.deltaTime);
+        Vector3.Lerp(_camera.transform.position, _pivotCamera.position + _cameraOffset, 5f * Time.deltaTime);
         //_camera.transform.localRotation = Quaternion.Lerp(_camera.transform.rotation, _pivotCamera.transform.rotation, _inputAnalogicoCam).normalized;
         float maxRotationCameraAngle = 45f;
         float normalizedInput = Mathf.Clamp(_inputAnalogicoCam, -1f, 1f);

@@ -10,6 +10,7 @@ TagManager:
   - AtaqueIni
   - Inimigo
   - BuriTriguuer
+  - Canoa
   layers:
   - Default
   - TransparentFX
