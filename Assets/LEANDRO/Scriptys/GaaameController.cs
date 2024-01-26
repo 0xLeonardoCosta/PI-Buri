@@ -6,6 +6,7 @@ public class GaaameController : MonoBehaviour
 {
     public Transform _player;
     public Transform _playerArm;
+    public Transform _posBuriCanoa;
 
 
 

@@ -55,6 +55,9 @@ public class MoveControl : MonoBehaviour
     public TargetLocation _targetLocation;
     public float speed = 1.0f;
 
+    //------------------Canoa---------------------
+    public bool _usandoCanoa;
+
     [Header("Gatilhos da animação")]
     [SerializeField] public float _variacaoVelocidadeAndar;
     [SerializeField] public float _variacaoAltura;
@@ -80,23 +83,26 @@ public class MoveControl : MonoBehaviour
 
     void Update()
     {
-        Move();
-        LookAtMovementDirection();// pausar na mira
-        RotIni();// so quando mirar
-        Dano();
-        Gravity();
-        CheckPulo(); // Checa se está encostando no chão e função de timer para normalizar pulo
-        CameraControl();
-        if (_inputBaladeira == true)
+        if (!_usandoCanoa)
         {
-            _timerBala -= Time.deltaTime;
-            if (_timerBala < 0)
-            {
-                _inputBaladeira = false;
-                _anim.SetBool("TiroBaladeira", _inputBaladeira);
-                _timerBala = _timerValueBala;
-            }
+            Move();
+            LookAtMovementDirection();// pausar na mira
+            RotIni();// so quando mirar
+            Dano();
+            Gravity();
+            CheckPulo();// Checa se está encostando no chão e função de timer para normalizar pulo
         }
+        CameraControl();
+         if (_inputBaladeira == true)
+         {
+             _timerBala -= Time.deltaTime;
+             if (_timerBala < 0)
+             {
+                 _inputBaladeira = false;
+                 _anim.SetBool("TiroBaladeira", _inputBaladeira);
+                 _timerBala = _timerValueBala;
+             }
+         }
     }
     void AndarN()// Sincronizar animações - Andar movimento de perna/Andar movimento de braço
     {

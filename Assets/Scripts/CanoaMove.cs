@@ -7,6 +7,8 @@ public class CanoaMove : MonoBehaviour
     [SerializeField] MoveControl _moveBuri;
 
     [SerializeField] Transform _player;
+    
+    [SerializeField] Transform _buriPosCanoa;
 
     [SerializeField] Transform _pivot;
 
@@ -25,27 +27,35 @@ public class CanoaMove : MonoBehaviour
 
     void Update()
     {
-        _input = _moveBuri._input;
-        CanoaMovement();
+        if (_moveBuri != null)
+        {
+            _input = _moveBuri._input;
+            CanoaMovement();
+        }
+      
     }
 
     public void CanoaMovement()
     {
         //if (_utilizandoCanoa)
         {
+            _moveBuri._usandoCanoa = true;
+            _moveBuri._pivotCamera = transform;
             //Travas de movimento e pulo
             _moveBuri._variacaoVelocidadeAndar = 0;
             _moveBuri._variacaoAltura = 0;
             //_moveBuri._gravityMultiplier = 0;
-            _moveBuri._checkGround = false;
-            _moveBuri._checkMover = false;
-
+             _moveBuri._checkGround = false;
+             _moveBuri._checkMover = false;
+            //_moveBuri.enabled = false;
             //Controle da câmera
-            _moveBuri._pivotCamera = transform;
+            
 
             //Botar o Buri Sentado na canoa
-            _player.position = transform.position;
-
+            //_player.position = transform.position;
+            _player.SetParent(_buriPosCanoa);
+          
+            _player.transform.localPosition = Vector3.zero;
             transform.RotateAround(_pivot.position, Vector3.up, _velocidadeCurva * _input.x * Time.deltaTime);
             transform.Translate(Vector3.up * _velocidade * _input.y);
 
