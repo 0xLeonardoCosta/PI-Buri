@@ -27,10 +27,10 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _Density: 450
-    - _Noise: -0.03
+    - _Density: 732.4
+    - _Noise: 0
     - _Power: 7
-    - _Speed: 2
+    - _Speed: 2.26
     - _SpeedOlas: 0.01
     m_Colors:
     - _ColorOlas: {r: 0.99056596, g: 0.7979069, b: 0.29436627, a: 0}
