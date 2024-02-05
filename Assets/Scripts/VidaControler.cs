@@ -120,7 +120,7 @@ public class VidaControler : MonoBehaviour
 
         if (_vidaAtual <= 0)
         {
-            Debug.Log("Game Over");
+           //Debug.Log("Game Over");
            // StartCoroutine(TimeGameOver());
         }
     }

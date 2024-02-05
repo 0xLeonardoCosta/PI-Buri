@@ -40,7 +40,8 @@ public class MoveControl : MonoBehaviour
 
     //===================SistemaDeVida===================
     VidaControler _vidaControler;
-
+    [SerializeField] int _vidaAtual;
+    [SerializeField] bool _gameOver;
     //---------------------Camera-----------------------
     [SerializeField] GameObject _camera;
     [SerializeField] public Transform _pivotCamera;
@@ -91,6 +92,7 @@ public class MoveControl : MonoBehaviour
             Dano();
             Gravity();
             CheckPulo();// Checa se está encostando no chão e função de timer para normalizar pulo
+            VidaCheck();
         }
         CameraControl();
          if (_inputBaladeira == true)
@@ -109,6 +111,22 @@ public class MoveControl : MonoBehaviour
         _anim.SetLayerWeight(0, 1); //perna
         _anim.SetLayerWeight(1, 1); //braco
     }
+    void VidaCheck()
+    {
+        _vidaAtual = _vidaControler._vidaAtual;
+        if (_vidaAtual <= 0)
+        {
+            _gameOver = true;
+        }
+    }
+    void Morte()
+    {
+        //travar move/ trava jogp 
+        //sair da aniamção
+        //false
+        //invoke()
+    }
+    //invoke , painel, gameover....
     void Move()
     {
         if (_checkMover)
@@ -127,6 +145,7 @@ public class MoveControl : MonoBehaviour
         _anim.SetFloat("Andar", _variacaoVelocidadeAndar);
         _anim.SetFloat("VelocidadeY", _variacaoAltura);
         _anim.SetBool("groundCheck", _checkGround);
+        _anim.SetBool("Morte", _gameOver);
     }
     void LookAtMovementDirection() //Script para virar a frente do personagem voltada a orientação do movimento
     {
@@ -147,6 +166,7 @@ public class MoveControl : MonoBehaviour
 
             // The step size is equal to speed times frame time.
             float singleStep = speed * Time.deltaTime;
+
 
             // Rotate the forward vector towards the target direction by one step
             Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
@@ -170,7 +190,7 @@ public class MoveControl : MonoBehaviour
             {
                 _playerVelocity.x = 0;
             }   
-            _anim.SetFloat("VelocidadeY", _controller.velocity.y);
+           // _anim.SetFloat("VelocidadeYVelocidadeY", _controller.velocity.y);
         }
     }
     void CheckPulo() // Timer para negativar inputPulo corretamente
@@ -196,7 +216,7 @@ public class MoveControl : MonoBehaviour
             _anim.SetBool("hit", _recebeuDano);
             Invoke("DanoTime", 3f);
             _vidaControler.RecebeuDano();
-            Debug.Log("RecebeuDano");
+            //Debug.Log("RecebeuDano");
         }
     }
     void DanoTime()

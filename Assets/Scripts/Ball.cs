@@ -13,13 +13,10 @@ public class Ball : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
-    {
-        
-    }
 
     public void Lancar()
     {
+        Debug.Log("Lançou");
         transform.position = _controller._playerArm.position;
         transform.eulerAngles = new Vector3(0, 0, 0);
         _rb.velocity= new Vector3(0, 0, 0);
