@@ -67,6 +67,13 @@ public class MoveControl : MonoBehaviour
     [SerializeField] public bool _inputBaladeira; //Input de baladeira
     [SerializeField] public bool _usandoCanoa;
 
+    //------------------Canoa---------------------
+
+    [Header("Objetos Carregados")]
+    [SerializeField] GameObject _baladeira;
+    [SerializeField] GameObject _varaPesca;
+    //[SerializeField] GameObject _remo;
+    
 
     void Start()
     {
@@ -129,6 +136,8 @@ public class MoveControl : MonoBehaviour
         _anim.SetBool("UsandoCanoa", _usandoCanoa);
         _anim.SetFloat("Andar", 0);
         _anim.SetFloat("VelocidadeY", 0);
+        _baladeira.SetActive(false);
+        _varaPesca.SetActive(true);
     }
     void Move()
     {
