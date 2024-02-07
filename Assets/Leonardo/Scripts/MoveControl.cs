@@ -127,6 +127,8 @@ public class MoveControl : MonoBehaviour
         float _variacaoVelocidadeCanoa = Mathf.Abs(_input.x) + Mathf.Abs(_input.y);
         _anim.SetFloat("RemarCanoa", _variacaoVelocidadeCanoa);
         _anim.SetBool("UsandoCanoa", _usandoCanoa);
+        _anim.SetFloat("Andar", 0);
+        _anim.SetFloat("VelocidadeY", 0);
     }
     void Move()
     {
