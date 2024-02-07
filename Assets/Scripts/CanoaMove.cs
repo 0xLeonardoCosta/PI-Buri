@@ -30,6 +30,7 @@ public class CanoaMove : MonoBehaviour
         if (_moveBuri != null)
         {
             _input = _moveBuri._input;
+            _utilizandoCanoa = true;
             CanoaMovement();
         }
       
@@ -37,7 +38,7 @@ public class CanoaMove : MonoBehaviour
 
     public void CanoaMovement()
     {
-        //if (_utilizandoCanoa)
+        if (_utilizandoCanoa)
         {
             _moveBuri._usandoCanoa = true;
             _moveBuri._pivotCamera = transform;
@@ -75,7 +76,8 @@ public class CanoaMove : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            _moveBuri = other.GetComponent<MoveControl>();            
+            _moveBuri = other.GetComponent<MoveControl>(); 
+            
         }
     }
 }

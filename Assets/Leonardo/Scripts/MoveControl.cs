@@ -57,8 +57,7 @@ public class MoveControl : MonoBehaviour
     public float speed = 1.0f;
 
     //------------------Canoa---------------------
-    public bool _usandoCanoa;
-
+    
     [Header("Gatilhos da animação")]
     [SerializeField] public float _variacaoVelocidadeAndar;
     [SerializeField] public float _variacaoAltura;
@@ -66,6 +65,7 @@ public class MoveControl : MonoBehaviour
     [SerializeField] public bool _checkMover; //Verificador se o player vai poder se mexer ou não
     [SerializeField] public bool _recebeuDano;
     [SerializeField] public bool _inputBaladeira; //Input de baladeira
+    [SerializeField] public bool _usandoCanoa;
 
 
     void Start()
@@ -94,17 +94,12 @@ public class MoveControl : MonoBehaviour
             CheckPulo();// Checa se está encostando no chão e função de timer para normalizar pulo
             VidaCheck();
         }
+        else
+        {
+            MoveCanoa();
+        }
         CameraControl();
-         if (_inputBaladeira == true)
-         {
-             _timerBala -= Time.deltaTime;
-             if (_timerBala < 0)
-             {
-                 _inputBaladeira = false;
-                 _anim.SetBool("TiroBaladeira", _inputBaladeira);
-                 _timerBala = _timerValueBala;
-             }
-         }
+        BaladeiraCheck();
     }
     void AndarN()// Sincronizar animações - Andar movimento de perna/Andar movimento de braço
     {
@@ -127,6 +122,10 @@ public class MoveControl : MonoBehaviour
         //invoke()
     }
     //invoke , painel, gameover....
+    void MoveCanoa()
+    {
+        _anim.SetBool("UsandoCanoa", _usandoCanoa);
+    }
     void Move()
     {
         if (_checkMover)
@@ -254,14 +253,25 @@ public class MoveControl : MonoBehaviour
             _camera.transform.localRotation = Quaternion.Lerp(_camera.transform.localRotation, Quaternion.Euler(36f, 0f, 0f), 0.3f); //Quaternion.Euler(36f, 0f, 0f);
         }
     }
+    void BaladeiraCheck()
+    {
+        if (_inputBaladeira == true)
+        {
+            _timerBala -= Time.deltaTime;
+            if (_timerBala < 0)
+            {
+                _inputBaladeira = false;
+                _anim.SetBool("TiroBaladeira", _inputBaladeira);
+                _timerBala = _timerValueBala;
+            }
+        }
+    }
     void AtirarBaladeira()
     {
         _inputBaladeira = true;
         _anim.SetBool("TiroBaladeira", true);
         Debug.Log(_inputBaladeira + " TiroBaladeira");
         //timer
-
-
     }
 
     public void Atirar()
