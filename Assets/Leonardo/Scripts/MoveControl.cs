@@ -124,6 +124,8 @@ public class MoveControl : MonoBehaviour
     //invoke , painel, gameover....
     void MoveCanoa()
     {
+        float _variacaoVelocidadeCanoa = Mathf.Abs(_input.x) + Mathf.Abs(_input.y);
+        _anim.SetFloat("RemarCanoa", _variacaoVelocidadeCanoa);
         _anim.SetBool("UsandoCanoa", _usandoCanoa);
     }
     void Move()

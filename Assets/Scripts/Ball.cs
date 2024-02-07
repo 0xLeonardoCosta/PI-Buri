@@ -7,6 +7,7 @@ public class Ball : MonoBehaviour
 {
     Rigidbody _rb;
     [SerializeField] GaaameController _controller;
+    [SerializeField] private float _velocityProjetil;
     void Start()
     {
         _controller = Camera.main.GetComponent<GaaameController>();
@@ -21,6 +22,6 @@ public class Ball : MonoBehaviour
         transform.eulerAngles = new Vector3(0, 0, 0);
         _rb.velocity= new Vector3(0, 0, 0);
 
-        _rb.AddForce(_controller._player.transform.forward * 24, ForceMode.Impulse);
+        _rb.AddForce(_controller._player.transform.forward * _velocityProjetil, ForceMode.Impulse);
     }
 }

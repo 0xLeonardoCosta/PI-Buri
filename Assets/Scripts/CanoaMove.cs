@@ -55,6 +55,7 @@ public class CanoaMove : MonoBehaviour
             //Botar o Buri Sentado na canoa
             //_player.position = transform.position;
             _player.SetParent(_buriPosCanoa);
+            _player.transform.localEulerAngles = new Vector3(0,0,0);
           
             _player.transform.localPosition = Vector3.zero;
             transform.RotateAround(_pivot.position, Vector3.up, _velocidadeCurva * _input.x * Time.deltaTime);
