@@ -39,14 +39,16 @@ public class MoveControl : MonoBehaviour
     private float _timerValue;
 
     //===================SistemaDeVida===================
-    VidaControler _vidaControler;
+    //VidaControler _vidaControler;
+    [SerializeField] GaaameController _gaaameController;
+    [SerializeField] HudGames _hudGames;
     [SerializeField] int _vidaAtual;
     [SerializeField] bool _gameOver;
     //---------------------Camera-----------------------
     [SerializeField] GameObject _camera;
     [SerializeField] public Transform _pivotCamera;
     [SerializeField] public Vector3 _cameraOffset = new (0f,9f,-9f);
-    Playpontos _playerPontos;
+    [SerializeField] Playpontos _playerPontos;
 
     //------------------Teste---------------------
     public float testando;
@@ -85,7 +87,9 @@ public class MoveControl : MonoBehaviour
         _checkMover = true;
         _projetilBala = _projetil.GetComponent<Ball>();
         _timerBala = _timerValueBala;
-        _vidaControler = Camera.main.GetComponent<VidaControler>();
+        //_vidaControler = Camera.main.GetComponent<VidaControler>();
+        _gaaameController = Camera.main.GetComponent<GaaameController>();
+        _hudGames = _gaaameController._canvasHud.GetComponent<HudGames>();
         _playerPontos = Camera.main.GetComponent<Playpontos>();
     }
 
@@ -115,7 +119,7 @@ public class MoveControl : MonoBehaviour
     }
     void VidaCheck()
     {
-        _vidaAtual = _vidaControler._vidaAtual;
+        _vidaAtual = _hudGames.vida;
         if (_vidaAtual <= 0)
         {
             _gameOver = true;
@@ -227,7 +231,8 @@ public class MoveControl : MonoBehaviour
             _checkMover = false;
             _anim.SetBool("hit", _recebeuDano);
             Invoke("DanoTime", 3f);
-            _vidaControler.RecebeuDano();
+            //_vidaControler.RecebeuDano();
+            _hudGames.RecebeuDano();
             //Debug.Log("RecebeuDano");
         }
     }
