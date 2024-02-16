@@ -6,6 +6,7 @@ using UnityEngine;
 public class HudControl : MonoBehaviour
 {
     [SerializeField] List <MenuControl> _menuControl;
+    bool _isPause;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,17 @@ public class HudControl : MonoBehaviour
         _menuControl[0].ChamarMenu();
     }
 
-    public void ChamarMEnuControl (int value)
+    private void Update()
+    {
+        if (_isPause == false);
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 1;
+    }
+
+    public void ChamarMenuControl (int value)
     {
         for (int i = 0; i < _menuControl.Count; i++)
         {
@@ -35,9 +46,5 @@ public class HudControl : MonoBehaviour
         _menuControl[value].ChamarMenu();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

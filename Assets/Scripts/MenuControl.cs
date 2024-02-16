@@ -13,20 +13,22 @@ public class MenuControl : MonoBehaviour
 
     private IEnumerator TimeItens()
     {
-        yield return new WaitForSeconds(1);
+        //yield return new WaitForSeconds(1);
 
         for (int i = 0; i < _itensMenu.Count; i++)
         {
-            _itensMenu[i].DOScale(1.2f, .25f);
             yield return new WaitForSeconds(.25f);
-            _itensMenu[i].DOScale(1f, .25f);
+            _itensMenu[i].DOScale(1.5f, .25f);
+            yield return new WaitForSeconds(.25f);
+            _itensMenu[i].DOScale(1f, 0.25f);
         }
-        _itensMenu[0].GetComponent<Button>().Select();
+        //_itensMenu[0].GetComponent<Button>().Select();
 
     }
 
     public void ChamarMenu()
     {
+        _itensMenu[0].GetComponent<Button>().Select();
         StartCoroutine(TimeItens());
     }
 
@@ -34,7 +36,7 @@ public class MenuControl : MonoBehaviour
     {
         for (int i = 0; i < _itensMenu.Count; i++)
         {
-            _itensMenu[i].transform.localScale = Vector3.zero;
+            _itensMenu[i].localScale = Vector3.zero;
         }
     }
 
