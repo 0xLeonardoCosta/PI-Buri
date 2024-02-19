@@ -15,6 +15,7 @@ public class HudGames : MonoBehaviour
     [SerializeField] GameObject _pos;
     [SerializeField] GameObject _pos1;
     [SerializeField] GameObject _pos2;
+    [SerializeField] Button _Reiniciar;
     public int vida;
     void Start()
     {
@@ -35,10 +36,11 @@ public class HudGames : MonoBehaviour
         {
             _iconVida[0].DOFade(0, 0.5f);
             //Chamar tela GameOver
-            _telaGameOver.DOScale(0.35f, 0.5f);
+            _telaGameOver.DOScale(1f, 0.5f);
             _vidaGrupo.transform.DOMove(_pos.transform.position, 0.1f);
             _baixoGrupo.transform.DOMove(_pos1.transform.position, 0.25f);
             _stamina.transform.DOMove(_pos2.transform.position, 0.05f);
+            _Reiniciar.Select();
         }
         else if (vida == 1)
         {
