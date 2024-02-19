@@ -11,6 +11,7 @@ TagManager:
   - Inimigo
   - BuriTriguuer
   - Canoa
+  - HUD
   layers:
   - Default
   - TransparentFX
