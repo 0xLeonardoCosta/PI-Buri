@@ -8,7 +8,7 @@ public class MoveControl : MonoBehaviour
 {
     public Vector2 _input; //Input system, axis: X,Z. 
     [SerializeField] Vector3 _playerVelocity;
-    private Vector3 _movement;
+    [SerializeField] private Vector3 _movement;
 
     private CharacterController _controller;
     private Animator _anim;
@@ -68,6 +68,9 @@ public class MoveControl : MonoBehaviour
     [SerializeField] public bool _recebeuDano;
     [SerializeField] public bool _inputBaladeira; //Input de baladeira
     [SerializeField] public bool _usandoCanoa;
+    [SerializeField] public bool _estaAndando;
+    [SerializeField] public bool _estaCorrendo;
+    [SerializeField] Vector3 magnitude;
 
     //------------------Canoa---------------------
 
@@ -147,6 +150,8 @@ public class MoveControl : MonoBehaviour
     {
         if (_checkMover)
         {
+            magnitude = new Vector3(_input.x, _controller.velocity.y, _input.y).normalized; // PAREI AQUI
+            
             _movement = new Vector3(_input.x, _controller.velocity.y, _input.y).normalized * _speed * Time.deltaTime;
         }
         else
@@ -284,7 +289,7 @@ public class MoveControl : MonoBehaviour
             }
         }
     }
-    void AtirarBaladeira()
+    public void AtirarBaladeira()
     {
         _inputBaladeira = true;
         _anim.SetBool("TiroBaladeira", true);
