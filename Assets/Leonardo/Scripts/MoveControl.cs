@@ -114,6 +114,7 @@ public class MoveControl : MonoBehaviour
         }
         CameraControl();
         BaladeiraCheck();
+        _variacaoAltura = _controller.velocity.y;
     }
     void AndarN()// Sincronizar animações - Andar movimento de perna/Andar movimento de braço
     {

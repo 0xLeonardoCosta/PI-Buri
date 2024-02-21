@@ -294,35 +294,6 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Buri - Pulando (Completo)
-      takeName: Armature - Buri|Buri - Pulando (Completo)
-      internalID: 282805122873924963
-      firstFrame: 0
-      lastFrame: 30
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
       name: Buri - Pulando/Subir
       takeName: Armature - Buri|Buri - Pulando/Subir
       internalID: -5867186097933501779
@@ -439,11 +410,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Buri - Pulando/Descer/Inferior
-      takeName: Armature - Buri|Buri - Pulando/Descer/Inferior
-      internalID: 5757104431183502720
+      name: Buri - Pulando (Completo)
+      takeName: Armature - Buri|Buri - Pulando (Completo)
+      internalID: 8921220147808395712
       firstFrame: 0
-      lastFrame: 15
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -468,11 +439,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Buri - Pulando/Descer/Superior
-      takeName: Armature - Buri|Buri - Pulando/Descer/Superior
-      internalID: 81446654416123044
+      name: Buri - Pulando-Subir-Superior
+      takeName: Armature - Buri|Buri - Pulando-Subir-Superior
+      internalID: 3843154970961976923
       firstFrame: 0
-      lastFrame: 15
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -497,11 +468,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Buri - Pulando/Subir/Inferior
-      takeName: Armature - Buri|Buri - Pulando/Subir/Inferior
-      internalID: 7653882356509774282
+      name: Buri - Pulando-Subir-Inferior
+      takeName: Armature - Buri|Buri - Pulando-Subir-Inferior
+      internalID: -8354726585265538139
       firstFrame: 0
-      lastFrame: 15
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -526,11 +497,40 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Buri - Pulando/Subir/Superior
-      takeName: Armature - Buri|Buri - Pulando/Subir/Superior
-      internalID: -2634546616490709525
+      name: Buri - Pulando-Descer-Superior
+      takeName: Armature - Buri|Buri - Pulando-Descer-Superior
+      internalID: 4439908617665500854
       firstFrame: 0
-      lastFrame: 15
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Buri - Pulando-Descer-Inferior
+      takeName: Armature - Buri|Buri - Pulando-Descer-Inferior
+      internalID: 8546219717951655619
+      firstFrame: 0
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
