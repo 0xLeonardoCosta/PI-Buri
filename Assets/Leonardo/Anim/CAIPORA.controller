@@ -7,7 +7,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Armature - Caipora|Caipora - Correndo
+  m_Name: Correndo
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -93,32 +93,32 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 8492035281285768815}
-    m_Position: {x: 20, y: 400, z: 0}
+    m_Position: {x: 330, y: 250, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7436083101350583663}
-    m_Position: {x: 300, y: 270, z: 0}
+    m_Position: {x: 600, y: 170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5473628741879721945}
     m_Position: {x: 30, y: 250, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5020453374170589651}
-    m_Position: {x: 690, y: 270, z: 0}
+    m_Position: {x: -270, y: 210, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6589759656746947094}
-    m_Position: {x: 690, y: 310, z: 0}
+    m_Position: {x: -270, y: 250, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5047751456359790849}
-    m_Position: {x: 690, y: 350, z: 0}
+    m_Position: {x: -270, y: 290, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3167971476517029051}
-    m_Position: {x: 690, y: 390, z: 0}
+    m_Position: {x: -270, y: 330, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_AnyStatePosition: {x: 50, y: 340, z: 0}
+  m_EntryPosition: {x: 50, y: 170, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -5473628741879721945}
@@ -129,7 +129,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Armature - Caipora|Caipora - Parada
+  m_Name: Parada
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -409,7 +409,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Armature - Caipora|Caipora - Andando
+  m_Name: Andando
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

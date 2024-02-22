@@ -33,7 +33,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature - Monstrinho 2|Monstrinho 2 - Andando
+      name: Monstrinho 2 - Andando
       takeName: Armature - Monstrinho 2|Monstrinho 2 - Andando
       internalID: -2837382543381210952
       firstFrame: 0
@@ -62,7 +62,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature - Monstrinho 2|Monstrinho 2 - Ataque
+      name: Monstrinho 2 - Ataque
       takeName: Armature - Monstrinho 2|Monstrinho 2 - Ataque
       internalID: -4909896590182544216
       firstFrame: 0
@@ -91,7 +91,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature - Monstrinho 2|Monstrinho 2 - Correndo
+      name: Monstrinho 2 - Correndo
       takeName: Armature - Monstrinho 2|Monstrinho 2 - Correndo
       internalID: 4558708362480933714
       firstFrame: 0
@@ -120,7 +120,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature - Monstrinho 2|Monstrinho 2 - Dano
+      name: Monstrinho 2 - Dano
       takeName: Armature - Monstrinho 2|Monstrinho 2 - Dano
       internalID: -612821369322556717
       firstFrame: 0
@@ -149,7 +149,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature - Monstrinho 2|Monstrinho 2 - Modo Ataque
+      name: Monstrinho 2 - Modo Ataque
       takeName: Armature - Monstrinho 2|Monstrinho 2 - Modo Ataque
       internalID: -2698069737134054538
       firstFrame: 0
@@ -178,7 +178,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature - Monstrinho 2|Monstrinho 2 - Parado
+      name: '|Monstrinho 2 - Parado'
       takeName: Armature - Monstrinho 2|Monstrinho 2 - Parado
       internalID: -5871036724606922729
       firstFrame: 0

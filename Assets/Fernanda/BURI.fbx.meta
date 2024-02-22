@@ -443,7 +443,7 @@ ModelImporter:
       takeName: Armature - Buri|Buri - Pulando-Subir-Superior
       internalID: 3843154970961976923
       firstFrame: 0
-      lastFrame: 40
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -472,7 +472,7 @@ ModelImporter:
       takeName: Armature - Buri|Buri - Pulando-Subir-Inferior
       internalID: -8354726585265538139
       firstFrame: 0
-      lastFrame: 40
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -501,7 +501,7 @@ ModelImporter:
       takeName: Armature - Buri|Buri - Pulando-Descer-Superior
       internalID: 4439908617665500854
       firstFrame: 0
-      lastFrame: 40
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -530,7 +530,7 @@ ModelImporter:
       takeName: Armature - Buri|Buri - Pulando-Descer-Inferior
       internalID: 8546219717951655619
       firstFrame: 0
-      lastFrame: 40
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
