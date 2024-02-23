@@ -7,23 +7,31 @@ using UnityEngine.SceneManagement;
 public class ControlGameOver : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI _contador;
-    [SerializeField] int timer;
+    [SerializeField] float timer;
+    [SerializeField] float timerTeste;
     private void Start()
     {
         timer = 9;
+        timerTeste = 100;
     }
-    private void Update()
+    /*private void Update()
     {
-        if (transform.localScale != Vector3.zero)
+        //float speed = 4;
+        //timerTeste = 0.001f *-0.1f - Time.time;
+
+        if (transform.lossyScale != Vector3.zero)
         {
-            _contador.text = ""+timer;
-            timer =- Time.frameCount;// me ajuda ivo
+            //timer = timer - Time.time;// me ajuda ivo
+            timer =+ timerTeste;
+            //_contador = "" + timer;
+            timerTeste = 0.001f * -0.1f - Time.time;
+            Debug.Log(timer);
             if (timer < 0)
             {
                 SceneManager.LoadScene("Menu");
             }
         }
-    }
+    }*/
     public void GameReiniciar()
     {
         SceneManager.LoadScene("BuriXimba");
