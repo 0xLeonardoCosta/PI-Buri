@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,30 +9,29 @@ public class ControlGameOver : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI _contador;
     [SerializeField] float timer;
-    [SerializeField] float timerTeste;
-    private void Start()
-    {
-        timer = 9;
-        timerTeste = 100;
-    }
-    /*private void Update()
-    {
-        //float speed = 4;
-        //timerTeste = 0.001f *-0.1f - Time.time;
+    [SerializeField] float tempoInicial = 0f;
+    [SerializeField] bool contagemIniciada = false;
 
-        if (transform.lossyScale != Vector3.zero)
+    private void Update()
+    {
+        if (transform.localScale != Vector3.zero && !contagemIniciada)
         {
-            //timer = timer - Time.time;// me ajuda ivo
-            timer =+ timerTeste;
-            //_contador = "" + timer;
-            timerTeste = 0.001f * -0.1f - Time.time;
-            Debug.Log(timer);
-            if (timer < 0)
+            contagemIniciada = true;
+            tempoInicial = Time.time;
+        }
+
+        if (contagemIniciada)
+        {
+            float tempoDecorrido = Time.time - tempoInicial; // Calcula o tempo decorrido desde o início da contagem
+            int numeroInt = (int)Mathf.Ceil(9 - tempoDecorrido); // Calcula o tempo restante e arredonda para cima
+            _contador.text = numeroInt.ToString(); // Atualiza o texto do contador
+            Debug.Log("Tempo decorrido: " + tempoDecorrido);
+            if (tempoDecorrido >= 10)
             {
                 SceneManager.LoadScene("Menu");
             }
         }
-    }*/
+    }
     public void GameReiniciar()
     {
         SceneManager.LoadScene("BuriXimba");

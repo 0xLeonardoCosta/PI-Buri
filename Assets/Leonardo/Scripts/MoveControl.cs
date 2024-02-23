@@ -77,7 +77,7 @@ public class MoveControl : MonoBehaviour
     [Header("Objetos Carregados")]
     [SerializeField] GameObject _baladeira;
     [SerializeField] GameObject _varaPesca;
-    //[SerializeField] GameObject _remo;
+    [SerializeField] GameObject _remo;
     
 
     void Start()
@@ -145,7 +145,8 @@ public class MoveControl : MonoBehaviour
         _anim.SetFloat("Andar", 0);
         _anim.SetFloat("VelocidadeY", 0);
         _baladeira.SetActive(false);
-        _varaPesca.SetActive(true);
+        _varaPesca.SetActive(false);
+        _remo.SetActive(true);
     }
     void Move()
     {
