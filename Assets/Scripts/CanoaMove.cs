@@ -14,6 +14,11 @@ public class CanoaMove : MonoBehaviour
 
     [SerializeField] Vector2 _input;
 
+    [SerializeField] Vector3 _movement;
+
+    [SerializeField] Rigidbody _rb;
+    [SerializeField] CharacterController _controller;
+
     [SerializeField] public bool _utilizarCanoa;
     [SerializeField] bool _utilizandoCanoa;
 
@@ -23,6 +28,8 @@ public class CanoaMove : MonoBehaviour
     void Start()
     {
         _player = Camera.main.GetComponent<GaaameController>()._player;
+        //_rb = GetComponent<Rigidbody>();
+        _controller = GetComponent<CharacterController>();
     }
 
     void Update()
@@ -33,7 +40,6 @@ public class CanoaMove : MonoBehaviour
             _utilizandoCanoa = true;
             CanoaMovement();
         }
-      
     }
 
     public void CanoaMovement()
@@ -56,11 +62,12 @@ public class CanoaMove : MonoBehaviour
             //_player.position = transform.position;
             _player.SetParent(_buriPosCanoa);
             _player.transform.localEulerAngles = new Vector3(0,0,0);
-          
             _player.transform.localPosition = Vector3.zero;
-            transform.RotateAround(_pivot.position, Vector3.up, _velocidadeCurva * _input.x * Time.deltaTime);
-            transform.Translate(Vector3.up * _velocidade * _input.y);
 
+            //transform.RotateAround(_pivot.position, Vector3.up, _velocidadeCurva * _input.x * Time.deltaTime);
+
+            //transform.Translate(Vector3.up * _velocidade * _input.y);
+            //_rb.MovePosition(transform.position + Vector3.right * _velocidade * _input.y);
             if (_input.x < 0)
             {
                 _pivot.localPosition = new Vector3(5f,0,0);
@@ -69,7 +76,11 @@ public class CanoaMove : MonoBehaviour
             {
                 _pivot.localPosition = new Vector3(-5f,0,0);
             }
-            transform.RotateAround(_pivot.position, Vector3.up, _velocidadeCurva * _input.x * Time.deltaTime);
+            //transform.RotateAround(_pivot.position, Vector3.up, _velocidadeCurva * _input.x * Time.deltaTime);
+            //_rb.MoveRotation(_pivot.position, Vector3.up, _velocidadeCurva * _input.x * Time.deltaTime);
+
+            _movement = new Vector3(_input.x, _controller.velocity.y, _input.y) * _velocidade * Time.deltaTime;
+            _controller.Move(_movement);
         }
     }
 
@@ -78,7 +89,6 @@ public class CanoaMove : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             _moveBuri = other.GetComponent<MoveControl>(); 
-            
         }
     }
 }
