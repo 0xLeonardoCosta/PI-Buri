@@ -1,0 +1,602 @@
+fileFormatVersion: 2
+guid: 4e5262a32dd75714b8e78199c838ce7f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Att-bt-aindaemteste_0
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 7395
+        width: 2510
+        height: 2510
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e32e9f241ce7924a891e44e779a420e
+      internalID: 1326075950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att-bt-aindaemteste_1
+      rect:
+        serializedVersion: 2
+        x: 2893
+        y: 7395
+        width: 2515
+        height: 2510
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25513271e0c7a314eb03a4d78965cfcf
+      internalID: -1747542534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att-bt-aindaemteste_2
+      rect:
+        serializedVersion: 2
+        x: 5642
+        y: 7395
+        width: 2515
+        height: 2510
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 155d37b3a550c8b469b1930290b927b5
+      internalID: -498870496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att-bt-aindaemteste_3
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 4793
+        width: 2510
+        height: 2514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e6fda844947e00488e9f4daa145bb51
+      internalID: -1735861037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att-bt-aindaemteste_4
+      rect:
+        serializedVersion: 2
+        x: 2893
+        y: 4793
+        width: 2515
+        height: 2514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5742563fada85f04fb7b09e842c2c827
+      internalID: -408643980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att-bt-aindaemteste_5
+      rect:
+        serializedVersion: 2
+        x: 5642
+        y: 4793
+        width: 2515
+        height: 2514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9193b4ba433a1b541a43f49c24d3e0d9
+      internalID: 2085969198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att-bt-aindaemteste_6
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 2195
+        width: 2510
+        height: 2510
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5d87dcd036bb084db4d83636abe41c2
+      internalID: -1721731587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att-bt-aindaemteste_7
+      rect:
+        serializedVersion: 2
+        x: 2893
+        y: 2195
+        width: 2515
+        height: 2510
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88e484b2e8b291840860f7ecf7c78b89
+      internalID: -2136954711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att-bt-aindaemteste_8
+      rect:
+        serializedVersion: 2
+        x: 5642
+        y: 2195
+        width: 2515
+        height: 2510
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff132cfea583c941a942585f7bf8049
+      internalID: 1758403893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att-bt-aindaemteste_9
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 1296
+        width: 415
+        height: 508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94970b305d60a6a4db24221932642e9b
+      internalID: -1245418086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att-bt-aindaemteste_10
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 1296
+        width: 412
+        height: 508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24cb31856eea46444914b4847c649635
+      internalID: -26534401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att-bt-aindaemteste_11
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 1296
+        width: 210
+        height: 508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a6b9a3c1382ed41a57b297496f0b82
+      internalID: 2039541336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att-bt-aindaemteste_12
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 1296
+        width: 313
+        height: 508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ac07a7e8e0d9ce4b8050c632f448654
+      internalID: 1325198621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att-bt-aindaemteste_13
+      rect:
+        serializedVersion: 2
+        x: 1946
+        y: 1296
+        width: 307
+        height: 508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e7243a45f076a4f9c19e9d859f9f53
+      internalID: -735770781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att-bt-aindaemteste_14
+      rect:
+        serializedVersion: 2
+        x: 6145
+        y: 593
+        width: 1513
+        height: 1514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68ba61c803cbfcf42b53a1f123352a54
+      internalID: 1809789814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att-bt-aindaemteste_15
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 745
+        width: 312
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39ef06d0268608c438ed0cdae91ba4eb
+      internalID: 1888818676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att-bt-aindaemteste_16
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 745
+        width: 410
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cae0be6f1d93e0f4abf6e566a1fd8c84
+      internalID: -273343091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att-bt-aindaemteste_17
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 745
+        width: 312
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60e3989a00a91384eae375f55cabd49b
+      internalID: 714836413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att-bt-aindaemteste_18
+      rect:
+        serializedVersion: 2
+        x: 1594
+        y: 745
+        width: 313
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce7ff6c0ff5375441a6f877aab2095e8
+      internalID: -1074894092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att-bt-aindaemteste_19
+      rect:
+        serializedVersion: 2
+        x: 1946
+        y: 745
+        width: 210
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c25acfe0ebd974a429e6e642c4b7e773
+      internalID: 2124411940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Att-bt-aindaemteste_20
+      rect:
+        serializedVersion: 2
+        x: 2195
+        y: 745
+        width: 312
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a45d4345df96024ea4ae861c10f0a58
+      internalID: 1268046370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 8c501ccf951af1a4fb220ebe045295aa
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Att-bt-aindaemteste_0: 1326075950
+      Att-bt-aindaemteste_1: -1747542534
+      Att-bt-aindaemteste_10: -26534401
+      Att-bt-aindaemteste_11: 2039541336
+      Att-bt-aindaemteste_12: 1325198621
+      Att-bt-aindaemteste_13: -735770781
+      Att-bt-aindaemteste_14: 1809789814
+      Att-bt-aindaemteste_15: 1888818676
+      Att-bt-aindaemteste_16: -273343091
+      Att-bt-aindaemteste_17: 714836413
+      Att-bt-aindaemteste_18: -1074894092
+      Att-bt-aindaemteste_19: 2124411940
+      Att-bt-aindaemteste_2: -498870496
+      Att-bt-aindaemteste_20: 1268046370
+      Att-bt-aindaemteste_3: -1735861037
+      Att-bt-aindaemteste_4: -408643980
+      Att-bt-aindaemteste_5: 2085969198
+      Att-bt-aindaemteste_6: -1721731587
+      Att-bt-aindaemteste_7: -2136954711
+      Att-bt-aindaemteste_8: 1758403893
+      Att-bt-aindaemteste_9: -1245418086
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
