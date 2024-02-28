@@ -123,7 +123,7 @@ public class MoveControl : MonoBehaviour
     }
     void VidaCheck()
     {
-        _vidaAtual = _hudGames.vida;
+        _vidaAtual = _hudGames._vidaAtual;
         if (_vidaAtual <= 0)
         {
             _gameOver = true;
@@ -335,6 +335,7 @@ public class MoveControl : MonoBehaviour
             _hitFruta = true;
             int valorPontos = other.GetComponent<Item>().Valor;
             _playerPontos.SomarPontos(valorPontos);
+            _hudGames.GanhouVida();
             other.GetComponent<Item>().DestroyItem();
             Invoke("HitFruta", 1);
          

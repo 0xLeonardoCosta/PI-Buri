@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class VidaControler : MonoBehaviour
 {
     [SerializeField] List<GameObject> _slotVida;
+    [SerializeField] Transform[] _imagemVida;
+    public bool _checkHit;
+    float _tamV;
     //0 = 1 vida, 1 = 2 vidas e etc...
 
     public int _vidaMaxima;
@@ -18,116 +21,119 @@ public class VidaControler : MonoBehaviour
 
     void Start()
     {
-        _vidaMaxima = 6;
-        _vidaAtual = _vidaMaxima;
-        _valorAnterior = _vidaAtual;
+        
+        
+        _tamV = _imagemVida[0].localScale.x;
     }
 
     
     void Update()
     {
-        if (_vidaAtual != _valorAnterior)
-        {
-            VidaCheck();
-            _valorAnterior = _vidaAtual;
-        }
+        
     }
 
-    void VidaCheck()
+    void VidaCheck(int Vida)
     {
+        if (Vida == 0)
+        {
+            _imagemVida[0].DOScale(0, 0.5f);
+            _imagemVida[1].DOScale(0, 0.5f);
+            _imagemVida[2].DOScale(0, 0.5f);
+            _imagemVida[3].DOScale(0, 0.5f);
+            _imagemVida[4].DOScale(0, 0.5f);
+            _imagemVida[5].DOScale(0, 0.5f);
+            _imagemVida[6].DOScale(0, 0.5f);
+        }
 
-        if (_vidaAtual > 6)
+        if (Vida == 1)
         {
-            _vidaAtual = _vidaMaxima;
+            _imagemVida[0].DOScale(0, 0.5f);
+            _imagemVida[1].DOScale(0, 0.5f);
+            _imagemVida[2].DOScale(0, 0.5f);
+            _imagemVida[3].DOScale(0, 0.5f);
+            _imagemVida[4].DOScale(0, 0.5f);
+            _imagemVida[5].DOScale(0, 0.5f);
+            _imagemVida[6].DOScale(0, 0.5f);
         }
-        if (_vidaAtual == 6)
+
+        else if (Vida == 2)
         {
-            _slotVida[0].SetActive(false);
-            _slotVida[1].SetActive(false);
-            _slotVida[2].SetActive(false);
-            _slotVida[3].SetActive(false);
-            _slotVida[4].SetActive(false);
-            _slotVida[5].SetActive(true);
-            _slotVida[6].SetActive(false);
+            _imagemVida[0].DOScale(0, 0.5f);
+            _imagemVida[1].DOScale(0, 0.5f);
+            _imagemVida[2].DOScale(0, 0.5f);
+            _imagemVida[3].DOScale(0, 0.5f);
+            _imagemVida[4].DOScale(0, 0.5f);
+            _imagemVida[5].DOScale(0, 0.5f);
+            _imagemVida[6].DOScale(0, 0.5f);
         }
-        if (_vidaAtual == 5)
+
+        else if (Vida == 3)
         {
-            _slotVida[0].SetActive(false);
-            _slotVida[1].SetActive(false);
-            _slotVida[2].SetActive(false);
-            _slotVida[3].SetActive(false);
-            _slotVida[4].SetActive(true);
-            _slotVida[5].SetActive(false);
-            _slotVida[6].SetActive(false);
+            _imagemVida[0].DOScale(0, 0.5f);
+            _imagemVida[1].DOScale(0, 0.5f);
+            _imagemVida[2].DOScale(0, 0.5f);
+            _imagemVida[3].DOScale(0, 0.5f);
+            _imagemVida[4].DOScale(0, 0.5f);
+            _imagemVida[5].DOScale(0, 0.5f);
+            _imagemVida[6].DOScale(0, 0.5f);
         }
-        if (_vidaAtual == 4)
+
+        else if (Vida == 4)
         {
-            _slotVida[0].SetActive(false);
-            _slotVida[1].SetActive(false);
-            _slotVida[2].SetActive(false);
-            _slotVida[3].SetActive(true);
-            _slotVida[4].SetActive(false);
-            _slotVida[5].SetActive(false);
-            _slotVida[6].SetActive(false);
+            _imagemVida[0].DOScale(0, 0.5f);
+            _imagemVida[1].DOScale(0, 0.5f);
+            _imagemVida[2].DOScale(0, 0.5f);
+            _imagemVida[3].DOScale(0, 0.5f);
+            _imagemVida[4].DOScale(0, 0.5f);
+            _imagemVida[5].DOScale(0, 0.5f);
+            _imagemVida[6].DOScale(0, 0.5f);
         }
-        if (_vidaAtual == 3)
+
+        else if (Vida == 5)
         {
-            _slotVida[0].SetActive(false);
-            _slotVida[1].SetActive(false);
-            _slotVida[2].SetActive(true);
-            _slotVida[3].SetActive(false);
-            _slotVida[4].SetActive(false);
-            _slotVida[5].SetActive(false);
-            _slotVida[6].SetActive(false);
+            _imagemVida[0].DOScale(0, 0.5f);
+            _imagemVida[1].DOScale(0, 0.5f);
+            _imagemVida[2].DOScale(0, 0.5f);
+            _imagemVida[3].DOScale(0, 0.5f);
+            _imagemVida[4].DOScale(0, 0.5f);
+            _imagemVida[5].DOScale(0, 0.5f);
+            _imagemVida[6].DOScale(0, 0.5f);
         }
-        if (_vidaAtual == 2)
+
+        else if (Vida == 6)
         {
-            _slotVida[0].SetActive(false);
-            _slotVida[1].SetActive(true);
-            _slotVida[2].SetActive(false);
-            _slotVida[3].SetActive(false);
-            _slotVida[4].SetActive(false);
-            _slotVida[5].SetActive(false);
-            _slotVida[6].SetActive(false);
+            _imagemVida[0].DOScale(0, 0.5f);
+            _imagemVida[1].DOScale(0, 0.5f);
+            _imagemVida[2].DOScale(0, 0.5f);
+            _imagemVida[3].DOScale(0, 0.5f);
+            _imagemVida[4].DOScale(0, 0.5f);
+            _imagemVida[5].DOScale(0, 0.5f);
+            _imagemVida[6].DOScale(0, 0.5f);
         }
-        if (_vidaAtual == 1)
-        {
-            _slotVida[0].SetActive(true);
-            _slotVida[1].SetActive(false);
-            _slotVida[2].SetActive(false);
-            _slotVida[3].SetActive(false);
-            _slotVida[4].SetActive(false);
-            _slotVida[5].SetActive(false);
-            _slotVida[6].SetActive(false);
-        }
-        if (_vidaAtual == 0)
-        {
-            _slotVida[0].SetActive(false);
-            _slotVida[1].SetActive(false);
-            _slotVida[2].SetActive(false);
-            _slotVida[3].SetActive(false);
-            _slotVida[4].SetActive(false);
-            _slotVida[5].SetActive(false);
-            _slotVida[6].SetActive(true);
-        }
+        
+        
+        
+        
+        
+        
     }
 
     public void RecebeuDano()
     {
-        _vidaAtual -= 1;
-        Debug.Log("PerdeuVida");
-        StartCoroutine(TimeHit());
-
-        if (_vidaAtual <= 0)
+        if (!_checkHit)
         {
-           //Debug.Log("Game Over");
-           // StartCoroutine(TimeGameOver());
+
+            _checkHit = true;
+            _vidaAtual--;
+            VidaCheck(_vidaAtual);
+            //Invoke("TimeHit", 1);
         }
     }
 
     public void GanhouVida()
     {
-        _vidaAtual += 1;
+        _vidaAtual ++;
+        VidaCheck(_vidaAtual);
     }
 
     IEnumerator TimeHit()

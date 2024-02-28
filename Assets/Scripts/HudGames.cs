@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class HudGames : MonoBehaviour
 {
-    [SerializeField] Image[] _iconVida;
+    public Transform[] _iconVida;
     [SerializeField] Transform _telaGameOver;
-    
+
     [SerializeField] GameObject _vidaGrupo;
     [SerializeField] GameObject _baixoGrupo;
     [SerializeField] GameObject _stamina;
@@ -16,54 +16,124 @@ public class HudGames : MonoBehaviour
     [SerializeField] GameObject _pos1;
     [SerializeField] GameObject _pos2;
     [SerializeField] Button _Reiniciar;
-    public int vida;
+    public int _vidaAtual;
+    public int _vidaMaxima;
+
+    public bool _checkHit;
+
+    float _tamV;
     void Start()
     {
-       // _iconVida[2].DOScale(0, 0.5f);
+        // _iconVida[2].DOScale(0, 0.5f);
+        _tamV = _iconVida[0].localScale.x;
     }
 
     public void RecebeuDano()
     {
-        vida--;
-        Debug.Log("PerdeuVida");
-        CheckIconVida(vida);
+            _vidaAtual--;
+            Debug.Log("Perdeyvida");
+            CheckIconVida(_vidaAtual);
+         
+    }
+
+    public void GanhouVida()
+    {
+        //_vidaAtual++;
+        if (_vidaAtual < 6)
+        {
+            _vidaAtual++;
+        }
+        Debug.Log("Ganhouvida");
+        CheckIconVida(_vidaAtual);
         //StartCoroutine(TimeHit());
     }
 
+
+
     public void CheckIconVida(int vida)
     {
-        if (vida == 0)
+        if (vida <= 0)
         {
-            _iconVida[0].DOFade(0, 0.5f);
+            _iconVida[0].DOScale(0, 0.5f);
+            _iconVida[1].DOScale(0, 0.5f);
+            _iconVida[2].DOScale(0, 0.5f);
+            _iconVida[3].DOScale(0, 0.5f);
+            _iconVida[4].DOScale(0, 0.5f);
+            _iconVida[5].DOScale(0, 0.5f);
+
             //Chamar tela GameOver
             _telaGameOver.DOScale(1f, 0.5f);
             _vidaGrupo.transform.DOMove(_pos.transform.position, 0.1f);
             _baixoGrupo.transform.DOMove(_pos1.transform.position, 0.25f);
             _stamina.transform.DOMove(_pos2.transform.position, 0.05f);
             _Reiniciar.Select();
+            
+            
         }
         else if (vida == 1)
         {
-           _iconVida[1].DOFade(0, 0.5f);
+            _iconVida[0].DOScale(_tamV, 0.5f);
+            _iconVida[1].DOScale(0, 0.5f);
+            _iconVida[2].DOScale(0, 0.5f);
+            _iconVida[3].DOScale(0, 0.5f);
+            _iconVida[4].DOScale(0, 0.5f);
+            _iconVida[5].DOScale(0, 0.5f);
+            
         }
         else if (vida == 2)
         {
-            _iconVida[2].DOFade(0, 0.5f);
+            _iconVida[0].DOScale(_tamV, 0.5f);
+            _iconVida[1].DOScale(_tamV, 0.5f);
+            _iconVida[2].DOScale(0, 0.5f);
+            _iconVida[3].DOScale(0, 0.5f);
+            _iconVida[4].DOScale(0, 0.5f);
+            _iconVida[5].DOScale(0, 0.5f);
+            
         }
         else if (vida == 3)
         {
-            _iconVida[3].DOFade(0, 0.5f);
+            _iconVida[0].DOScale(_tamV, 0.5f);
+            _iconVida[1].DOScale(_tamV, 0.5f);
+            _iconVida[2].DOScale(_tamV, 0.5f);
+            _iconVida[3].DOScale(0, 0.5f);
+            _iconVida[4].DOScale(0, 0.5f);
+            _iconVida[5].DOScale(0, 0.5f);
+            
         }
         else if (vida == 4)
         {
-           _iconVida[4].DOFade(0, 0.5f);
+            _iconVida[0].DOScale(_tamV, 0.5f);
+            _iconVida[1].DOScale(_tamV, 0.5f);
+            _iconVida[2].DOScale(_tamV, 0.5f);
+            _iconVida[3].DOScale(_tamV, 0.5f);
+            _iconVida[4].DOScale(0, 0.5f);
+            _iconVida[5].DOScale(0, 0.5f);
+            
         }
         else if (vida == 5)
         {
-           _iconVida[5].DOFade(0, 0.5f);
+            _iconVida[0].DOScale(_tamV, 0.5f);
+            _iconVida[1].DOScale(_tamV, 0.5f);
+            _iconVida[2].DOScale(_tamV, 0.5f);
+            _iconVida[3].DOScale(_tamV, 0.5f);
+            _iconVida[4].DOScale(_tamV, 0.5f);
+            _iconVida[5].DOScale(0, 0.5f);
+            
         }
 
-    }
+        else if (vida > 5)
+        {
+            _iconVida[0].DOScale(_tamV, 0.5f);
+            _iconVida[1].DOScale(_tamV, 0.5f);
+            _iconVida[2].DOScale(_tamV, 0.5f);
+            _iconVida[3].DOScale(_tamV, 0.5f);
+            _iconVida[4].DOScale(_tamV, 0.5f);
+            _iconVida[5].DOScale(_tamV, 0.5f);
+            
+        }
+
+    } 
+
     /*IEnumerator TimeHit()
     {
         //yield return new WaitForSeconds(.25f);
