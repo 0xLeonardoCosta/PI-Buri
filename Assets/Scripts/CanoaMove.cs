@@ -66,7 +66,7 @@ public class CanoaMove : MonoBehaviour
 
             //transform.RotateAround(_pivot.position, Vector3.up, _velocidadeCurva * _input.x * Time.deltaTime);
 
-            transform.Translate(Vector3.up * _velocidade * _input.y);
+            //transform.Translate(Vector3.up * _velocidade * _input.y);
             //_rb.MovePosition(transform.position + Vector3.right * _velocidade * _input.y);
             if (_input.x < 0)
             {
