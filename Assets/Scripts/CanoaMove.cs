@@ -66,7 +66,7 @@ public class CanoaMove : MonoBehaviour
 
             //transform.RotateAround(_pivot.position, Vector3.up, _velocidadeCurva * _input.x * Time.deltaTime);
 
-            //transform.Translate(Vector3.up * _velocidade * _input.y);
+            transform.Translate(Vector3.up * _velocidade * _input.y);
             //_rb.MovePosition(transform.position + Vector3.right * _velocidade * _input.y);
             if (_input.x < 0)
             {
@@ -76,11 +76,11 @@ public class CanoaMove : MonoBehaviour
             {
                 _pivot.localPosition = new Vector3(-5f,0,0);
             }
-            //transform.RotateAround(_pivot.position, Vector3.up, _velocidadeCurva * _input.x * Time.deltaTime);
+            transform.RotateAround(_pivot.position, Vector3.up, _velocidadeCurva * _input.x * Time.deltaTime);
             //_rb.MoveRotation(_pivot.position, Vector3.up, _velocidadeCurva * _input.x * Time.deltaTime);
 
-            _movement = new Vector3(_input.x, _controller.velocity.y, _input.y) * _velocidade * Time.deltaTime;
-            _controller.Move(_movement);
+            //_movement = new Vector3(_input.x, _controller.velocity.y, _input.y) * _velocidade * Time.deltaTime;
+            //_controller.Move(_movement);
         }
     }
 
