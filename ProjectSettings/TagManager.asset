@@ -12,6 +12,7 @@ TagManager:
   - BuriTriguuer
   - Canoa
   - HUD
+  - Ground
   layers:
   - Default
   - TransparentFX
