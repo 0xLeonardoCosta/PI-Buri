@@ -18,7 +18,7 @@ public class ItensControl : MonoBehaviour
     void ItensOn()
     {
         Shuffle(_posFrutas);
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 10; i++)
         {
             Fruta1_On(i);
         }
