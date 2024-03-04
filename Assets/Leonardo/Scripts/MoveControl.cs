@@ -10,13 +10,15 @@ public class MoveControl : MonoBehaviour
     [SerializeField] Vector3 _playerVelocity;
     [SerializeField] private Vector3 _movement;
 
-    private CharacterController _controller;
+    public CharacterController _controller;
     private Animator _anim;
 
     //[SerializeField] LayerMask _groundMask;
     //[SerializeField] private float _raycastLenght = 1.15f; //Raio para identificar Ground, saindo do centro do gameObject
 
     private bool _inputPulo; //Input de pulo
+
+    [SerializeField] public GameObject _buriTriguer;
 
     //--------------------------Baladeira--------------------------------
     [SerializeField] GameObject _projetil;
@@ -32,6 +34,7 @@ public class MoveControl : MonoBehaviour
     [SerializeField] float _speedMin = 3;
     [SerializeField] float _speedMax = 9;
     [SerializeField] float _speedRotation = 15;
+    [SerializeField] float _variacaoVelocidadeCanoa;
     [SerializeField] float _jump = 5;
     [SerializeField] float _amplitudeAnalogico;
     [SerializeField] float _inputAnalogicoCam;
@@ -107,13 +110,15 @@ public class MoveControl : MonoBehaviour
             Gravity();
             CheckPulo();// Checa se está encostando no chão e função de timer para normalizar pulo
             VidaCheck();
+            ReativarBaladeira();
+            BaladeiraCheck();
+            CanoaCheck();
         }
         else
         {
             MoveCanoa();
         }
         CameraControl();
-        BaladeiraCheck();
         _variacaoAltura = _controller.velocity.y;
     }
     void AndarN()// Sincronizar animações - Andar movimento de perna/Andar movimento de braço
@@ -139,7 +144,7 @@ public class MoveControl : MonoBehaviour
     //invoke , painel, gameover....
     void MoveCanoa()
     {
-        float _variacaoVelocidadeCanoa = Mathf.Abs(_input.x) + Mathf.Abs(_input.y);
+        _variacaoVelocidadeCanoa = Mathf.Abs(_input.x) + Mathf.Abs(_input.y);
         _anim.SetFloat("RemarCanoa", _variacaoVelocidadeCanoa);
         _anim.SetBool("UsandoCanoa", _usandoCanoa);
         _anim.SetFloat("Andar", 0);
@@ -147,6 +152,17 @@ public class MoveControl : MonoBehaviour
         _baladeira.SetActive(false);
         _varaPesca.SetActive(false);
         _remo.SetActive(true);
+    }
+    void CanoaCheck()
+    {
+        _anim.SetFloat("RemarCanoa", _variacaoVelocidadeCanoa);
+        _anim.SetBool("UsandoCanoa", _usandoCanoa);
+    }
+    void ReativarBaladeira()
+    {
+        _baladeira.SetActive(true);
+        _varaPesca.SetActive(false);
+        _remo.SetActive(false);
     }
     void Move()
     {

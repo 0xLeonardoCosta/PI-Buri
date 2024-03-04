@@ -13,6 +13,7 @@ TagManager:
   - Canoa
   - HUD
   - Ground
+  - AtracaCanoa
   layers:
   - Default
   - TransparentFX

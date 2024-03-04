@@ -20,12 +20,16 @@ public class Peixinho : MonoBehaviour
     void Update()
     {
         float _distancia = _agent.remainingDistance;
-        float _distanciaRest = 0.1f;
+        float _distanciaRest = 0.3f;
         if (_distancia < _distanciaRest && _numberM == 0)
         {
             _numberM = 1;
         }
         else if (_distancia < _distanciaRest && _numberM == 1)
+        {
+            _numberM = 2;
+        }
+        else if (_distancia < _distanciaRest && _numberM == 2)
         {
             _numberM = 0;
         }
