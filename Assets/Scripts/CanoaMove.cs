@@ -7,6 +7,8 @@ public class CanoaMove : MonoBehaviour
 {
     [SerializeField] MoveControl _moveBuri;
 
+    [SerializeField] AtracaCanoa _atracaCanoa;
+
     [SerializeField] Transform _player;
     
     [SerializeField] Transform _buriPosCanoa;
@@ -78,6 +80,9 @@ public class CanoaMove : MonoBehaviour
         }
         else
         {
+            _player.transform.localEulerAngles = new Vector3(0, 0, 0);
+            _player.transform.position = _buriPosSpawn.position;
+
             _moveBuri._usandoCanoa = false;
             _moveBuri._pivotCamera = _moveBuri.transform;
             _moveBuri._variacaoVelocidadeAndar = Mathf.Abs(_moveBuri._input.x) + Mathf.Abs(_moveBuri._input.y);
@@ -85,7 +90,10 @@ public class CanoaMove : MonoBehaviour
             _moveBuri._checkGround = _moveBuri._controller.isGrounded;
             _moveBuri._checkMover = true;
             _moveBuri._buriTriguer.GetComponent<CapsuleCollider>().enabled = true;
-            _moveBuri = null;
+            _player.SetParent(null);
+            _player.transform.localEulerAngles = new Vector3(0, 0, 0);
+            _player.transform.position = _buriPosSpawn.position;
+            //_moveBuri = null;
         }
     }
 
@@ -99,8 +107,17 @@ public class CanoaMove : MonoBehaviour
         {
             Debug.Log("Atracou");
             _utilizandoCanoa = false; 
-            _atracouCanoa = true; 
-            //_buriPosSpawn = other.
+            _atracouCanoa = true;
+            _atracaCanoa = other.GetComponent<AtracaCanoa>();
+            _buriPosSpawn = _atracaCanoa._buriDePeAqui;
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            _moveBuri = null;
+            _atracaCanoa = null;
         }
     }
 }
