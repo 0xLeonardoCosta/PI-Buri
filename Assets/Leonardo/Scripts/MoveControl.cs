@@ -195,10 +195,12 @@ public class MoveControl : MonoBehaviour
         if (_estaCorrendo == false)
         {
             _estaCorrendo = true;
+            _speed = 9;
         }
         else if (_estaCorrendo == true)
         {
             _estaCorrendo = false;
+            _speed = 5;
         }
         _anim.SetBool("EstaCorrendo", _estaCorrendo);
     }
@@ -340,7 +342,7 @@ public class MoveControl : MonoBehaviour
     {
         _input = value.ReadValue<Vector2>();
         _amplitudeAnalogico = _input.magnitude;
-        _speed = Mathf.Lerp(_speedMin, _speedMax, _amplitudeAnalogico);
+        //_speed = Mathf.Lerp(_speedMin, _speedMax, _amplitudeAnalogico);
 
     }
     public void SetPular(InputAction.CallbackContext value) //Pulo: true ou false
