@@ -71,7 +71,6 @@ public class MoveControl : MonoBehaviour
     [SerializeField] public bool _recebeuDano;
     [SerializeField] public bool _inputBaladeira; //Input de baladeira
     [SerializeField] public bool _usandoCanoa;
-    [SerializeField] public bool _estaAndando;
     [SerializeField] public bool _estaCorrendo;
     [SerializeField] Vector3 magnitude;
 
@@ -185,6 +184,17 @@ public class MoveControl : MonoBehaviour
         _anim.SetFloat("VelocidadeY", _variacaoAltura);
         _anim.SetBool("groundCheck", _checkGround);
         _anim.SetBool("Morte", _gameOver);
+    }
+    public void EstaCorrendo()
+    {   
+        if (_estaCorrendo == false)
+        {
+            _estaCorrendo = true;
+        }
+        else if (_estaCorrendo == true)
+        {
+            _estaCorrendo = false;
+        }
     }
     void LookAtMovementDirection() //Script para virar a frente do personagem voltada a orientação do movimento
     {
@@ -334,7 +344,10 @@ public class MoveControl : MonoBehaviour
     public void SetBaladeira(InputAction.CallbackContext value)
     {
         AtirarBaladeira();
-
+    }
+    public void SetEstaCorrendo(InputAction.CallbackContext value)
+    {
+        EstaCorrendo();
     }
     public void SetCameraAnalogico(InputAction.CallbackContext value) //Pulo: true ou false
     {
