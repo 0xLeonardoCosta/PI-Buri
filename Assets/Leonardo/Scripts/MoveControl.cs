@@ -96,6 +96,9 @@ public class MoveControl : MonoBehaviour
         _gaaameController = Camera.main.GetComponent<GaaameController>();
         _hudGames = _gaaameController._canvasHud.GetComponent<HudGames>();
         _playerPontos = Camera.main.GetComponent<Playpontos>();
+       
+
+
     }
 
     void Update()
@@ -112,6 +115,7 @@ public class MoveControl : MonoBehaviour
             ReativarBaladeira();
             BaladeiraCheck();
             CanoaCheck();
+            _anim.SetLayerWeight(1, 1);
         }
         else
         {
@@ -151,6 +155,7 @@ public class MoveControl : MonoBehaviour
         _baladeira.SetActive(false);
         _varaPesca.SetActive(false);
         _remo.SetActive(true);
+        _anim.SetLayerWeight(1, 0);
     }
     void CanoaCheck()
     {
