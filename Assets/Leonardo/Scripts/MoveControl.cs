@@ -184,7 +184,8 @@ public class MoveControl : MonoBehaviour
         // Linhas abaixo feitas para animação do personagem
         _variacaoVelocidadeAndar = Mathf.Abs(_input.x) + Mathf.Abs(_input.y);
         _variacaoAltura = _controller.velocity.y;
-
+        
+        if (_speed == 0) { _speed = 5; }
         _anim.SetFloat("Andar", _variacaoVelocidadeAndar);
         _anim.SetFloat("VelocidadeY", _variacaoAltura);
         _anim.SetBool("groundCheck", _checkGround);
