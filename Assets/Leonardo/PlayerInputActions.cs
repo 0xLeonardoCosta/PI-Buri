@@ -62,6 +62,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""EstaCorrendo"",
+                    ""type"": ""Button"",
+                    ""id"": ""2cfdb9c8-bda6-48a3-8a70-eab5424559c9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -361,6 +370,28 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""UsarBaladeira"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c0ee245d-f737-4004-a7f5-b47098cdeb09"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""EstaCorrendo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dbc81411-5f96-4913-a7c0-9d1a34b0158e"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""EstaCorrendo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -373,6 +404,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Buri_Pular = m_Buri.FindAction("Pular", throwIfNotFound: true);
         m_Buri_SetCameraAnalogico = m_Buri.FindAction("SetCameraAnalogico", throwIfNotFound: true);
         m_Buri_UsarBaladeira = m_Buri.FindAction("UsarBaladeira", throwIfNotFound: true);
+        m_Buri_EstaCorrendo = m_Buri.FindAction("EstaCorrendo", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -438,6 +470,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Buri_Pular;
     private readonly InputAction m_Buri_SetCameraAnalogico;
     private readonly InputAction m_Buri_UsarBaladeira;
+    private readonly InputAction m_Buri_EstaCorrendo;
     public struct BuriActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -446,6 +479,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Pular => m_Wrapper.m_Buri_Pular;
         public InputAction @SetCameraAnalogico => m_Wrapper.m_Buri_SetCameraAnalogico;
         public InputAction @UsarBaladeira => m_Wrapper.m_Buri_UsarBaladeira;
+        public InputAction @EstaCorrendo => m_Wrapper.m_Buri_EstaCorrendo;
         public InputActionMap Get() { return m_Wrapper.m_Buri; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -467,6 +501,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @UsarBaladeira.started += instance.OnUsarBaladeira;
             @UsarBaladeira.performed += instance.OnUsarBaladeira;
             @UsarBaladeira.canceled += instance.OnUsarBaladeira;
+            @EstaCorrendo.started += instance.OnEstaCorrendo;
+            @EstaCorrendo.performed += instance.OnEstaCorrendo;
+            @EstaCorrendo.canceled += instance.OnEstaCorrendo;
         }
 
         private void UnregisterCallbacks(IBuriActions instance)
@@ -483,6 +520,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @UsarBaladeira.started -= instance.OnUsarBaladeira;
             @UsarBaladeira.performed -= instance.OnUsarBaladeira;
             @UsarBaladeira.canceled -= instance.OnUsarBaladeira;
+            @EstaCorrendo.started -= instance.OnEstaCorrendo;
+            @EstaCorrendo.performed -= instance.OnEstaCorrendo;
+            @EstaCorrendo.canceled -= instance.OnEstaCorrendo;
         }
 
         public void RemoveCallbacks(IBuriActions instance)
@@ -506,5 +546,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnPular(InputAction.CallbackContext context);
         void OnSetCameraAnalogico(InputAction.CallbackContext context);
         void OnUsarBaladeira(InputAction.CallbackContext context);
+        void OnEstaCorrendo(InputAction.CallbackContext context);
     }
 }

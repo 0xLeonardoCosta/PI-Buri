@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "EstaCorrendo",
+                    "type": "Button",
+                    "id": "2cfdb9c8-bda6-48a3-8a70-eab5424559c9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -337,6 +346,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "UsarBaladeira",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c0ee245d-f737-4004-a7f5-b47098cdeb09",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EstaCorrendo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dbc81411-5f96-4913-a7c0-9d1a34b0158e",
+                    "path": "<Gamepad>/leftStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EstaCorrendo",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

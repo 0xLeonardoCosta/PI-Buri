@@ -195,6 +195,7 @@ public class MoveControl : MonoBehaviour
         {
             _estaCorrendo = false;
         }
+        _anim.SetBool("EstaCorrendo", _estaCorrendo);
     }
     void LookAtMovementDirection() //Script para virar a frente do personagem voltada a orientação do movimento
     {
