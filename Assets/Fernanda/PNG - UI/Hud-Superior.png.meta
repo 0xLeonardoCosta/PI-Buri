@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2c74fbd2755591845b7496b4b56bfba0
+guid: da5b8f7f02e0d2342b77f2182622bba7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,7 +81,33 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -107,7 +133,33 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -123,7 +175,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: VIDA CHEIA
+      name: Vida cheia
       rect:
         serializedVersion: 2
         x: 193
@@ -137,14 +189,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51a0f6aee8dfb2041abcf986e4e81cc3
-      internalID: 449458756
+      spriteID: 37f99809621699546adbed4196b3226a
+      internalID: -2125583050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VIDA METADE
+      name: Vida-metade
       rect:
         serializedVersion: 2
         x: 2244
@@ -158,14 +210,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a5436df656cabf4bbe07cae59ee6096
-      internalID: -633163487
+      spriteID: 0469e5747d3cb07468db603d442e131c
+      internalID: -1658432755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VIDA VAZIA VERDE
+      name: Vida-vazia-verde
       rect:
         serializedVersion: 2
         x: 4294
@@ -179,17 +231,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb9eeac0e2099ee4ba1ca973ffe99d22
-      internalID: 1281994689
+      spriteID: b9345ac256702f6438ad8af279204638
+      internalID: 415286442
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VIDA VAZIA CINZA
+      name: Vida-vazia-cinza
       rect:
         serializedVersion: 2
-        x: 7989
+        x: 7996
         y: 7942
         width: 1811
         height: 1714
@@ -200,19 +252,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c9410fbb1282cd4ebc6d5fc77ad015d
-      internalID: 60486754
+      spriteID: 7184bb11275b6e9438081a0b6c060901
+      internalID: 1374463880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ESTAMINA
+      name: Estamina-1
       rect:
         serializedVersion: 2
-        x: 193
+        x: 247
         y: 6194
-        width: 7314
+        width: 7411
         height: 1714
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -221,20 +273,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b54d61ad1b0ae244b724275e9f9c4bb
-      internalID: -1924033785
+      spriteID: eb795777fada53d4182034cf702212a1
+      internalID: -1465028381
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BARRA
+      name: Hud-Superior_5
       rect:
         serializedVersion: 2
-        x: 544
-        y: 5193
-        width: 6514
-        height: 913
+        x: 8142
+        y: 5745
+        width: 1314
+        height: 1811
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,8 +294,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da1697bdf349e444dabd6a7be8578a16
-      internalID: -588881607
+      spriteID: 3d55ed9c3d619444c877dc062a2f7325
+      internalID: -1797851238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estamina-2
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 4392
+        width: 7411
+        height: 1714
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9187875f08c47e43abe9df499f7cf76
+      internalID: -1504618982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud-Superior_7
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 3394
+        width: 6611
+        height: 910
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e637d0d78f8b919468da96443219555e
+      internalID: -188988429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estamina-com-raio
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 247
+        width: 9614
+        height: 2910
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2897a0475a7ecbd49b641933ab47abc2
+      internalID: 1424501560
       vertices: []
       indices: 
       edges: []
@@ -251,7 +366,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 2509b424946b919458939e473e41335e
+    spriteID: bb815531e1de2e149a3d6de37f4a9c44
     internalID: 0
     vertices: []
     indices: 
@@ -259,12 +374,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BARRA: -588881607
-      ESTAMINA: -1924033785
-      VIDA CHEIA: 449458756
-      VIDA METADE: -633163487
-      VIDA VAZIA CINZA: 60486754
-      VIDA VAZIA VERDE: 1281994689
+      Estamina-1: -1465028381
+      Estamina-2: -1504618982
+      Estamina-com-raio: 1424501560
+      Hud-Superior_5: -1797851238
+      Hud-Superior_7: -188988429
+      Vida cheia: -2125583050
+      Vida-metade: -1658432755
+      Vida-vazia-cinza: 1374463880
+      Vida-vazia-verde: 415286442
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
