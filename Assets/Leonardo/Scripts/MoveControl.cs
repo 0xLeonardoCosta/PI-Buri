@@ -72,6 +72,7 @@ public class MoveControl : MonoBehaviour
     [SerializeField] public bool _inputBaladeira; //Input de baladeira
     [SerializeField] public bool _usandoCanoa;
     [SerializeField] public bool _estaCorrendo;
+    [SerializeField] public bool _estaAndando;
     [SerializeField] Vector3 magnitude;
 
     //------------------Canoa---------------------
@@ -96,7 +97,7 @@ public class MoveControl : MonoBehaviour
         _gaaameController = Camera.main.GetComponent<GaaameController>();
         _hudGames = _gaaameController._canvasHud.GetComponent<HudGames>();
         _playerPontos = Camera.main.GetComponent<Playpontos>();
-       
+        EstaCorrendo();
 
 
     }
@@ -115,6 +116,7 @@ public class MoveControl : MonoBehaviour
             ReativarBaladeira();
             BaladeiraCheck();
             CanoaCheck();
+            EstaAndando();
             _anim.SetLayerWeight(1, 1);
         }
         else
@@ -204,6 +206,18 @@ public class MoveControl : MonoBehaviour
             _speed = 5;
         }
         _anim.SetBool("EstaCorrendo", _estaCorrendo);
+    }
+    public void EstaAndando()
+    {   
+        if (_variacaoVelocidadeAndar < 0.5 || _estaCorrendo == false)
+        {
+            _estaAndando = true;
+        }
+        else if (_variacaoVelocidadeAndar > 0.5 || _estaCorrendo == true)
+        {
+            _estaAndando = false;
+        }
+        _anim.SetBool("EstaAndando", _estaAndando);
     }
     void LookAtMovementDirection() //Script para virar a frente do personagem voltada a orientação do movimento
     {

@@ -9,6 +9,8 @@ public class CanoaMove : MonoBehaviour
 
     [SerializeField] AtracaCanoa _atracaCanoa;
 
+    [SerializeField] GameObject _botaoCanoa;
+
     [SerializeField] Transform _player;
     
     [SerializeField] Transform _buriPosCanoa;
@@ -38,18 +40,20 @@ public class CanoaMove : MonoBehaviour
         if (_moveBuri != null) // Se a variavel _moveBuri estiver atribuida, ou seja, não esteja vazia
         {
             _input = _moveBuri._input;
-            if (_atracouCanoa == true) 
-            {
-                _utilizandoCanoa = false;
-            }
-            else
-            {
-                _utilizandoCanoa = true;
-            }
             CanoaMovement();
         }
     }
-
+    public void PressionarBotao()
+    {
+        if (_utilizandoCanoa == false)
+        {
+            _utilizandoCanoa = true;
+        }
+        else if (_utilizandoCanoa == true)
+        {
+            _utilizandoCanoa = false;
+        }
+    }
     public void CanoaMovement()
     {
         if (_utilizandoCanoa)
@@ -80,8 +84,8 @@ public class CanoaMove : MonoBehaviour
         }
         else
         {
-            _player.transform.localEulerAngles = new Vector3(0, 0, 0);
-            _player.transform.position = _buriPosSpawn.position;
+            //_player.transform.localEulerAngles = new Vector3(0, 0, 0);
+            //_player.transform.position = _buriPosSpawn.position;
 
             _moveBuri._usandoCanoa = false;
             _moveBuri._pivotCamera = _moveBuri.transform;
@@ -92,7 +96,7 @@ public class CanoaMove : MonoBehaviour
             _moveBuri._buriTriguer.GetComponent<CapsuleCollider>().enabled = true;
             _player.SetParent(null);
             _player.transform.localEulerAngles = new Vector3(0, 0, 0);
-            _player.transform.position = _buriPosSpawn.position;
+            //_player.transform.position = _buriPosSpawn.position;
             //_moveBuri = null;
         }
     }
@@ -101,21 +105,23 @@ public class CanoaMove : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            _moveBuri = other.GetComponent<MoveControl>(); 
+            _moveBuri = other.GetComponent<MoveControl>();
+            _botaoCanoa.SetActive(true);
         }
         if (other.gameObject.CompareTag("AtracaCanoa"))
         {
             Debug.Log("Atracou");
             _utilizandoCanoa = false; 
-            _atracouCanoa = true;
-            _atracaCanoa = other.GetComponent<AtracaCanoa>();
-            _buriPosSpawn = _atracaCanoa._buriDePeAqui;
+            //_atracouCanoa = true;
+            //_atracaCanoa = other.GetComponent<AtracaCanoa>();
+            //_buriPosSpawn = _atracaCanoa._buriDePeAqui;
         }
     }
     void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            _botaoCanoa.SetActive(false);
             _moveBuri = null;
             _atracaCanoa = null;
         }
