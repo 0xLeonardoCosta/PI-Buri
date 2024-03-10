@@ -25,7 +25,7 @@ public class ControlGameOver : MonoBehaviour
             float tempoDecorrido = Time.time - tempoInicial; // Calcula o tempo decorrido desde o início da contagem
             int numeroInt = (int)Mathf.Ceil(9 - tempoDecorrido); // Calcula o tempo restante e arredonda para cima
             _contador.text = numeroInt.ToString(); // Atualiza o texto do contador
-            Debug.Log("Tempo decorrido: " + tempoDecorrido);
+            //Debug.Log("Tempo decorrido: " + tempoDecorrido);
             if (tempoDecorrido >= 10)
             {
                 SceneManager.LoadScene("Menu");
