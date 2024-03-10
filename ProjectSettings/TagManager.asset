@@ -15,6 +15,7 @@ TagManager:
   - Ground
   - AtracaCanoa
   - NPC
+  - Agua
   layers:
   - Default
   - TransparentFX

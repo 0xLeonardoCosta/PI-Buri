@@ -7,15 +7,13 @@ public class CanoaMove : MonoBehaviour
 {
     [SerializeField] MoveControl _moveBuri;
 
-    [SerializeField] AtracaCanoa _atracaCanoa;
-
     [SerializeField] GameObject _botaoCanoa;
 
     [SerializeField] Transform _player;
     
     [SerializeField] Transform _buriPosCanoa;
 
-    [SerializeField] Transform _buriPosSpawn;
+    [SerializeField] Vector3 _buriPosSpawn;
 
     [SerializeField] Transform _pivot;
 
@@ -25,7 +23,6 @@ public class CanoaMove : MonoBehaviour
 
     [SerializeField] public bool _utilizarCanoa;
     [SerializeField] bool _utilizandoCanoa;
-    [SerializeField] bool _atracouCanoa;
 
     [SerializeField] float _velocidadeCurva;
     [SerializeField] float _velocidade;
@@ -84,9 +81,7 @@ public class CanoaMove : MonoBehaviour
         }
         else
         {
-            //_player.transform.localEulerAngles = new Vector3(0, 0, 0);
-            //_player.transform.position = _buriPosSpawn.position;
-
+            //Quando Buri sair da canoa
             _moveBuri._usandoCanoa = false;
             _moveBuri._pivotCamera = _moveBuri.transform;
             _moveBuri._variacaoVelocidadeAndar = Mathf.Abs(_moveBuri._input.x) + Mathf.Abs(_moveBuri._input.y);
@@ -95,9 +90,6 @@ public class CanoaMove : MonoBehaviour
             _moveBuri._checkMover = true;
             _moveBuri._buriTriguer.GetComponent<CapsuleCollider>().enabled = true;
             _player.SetParent(null);
-            _player.transform.localEulerAngles = new Vector3(0, 0, 0);
-            //_player.transform.position = _buriPosSpawn.position;
-            //_moveBuri = null;
         }
     }
 
@@ -108,14 +100,7 @@ public class CanoaMove : MonoBehaviour
             _moveBuri = other.GetComponent<MoveControl>();
             _botaoCanoa.SetActive(true);
         }
-        if (other.gameObject.CompareTag("AtracaCanoa"))
-        {
-            Debug.Log("Atracou");
-            _utilizandoCanoa = false; 
-            //_atracouCanoa = true;
-            //_atracaCanoa = other.GetComponent<AtracaCanoa>();
-            //_buriPosSpawn = _atracaCanoa._buriDePeAqui;
-        }
+
     }
     void OnTriggerExit(Collider other)
     {
@@ -123,7 +108,7 @@ public class CanoaMove : MonoBehaviour
         {
             _botaoCanoa.SetActive(false);
             _moveBuri = null;
-            _atracaCanoa = null;
+            
         }
     }
 }

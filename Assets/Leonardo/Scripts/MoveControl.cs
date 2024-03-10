@@ -73,6 +73,7 @@ public class MoveControl : MonoBehaviour
     [SerializeField] public bool _usandoCanoa;
     [SerializeField] public bool _estaCorrendo;
     [SerializeField] public bool _estaAndando;
+    [SerializeField] public bool _estaNaAgua;
     [SerializeField] Vector3 magnitude;
 
     //------------------Canoa---------------------
@@ -117,6 +118,7 @@ public class MoveControl : MonoBehaviour
             BaladeiraCheck();
             CanoaCheck();
             EstaAndando();
+            NaAguaCheck();
             _anim.SetLayerWeight(1, 1);
         }
         else
@@ -218,6 +220,10 @@ public class MoveControl : MonoBehaviour
             _estaAndando = false;
         }
         _anim.SetBool("EstaAndando", _estaAndando);
+    }
+    void NaAguaCheck()
+    {   
+        _anim.SetBool("EstaNaAgua", _estaNaAgua);
     }
     void LookAtMovementDirection() //Script para virar a frente do personagem voltada a orientação do movimento
     {
@@ -397,12 +403,22 @@ public class MoveControl : MonoBehaviour
         {
             _recebeuDano = true;
         }
+
+        if (other.gameObject.CompareTag("Agua"))
+        {
+            _estaNaAgua = true;
+        }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("AtaqueIni"))
         {
             _recebeuDano = false;
+        }
+
+        if (other.gameObject.CompareTag("Agua"))
+        {
+                _estaNaAgua = false;
         }
     }
 
