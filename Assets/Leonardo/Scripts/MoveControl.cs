@@ -61,6 +61,8 @@ public class MoveControl : MonoBehaviour
     public TargetLocation _targetLocation;
     public float speed = 1.0f;
 
+    [SerializeField] GameObject _botaoCorrerAndar;
+
     //------------------Canoa---------------------
     
     [Header("Gatilhos da animação")]
@@ -227,10 +229,25 @@ public class MoveControl : MonoBehaviour
         if (_estaNaAgua == true)
         {
             _baladeira.SetActive(false);
+            _botaoCorrerAndar.SetActive(false);
+            _speed = 5;
         }
         else
         {
             _baladeira.SetActive(true);
+            VerificarSpeed();
+            _botaoCorrerAndar.SetActive(true);
+        }
+    }
+    void VerificarSpeed()
+    {
+        if (_estaCorrendo == true)
+        {
+            _speed = 9;
+        }
+        else
+        {
+            _speed = 5;
         }
     }
     void LookAtMovementDirection() //Script para virar a frente do personagem voltada a orientação do movimento
