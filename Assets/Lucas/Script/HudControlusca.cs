@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HudControlusca : MonoBehaviour
 {
@@ -32,5 +33,10 @@ public class HudControlusca : MonoBehaviour
         _menuControls[value].gameObject.SetActive(true);
         _menuControls[value].transform.DOScale(1, .25f);
         _menuControls[value].ChamarMenu();
+    }
+
+    public void NovoJogo()
+    {
+        SceneManager.LoadScene("BuriXimba");
     }
 }
