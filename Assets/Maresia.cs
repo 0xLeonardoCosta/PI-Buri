@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using DG.Tweening;
 
 public class Maresia : MonoBehaviour
 {
     private Transform _player;
+
+    [SerializeField] GameObject _buriSobeDesce;
 
     [SerializeField] float _alturaPlataforma, _alturaAtual, _incremento;
 
@@ -33,8 +36,11 @@ public class Maresia : MonoBehaviour
         else if (_maresia && foiPraBaixo)
         {
             transform.SetParent(null);
+            _alturaAtual = transform.position.y;
+            _buriSobeDesce.gameObject.SetActive(true);
             transform.position = new Vector3(_player.position.x, -_alturaPlataforma, _player.position.z);
-            /*_alturaAtual = transform.position.y;
+
+            /*
             if (_alturaPlataforma > 1 && _alturaPlataforma < 1.21 && vaiprabaixo == true)
             {
                 _alturaPlataforma -= _incremento * Time.deltaTime;
