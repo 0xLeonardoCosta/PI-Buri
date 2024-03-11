@@ -8,6 +8,8 @@ public class CanoaMove : MonoBehaviour
     [SerializeField] MoveControl _moveBuri;
 
     [SerializeField] GameObject _botaoCanoa;
+    
+    [SerializeField] GameObject _rio;
 
     [SerializeField] Transform _player;
     
@@ -55,6 +57,7 @@ public class CanoaMove : MonoBehaviour
     {
         if (_utilizandoCanoa)
         {
+            _rio.GetComponent<MeshCollider>().isTrigger = false;
             _moveBuri._usandoCanoa = true;
             _moveBuri._pivotCamera = transform;
             _moveBuri._variacaoVelocidadeAndar = 0;
@@ -82,6 +85,7 @@ public class CanoaMove : MonoBehaviour
         else
         {
             //Quando Buri sair da canoa
+            _rio.GetComponent<MeshCollider>().isTrigger = true;
             _moveBuri._usandoCanoa = false;
             _moveBuri._pivotCamera = _moveBuri.transform;
             _moveBuri._variacaoVelocidadeAndar = Mathf.Abs(_moveBuri._input.x) + Mathf.Abs(_moveBuri._input.y);
