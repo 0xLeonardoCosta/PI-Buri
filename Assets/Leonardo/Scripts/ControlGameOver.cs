@@ -28,7 +28,7 @@ public class ControlGameOver : MonoBehaviour
             //Debug.Log("Tempo decorrido: " + tempoDecorrido);
             if (tempoDecorrido >= 10)
             {
-                SceneManager.LoadScene("Menu");
+                SceneManager.LoadScene("MenuBuriLusca");
             }
         }
     }
@@ -38,6 +38,6 @@ public class ControlGameOver : MonoBehaviour
     }
     public void VoltarMenuPrincipaaaau()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("MenuBuriLusca");
     }
 }

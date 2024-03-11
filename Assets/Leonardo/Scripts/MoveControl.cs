@@ -224,6 +224,14 @@ public class MoveControl : MonoBehaviour
     void NaAguaCheck()
     {   
         _anim.SetBool("EstaNaAgua", _estaNaAgua);
+        if (_estaNaAgua == true)
+        {
+            _baladeira.SetActive(false);
+        }
+        else
+        {
+            _baladeira.SetActive(true);
+        }
     }
     void LookAtMovementDirection() //Script para virar a frente do personagem voltada a orientação do movimento
     {
