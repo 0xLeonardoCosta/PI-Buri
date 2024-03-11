@@ -26,12 +26,16 @@ public class CanoaMove : MonoBehaviour
     [SerializeField] public bool _utilizarCanoa;
     [SerializeField] bool _utilizandoCanoa;
 
+    [SerializeField] Rigidbody _rb;
+
     [SerializeField] float _velocidadeCurva;
     [SerializeField] float _velocidade;
+    bool _dentroCanoa;
 
     void Start()
     {
         _player = Camera.main.GetComponent<GaaameController>()._player;
+        _rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -71,7 +75,12 @@ public class CanoaMove : MonoBehaviour
             _player.transform.localEulerAngles = new Vector3(0,0,0);
             _player.transform.localPosition = Vector3.zero;
 
-            transform.Translate(Vector3.up * _velocidade * _input.y);
+            //transform.Translate(Vector3.up * _velocidade * _input.y);
+
+            //utlizando o rigidbody
+            Vector3 moveDirection = transform.up * _input.y * _velocidade;
+            _rb.MovePosition(_rb.position + moveDirection * Time.fixedDeltaTime);
+
             if (_input.x < 0)
             {
                 _pivot.localPosition = new Vector3(5f,0,0);
@@ -80,7 +89,11 @@ public class CanoaMove : MonoBehaviour
             {
                 _pivot.localPosition = new Vector3(-5f,0,0);
             }
-            transform.RotateAround(_pivot.position, Vector3.up, _velocidadeCurva * _input.x * Time.deltaTime);
+            //transform.RotateAround(_pivot.position, Vector3.up, _velocidadeCurva * _input.x * Time.deltaTime);
+
+            // Rotação em torno do eixo Y mantendo o pivô constante
+            Quaternion deltaRotation = Quaternion.Euler(Vector3.back * _input.x * _velocidadeCurva * Time.fixedDeltaTime);
+            _rb.MoveRotation(_rb.rotation * deltaRotation);
         }
         else
         {
@@ -103,15 +116,17 @@ public class CanoaMove : MonoBehaviour
         {
             _moveBuri = other.GetComponent<MoveControl>();
             _botaoCanoa.SetActive(true);
+            
         }
 
     }
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))  //&& !_utilizandoCanoa)
         {
             _botaoCanoa.SetActive(false);
-            _moveBuri = null;
+            //_moveBuri = null;
+            Debug.Log("Saiu canoa");
             
         }
     }
