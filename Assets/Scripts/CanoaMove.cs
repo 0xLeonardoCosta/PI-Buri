@@ -75,11 +75,11 @@ public class CanoaMove : MonoBehaviour
             _player.transform.localEulerAngles = new Vector3(0,0,0);
             _player.transform.localPosition = Vector3.zero;
 
-            //transform.Translate(Vector3.up * _velocidade * _input.y);
+            transform.Translate(Vector3.up * _velocidade * _input.y);
 
             //utlizando o rigidbody
-            Vector3 moveDirection = transform.up * _input.y * _velocidade;
-            _rb.MovePosition(_rb.position + moveDirection * Time.fixedDeltaTime);
+            //Vector3 moveDirection = transform.up * _input.y * _velocidade;
+            //_rb.MovePosition(_rb.position + moveDirection * Time.fixedDeltaTime);
 
             if (_input.x < 0)
             {
@@ -89,11 +89,11 @@ public class CanoaMove : MonoBehaviour
             {
                 _pivot.localPosition = new Vector3(-5f,0,0);
             }
-            //transform.RotateAround(_pivot.position, Vector3.up, _velocidadeCurva * _input.x * Time.deltaTime);
+            transform.RotateAround(_pivot.position, Vector3.up, _velocidadeCurva * _input.x * Time.deltaTime);
 
             // Rotação em torno do eixo Y mantendo o pivô constante
-            Quaternion deltaRotation = Quaternion.Euler(Vector3.back * _input.x * _velocidadeCurva * Time.fixedDeltaTime);
-            _rb.MoveRotation(_rb.rotation * deltaRotation);
+            //Quaternion deltaRotation = Quaternion.Euler(Vector3.back * _input.x * _velocidadeCurva * Time.fixedDeltaTime);
+            ///_rb.MoveRotation(_rb.rotation * deltaRotation);
         }
         else
         {

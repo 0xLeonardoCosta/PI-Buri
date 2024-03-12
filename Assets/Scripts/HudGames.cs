@@ -16,7 +16,7 @@ public class HudGames : MonoBehaviour
     [SerializeField] GameObject _pos; //Coracoes
     [SerializeField] GameObject _pos1; //Botoes(sai da tela)
     [SerializeField] GameObject _pos2; //Stamina(sai da tela)
-    [SerializeField] GameObject _pos3; //Continue
+    //[SerializeField] GameObject _pos3; //Continue
     [SerializeField] Button _Reiniciar;
     public int _vidaAtual;
     public int _vidaMaxima;
@@ -65,8 +65,9 @@ public class HudGames : MonoBehaviour
 
             //Chamar tela GameOver
             _telaGameOver.DOScale(1f, 0.5f);
-            _vidaGrupo.transform.DOMove(_pos.transform.position, 0.15f);
-            _btGameOverGrupo.transform.DOMove(_pos3.transform.position, 0.15f);
+            _vidaGrupo.transform.DOMove(_pos.transform.position, 1.5f);
+            //_btGameOverGrupo.transform.DOMove(_pos3.transform.position, 0.15f);
+            _btGameOverGrupo.transform.DOScale(1, 0.25f);
             _baixoGrupo.transform.DOMove(_pos1.transform.position, 0.25f);
             _stamina.transform.DOMove(_pos2.transform.position, 0.05f);
             _Reiniciar.Select();
