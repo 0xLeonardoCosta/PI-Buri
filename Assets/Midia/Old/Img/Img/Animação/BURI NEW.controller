@@ -181,7 +181,7 @@ BlendTree:
     m_Motion: {fileID: -7050879197367763658, guid: 3b29ebd4d93997c43b1509d5c9ef16d7, type: 3}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
+    m_TimeScale: 2
     m_CycleOffset: 0
     m_DirectBlendParameter: Andar
     m_Mirror: 0
@@ -875,7 +875,7 @@ AnimatorStateMachine:
     m_Position: {x: 580, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -22307858309479611}
-    m_Position: {x: 240, y: -300, z: 0}
+    m_Position: {x: 300, y: -240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4315589353485446021}
     m_Position: {x: 240, y: 170, z: 0}
@@ -890,7 +890,7 @@ AnimatorStateMachine:
     m_Position: {x: 580, y: 20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1651606084232602941}
-    m_Position: {x: 820, y: -270, z: 0}
+    m_Position: {x: 800, y: -240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3698658816825169356}
     m_Position: {x: -10, y: 210, z: 0}
@@ -1715,7 +1715,7 @@ BlendTree:
     m_Motion: {fileID: -7050879197367763658, guid: 3b29ebd4d93997c43b1509d5c9ef16d7, type: 3}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
+    m_TimeScale: 2
     m_CycleOffset: 0
     m_DirectBlendParameter: Andar
     m_Mirror: 0
