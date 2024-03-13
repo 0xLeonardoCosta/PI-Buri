@@ -433,6 +433,14 @@ public class MoveControl : MonoBehaviour
         {
             _estaNaAgua = true;
         }
+
+        if (other.gameObject.CompareTag("Canoa"))
+        {
+            other.GetComponent<CanoaMove>()._moveBuri = gameObject.GetComponent<MoveControl>();
+            other.GetComponent<CanoaMove>()._botaoCanoa.SetActive(true);
+        }
+
+
     }
     private void OnTriggerExit(Collider other)
     {
@@ -444,6 +452,11 @@ public class MoveControl : MonoBehaviour
         if (other.gameObject.CompareTag("Agua"))
         {
                 _estaNaAgua = false;
+        }
+        if (other.gameObject.CompareTag("Canoa") && !_usandoCanoa)
+        {
+            other.GetComponent<CanoaMove>()._botaoCanoa.SetActive(false);
+            other.GetComponent<CanoaMove>()._moveBuri = null;
         }
     }
 

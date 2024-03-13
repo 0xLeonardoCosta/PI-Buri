@@ -46,9 +46,9 @@ public class HudGames : MonoBehaviour
     }
     void Update()
     {
-        if (_vidaAtual == 2 || _vidaAtual == 1)
+        // if (_vidaAtual == 2 || _vidaAtual == 1)
         {
-            StartCoroutine(Resta1Coracao());
+           // StartCoroutine(Resta1Coracao());
         }    
     }
 

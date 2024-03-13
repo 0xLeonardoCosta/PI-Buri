@@ -5,9 +5,9 @@ using UnityEngine.InputSystem.XR;
 
 public class CanoaMove : MonoBehaviour
 {
-    [SerializeField] MoveControl _moveBuri;
+    public MoveControl _moveBuri;
 
-    [SerializeField] GameObject _botaoCanoa;
+    public GameObject _botaoCanoa;
     
     [SerializeField] GameObject _rio;
 
@@ -39,6 +39,15 @@ public class CanoaMove : MonoBehaviour
     }
 
     void Update()
+    {
+        if (_moveBuri != null) // Se a variavel _moveBuri estiver atribuida, ou seja, não esteja vazia
+        {
+            _input = _moveBuri._input;
+         //   CanoaMovement();
+        }
+    }
+
+    private void FixedUpdate()
     {
         if (_moveBuri != null) // Se a variavel _moveBuri estiver atribuida, ou seja, não esteja vazia
         {
@@ -75,11 +84,13 @@ public class CanoaMove : MonoBehaviour
             _player.transform.localEulerAngles = new Vector3(0,0,0);
             _player.transform.localPosition = Vector3.zero;
 
-            transform.Translate(Vector3.up * _velocidade * _input.y);
+            //transform.Translate(Vector3.up * _velocidade * _input.y);
 
             //utlizando o rigidbody
-            //Vector3 moveDirection = transform.up * _input.y * _velocidade;
-            //_rb.MovePosition(_rb.position + moveDirection * Time.fixedDeltaTime);
+            Vector3 moveDirection = transform.up * _input.y * _velocidade;
+            _rb.MovePosition(_rb.position + moveDirection * Time.fixedDeltaTime);
+
+            //transform.RotateAround(_pivot.position, Vector3.up, _velocidadeCurva * _input.x * Time.deltaTime);
 
             if (_input.x < 0)
             {
@@ -89,11 +100,9 @@ public class CanoaMove : MonoBehaviour
             {
                 _pivot.localPosition = new Vector3(-5f,0,0);
             }
-            transform.RotateAround(_pivot.position, Vector3.up, _velocidadeCurva * _input.x * Time.deltaTime);
-
             // Rotação em torno do eixo Y mantendo o pivô constante
-            //Quaternion deltaRotation = Quaternion.Euler(Vector3.back * _input.x * _velocidadeCurva * Time.fixedDeltaTime);
-            ///_rb.MoveRotation(_rb.rotation * deltaRotation);
+            Quaternion deltaRotation = Quaternion.Euler(Vector3.back * -_input.x * _velocidadeCurva * Time.fixedDeltaTime);
+            _rb.MoveRotation(_rb.rotation * deltaRotation);
         }
         else
         {
@@ -114,8 +123,8 @@ public class CanoaMove : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            _moveBuri = other.GetComponent<MoveControl>();
-            _botaoCanoa.SetActive(true);
+           // _moveBuri = other.GetComponent<MoveControl>();
+           // _botaoCanoa.SetActive(true);
             
         }
 
@@ -124,9 +133,13 @@ public class CanoaMove : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))  //&& !_utilizandoCanoa)
         {
-            _botaoCanoa.SetActive(false);
-            //_moveBuri = null;
-            Debug.Log("Saiu canoa");
+            if (other.GetComponent<MoveControl>()._usandoCanoa)
+            {
+              //  _botaoCanoa.SetActive(false);
+             //   _moveBuri = null;
+             //   Debug.Log("Saiu canoa");
+            }
+           
             
         }
     }
