@@ -7,7 +7,12 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject _pauseMenu;
     [SerializeField] List<GameObject> _BtMenu;
+    [SerializeField] GameObject _BtPause;
 
+    void Start()
+    {
+        transform.localScale = Vector3.zero;    
+    }
     public void Pause()
     {
         StartCoroutine(AbrirMenuPause());
@@ -19,6 +24,7 @@ public class PauseMenu : MonoBehaviour
 
     IEnumerator AbrirMenuPause()
     {
+        _BtPause.transform.DOScale(0f, 0.3f);
         _pauseMenu.transform.DOScale(1.5f, 0.2f);
         yield return new WaitForSeconds(0.5f);
         _pauseMenu.transform.DOScale(1f, 0.2f);
@@ -44,5 +50,7 @@ public class PauseMenu : MonoBehaviour
         }
         yield return new WaitForSeconds(0.5f);
         _pauseMenu.transform.DOScale(0f, 0.2f);
+        _BtPause.transform.DOScale(1f, 0.3f);
+        //_BtPause.SetActive(false);
     }
 }
