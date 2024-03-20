@@ -21,6 +21,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         _pauseMenu.transform.localScale = Vector3.zero;    
+        _opcoesMenu.transform.localScale = Vector3.zero;    
     }
     public void Pause()
     {
@@ -36,7 +37,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void VoltarMenuPrincipaaaau()
     {
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
         SceneManager.LoadScene("MenuBuriLusca");
     }
 
@@ -57,7 +58,7 @@ public class PauseMenu : MonoBehaviour
             _BtMenu[i].transform.DOScale(2.9f, 0.2f);
         }
         yield return new WaitForSeconds(0.5f);
-        Time.timeScale = 0.01f;
+        //Time.timeScale = 0.01f;
     }
 
     IEnumerator FecharMenuPause()
@@ -79,8 +80,9 @@ public class PauseMenu : MonoBehaviour
         _BtPause.transform.DOScale(1f, 0.3f);
         //_BtPause.SetActive(false);
     }
-    IEnumerator FecharMenuOpcoes()
+    IEnumerator AbrirMenuOpcoes()
     {
+        _pauseMenu.SetActive(false);
         _opcoesMenu.transform.DOScale(1.5f, 0.2f);
         yield return new WaitForSeconds(0.5f);
         _opcoesMenu.transform.DOScale(1f, 0.2f);
