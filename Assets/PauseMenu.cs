@@ -31,20 +31,24 @@ public class PauseMenu : MonoBehaviour
     {
         StartCoroutine(AbrirMenuOpcoes());
     }
+    public void Voltar()
+    {
+        StartCoroutine(VoltarAoMenuPause());
+    }
     public void FecharMenu()
     {
         StartCoroutine(FecharMenuPause());
     }
-    public void VoltarMenuPrincipaaaau()
+    public void VoltarMenuPrincipaaaau() // Voltar ao menu
     {
         //Time.timeScale = 1f;
         SceneManager.LoadScene("MenuBuriLusca");
     }
 
-    IEnumerator AbrirMenuPause()
+    IEnumerator AbrirMenuPause() // Dar pause no game
     {
         _BtPause.transform.DOScale(0f, 0.3f);
-        _pauseMenu.transform.DOScale(1.5f, 0.2f);
+        _pauseMenu.transform.DOScale(1.3f, 0.2f);
         yield return new WaitForSeconds(0.5f);
         _pauseMenu.transform.DOScale(1f, 0.2f);
 
@@ -61,7 +65,7 @@ public class PauseMenu : MonoBehaviour
         //Time.timeScale = 0.01f;
     }
 
-    IEnumerator FecharMenuPause()
+    IEnumerator FecharMenuPause() // Voltar ao game
     {
         Time.timeScale = 1f;
 
@@ -80,11 +84,27 @@ public class PauseMenu : MonoBehaviour
         _BtPause.transform.DOScale(1f, 0.3f);
         //_BtPause.SetActive(false);
     }
-    IEnumerator AbrirMenuOpcoes()
+    IEnumerator AbrirMenuOpcoes() // Abrir opcoes do game
     {
         _pauseMenu.SetActive(false);
-        _opcoesMenu.transform.DOScale(1.5f, 0.2f);
+        _opcoesMenu.transform.DOScale(1.3f, 0.2f);
         yield return new WaitForSeconds(0.5f);
         _opcoesMenu.transform.DOScale(1f, 0.2f);
+    }
+    IEnumerator VoltarAoMenuPause() // Voltar ao menu a partir do opcoes
+    {
+        _BtPause.transform.DOScale(0f, 0.3f);
+        _pauseMenu.transform.DOScale(1.3f, 0.2f);
+        yield return new WaitForSeconds(0.5f);
+        _pauseMenu.transform.DOScale(1f, 0.2f);
+
+        for (int i = 0; i < _BtMenu.Count; i++)
+        {
+            _BtMenu[i].transform.DOScale(1.5f, 0.2f);
+            yield return new WaitForSeconds(0.2f);
+            _BtMenu[i].transform.DOScale(2.9f, 0.2f);
+        }
+        yield return new WaitForSeconds(0.5f);
+        //Time.timeScale = 0.01f;
     }
 }
