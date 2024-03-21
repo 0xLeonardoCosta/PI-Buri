@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject _pauseMenu;
     [SerializeField] GameObject _opcoesMenu;
 
+    [SerializeField] Sprite[] _spriteBTVoltarAoJogo;
+
     [SerializeField] List<GameObject> _BtMenu;
     [SerializeField] GameObject _BtPause;
+    [SerializeField] GameObject _BtVoltarAoJogo;
 
     [SerializeField] GameObject _botoesBaixo;
     [SerializeField] GameObject _staminaVidas;
@@ -39,6 +43,10 @@ public class PauseMenu : MonoBehaviour
     {
         StartCoroutine(FecharMenuPause());
     }
+    public void VoltarAoJogo()
+    {
+        StartCoroutine(VoltarAoJogoAgora());
+    }
     public void VoltarMenuPrincipaaaau() // Voltar ao menu
     {
         //Time.timeScale = 1f;
@@ -54,6 +62,35 @@ public class PauseMenu : MonoBehaviour
 
         _botoesBaixo.transform.DOMove(_posBaixo.position, 1f);
         _staminaVidas.transform.DOMove(_posCima.position, 1f);
+
+        for (int i = 0; i < _BtMenu.Count; i++)
+        {
+            _BtMenu[i].transform.DOScale(1.5f, 0.2f);
+            yield return new WaitForSeconds(0.2f);
+            _BtMenu[i].transform.DOScale(2.9f, 0.2f);
+        }
+        yield return new WaitForSeconds(0.5f);
+        //Time.timeScale = 0.01f;
+    }
+
+    IEnumerator AbrirMenuOpcoes() // Abrir opcoes do game
+    {
+        _pauseMenu.SetActive(false);
+        _BtVoltarAoJogo.SetActive(true);
+        _BtVoltarAoJogo.transform.DOScale(1f, 0.2f);
+        _opcoesMenu.transform.DOScale(1.3f, 0.2f);
+        yield return new WaitForSeconds(0.5f);
+        _opcoesMenu.transform.DOScale(1f, 0.2f);
+    }
+
+    
+    IEnumerator VoltarAoMenuPause() // Voltar ao menu a partir do opcoes
+    {
+        _pauseMenu.SetActive(true);
+        _BtPause.transform.DOScale(0f, 0.3f);
+        _pauseMenu.transform.DOScale(1.3f, 0.2f);
+        yield return new WaitForSeconds(0.5f);
+        _pauseMenu.transform.DOScale(1f, 0.2f);
 
         for (int i = 0; i < _BtMenu.Count; i++)
         {
@@ -84,27 +121,19 @@ public class PauseMenu : MonoBehaviour
         _BtPause.transform.DOScale(1f, 0.3f);
         //_BtPause.SetActive(false);
     }
-    IEnumerator AbrirMenuOpcoes() // Abrir opcoes do game
-    {
-        _pauseMenu.SetActive(false);
-        _opcoesMenu.transform.DOScale(1.3f, 0.2f);
-        yield return new WaitForSeconds(0.5f);
-        _opcoesMenu.transform.DOScale(1f, 0.2f);
-    }
-    IEnumerator VoltarAoMenuPause() // Voltar ao menu a partir do opcoes
-    {
-        _BtPause.transform.DOScale(0f, 0.3f);
-        _pauseMenu.transform.DOScale(1.3f, 0.2f);
-        yield return new WaitForSeconds(0.5f);
-        _pauseMenu.transform.DOScale(1f, 0.2f);
 
-        for (int i = 0; i < _BtMenu.Count; i++)
-        {
-            _BtMenu[i].transform.DOScale(1.5f, 0.2f);
-            yield return new WaitForSeconds(0.2f);
-            _BtMenu[i].transform.DOScale(2.9f, 0.2f);
-        }
-        yield return new WaitForSeconds(0.5f);
-        //Time.timeScale = 0.01f;
+    IEnumerator VoltarAoJogoAgora()
+    {
+        _BtVoltarAoJogo.gameObject.GetComponent<Image>().sprite = _spriteBTVoltarAoJogo[0];
+        yield return new WaitForSeconds(1f);
+        _BtVoltarAoJogo.gameObject.GetComponent<Image>().sprite = _spriteBTVoltarAoJogo[1];
+        _botoesBaixo.transform.DOMove(_posOriginBaixo.position, 0.5f);
+        _staminaVidas.transform.DOMove(_posOriginCima.position, 0.5f);
+        _BtPause.SetActive(true);
+        _pauseMenu.SetActive(true);
+        _BtPause.transform.DOScale(0f, 0.3f);
+        _pauseMenu.transform.DOScale(0f, 0.2f);
+        _BtVoltarAoJogo.transform.DOScale(0f, 0.2f);
+        yield return new WaitForSeconds(0f);
     }
 }
