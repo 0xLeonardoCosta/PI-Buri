@@ -13,11 +13,15 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] Sprite[] _spriteBTVoltarAoJogo;
 
     [SerializeField] List<GameObject> _BtMenu;
-    [SerializeField] GameObject _BtPause;
+    [SerializeField] GameObject _BtPause, _BtInventario;
     [SerializeField] GameObject _BtVoltarAoJogo;
 
     [SerializeField] GameObject _botoesBaixo;
     [SerializeField] GameObject _staminaVidas;
+
+
+    [SerializeField] Transform _posForaPause, _posForaInventario;
+    [SerializeField] Transform _posOriginPause, _posOriginInventario;
 
     [SerializeField] Transform _posBaixo, _posCima;
     [SerializeField] Transform _posOriginBaixo, _posOriginCima;
@@ -55,13 +59,15 @@ public class PauseMenu : MonoBehaviour
 
     IEnumerator AbrirMenuPause() // Dar pause no game
     {
-        _BtPause.transform.DOScale(0f, 0.3f);
+        _BtPause.transform.DOMove(_posForaPause.position, 0.3f);
+        _BtInventario.transform.DOMove(_posForaInventario.position, 0.3f);
+
+        _botoesBaixo.transform.DOMove(_posBaixo.position, 0.3f);
+        _staminaVidas.transform.DOMove(_posCima.position, 0.3f);
+
         _pauseMenu.transform.DOScale(1.3f, 0.2f);
         yield return new WaitForSeconds(0.5f);
         _pauseMenu.transform.DOScale(1f, 0.2f);
-
-        _botoesBaixo.transform.DOMove(_posBaixo.position, 1f);
-        _staminaVidas.transform.DOMove(_posCima.position, 1f);
 
         for (int i = 0; i < _BtMenu.Count; i++)
         {
@@ -112,21 +118,25 @@ public class PauseMenu : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
             _BtMenu[i].transform.DOScale(0f, 0.2f);
         }
-        yield return new WaitForSeconds(0.5f);
 
-        _botoesBaixo.transform.DOMove(_posOriginBaixo.position, 0.5f);
-        _staminaVidas.transform.DOMove(_posOriginCima.position, 0.5f);
+        _pauseMenu.transform.DOScale(0f, 0.15f);
+        //_BtPause.transform.DOScale(1f, 0.3f);
+        //yield return new WaitForSeconds(0.5f);
 
-        _pauseMenu.transform.DOScale(0f, 0.2f);
-        _BtPause.transform.DOScale(1f, 0.3f);
+        _botoesBaixo.transform.DOMove(_posOriginBaixo.position, 0.2f);
+        _staminaVidas.transform.DOMove(_posOriginCima.position, 0.2f);
+
+        _BtPause.transform.DOMove(_posOriginPause.position, 0.15f);
+        _BtInventario.transform.DOMove(_posOriginInventario.position, 0.15f);
+
         //_BtPause.SetActive(false);
     }
 
     IEnumerator VoltarAoJogoAgora()
     {
-        _BtVoltarAoJogo.gameObject.GetComponent<Image>().sprite = _spriteBTVoltarAoJogo[0];
-        yield return new WaitForSeconds(1f);
         _BtVoltarAoJogo.gameObject.GetComponent<Image>().sprite = _spriteBTVoltarAoJogo[1];
+        yield return new WaitForSeconds(1f);
+        _BtVoltarAoJogo.gameObject.GetComponent<Image>().sprite = _spriteBTVoltarAoJogo[0];
         _botoesBaixo.transform.DOMove(_posOriginBaixo.position, 0.5f);
         _staminaVidas.transform.DOMove(_posOriginCima.position, 0.5f);
         _BtPause.SetActive(true);
