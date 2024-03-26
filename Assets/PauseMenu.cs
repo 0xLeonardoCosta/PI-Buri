@@ -90,6 +90,7 @@ public class PauseMenu : MonoBehaviour
     IEnumerator AbrirMenuOpcoes() // Abrir opcoes do game
     {
         _pauseMenu.SetActive(false);
+        _opcoesMenu.SetActive(true);
         _BtVoltarAoJogo.SetActive(true);
         _BtVoltarAoJogo.transform.DOScale(1f, 0.2f);
         _opcoesMenu.transform.DOScale(1.3f, 0.2f);
