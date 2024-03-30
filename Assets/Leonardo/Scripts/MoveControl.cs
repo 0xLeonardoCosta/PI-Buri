@@ -6,6 +6,10 @@ using UnityEngine.InputSystem;
 
 public class MoveControl : MonoBehaviour
 {
+    [SerializeField] Transform _orientation;
+    [SerializeField] Vector3 _direcaoMove;
+    [SerializeField] Transform _esqueletoBuri;
+    
     public Vector2 _input; //Input system, axis: X,Z. 
     [SerializeField] Vector3 _playerVelocity;
     [SerializeField] private Vector3 _movement;
@@ -110,7 +114,7 @@ public class MoveControl : MonoBehaviour
         if (!_usandoCanoa)
         {
             Move();
-            LookAtMovementDirection();// pausar na mira
+            //LookAtMovementDirection();// pausar na mira
             RotIni();// so quando mirar
             Dano();
             Gravity();
@@ -127,7 +131,7 @@ public class MoveControl : MonoBehaviour
         {
             MoveCanoa();
         }
-        CameraControl();
+        //CameraControl();
         _variacaoAltura = _controller.velocity.y;
     }
     void AndarN()// Sincronizar animações - Andar movimento de perna/Andar movimento de braço
@@ -178,9 +182,16 @@ public class MoveControl : MonoBehaviour
     {
         if (_checkMover)
         {
-            magnitude = new Vector3(_input.x, _controller.velocity.y, _input.y).normalized; // PAREI AQUI
-            
-            _movement = new Vector3(_input.x, _controller.velocity.y, _input.y).normalized * _speed * Time.deltaTime;
+            //magnitude = new Vector3(_input.x, _controller.velocity.y, _input.y).normalized; // PAREI AQUI
+            _direcaoMove = (_orientation.forward * _input.y + _orientation.right * _input.x);
+            _movement = new Vector3(_direcaoMove.x, _controller.velocity.y, _direcaoMove.z).normalized * _speed * Time.deltaTime;
+            if (_direcaoMove != Vector3.zero)
+            {
+                _esqueletoBuri.forward = Vector3.Slerp(_esqueletoBuri.forward, _direcaoMove.normalized, Time.deltaTime * _speedRotation);
+                
+                Quaternion targetRotation = Quaternion.Euler(-165, _esqueletoBuri.rotation.eulerAngles.y, _esqueletoBuri.rotation.eulerAngles.z);
+                _esqueletoBuri.rotation = Quaternion.Slerp(_esqueletoBuri.rotation, targetRotation, Time.deltaTime * _speedRotation);
+            }
         }
         else
         {
