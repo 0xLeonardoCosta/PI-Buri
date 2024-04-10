@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FooterImage : MonoBehaviour
 {
-    public Image imageComponent;
+    public List<Image> imageComponent;
     public float scrollSpeed = 50f; // Velocidade de deslizamento
 
     private RectTransform imageTransform;
@@ -13,7 +13,7 @@ public class FooterImage : MonoBehaviour
 
     void Start()
     {
-        imageTransform = imageComponent.GetComponent<RectTransform>();
+      //  imageTransform = imageComponent.GetComponent<RectTransform>();
         imageWidth = imageTransform.rect.width;
     }
 
@@ -23,7 +23,7 @@ public class FooterImage : MonoBehaviour
         imageTransform.anchoredPosition -= new Vector2(scrollSpeed * Time.deltaTime, 0);
 
         // Se a imagem sair completamente da tela, reposiciona-a para começar de novo
-        if (imageTransform.anchoredPosition.x < -2000)
+        if (imageTransform.anchoredPosition.x < 0)
         {
             // Reposiciona a imagem para o início
             imageTransform.anchoredPosition += new Vector2(imageWidth, 0);

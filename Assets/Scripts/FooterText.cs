@@ -10,11 +10,12 @@ public class FooterText : MonoBehaviour
 
     private RectTransform textTransform;
     private float textWidth;
+    public float textWidth2;
 
     void Start()
     {
         textTransform = textComponent.GetComponent<RectTransform>();
-        textWidth = textTransform.rect.width;
+        textWidth2 = textTransform.rect.width;
     }
 
     void Update()
@@ -26,7 +27,7 @@ public class FooterText : MonoBehaviour
         if (textTransform.anchoredPosition.x < -textWidth)
         {
             // Reposiciona o texto para o início
-            textTransform.anchoredPosition += new Vector2(textWidth, 0);
+            textTransform.anchoredPosition += new Vector2(textWidth2, 0);
         }
     }
 }
