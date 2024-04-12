@@ -11,6 +11,14 @@ public class MoveFloatBuri : MonoBehaviour
     public float _deslocamentoY;
 
     public int _score = 0;
+
+
+    public GameObject _balaProjetil; // vai ser a nossa bala
+    public Transform _arma; // posicao de onde vai sair nosso tiro
+    private bool _tiro; // vai ser o imput do tiro da nossa arma
+    public float _forcadoTiro; // vai ser a velocidade do nosso tiro
+    private bool _flipX = false; //vai ser o nosso novo flip
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +29,7 @@ public class MoveFloatBuri : MonoBehaviour
     void Update()
     {
         transform.position = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, _deslocamentoY, 0); //hahaa
+        _tiro = Input.GetButtonDown("Fire1");
     }
 
     void OnCollisionEnter2D(Collision2D col)
