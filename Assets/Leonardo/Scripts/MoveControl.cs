@@ -9,8 +9,13 @@ public class MoveControl : MonoBehaviour
     [SerializeField] Transform _orientation;
     [SerializeField] Vector3 _direcaoMove;
     [SerializeField] Transform _esqueletoBuri;
-    
-    public Vector2 _input; //Input system, axis: X,Z. 
+
+    public Transform cameraTransform; // Referência para a transformação da câmera
+    public float moveSpeed = 5f; // Velocidade de movimento do jogador
+    public float turnSmoothTime = 0.1f; // Suavização de rotação
+    private float turnSmoothVelocity;
+
+    public Vector3 _input; //Input system, axis: X,Z. 
     [SerializeField] Vector3 _playerVelocity;
     [SerializeField] private Vector3 _movement;
 
@@ -88,7 +93,9 @@ public class MoveControl : MonoBehaviour
     [SerializeField] GameObject _baladeira;
     [SerializeField] GameObject _varaPesca;
     [SerializeField] GameObject _remo;
-    
+    [SerializeField] float rotation;
+
+
 
     void Start()
     {
@@ -183,25 +190,31 @@ public class MoveControl : MonoBehaviour
         if (_checkMover)
         {
             //magnitude = new Vector3(_input.x, _controller.velocity.y, _input.y).normalized; // PAREI AQUI
-            _direcaoMove = (_orientation.forward * _input.y + _orientation.right * _input.x);
-            _movement = new Vector3(_direcaoMove.x, _controller.velocity.y, _direcaoMove.z).normalized * _speed * Time.deltaTime;
-            if (_direcaoMove != Vector3.zero)
+            _direcaoMove = (transform.forward * _input.y );
+          //  _movement = new Vector3(0, 0, _input.y).normalized * _speed * Time.deltaTime;
+
+            rotation = _input.x * 5 * Time.deltaTime;
+            transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y-(-rotation)*80, 0);
+
+            /*if (_direcaoMove != Vector3.zero)
             {
                 _esqueletoBuri.forward = Vector3.Slerp(_esqueletoBuri.forward, _direcaoMove.normalized, Time.deltaTime * _speedRotation);
-                
+
                 Quaternion targetRotation = Quaternion.Euler(-165, _esqueletoBuri.rotation.eulerAngles.y, _esqueletoBuri.rotation.eulerAngles.z);
                 _esqueletoBuri.rotation = Quaternion.Slerp(_esqueletoBuri.rotation, targetRotation, Time.deltaTime * _speedRotation);
             }
+            */
         }
         else
         {
             _movement = Vector3.zero;
         }
-        _controller.Move(_movement);
+    
+       
         // Linhas abaixo feitas para animação do personagem
         _variacaoVelocidadeAndar = Mathf.Abs(_input.x) + Mathf.Abs(_input.y);
         _variacaoAltura = _controller.velocity.y;
-        
+           _controller.Move(_direcaoMove);
         if (_speed == 0) { _speed = 5; }
         _anim.SetFloat("Andar", _variacaoVelocidadeAndar);
         _anim.SetFloat("VelocidadeY", _variacaoAltura);
@@ -263,7 +276,7 @@ public class MoveControl : MonoBehaviour
     }
     void LookAtMovementDirection() //Script para virar a frente do personagem voltada a orientação do movimento
     {
-        if (_input != Vector2.zero && _checkMover && !_inputBaladeira)
+        if (_input != Vector3.zero && _checkMover && !_inputBaladeira)
         {
             float targetAngle = Mathf.Atan2(_input.x, _input.y) * Mathf.Rad2Deg;
             Quaternion targetRotation = Quaternion.Euler(0f, targetAngle, 0f);
@@ -397,8 +410,8 @@ public class MoveControl : MonoBehaviour
 
     public void SetMove(InputAction.CallbackContext value) //Input direcional X e Z (Input System)
     {
-        _input = value.ReadValue<Vector2>();
-        _amplitudeAnalogico = _input.magnitude;
+        _input = value.ReadValue<Vector3>();
+        //_amplitudeAnalogico = _input.magnitude;
         //_speed = Mathf.Lerp(_speedMin, _speedMax, _amplitudeAnalogico);
 
     }

@@ -9,7 +9,7 @@
                     "name": "Movimento",
                     "type": "Value",
                     "id": "45662cb7-0637-4040-b84e-4a5921a8e668",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Vector3",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -55,7 +55,7 @@
                 {
                     "name": "Teclado WASD",
                     "id": "7a9763e3-9de9-452d-a6af-ea2421677ea0",
-                    "path": "2DVector",
+                    "path": "3DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -64,7 +64,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
+                    "name": "Up",
                     "id": "3ceae747-479f-4957-bfd6-9f980db9e50c",
                     "path": "<Keyboard>/w",
                     "interactions": "",
@@ -75,7 +75,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "down",
+                    "name": "Down",
                     "id": "798d32e6-f688-46db-852b-d09fc27a6c5c",
                     "path": "<Keyboard>/s",
                     "interactions": "",
@@ -86,7 +86,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "left",
+                    "name": "Left",
                     "id": "caf0237a-15bf-417e-906f-70ff917a2b9f",
                     "path": "<Keyboard>/a",
                     "interactions": "",
@@ -97,7 +97,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "right",
+                    "name": "Right",
                     "id": "524d264e-1ab5-48a2-9a35-fdcaa0845ca2",
                     "path": "<Keyboard>/d",
                     "interactions": "",
@@ -108,9 +108,31 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "Forward",
+                    "id": "acb208e8-c514-40aa-b0d3-7737ca2d3cf2",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movimento",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Backward",
+                    "id": "32170674-e787-4399-a2d4-79f0ab5e28a4",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movimento",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "Teclado Setas",
                     "id": "8d0cdba4-919b-44e1-be88-be6374eebeba",
-                    "path": "2DVector",
+                    "path": "3DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -119,7 +141,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
+                    "name": "Up",
                     "id": "f2938477-e308-43f1-9000-a98fd26a6d9a",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
@@ -130,7 +152,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "down",
+                    "name": "Down",
                     "id": "e8fba6bc-843a-4f24-8669-f11a6f8f473a",
                     "path": "<Keyboard>/downArrow",
                     "interactions": "",
@@ -141,7 +163,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "left",
+                    "name": "Left",
                     "id": "e9e100ea-7dfb-4e66-849c-886daa0aa043",
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
@@ -152,7 +174,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "right",
+                    "name": "Right",
                     "id": "c33370b9-6dd5-4f81-b065-4dca35ebb9e8",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
@@ -163,9 +185,31 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "Forward",
+                    "id": "965d1d8a-8067-49c0-a5db-791071812d92",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movimento",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Backward",
+                    "id": "47ba1767-84a5-4754-9b3a-6fbd29baf164",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movimento",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "Gamepad",
                     "id": "7a2d7fac-9eae-4c3f-b77c-2d1532167a93",
-                    "path": "2DVector",
+                    "path": "3DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -174,7 +218,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
+                    "name": "Up",
                     "id": "9c00b229-0969-490f-a7cd-048bc40d156c",
                     "path": "<Gamepad>/dpad/up",
                     "interactions": "",
@@ -185,7 +229,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "down",
+                    "name": "Down",
                     "id": "1010e613-bc25-4448-aa1f-513d83fcb8c1",
                     "path": "<Gamepad>/dpad/down",
                     "interactions": "",
@@ -196,7 +240,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "left",
+                    "name": "Left",
                     "id": "7e3ef68f-d60e-4867-95fc-96eb16ae3c67",
                     "path": "<Gamepad>/dpad/left",
                     "interactions": "",
@@ -207,7 +251,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "right",
+                    "name": "Right",
                     "id": "d26a9b07-1b21-49cf-afae-4b7c6fa873e0",
                     "path": "<Gamepad>/dpad/right",
                     "interactions": "",
@@ -218,9 +262,31 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "Forward",
+                    "id": "1a32d560-e217-4fee-8e57-124882e94139",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movimento",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Backward",
+                    "id": "5b392a7d-f826-4688-88c3-0e5d7f98cb69",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movimento",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "Analogico",
                     "id": "28ce32ff-6c7d-47c5-b9c8-27d4cdb70fa3",
-                    "path": "2DVector(mode=2)",
+                    "path": "3DVector(mode=2)",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -229,7 +295,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
+                    "name": "Up",
                     "id": "171a86c4-3736-4222-b5f2-2e722d084fd8",
                     "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
@@ -240,7 +306,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "down",
+                    "name": "Down",
                     "id": "ab6961fd-bd83-4fe2-b71a-adce3f3f1d95",
                     "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
@@ -251,7 +317,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "left",
+                    "name": "Left",
                     "id": "f70877e9-bd42-4deb-add0-df9725a1286b",
                     "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
@@ -262,9 +328,31 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "right",
+                    "name": "Right",
                     "id": "e1776c00-367b-42a5-94db-a1eb9a1807fb",
                     "path": "<Gamepad>/leftStick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movimento",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Forward",
+                    "id": "33c3c935-99e1-4d0b-9458-18493cd74ec3",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movimento",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Backward",
+                    "id": "4741bdb6-806b-4cc9-a009-eab68915e8b9",
+                    "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
