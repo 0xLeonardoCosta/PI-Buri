@@ -16,6 +16,7 @@ TagManager:
   - AtracaCanoa
   - NPC
   - Agua
+  - bala2d
   layers:
   - Default
   - TransparentFX
