@@ -190,10 +190,10 @@ public class MoveControl : MonoBehaviour
         if (_checkMover)
         {
             //magnitude = new Vector3(_input.x, _controller.velocity.y, _input.y).normalized; // PAREI AQUI
-            _direcaoMove = (transform.forward * _input.y );
+            _direcaoMove = (transform.forward * _speed * _input.y );
           //  _movement = new Vector3(0, 0, _input.y).normalized * _speed * Time.deltaTime;
 
-            rotation = _input.x * 5 * Time.deltaTime;
+            rotation = _input.x * 2 * Time.deltaTime;
             transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y-(-rotation)*80, 0);
 
             /*if (_direcaoMove != Vector3.zero)
@@ -226,12 +226,12 @@ public class MoveControl : MonoBehaviour
         if (_estaCorrendo == false)
         {
             _estaCorrendo = true;
-            _speed = 9;
+            _speed = _speedMax;
         }
         else if (_estaCorrendo == true)
         {
             _estaCorrendo = false;
-            _speed = 5;
+            _speed = _speedMin;
         }
         _anim.SetBool("EstaCorrendo", _estaCorrendo);
     }
@@ -254,7 +254,7 @@ public class MoveControl : MonoBehaviour
         {
             _baladeira.SetActive(false);
             _botaoCorrerAndar.SetActive(false);
-            _speed = 5;
+            _speed = _speedMin;
         }
         else
         {
@@ -267,7 +267,7 @@ public class MoveControl : MonoBehaviour
     {
         if (_estaCorrendo == true)
         {
-            _speed = 9;
+            _speed = _speedMax;
         }
         else
         {
