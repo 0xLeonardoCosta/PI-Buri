@@ -40,9 +40,9 @@ public class MoveControl : MonoBehaviour
     private float _gravityValue = -9.81f;
     public float _gravityMultiplier;
     [SerializeField] float _speed;
-    [SerializeField] float _speedMin = 3;
-    [SerializeField] float _speedMax = 9;
-    [SerializeField] float _speedRotation = 15;
+    [SerializeField] float _speedMin = 0.05f;
+    [SerializeField] float _speedMax = 0.12f;
+    [SerializeField] float _speedRotation;
     [SerializeField] float _variacaoVelocidadeCanoa;
     [SerializeField] float _jump = 5;
     [SerializeField] float _amplitudeAnalogico;
@@ -194,7 +194,7 @@ public class MoveControl : MonoBehaviour
           //  _movement = new Vector3(0, 0, _input.y).normalized * _speed * Time.deltaTime;
 
             rotation = _input.x * 2 * Time.deltaTime;
-            transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y-(-rotation)*80, 0);
+            transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y-(-rotation)* _speedRotation, 0);
 
             /*if (_direcaoMove != Vector3.zero)
             {
@@ -254,7 +254,7 @@ public class MoveControl : MonoBehaviour
         {
             _baladeira.SetActive(false);
             _botaoCorrerAndar.SetActive(false);
-            _speed = _speedMin;
+            _speed = 0.1f;
         }
         else
         {
@@ -271,7 +271,7 @@ public class MoveControl : MonoBehaviour
         }
         else
         {
-            _speed = 5;
+            _speed = _speedMin;
         }
     }
     void LookAtMovementDirection() //Script para virar a frente do personagem voltada a orientação do movimento
