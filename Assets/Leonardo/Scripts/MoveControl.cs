@@ -75,6 +75,7 @@ public class MoveControl : MonoBehaviour
     //------------------Canoa---------------------
     
     [Header("Gatilhos da animação")]
+    [SerializeField] public float _inputX, _inputY;
     [SerializeField] public float _variacaoVelocidadeAndar;
     [SerializeField] public float _variacaoAltura;
     [SerializeField] public bool _checkGround; //Verificador se o player está encostando no chão
@@ -191,7 +192,7 @@ public class MoveControl : MonoBehaviour
         {
             //magnitude = new Vector3(_input.x, _controller.velocity.y, _input.y).normalized; // PAREI AQUI
             _direcaoMove = (transform.forward * _speed * _input.y );
-          //  _movement = new Vector3(0, 0, _input.y).normalized * _speed * Time.deltaTime;
+            //_movement = new Vector3(0, 0, _input.y).normalized * _speed * Time.deltaTime;
 
             rotation = _input.x * 2 * Time.deltaTime;
             transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y-(-rotation)* _speedRotation, 0);
@@ -214,8 +215,13 @@ public class MoveControl : MonoBehaviour
         // Linhas abaixo feitas para animação do personagem
         _variacaoVelocidadeAndar = Mathf.Abs(_input.x) + Mathf.Abs(_input.y);
         _variacaoAltura = _controller.velocity.y;
-           _controller.Move(_direcaoMove);
+
+        _controller.Move(_direcaoMove);
+
         if (_speed == 0) { _speed = 5; }
+        _anim.SetFloat("InputX", _input.x);
+        _anim.SetFloat("InputY", _input.y);
+        
         _anim.SetFloat("Andar", _variacaoVelocidadeAndar);
         _anim.SetFloat("VelocidadeY", _variacaoAltura);
         _anim.SetBool("groundCheck", _checkGround);
