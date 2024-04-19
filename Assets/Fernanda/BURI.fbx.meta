@@ -903,7 +903,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: '|Buri - Correndo-Esquerda-Inferior'
+      name: Buri - Correndo-Esquerda-Inferior
       takeName: Armature - Buri|Buri - Correndo-Esquerda-Inferior
       internalID: 1170458014711099824
       firstFrame: 0
@@ -1019,18 +1019,18 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature - Buri|Buri - Andando-Costa-Superior
-      takeName: Armature - Buri|Buri - Andando-Costa-Superior
+      name: Buri - Correndo-Direita-Superior
+      takeName: Armature - Buri|Buri - Correndo-Direita-Superior
       internalID: 8880734887569104673
       firstFrame: 0
-      lastFrame: 40
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
