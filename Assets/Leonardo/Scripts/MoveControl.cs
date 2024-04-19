@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -194,7 +195,7 @@ public class MoveControl : MonoBehaviour
             //_movement = new Vector3(0, 0, _input.y).normalized * _speed * Time.deltaTime;
 
             //Controle Rotationando no proprio eixo abaixo
-            _direcaoMove = (transform.forward * _speed * _input.y);
+            _direcaoMove = (transform.forward * _speed * _input.y).normalized;
             rotation = _input.x * 2 * Time.deltaTime;
             transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y-(-rotation)* _speedRotation, 0);
             
@@ -224,9 +225,9 @@ public class MoveControl : MonoBehaviour
         _variacaoVelocidadeAndar = Mathf.Abs(_input.x) + Mathf.Abs(_input.y);
         _variacaoAltura = _controller.velocity.y;
 
-        _controller.Move(_direcaoMove);
+        _controller.Move(_direcaoMove/9);
 
-        if (_speed == 0) { _speed = 5; }
+      //  if (_speed == 0) { _speed = 5; }
         _anim.SetFloat("InputX", _input.x);
         _anim.SetFloat("InputY", _input.y);
         
