@@ -190,12 +190,20 @@ public class MoveControl : MonoBehaviour
     {
         if (_checkMover)
         {
-            //magnitude = new Vector3(_input.x, _controller.velocity.y, _input.y).normalized; // PAREI AQUI
-            _direcaoMove = (transform.forward * _speed * _input.y );
+            //magnitude = new Vector3(_input.x, _controller.velocity.y, _input.y).normalized; // PAREI AQUI            
             //_movement = new Vector3(0, 0, _input.y).normalized * _speed * Time.deltaTime;
 
+            //Controle Rotationando no proprio eixo abaixo
+            _direcaoMove = (transform.forward * _speed * _input.y);
             rotation = _input.x * 2 * Time.deltaTime;
             transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y-(-rotation)* _speedRotation, 0);
+            
+
+            //Antiga Movimentação
+            /*
+            _movement = new Vector3(_input.x, _controller.velocity.y, _input.y).normalized * _speed * Time.deltaTime;
+            _controller.Move(_movement);
+            */
 
             /*if (_direcaoMove != Vector3.zero)
             {
