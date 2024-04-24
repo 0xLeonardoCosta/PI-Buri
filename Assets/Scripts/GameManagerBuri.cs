@@ -15,9 +15,14 @@ public class GameManagerBuri : MonoBehaviour
     void Start()
     {
         Carregar();
-        _posPlayer.localPosition = _pos[_partfase].transform.position;
+        //_posPlayer.localPosition = _pos[_partfase].transform.position;
     }
-
+    public void CheckPointSalvar(Vector3 pos)
+    {
+        PlayerPrefs.SetFloat("PosX", pos.x);
+        PlayerPrefs.SetFloat("PosY", pos.y);
+        PlayerPrefs.SetFloat("PosZ", pos.z);
+    }
     public void AumentarFase()
     {
         _fase++;

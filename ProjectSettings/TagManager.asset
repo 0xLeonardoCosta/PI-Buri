@@ -17,6 +17,7 @@ TagManager:
   - NPC
   - Agua
   - bala2d
+  - CheckPoint
   layers:
   - Default
   - TransparentFX
