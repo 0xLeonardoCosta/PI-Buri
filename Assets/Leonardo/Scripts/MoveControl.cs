@@ -43,6 +43,7 @@ public class MoveControl : MonoBehaviour
     [SerializeField] float _speed;
     [SerializeField] float _speedMin = 0.05f;
     [SerializeField] float _speedMax = 0.12f;
+    [SerializeField] float _speedNaAgua = 0.1f;
     [SerializeField] float _speedRotation;
     [SerializeField] float _variacaoVelocidadeCanoa;
     [SerializeField] float _jump = 5;
@@ -269,7 +270,7 @@ public class MoveControl : MonoBehaviour
         {
             _baladeira.SetActive(false);
             _botaoCorrerAndar.SetActive(false);
-            _speed = 0.1f;
+            _speed = _speedNaAgua;
         }
         else
         {
