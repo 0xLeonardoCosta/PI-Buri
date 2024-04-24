@@ -195,7 +195,7 @@ public class MoveControl : MonoBehaviour
             //_movement = new Vector3(0, 0, _input.y).normalized * _speed * Time.deltaTime;
 
             //Controle Rotationando no proprio eixo abaixo
-            _direcaoMove = (transform.forward * _speed * _input.y).normalized;
+            _direcaoMove = (transform.forward * _speed * _input.y);
             rotation = _input.x * 2 * Time.deltaTime;
             transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y-(-rotation)* _speedRotation, 0);
             
