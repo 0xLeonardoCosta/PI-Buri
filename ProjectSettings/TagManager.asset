@@ -18,6 +18,7 @@ TagManager:
   - Agua
   - bala2d
   - CheckPoint
+  - Casa
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - UI
   - Canoa
   - Ximba1
-  - 
+  - Casas
   - 
   - 
   - 
