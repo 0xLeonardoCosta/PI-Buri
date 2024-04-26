@@ -11,9 +11,12 @@ public class GameManagerBuri : MonoBehaviour
     [SerializeField] Transform _posPlayer;
     [SerializeField] Transform[] _pos;
 
-    // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefs.GetInt("StartSave") == 0)
+        {
+            PlayerPrefs.SetInt("StartSalve", 0);
+        }
         Carregar();
         //_posPlayer.localPosition = _pos[_partfase].transform.position;
     }

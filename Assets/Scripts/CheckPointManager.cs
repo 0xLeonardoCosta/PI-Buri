@@ -24,6 +24,7 @@ public class CheckPointManager : MonoBehaviour
         if (other.gameObject.CompareTag(_tagCheckPoint))
         {
             Debug.Log("Posição CheckPoint" + other.transform.position);
+            _gameManager.Salvar();
             _gameManager.CheckPointSalvar(other.transform.position);
         }
     }
