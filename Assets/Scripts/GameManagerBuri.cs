@@ -15,13 +15,14 @@ public class GameManagerBuri : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("StartSave") == 0)
         {
-            PlayerPrefs.SetInt("StartSalve", 0);
+            PlayerPrefs.SetInt("StartSave", 0);
         }
         Carregar();
         //_posPlayer.localPosition = _pos[_partfase].transform.position;
     }
     public void CheckPointSalvar(Vector3 pos)
     {
+        PlayerPrefs.SetInt("StartSave", 1);
         PlayerPrefs.SetFloat("PosX", pos.x);
         PlayerPrefs.SetFloat("PosY", pos.y);
         PlayerPrefs.SetFloat("PosZ", pos.z);
@@ -33,6 +34,7 @@ public class GameManagerBuri : MonoBehaviour
     public void Salvar()
     {
         PlayerPrefs.SetInt("fase", _fase);
+        PlayerPrefs.SetInt("StartSave", 1);
     }
     public void Carregar()
     {
