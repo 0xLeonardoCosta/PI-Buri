@@ -3,7 +3,107 @@ guid: 7df87693d99fd3b4c9e895230a4c9e94
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CavernaIara_Material
+    second: {fileID: 2100000, guid: 126b644c63921e14b8d91a40d99067ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FuroKidney1_Material
+    second: {fileID: 2100000, guid: 251b7ba88c1c61249960da104ef14082, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FuroKidney2_Material
+    second: {fileID: 2100000, guid: bf37a2d2fdb98564383b22ee244b073a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FuroKidney3_Material
+    second: {fileID: 2100000, guid: d6c231f8dc1a86c47b2b8d5464589fd8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FuroKidney4_Material
+    second: {fileID: 2100000, guid: e88b1f009420e3740b94af69bf4eaa21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FuroKidney5_Material
+    second: {fileID: 2100000, guid: 8339d70244ad8004d8e6f14f2c982ce9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FuroKidney6_Material
+    second: {fileID: 2100000, guid: 6979fd0ed99254b4d83e277c460072b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FuroKidney7_Material
+    second: {fileID: 2100000, guid: 55fd6317507730945be07180b349a7e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FuroKidney8_Material
+    second: {fileID: 2100000, guid: f6a2f0ae19fe74646b85c5c9e03c6635, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FuroKidney9_Material
+    second: {fileID: 2100000, guid: ed465dd93c9da3547b282551f4c17a26, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IlhaAmarAntes1_Material
+    second: {fileID: 2100000, guid: 8d700c5b740fc4742bbfb6e601d2cb50, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IlhaAmarAntes2_Material
+    second: {fileID: 2100000, guid: b18fd8aa476e4834bb5fb37f4cc4bb5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IlhaBatativo_Material
+    second: {fileID: 2100000, guid: bed27c13807018c43a89db5b1b5312be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IlhaDoFarol1_Material
+    second: {fileID: 2100000, guid: 9e69dc55b79f77a43a90cee6578a1ec5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IlhaDoFarol2_Material
+    second: {fileID: 2100000, guid: 94b6aff2022764540a42f31cab76b1b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IlhaMatinta1_Material
+    second: {fileID: 2100000, guid: 773f57a2b8dac174faf3a68b7e41f1b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IlhaMatinta2_Material
+    second: {fileID: 2100000, guid: bf4b77e9ca34e1d4fbe6d4f15da75e85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IlhaXimba1_Material
+    second: {fileID: 2100000, guid: aa4e65488313aaa4aa39dd7d55ba676f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IlhaXimba2_Material
+    second: {fileID: 2100000, guid: 99d072379c4dddc45be63deb455729ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IlhaXimba3_Material
+    second: {fileID: 2100000, guid: 5bcc03fefb675c746b38a330a379ff49, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
