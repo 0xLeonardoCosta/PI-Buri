@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitNumeros : Item2D
+public class HitNumeros : projetil
 {
-    public override void DestroyItem()
+   public override void DestroyItem()
     {
-        StartCoroutine(DestruirTime());
+
     }
 
-    IEnumerator DestruirTime()
+    IEnumerable DestruirTime()
     {
-        Debug.Log("tomaaaaaa");
         Textura.enabled = false;
         PartSaida.SetActive(true);
         yield return new WaitForSeconds(3f);
