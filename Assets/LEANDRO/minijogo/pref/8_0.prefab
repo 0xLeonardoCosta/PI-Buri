@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 948806630194517122}
   - component: {fileID: 3803192102999500794}
   - component: {fileID: 6481583326313958561}
+  - component: {fileID: -3623070407858390044}
   m_Layer: 0
   m_Name: 8_0
   m_TagString: Untagged
@@ -194,10 +195,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ac40eb08d318347920bafd7acd73da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partMorte: {fileID: 0}
-  _restart: {fileID: 0}
-  _meshe: {fileID: 0}
-  _collider: {fileID: 0}
+  _score: 0
+  _pontos: {fileID: 0}
+  _textura: {fileID: 0}
+  _partSaida: {fileID: 0}
+--- !u!114 &-3623070407858390044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3020322514183334581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29ac40eb08d318347920bafd7acd73da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _score: 0
+  _pontos: {fileID: 0}
+  _textura: {fileID: 0}
+  _partSaida: {fileID: 0}
 --- !u!1 &3367595248297418622
 GameObject:
   m_ObjectHideFlags: 0

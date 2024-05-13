@@ -10,6 +10,7 @@ public class projetil : MonoBehaviour
     public TextMeshProUGUI _pontos;
     [SerializeField] SpriteRenderer _textura;
     [SerializeField] GameObject _partSaida;
+    [SerializeField] Collider2D _Collider2D;
 
 
     // Start is called before the first frame update
@@ -17,6 +18,7 @@ public class projetil : MonoBehaviour
     {
         _pontos = Camera.main.GetComponent<MiniGameController>()._pontos;
         _textura = GetComponent<SpriteRenderer>();
+        _Collider2D = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame

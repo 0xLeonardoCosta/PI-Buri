@@ -9610,6 +9610,7 @@ GameObject:
   - component: {fileID: 971545267767586400}
   - component: {fileID: 2521421511157263549}
   - component: {fileID: 5422054500480615430}
+  - component: {fileID: -3002125007482798292}
   m_Layer: 0
   m_Name: 3_0
   m_TagString: Untagged
@@ -9790,10 +9791,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ac40eb08d318347920bafd7acd73da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _partMorte: {fileID: 0}
-  _restart: {fileID: 0}
-  _meshe: {fileID: 0}
-  _collider: {fileID: 0}
+  _score: 0
+  _pontos: {fileID: 0}
+  _textura: {fileID: 0}
+  _partSaida: {fileID: 0}
+--- !u!114 &-3002125007482798292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5073384193842711614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29ac40eb08d318347920bafd7acd73da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _score: 0
+  _pontos: {fileID: 0}
+  _textura: {fileID: 0}
+  _partSaida: {fileID: 0}
 --- !u!1 &8878569875463550904
 GameObject:
   m_ObjectHideFlags: 0

@@ -4866,6 +4866,7 @@ GameObject:
   - component: {fileID: 6217486663216542987}
   - component: {fileID: 2751323682428270421}
   - component: {fileID: 1225545711168250232}
+  - component: {fileID: -122550341345932844}
   m_Layer: 0
   m_Name: 1_0
   m_TagString: Untagged
@@ -5034,6 +5035,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-122550341345932844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5913435536832855344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29ac40eb08d318347920bafd7acd73da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _score: 0
+  _pontos: {fileID: 0}
+  _textura: {fileID: 6776270201886620952}
+  _partSaida: {fileID: 6589485137887734810}
+  _Collider2D: {fileID: 0}
 --- !u!1 &6589485137887734810
 GameObject:
   m_ObjectHideFlags: 0
@@ -14523,7 +14541,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 57
   m_RenderMode: 1
   m_MeshDistribution: 0
   m_SortMode: 0

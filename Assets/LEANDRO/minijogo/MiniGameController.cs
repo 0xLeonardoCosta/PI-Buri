@@ -20,7 +20,8 @@ public class MiniGameController : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    private void OnTriggerEnter2D(Collider2D collision)
+    
     {
         // Debug.Log(col.gameObject.name);
         /*_score = Camera.main.GetComponent<MiniGameController>()._score;
@@ -28,6 +29,7 @@ public class MiniGameController : MonoBehaviour
         _pontos.text = Camera.main.GetComponent<MiniGameController>()._score + "Pontos";*/
         _score++;
         _pontos.text = "Pontos: " + _score;
-        Destroy(col.gameObject);
+        collision.GetComponent<projetil>().DestroyItem();
+        //Destroy(col.gameObject);
     }
 }
