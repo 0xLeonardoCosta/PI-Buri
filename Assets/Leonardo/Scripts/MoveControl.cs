@@ -86,6 +86,7 @@ public class MoveControl : MonoBehaviour
     [SerializeField] public bool _inputBaladeira; //Input de baladeira
     [SerializeField] public bool _usandoCanoa;
     [SerializeField] public bool _estaCorrendo;
+    [SerializeField] public float _estaminaValue;
     [SerializeField] public bool _estaAndando;
     [SerializeField] public bool _estaNaAgua;
     [SerializeField] Vector3 magnitude;
@@ -238,16 +239,19 @@ public class MoveControl : MonoBehaviour
         _anim.SetBool("Morte", _gameOver);
     }
     public void EstaCorrendo()
-    {   
-        if (_estaCorrendo == false)
+    {
+        if (_estaminaValue >= 0)
         {
-            _estaCorrendo = true;
-            _speed = _speedMax;
-        }
-        else if (_estaCorrendo == true)
-        {
-            _estaCorrendo = false;
-            _speed = _speedMin;
+            if (_estaCorrendo == false)
+            {
+                _estaCorrendo = true;
+                _speed = _speedMax;
+            }
+            else if (_estaCorrendo == true)
+            {
+                _estaCorrendo = false;
+                _speed = _speedMin;
+            }
         }
         _anim.SetBool("EstaCorrendo", _estaCorrendo);
     }
@@ -442,6 +446,8 @@ public class MoveControl : MonoBehaviour
     public void SetEstaCorrendo(InputAction.CallbackContext value)
     {
         EstaCorrendo();
+     //   value.performed
+
     }
     public void SetCameraAnalogico(InputAction.CallbackContext value) //Pulo: true ou false
     {
