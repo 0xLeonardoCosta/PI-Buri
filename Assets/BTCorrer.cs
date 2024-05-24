@@ -18,21 +18,33 @@ public class BTCorrer : MonoBehaviour
     void Start()
     {
         _moveControl = _player.GetComponent<MoveControl>();
+        _texto.text = "CORRER";
     }
 
     void Update()
     {
-        if (_moveControl._estaCorrendo == true)
+        if (_moveControl._checkCorrendoBT == true)
         {
             _btCorrer.sprite = _btPressionado;
             _texto.transform.position = _pos1.position;
-            _texto.text = "CORRER";
+           // _texto.text = "CORRER";
         }
         else
         {
             _btCorrer.sprite = _btNaoPressionado;
             _texto.transform.position = _pos2.position;
-            _texto.text = "ANDAR";
+           // _texto.text = "CORRER";
         }
     }
+
+    public void clickButton()
+    {
+        _moveControl._checkCorrendoBT = !_moveControl._checkCorrendoBT;
+    }
+    public void TaskOnClick()
+    {
+        //Output this to console when Button1 or Button3 is clicked
+        Debug.Log("You have clicked the button!");
+    }
+
 }

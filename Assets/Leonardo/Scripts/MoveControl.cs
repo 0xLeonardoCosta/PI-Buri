@@ -40,7 +40,7 @@ public class MoveControl : MonoBehaviour
 
     private float _gravityValue = -9.81f;
     public float _gravityMultiplier;
-    [SerializeField] float _speed;
+    public float _speed;
     [SerializeField] float _speedMin = 0.05f;
     [SerializeField] float _speedMax = 0.12f;
     [SerializeField] float _speedNaAgua = 0.1f;
@@ -99,6 +99,10 @@ public class MoveControl : MonoBehaviour
     [SerializeField] GameObject _remo;
     [SerializeField] float rotation;
 
+    public bool _checkCorrendo;
+    public bool _checkCorrendoBT;
+    public bool _correndoAtivo;
+
 
 
     void Start()
@@ -115,7 +119,7 @@ public class MoveControl : MonoBehaviour
         _gaaameController = Camera.main.GetComponent<GaaameController>();
         _hudGames = _gaaameController._canvasHud.GetComponent<HudGames>();
         _playerPontos = Camera.main.GetComponent<Playpontos>();
-        EstaCorrendo();
+      
 
 
     }
@@ -124,6 +128,7 @@ public class MoveControl : MonoBehaviour
     {
         if (!_usandoCanoa)
         {
+            EstaCorrendo();
             Move();
             //LookAtMovementDirection();// pausar na mira
             RotIni();// so quando mirar
@@ -134,7 +139,7 @@ public class MoveControl : MonoBehaviour
             ReativarBaladeira();
             BaladeiraCheck();
             CanoaCheck();
-            EstaAndando();
+           
             NaAguaCheck();
             _anim.SetLayerWeight(1, 1);
         }
@@ -144,6 +149,7 @@ public class MoveControl : MonoBehaviour
         }
         //CameraControl();
         _variacaoAltura = _controller.velocity.y;
+        _anim.SetBool("EstaCorrendo", _estaCorrendo);
     }
     void AndarN()// Sincronizar animações - Andar movimento de perna/Andar movimento de braço
     {
@@ -240,20 +246,22 @@ public class MoveControl : MonoBehaviour
     }
     public void EstaCorrendo()
     {
-        if (_estaminaValue >= 0)
+        if (_estaminaValue >= 0 && (_checkCorrendo || _checkCorrendoBT))
         {
-            if (_estaCorrendo == false)
-            {
-                _estaCorrendo = true;
-                _speed = _speedMax;
-            }
-            else if (_estaCorrendo == true)
-            {
-                _estaCorrendo = false;
-                _speed = _speedMin;
-            }
+            _speed = _speedMax;
+            _estaCorrendo = true;
+            _checkCorrendoBT = true;
+
+
         }
-        _anim.SetBool("EstaCorrendo", _estaCorrendo);
+        else
+        {
+            _speed = _speedMin;
+            _estaCorrendo = false;
+            _checkCorrendoBT = false;
+
+        }
+       
     }
     public void EstaAndando()
     {   
@@ -445,8 +453,21 @@ public class MoveControl : MonoBehaviour
     }
     public void SetEstaCorrendo(InputAction.CallbackContext value)
     {
-        EstaCorrendo();
-     //   value.performed
+        if (_correndoAtivo)
+        {
+            _checkCorrendo = value.performed;
+            if (!_checkCorrendo)
+            {
+                _speed = 0;
+            }
+           
+        }
+        else
+        {
+            _checkCorrendo=false;
+            _speed = 0;
+        }
+     //   if(_speed)
 
     }
     public void SetCameraAnalogico(InputAction.CallbackContext value) //Pulo: true ou false
