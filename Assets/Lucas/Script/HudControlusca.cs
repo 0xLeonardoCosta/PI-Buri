@@ -39,4 +39,10 @@ public class HudControlusca : MonoBehaviour
     {
         SceneManager.LoadScene("BuriXimba");
     }
+
+    public void SairJogo()
+    {
+        Debug.Log("Sair do Jogo");
+        Application.Quit();
+    }
 }
