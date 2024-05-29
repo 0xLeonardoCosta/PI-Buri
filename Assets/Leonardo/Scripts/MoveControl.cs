@@ -103,7 +103,7 @@ public class MoveControl : MonoBehaviour
     public bool _checkCorrendoBT;
     public bool _correndoAtivo;
 
-
+    public Transform _hudGameBaixo;
 
     void Start()
     {
@@ -128,7 +128,16 @@ public class MoveControl : MonoBehaviour
     {
         if (!_usandoCanoa)
         {
-            EstaCorrendo();
+            if (_hudGameBaixo.gameObject.activeInHierarchy)
+            {
+                EstaCorrendoCelular();
+            }
+            else
+            {
+                EstaCorrendo();
+            }
+           
+
             Move();
             //LookAtMovementDirection();// pausar na mira
             RotIni();// so quando mirar
@@ -244,13 +253,37 @@ public class MoveControl : MonoBehaviour
         _anim.SetBool("groundCheck", _checkGround);
         _anim.SetBool("Morte", _gameOver);
     }
+
+
+    void EstaCorrendoCelular()
+    {
+        if (_estaminaValue >= 0 && _checkCorrendoBT)
+        {
+            _speed = _speedMax;
+         
+            _checkCorrendoBT = true;
+            _estaCorrendo = true;
+
+
+        }
+        else
+        {
+            _speed = _speedMin;
+          
+            _checkCorrendoBT = false;
+            _estaCorrendo = false;
+
+        }
+    }
     public void EstaCorrendo()
     {
-        if (_estaminaValue >= 0 && (_checkCorrendo || _checkCorrendoBT))
+        
+
+        if (_estaminaValue >= 0 && _checkCorrendo)
         {
             _speed = _speedMax;
             _estaCorrendo = true;
-            _checkCorrendoBT = true;
+            
 
 
         }
@@ -258,7 +291,7 @@ public class MoveControl : MonoBehaviour
         {
             _speed = _speedMin;
             _estaCorrendo = false;
-            _checkCorrendoBT = false;
+            
 
         }
        

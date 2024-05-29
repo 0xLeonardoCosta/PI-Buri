@@ -36,6 +36,8 @@ public class HudGames : MonoBehaviour
 
     float _tamV;
 
+   
+
     [SerializeField] Color[] _cor;
     [SerializeField] Image _corPanelHit;
 
