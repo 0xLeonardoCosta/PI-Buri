@@ -19,6 +19,7 @@ TagManager:
   - bala2d
   - CheckPoint
   - Casa
+  - Camera
   layers:
   - Default
   - TransparentFX

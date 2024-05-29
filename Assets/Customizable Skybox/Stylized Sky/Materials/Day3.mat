@@ -26,7 +26,7 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _AtmosphereThickness: 1
+    - _AtmosphereThickness: 1.24
     - _Exposure: 1.3
     - _HorizonLineContribution: 0
     - _HorizonLineExponent: 1
@@ -38,7 +38,7 @@ Material:
     - _SunHaloContribution: 0.5
     - _SunHaloExponent: 50
     - _SunSize: 0.067
-    - _SunSizeConvergence: 5
+    - _SunSizeConvergence: 10
     - _Title: 0
     - __dirty: 0
     m_Colors:
