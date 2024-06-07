@@ -5,6 +5,7 @@ using UnityEngine;
 public class GaaameController : MonoBehaviour
 {
     public Transform _player;
+    public Transform _miniCam;
     public Transform _playerArm;
     public Transform _posBuriCanoa;
     public Canvas _canvasHud;
