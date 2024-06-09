@@ -21,12 +21,12 @@ public class BotaoComecar : MonoBehaviour
     }
     public void Clicou()
     {
-        Invoke("Animacao", 0f);
+        StartCoroutine("Animacao", 0f);
     }
     IEnumerator Animacao()
     {
-        _telaPainelCor.GetComponent<Image>().DOFade(0, 0.15f);
-        _letreiro.GetComponent<Transform>().DOMove(_pos.position, 0.25f);
+        _telaPainelCor.GetComponent<Image>().DOFade(0, 1f);
+        _letreiro.GetComponent<Transform>().DOMove(_pos.position, 0.5f);
         yield return null;
     }
 }
