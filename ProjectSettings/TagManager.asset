@@ -20,6 +20,7 @@ TagManager:
   - CheckPoint
   - Casa
   - Camera
+  - Missao
   layers:
   - Default
   - TransparentFX

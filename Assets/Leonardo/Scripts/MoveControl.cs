@@ -73,9 +73,10 @@ public class MoveControl : MonoBehaviour
     public float speed = 1.0f;
 
     [SerializeField] GameObject _botaoCorrerAndar;
+    [SerializeField] List<GameObject>  _pontoDaMissao;
 
     //------------------Canoa---------------------
-    
+
     [Header("Gatilhos da animação")]
     [SerializeField] public float _inputX, _inputY;
     [SerializeField] public float _variacaoVelocidadeAndar;
@@ -160,6 +161,8 @@ public class MoveControl : MonoBehaviour
         _variacaoAltura = _controller.velocity.y;
         _anim.SetBool("EstaCorrendo", _estaCorrendo);
     }
+
+
     void AndarN()// Sincronizar animações - Andar movimento de perna/Andar movimento de braço
     {
         _anim.SetLayerWeight(0, 1); //perna
@@ -538,6 +541,21 @@ public class MoveControl : MonoBehaviour
         {
             other.GetComponent<CanoaMove>()._moveBuri = gameObject.GetComponent<MoveControl>();
             other.GetComponent<CanoaMove>()._botaoCanoa.SetActive(true);
+        }
+
+        if (other.gameObject.CompareTag("Missao")) 
+        {
+            Debug.Log("Aguaaaaaaaaaaaaaaa");
+            _pontoDaMissao[0].SetActive(false);
+            _pontoDaMissao[1].SetActive(true);
+            //_pontoDaMissao[2].SetActive(false);
+
+
+        }
+        else
+        {
+            _pontoDaMissao[1].SetActive(false);
+            //_pontoDaMissao[2].SetActive(true);
         }
 
 
