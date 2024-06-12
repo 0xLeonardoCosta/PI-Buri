@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -546,17 +547,22 @@ public class MoveControl : MonoBehaviour
         if (other.gameObject.CompareTag("Missao")) 
         {
             Debug.Log("Aguaaaaaaaaaaaaaaa");
-            _pontoDaMissao[0].SetActive(false);
-            _pontoDaMissao[1].SetActive(true);
-            //_pontoDaMissao[2].SetActive(false);
+            _pontoDaMissao[0].SetActive(false); // xanaina
+            _pontoDaMissao[1].SetActive(true); // canoa
+            //_pontoDaMissao[2].SetActive(false); // detritos
+
 
 
         }
         else
         {
-            _pontoDaMissao[1].SetActive(false);
-            //_pontoDaMissao[2].SetActive(true);
+            
+            _pontoDaMissao[1].SetActive(false); // canoa
+            
+            //_pontoDaMissao[2].SetActive(true); // detritos
         }
+
+        
 
 
     }
