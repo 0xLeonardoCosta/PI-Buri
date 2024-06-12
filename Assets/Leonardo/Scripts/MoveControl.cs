@@ -75,6 +75,7 @@ public class MoveControl : MonoBehaviour
 
     [SerializeField] GameObject _botaoCorrerAndar;
     [SerializeField] List<GameObject>  _pontoDaMissao;
+    [SerializeField] GameObject _buriCabessote;
 
     //------------------Canoa---------------------
 
@@ -158,6 +159,7 @@ public class MoveControl : MonoBehaviour
         {
             MoveCanoa();
         }
+        CheckPointsOrientacao();
         //CameraControl();
         _variacaoAltura = _controller.velocity.y;
         _anim.SetBool("EstaCorrendo", _estaCorrendo);
@@ -467,6 +469,13 @@ public class MoveControl : MonoBehaviour
         Debug.Log(_inputBaladeira + " TiroBaladeira");
         //timer
     }
+    void CheckPointsOrientacao()
+    {
+        for (int i = 0; i < _pontoDaMissao.Count; i++)
+        {
+            _pontoDaMissao[i].transform.eulerAngles = new Vector3(_pontoDaMissao[i].transform.localEulerAngles.x, transform.eulerAngles.y, _pontoDaMissao[i].transform.localEulerAngles.z);
+        }
+    }
 
     public void Atirar()
     {
@@ -558,8 +567,7 @@ public class MoveControl : MonoBehaviour
         {
             
             _pontoDaMissao[1].SetActive(false); // canoa
-            
-            //_pontoDaMissao[2].SetActive(true); // detritos
+            _pontoDaMissao[2].SetActive(true); // detritos
         }
 
         
