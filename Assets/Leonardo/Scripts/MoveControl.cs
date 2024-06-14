@@ -553,19 +553,15 @@ public class MoveControl : MonoBehaviour
             other.GetComponent<CanoaMove>()._botaoCanoa.SetActive(true);
         }
 
-        if (other.gameObject.CompareTag("Missao")) 
+        if (other.gameObject.CompareTag("Missao"))
         {
             Debug.Log("Aguaaaaaaaaaaaaaaa");
             _pontoDaMissao[0].SetActive(false); // xanaina
             _pontoDaMissao[1].SetActive(true); // canoa
-            //_pontoDaMissao[2].SetActive(false); // detritos
-
-
-
+            _pontoDaMissao[2].SetActive(false); // detritos
         }
         else
         {
-            
             _pontoDaMissao[1].SetActive(false); // canoa
             _pontoDaMissao[2].SetActive(true); // detritos
         }
