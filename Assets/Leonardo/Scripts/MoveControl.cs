@@ -77,6 +77,8 @@ public class MoveControl : MonoBehaviour
     [SerializeField] List<GameObject>  _pontoDaMissao;
     [SerializeField] GameObject _buriCabessote;
 
+    [SerializeField] bool[] _checkPoint;
+
     //------------------Canoa---------------------
 
     [Header("Gatilhos da animação")]
@@ -555,20 +557,36 @@ public class MoveControl : MonoBehaviour
 
         if (other.gameObject.CompareTag("Missao"))
         {
-            Debug.Log("Aguaaaaaaaaaaaaaaa");
-            _pontoDaMissao[0].SetActive(false); // xanaina
-            _pontoDaMissao[1].SetActive(true); // canoa
-            _pontoDaMissao[2].SetActive(false); // detritos
+            if (_checkPoint[0] == true)
+            {
+                _checkPoint[1] = true;
+                _checkPoint[0] = false;
+            }
+            else if (_checkPoint[1] ==  true)
+            {
+                _checkPoint[2] = true;
+                _checkPoint[1] = false;
+            }
+            
+            if (_checkPoint[0]==true)
+            {
+                _pontoDaMissao[0].SetActive(true); // xanaina
+                _pontoDaMissao[1].SetActive(false); // canoa
+                _pontoDaMissao[2].SetActive(false); // detritos
+            }
+            else if (_checkPoint[1] == true)
+            {
+                _pontoDaMissao[0].SetActive(false); // xanaina
+                _pontoDaMissao[1].SetActive(true); // canoa
+                _pontoDaMissao[2].SetActive(false); // detritos
+            }
+            else if (_checkPoint[2] == true)
+            {
+                _pontoDaMissao[0].SetActive(false); // xanaina
+                _pontoDaMissao[1].SetActive(false); // canoa
+                _pontoDaMissao[2].SetActive(true); // detritos
+            }
         }
-        else
-        {
-            _pontoDaMissao[1].SetActive(false); // canoa
-            _pontoDaMissao[2].SetActive(true); // detritos
-        }
-
-        
-
-
     }
     private void OnTriggerExit(Collider other)
     {
