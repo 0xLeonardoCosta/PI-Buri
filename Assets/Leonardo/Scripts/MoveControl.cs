@@ -584,7 +584,7 @@ public class MoveControl : MonoBehaviour
             {
                 _pontoDaMissao[0].SetActive(false); // xanaina
                 _pontoDaMissao[1].SetActive(false); // canoa
-                _pontoDaMissao[2].SetActive(true); // detritos
+                _pontoDaMissao[2].SetActive (true); // detritos
             }
         }
     }
