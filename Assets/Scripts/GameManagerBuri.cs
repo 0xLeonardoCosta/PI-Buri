@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManagerBuri : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class GameManagerBuri : MonoBehaviour
 
     [SerializeField] Transform _posPlayer;
     [SerializeField] Transform[] _pos;
+    public GameObject _tutoral;
+    public GameObject _tutoralSairCanoa;
+    [SerializeField] List<string> _TextoTutoral;
+    [SerializeField] Text textTutor;
 
     void Start()
     {
@@ -40,5 +45,28 @@ public class GameManagerBuri : MonoBehaviour
     {
         _fase = PlayerPrefs.GetInt("fase");
         
+    }
+
+    public void Tutorial(int value, bool on)
+    {
+        _tutoral.SetActive(on);
+        textTutor.text = _TextoTutoral[value];
+
+    }
+
+    public void FecharTutorial(int value)
+    {
+        _tutoral.SetActive(false);
+        if (value == 0)// entrar na canoa
+        {
+            _tutoralSairCanoa.SetActive(true);
+        }
+       
+
+    }
+
+    public void TutoralSairCanoa(bool value)
+    {
+        _tutoralSairCanoa.SetActive(value);
     }
 }

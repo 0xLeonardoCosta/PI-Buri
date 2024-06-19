@@ -8,6 +8,7 @@ public class CanoaMove : MonoBehaviour
     public MoveControl _moveBuri;
 
     public GameObject _botaoCanoa;
+    public GameObject _textoSubirCanoa;
     
     [SerializeField] GameObject _rio;
 
@@ -30,11 +31,14 @@ public class CanoaMove : MonoBehaviour
 
     [SerializeField] float _velocidadeCurva;
     [SerializeField] float _velocidade;
+    GameManagerBuri _managerBuri;
     bool _dentroCanoa;
 
     void Start()
     {
+
         _player = Camera.main.GetComponent<GaaameController>()._player;
+        _managerBuri =Camera.main.GetComponent<GameManagerBuri>();
         _rb = GetComponent<Rigidbody>();
     }
 
@@ -70,6 +74,8 @@ public class CanoaMove : MonoBehaviour
     {
         if (_utilizandoCanoa)
         {
+            _managerBuri._tutoral.SetActive(false);
+            _managerBuri.TutoralSairCanoa(true);
             _rio.GetComponent<MeshCollider>().isTrigger = false;
             _moveBuri._usandoCanoa = true;
             _moveBuri._pivotCamera = transform;
@@ -106,6 +112,7 @@ public class CanoaMove : MonoBehaviour
         }
         else
         {
+            _managerBuri.TutoralSairCanoa(false);
             //Quando Buri sair da canoa
             _rio.GetComponent<MeshCollider>().isTrigger = true;
             _moveBuri._usandoCanoa = false;

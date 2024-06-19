@@ -111,9 +111,11 @@ public class MoveControl : MonoBehaviour
     public bool _correndoAtivo;
 
     public Transform _hudGameBaixo;
+    GameManagerBuri _GameManagerBuri;
 
     void Start()
     {
+        _GameManagerBuri = Camera.main.GetComponent<GameManagerBuri>();
         _timer = _timerValue;
         _controller = GetComponent<CharacterController>();
         _anim = GetComponent<Animator>();
@@ -559,6 +561,8 @@ public class MoveControl : MonoBehaviour
         {
             other.GetComponent<CanoaMove>()._moveBuri = gameObject.GetComponent<MoveControl>();
             other.GetComponent<CanoaMove>()._botaoCanoa.SetActive(true);
+            _GameManagerBuri.Tutorial(0,true);
+           // other.GetComponent<CanoaMove>()._textoSubirCanoa.SetActive(true);
         }
 
         if (other.gameObject.CompareTag("Missao"))
@@ -609,6 +613,8 @@ public class MoveControl : MonoBehaviour
         {
             other.GetComponent<CanoaMove>()._botaoCanoa.SetActive(false);
             other.GetComponent<CanoaMove>()._moveBuri = null;
+            // other.GetComponent<CanoaMove>()._textoSubirCanoa.SetActive(false);
+            _GameManagerBuri.Tutorial(0, false);
         }
     }
 
