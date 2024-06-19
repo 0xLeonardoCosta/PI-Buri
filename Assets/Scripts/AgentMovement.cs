@@ -7,6 +7,7 @@ public class AgentMovement : MonoBehaviour
     public LayerMask areaMask;  // Define the area mask the agent should use
     public float moveRadius = 10f;
     public Animator animator;   // Referência ao Animator
+    public MoveToTrigger _toTrigger;
 
     void Start()
     {
@@ -49,9 +50,22 @@ public class AgentMovement : MonoBehaviour
         Andar();
     }
 
+    public void AndarIni()
+    {
+        
+        Invoke("TimeAndar", 0.2f);
+    }
+
     void Andar()
     {
         float velocidade = agent.velocity.magnitude;
         animator.SetFloat("Andando", Mathf.Abs(velocidade));
+    }
+
+    void TimeAndar()
+    {
+        _toTrigger._iniciar = true;
+        agent.isStopped = false;
+        animator.SetInteger("JanocaAnim", 0);
     }
 }
