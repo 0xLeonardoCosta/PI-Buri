@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: f4e9d6bd58a5eee46a1e43dabd90ceaa
+guid: fb900b54a661d27448de839a6401672b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
   externalObjects: {}
   materials:
-    materialImportMode: 2
-    materialName: 0
-    materialSearch: 1
-    materialLocation: 1
+    materialImportMode: 1
+    materialName: 2
+    materialSearch: 2
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Levantando
-      takeName: mixamo.com
-      internalID: -203655887218126122
+      name: ARMATURE-BANDEIRA|Peixe Vermelho - Nadando.002
+      takeName: ARMATURE-BANDEIRA|Peixe Vermelho - Nadando.002
+      internalID: -8097137616065025147
       firstFrame: 0
-      lastFrame: 77
+      lastFrame: 90
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

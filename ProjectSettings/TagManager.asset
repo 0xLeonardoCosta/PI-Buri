@@ -21,6 +21,7 @@ TagManager:
   - Casa
   - Camera
   - Missao
+  - Walking-NPC-Janaina
   layers:
   - Default
   - TransparentFX
@@ -33,8 +34,8 @@ TagManager:
   - Casas
   - Ground
   - _minicamera
-  - 
-  - 
+  - Walking-NPC-Janaina
+  - NPC
   - 
   - 
   - 
