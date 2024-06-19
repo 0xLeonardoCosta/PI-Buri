@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "UsarCanoa",
+                    "type": "Button",
+                    "id": "7ea33f02-dcdc-4633-969e-0f2993315165",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -456,6 +465,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "EstaCorrendo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fecaf910-c7bb-4435-aa2b-f9744bc87703",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UsarCanoa",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "366acdb3-31c0-4c2b-a1e4-0937d9db0ed2",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UsarCanoa",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

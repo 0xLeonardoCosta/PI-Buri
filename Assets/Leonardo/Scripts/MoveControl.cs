@@ -79,6 +79,8 @@ public class MoveControl : MonoBehaviour
 
     [SerializeField] bool[] _checkPoint;
 
+    [SerializeField] GameObject _canoa;
+
     //------------------Canoa---------------------
 
     [Header("Gatilhos da animação")]
@@ -498,6 +500,10 @@ public class MoveControl : MonoBehaviour
     public void SetBaladeira(InputAction.CallbackContext value)
     {
         AtirarBaladeira();
+    }
+    public void UsarCanoa(InputAction.CallbackContext value)
+    {
+        _canoa.GetComponent<CanoaMove>().PressionarBotao();
     }
     public void SetEstaCorrendo(InputAction.CallbackContext value)
     {

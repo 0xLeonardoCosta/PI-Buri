@@ -71,6 +71,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UsarCanoa"",
+                    ""type"": ""Button"",
+                    ""id"": ""7ea33f02-dcdc-4633-969e-0f2993315165"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -480,6 +489,28 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""EstaCorrendo"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fecaf910-c7bb-4435-aa2b-f9744bc87703"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UsarCanoa"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""366acdb3-31c0-4c2b-a1e4-0937d9db0ed2"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UsarCanoa"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -493,6 +524,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Buri_SetCameraAnalogico = m_Buri.FindAction("SetCameraAnalogico", throwIfNotFound: true);
         m_Buri_UsarBaladeira = m_Buri.FindAction("UsarBaladeira", throwIfNotFound: true);
         m_Buri_EstaCorrendo = m_Buri.FindAction("EstaCorrendo", throwIfNotFound: true);
+        m_Buri_UsarCanoa = m_Buri.FindAction("UsarCanoa", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -559,6 +591,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Buri_SetCameraAnalogico;
     private readonly InputAction m_Buri_UsarBaladeira;
     private readonly InputAction m_Buri_EstaCorrendo;
+    private readonly InputAction m_Buri_UsarCanoa;
     public struct BuriActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -568,6 +601,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @SetCameraAnalogico => m_Wrapper.m_Buri_SetCameraAnalogico;
         public InputAction @UsarBaladeira => m_Wrapper.m_Buri_UsarBaladeira;
         public InputAction @EstaCorrendo => m_Wrapper.m_Buri_EstaCorrendo;
+        public InputAction @UsarCanoa => m_Wrapper.m_Buri_UsarCanoa;
         public InputActionMap Get() { return m_Wrapper.m_Buri; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -592,6 +626,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @EstaCorrendo.started += instance.OnEstaCorrendo;
             @EstaCorrendo.performed += instance.OnEstaCorrendo;
             @EstaCorrendo.canceled += instance.OnEstaCorrendo;
+            @UsarCanoa.started += instance.OnUsarCanoa;
+            @UsarCanoa.performed += instance.OnUsarCanoa;
+            @UsarCanoa.canceled += instance.OnUsarCanoa;
         }
 
         private void UnregisterCallbacks(IBuriActions instance)
@@ -611,6 +648,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @EstaCorrendo.started -= instance.OnEstaCorrendo;
             @EstaCorrendo.performed -= instance.OnEstaCorrendo;
             @EstaCorrendo.canceled -= instance.OnEstaCorrendo;
+            @UsarCanoa.started -= instance.OnUsarCanoa;
+            @UsarCanoa.performed -= instance.OnUsarCanoa;
+            @UsarCanoa.canceled -= instance.OnUsarCanoa;
         }
 
         public void RemoveCallbacks(IBuriActions instance)
@@ -635,5 +675,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnSetCameraAnalogico(InputAction.CallbackContext context);
         void OnUsarBaladeira(InputAction.CallbackContext context);
         void OnEstaCorrendo(InputAction.CallbackContext context);
+        void OnUsarCanoa(InputAction.CallbackContext context);
     }
 }
