@@ -81,6 +81,8 @@ public class MoveControl : MonoBehaviour
 
     [SerializeField] GameObject _canoa;
 
+    [SerializeField] TutorControl _textoControl;
+
     //------------------Canoa---------------------
 
     [Header("Gatilhos da animação")]
@@ -128,7 +130,7 @@ public class MoveControl : MonoBehaviour
         _gaaameController = Camera.main.GetComponent<GaaameController>();
         _hudGames = _gaaameController._canvasHud.GetComponent<HudGames>();
         _playerPontos = Camera.main.GetComponent<Playpontos>();
-      
+        _textoControl = Camera.main.GetComponent<GaaameController>()._canvasHud.GetComponent<TutorControl>();
 
 
     }
@@ -577,24 +579,39 @@ public class MoveControl : MonoBehaviour
                 _checkPoint[2] = true;
                 _checkPoint[1] = false;
             }
+            else if (_checkPoint[2] ==  true)
+            {
+                _checkPoint[3] = true;
+                _checkPoint[2] = false;
+            }
             
             if (_checkPoint[0]==true)
             {
                 _pontoDaMissao[0].SetActive(true); // xanaina
                 _pontoDaMissao[1].SetActive(false); // canoa
                 _pontoDaMissao[2].SetActive(false); // detritos
+                //_textoControl.valor = 0;
+                _textoControl.TextTutorOM(0);
             }
             else if (_checkPoint[1] == true)
             {
                 _pontoDaMissao[0].SetActive(false); // xanaina
                 _pontoDaMissao[1].SetActive(true); // canoa
                 _pontoDaMissao[2].SetActive(false); // detritos
+                //_textoControl.valor = 1;
+                _textoControl.TextTutorOM(0);
             }
             else if (_checkPoint[2] == true)
             {
                 _pontoDaMissao[0].SetActive(false); // xanaina
                 _pontoDaMissao[1].SetActive(false); // canoa
                 _pontoDaMissao[2].SetActive (true); // detritos
+                //_textoControl.valor = 2;
+                _textoControl.TextTutorOM(1);
+            }
+            else if (_checkPoint[3] == true)
+            {
+                _textoControl.TextTutorOM(2);
             }
         }
     }
