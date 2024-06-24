@@ -9,6 +9,7 @@ public class MoveToTrigger : MonoBehaviour
     public bool _iniciar;
     bool _outrodest;
     public float parada;
+    AgentMovement agentMovement;
 
     void Update()
     {
@@ -18,6 +19,7 @@ public class MoveToTrigger : MonoBehaviour
             if (agent.remainingDistance < 1 && !_outrodest)
             {
                 _outrodest = true;
+                agentMovement._startRot = true;
                 Invoke("OutroDestido", parada);
             }
         }
@@ -31,10 +33,11 @@ public class MoveToTrigger : MonoBehaviour
 
     private void Start()
     {
-        //_iniciar = true;
+        agentMovement = GetComponent<AgentMovement>();
     }
     void OutroDestido()
     {
         destination = destination2;
+        agentMovement._startRot = false;
     }
 }

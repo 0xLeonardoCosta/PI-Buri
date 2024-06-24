@@ -9,6 +9,13 @@ public class AgentMovement : MonoBehaviour
     public Animator animator;   // Referência ao Animator
     public MoveToTrigger _toTrigger;
 
+
+    Transform from;
+    public Transform to;
+    float speed = 0.01f;
+    float timeCount = 0.0f;
+    public bool _startRot;
+
     void Start()
     {
         // Inicializar componentes
@@ -48,6 +55,11 @@ public class AgentMovement : MonoBehaviour
 
         // Atualiza a animação
         Andar();
+
+        if(_startRot)
+        {
+            Rot();
+        }
     }
 
     public void AndarIni()
@@ -67,5 +79,11 @@ public class AgentMovement : MonoBehaviour
         _toTrigger._iniciar = true;
         agent.isStopped = false;
         animator.SetInteger("JanocaAnim", 0);
+    }
+
+    void Rot()
+    {
+        transform.rotation = Quaternion.Lerp(transform.rotation, to.rotation, timeCount * speed);
+        timeCount = timeCount + Time.deltaTime;
     }
 }

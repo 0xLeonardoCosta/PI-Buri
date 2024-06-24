@@ -12,6 +12,8 @@ public class JanocaMove2 : MonoBehaviour
 
     private CharacterController character;
     public float velocidade = 1.5f;
+    public float gravity = -9.81f; // Valor da gravidade
+    private Vector3 movimento;
 
     // Start is called before the first frame update
     private void Awake()
@@ -28,12 +30,22 @@ public class JanocaMove2 : MonoBehaviour
     {
         entradasJogador = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-
+        float andar = entradasJogador.magnitude;
 
         animator.SetFloat("InputX", entradasJogador.x);
         animator.SetFloat("InputY", entradasJogador.y);
+        animator.SetFloat("Andar", andar);
 
-        character.Move(new Vector3(entradasJogador.x, -9.81f, entradasJogador.y) * velocidade * Time.deltaTime);
+        Vector3 move = new Vector3(entradasJogador.x, 0f, entradasJogador.y);
+        if (move != Vector3.zero)
+        {
+            // Rotacionar o personagem para a direção do movimento
+            transform.rotation = Quaternion.LookRotation(move);
+        }
+
+        // Aplicar movimento e gravidade
+        movimento = move * velocidade;
+        movimento.y = gravity * Time.deltaTime; // Aplicar gravidade
+        character.Move(movimento * Time.deltaTime);
     }
 }
-
