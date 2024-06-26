@@ -573,11 +573,13 @@ public class MoveControl : MonoBehaviour
             {
                 _checkPoint[1] = true;
                 _checkPoint[0] = false;
+                //_textoControl._spriteExclamatIVO.SetActive(false);
             }
             else if (_checkPoint[1] ==  true)
             {
                 _checkPoint[2] = true;
                 _checkPoint[1] = false;
+                
             }
             else if (_checkPoint[2] ==  true)
             {
