@@ -28,8 +28,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4446159772414109749}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4818,8 +4818,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4446159772414109749}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9654,14 +9654,13 @@ GameObject:
   - component: {fileID: 4446159772414109749}
   - component: {fileID: 8777055512003842590}
   - component: {fileID: 4777605602331655315}
-  - component: {fileID: 375412458157151359}
   m_Layer: 0
   m_Name: azulexplosao
   m_TagString: FxTemporaire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4446159772414109749
 Transform:
   m_ObjectHideFlags: 0
@@ -9672,8 +9671,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 4.7, y: 4.7, z: 4.7}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4844591478284155313}
   - {fileID: 1120684134926124929}
@@ -14342,7 +14341,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 57
   m_RenderMode: 1
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -14373,19 +14372,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &375412458157151359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7174705991612810820}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fd2e8874f60266498a388d7229a1bac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnlyDeactivate: 0
 --- !u!1 &8551547545967394560
 GameObject:
   m_ObjectHideFlags: 0
@@ -14400,7 +14386,6 @@ GameObject:
   - component: {fileID: 6015864318962307236}
   - component: {fileID: 9219542359628644124}
   - component: {fileID: 5263443001928043730}
-  - component: {fileID: 4976217554743692640}
   m_Layer: 0
   m_Name: 7_0
   m_TagString: Untagged
@@ -14583,21 +14568,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _score: 0
   _pontos: {fileID: 0}
-  _textura: {fileID: 0}
-  _partSaida: {fileID: 0}
---- !u!114 &4976217554743692640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8551547545967394560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29ac40eb08d318347920bafd7acd73da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _score: 0
-  _pontos: {fileID: 0}
-  _textura: {fileID: 0}
-  _partSaida: {fileID: 0}
+  _textura: {fileID: 6274414234098591814}
+  _partSaida: {fileID: 7174705991612810820}
+  _Collider2D: {fileID: 0}
