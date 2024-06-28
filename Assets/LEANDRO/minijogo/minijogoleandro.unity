@@ -732,7 +732,7 @@ MonoBehaviour:
   _arma: {fileID: 1672439688}
   _forcadoTiro: 0.37
   _timer: 0.69
-  _timerValue: 0.01
+  _timerValue: 0.5
   _speed: 200
 --- !u!114 &1479559295
 MonoBehaviour:

@@ -56,6 +56,8 @@ public class MoveFloatBuri : MonoBehaviour
                 _timer = _timerValue;
             }
         }
+
+        _anim.SetBool("Atirar", _atirar);
     }
 
     /*void OnCollisionEnter2D(Collision2D col)
@@ -75,7 +77,7 @@ public class MoveFloatBuri : MonoBehaviour
         _temp.GetComponent<Rigidbody2D>().velocity = new Vector2(_forcadoTiro, 0);
         Destroy(_temp.gameObject, 3f);
         
-        _anim.SetBool("Atirar", _atirar);
+        
     }
 
     public void SetMove(InputAction.CallbackContext value) //Input direcional X e Z (Input System)
