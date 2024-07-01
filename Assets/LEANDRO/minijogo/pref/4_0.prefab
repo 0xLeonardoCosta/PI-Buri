@@ -4989,6 +4989,7 @@ MonoBehaviour:
   _textura: {fileID: 4321311367009769927}
   _partSaida: {fileID: 5469907524497506842}
   _Collider2D: {fileID: 0}
+  _resultado: 4
 --- !u!1 &5469907524497506842
 GameObject:
   m_ObjectHideFlags: 0

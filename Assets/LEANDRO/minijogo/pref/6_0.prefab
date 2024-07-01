@@ -14571,3 +14571,4 @@ MonoBehaviour:
   _textura: {fileID: 768561897764898931}
   _partSaida: {fileID: 6103882318495012971}
   _Collider2D: {fileID: 0}
+  _resultado: 6

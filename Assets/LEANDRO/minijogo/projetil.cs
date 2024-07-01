@@ -11,7 +11,9 @@ public class projetil : MonoBehaviour
     [SerializeField] SpriteRenderer _textura;
     [SerializeField] GameObject _partSaida;
     [SerializeField] Collider2D _Collider2D;
+    protected MiniGameController _miniGameController;
 
+   
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -19,6 +21,10 @@ public class projetil : MonoBehaviour
         _pontos = Camera.main.GetComponent<MiniGameController>()._pontos;
         _textura = GetComponent<SpriteRenderer>();
         _Collider2D = GetComponent<Collider2D>();
+        _miniGameController = Camera.main.GetComponent<MiniGameController>();
+
+
+
     }
 
     // Update is called once per frame
@@ -33,8 +39,8 @@ public class projetil : MonoBehaviour
         _score++;
         _pontos.text = "Pontos: " + _score;
         Camera.main.GetComponent<MiniGameController>()._score++;
-        
-        
+
+        Debug.Log(col.gameObject.name);
         
         Destroy(col.gameObject);
     }

@@ -7,18 +7,20 @@ public class MiniGameController : MonoBehaviour
 {
     public TextMeshProUGUI _pontos;
     public int _score = 0;
+    public int _resultadoContaReal;
+    public int _numbProblemas=1;
+
+    public List<Conta> _problemas;
+   
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        ChamarQuest();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     
@@ -32,4 +34,19 @@ public class MiniGameController : MonoBehaviour
         collision.GetComponent<projetil>().DestroyItem();
         //Destroy(col.gameObject);
     }
+
+    public void ChamarQuest()
+    {
+        _problemas[_numbProblemas].gameObject.SetActive(false);
+        Debug.Log("desativar "+ _problemas[_numbProblemas].gameObject.name);
+
+        if (_numbProblemas <= _problemas.Count-1)
+        {
+            _problemas[_numbProblemas].gameObject.SetActive(true);
+            _numbProblemas++;
+            Debug.Log("ativar " + _problemas[_numbProblemas].gameObject.name);
+
+        }
+       
+    } 
 }
