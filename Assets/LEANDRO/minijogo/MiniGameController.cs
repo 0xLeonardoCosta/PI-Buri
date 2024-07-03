@@ -34,6 +34,8 @@ public class MiniGameController : MonoBehaviour
         _numeros[_numbQuant].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         _numeros[_numbQuant].gameObject.SetActive(true);
         _numeros[_numbQuant].transform.position = _posNumeros[0].position;
+        _numeros[_numbQuant].GetComponent<HitNumeros>()._particula.Stop();
+        _numeros[_numbQuant].GetComponent<HitNumeros>().Textura.enabled = true;
         _numbQuant++;
         if (_numbQuant >= _numeros.Count)
         {

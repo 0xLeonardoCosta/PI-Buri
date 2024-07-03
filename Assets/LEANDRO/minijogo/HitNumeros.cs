@@ -6,7 +6,8 @@ public class HitNumeros : projetil
 {
 
     public int _resultado;
-   
+    public ParticleSystem _particula;
+
 
 
     /*public override void DestroyItem()
@@ -25,8 +26,9 @@ public class HitNumeros : projetil
             if(_resultado == _miniGameController._resultadoContaReal)
             {
                 Debug.Log("Certo");
-                _miniGameController.ChamarQuest();
-               // StartCoroutine(DestruirTimeCerto());
+            
+                StartCoroutine(DestruirTimeCerto());
+                // StartCoroutine(DestruirTimeCerto());
             }
             else
             {
@@ -42,7 +44,8 @@ public class HitNumeros : projetil
     {
        
         Textura.enabled = false;
-        PartSaida.SetActive(true);
+//PartSaida.SetActive(true);
+        PartSaida.GetComponent<ParticleSystem>().Play();
         yield return new WaitForSeconds(3f);
 
         gameObject.SetActive(false);
@@ -50,10 +53,10 @@ public class HitNumeros : projetil
 
     IEnumerator DestruirTimeCerto()
     {
-
-        Textura.enabled = false;
-        PartSaida.SetActive(true);
         _miniGameController.ChamarQuest();
+        Textura.enabled = false;
+        PartSaida.GetComponent<ParticleSystem>().Play();
+       // PartSaida.SetActive(true);
         yield return new WaitForSeconds(3f);
      
         gameObject.SetActive(false);
