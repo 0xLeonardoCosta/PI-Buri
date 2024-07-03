@@ -8,17 +8,40 @@ public class MiniGameController : MonoBehaviour
     public TextMeshProUGUI _pontos;
     public int _score = 0;
     public int _resultadoContaReal;
-    public int _numbProblemas=1;
+    public int _numbProblemas;
 
     public List<Conta> _problemas;
-   
+
+    public int _numbQuant;
+    public List<Transform> _posNumeros;
+    public List<Transform> _numeros;
+
+
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        Shuffle(_problemas);
+        Shuffle2(_numeros);
         ChamarQuest();
+          Invoke("CaiNumero", 2);
+    }
+
+    void CaiNumero()
+    {
+        _numeros[_numbQuant].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        _numeros[_numbQuant].gameObject.SetActive(true);
+        _numeros[_numbQuant].transform.position = _posNumeros[0].position;
+        _numbQuant++;
+        if (_numbQuant >= _numeros.Count)
+        {
+            _numbQuant = 0;
+            Shuffle2(_numeros);
+
+        }
+        Invoke("CaiNumero", 2);
     }
 
 
@@ -37,16 +60,41 @@ public class MiniGameController : MonoBehaviour
 
     public void ChamarQuest()
     {
-        _problemas[_numbProblemas].gameObject.SetActive(false);
-        Debug.Log("desativar "+ _problemas[_numbProblemas].gameObject.name);
+        // _problemas[_numbProblemas].gameObject.SetActive(false);
+        // Debug.Log("desativar "+ _problemas[_numbProblemas].gameObject.name);
 
-        if (_numbProblemas <= _problemas.Count-1)
+        for (int i = 0; i < _problemas.Count; i++)
         {
-            _problemas[_numbProblemas].gameObject.SetActive(true);
-            _numbProblemas++;
-            Debug.Log("ativar " + _problemas[_numbProblemas].gameObject.name);
-
+            _problemas[i].gameObject.SetActive(false);
         }
-       
-    } 
+        _problemas[_numbProblemas].gameObject.SetActive(true);
+        _numbProblemas++;
+        if (_numbProblemas >= _problemas.Count)
+        {
+            _numbProblemas = 0;
+            Shuffle(_problemas);
+        }
+
+    }
+
+    void Shuffle(List<Conta> lists)
+    {
+        for (int j = lists.Count - 1; j > 0; j--)
+        {
+            int rnd = UnityEngine.Random.Range(0, j + 1);
+            Conta temp = lists[j];
+            lists[j] = lists[rnd];
+            lists[rnd] = temp;
+        }
+    }
+    void Shuffle2(List<Transform> lists)
+    {
+        for (int j = lists.Count - 1; j > 0; j--)
+        {
+            int rnd = UnityEngine.Random.Range(0, j + 1);
+            Transform temp = lists[j];
+            lists[j] = lists[rnd];
+            lists[rnd] = temp;
+        }
+    }
 }
