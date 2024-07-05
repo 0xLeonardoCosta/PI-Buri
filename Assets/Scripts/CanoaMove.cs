@@ -32,11 +32,12 @@ public class CanoaMove : MonoBehaviour
     [SerializeField] float _velocidadeCurva;
     [SerializeField] float _velocidade;
     GameManagerBuri _managerBuri;
+    GaaameController _gaaameController;
     bool _dentroCanoa;
 
     void Start()
     {
-
+        _gaaameController = Camera.main.GetComponent<GaaameController>();
         _player = Camera.main.GetComponent<GaaameController>()._player;
         _managerBuri =Camera.main.GetComponent<GameManagerBuri>();
         _rb = GetComponent<Rigidbody>();
@@ -134,6 +135,10 @@ public class CanoaMove : MonoBehaviour
            // _botaoCanoa.SetActive(true);
             
         }
+        if (other.gameObject.CompareTag("MiniGame"))
+        {
+            _gaaameController._btMiniGame.SetActive(true);
+        }
 
     }
     void OnTriggerExit(Collider other)
@@ -146,8 +151,11 @@ public class CanoaMove : MonoBehaviour
              //   _moveBuri = null;
              //   Debug.Log("Saiu canoa");
             }
-           
-            
+            if (other.gameObject.CompareTag("MiniGame"))
+            {
+                _gaaameController._btMiniGame.SetActive(false);
+            }
+
         }
     }
 }

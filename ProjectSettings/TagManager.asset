@@ -23,6 +23,7 @@ TagManager:
   - Missao
   - Walking-NPC-Janaina
   - Walking-NPC-Buri
+  - MiniGame
   layers:
   - Default
   - TransparentFX

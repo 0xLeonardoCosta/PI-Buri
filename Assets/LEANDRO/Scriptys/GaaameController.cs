@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GaaameController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GaaameController : MonoBehaviour
     public Transform _miniCam;
     public Transform _playerArm;
     public Transform _posBuriCanoa;
+    public GameObject _btMiniGame;
     public Canvas _canvasHud;
 
     public List<AudioSource> _listaAudioHUD, _listaAudioGames, _listaAudioMusica;
