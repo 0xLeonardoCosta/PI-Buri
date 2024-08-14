@@ -13,7 +13,7 @@ public class PlayerItens : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("ItemTag"))
         {
@@ -33,8 +33,10 @@ public class PlayerItens : MonoBehaviour
             }
 
 
-
+            Debug.Log("Dei");
             Debug.Log(_itemObj._itemInventario._nome);
         }
     }
 }
+
+
