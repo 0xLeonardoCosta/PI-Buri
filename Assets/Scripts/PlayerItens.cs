@@ -34,7 +34,7 @@ public class PlayerItens : MonoBehaviour
 
 
 
-            //Debug.Log(_itemObj._itemInventario._nome);
+            Debug.Log(_itemObj._itemInventario._nome);
         }
     }
 }
