@@ -6,5 +6,7 @@ using UnityEngine.UI;
 public class GridItem : MonoBehaviour
 {
     public List<Image> _itemArmas = new List<Image>();
+
+   
 }
 

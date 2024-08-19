@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerItens : MonoBehaviour
 {
-    GridItem _gridItem;
+    public GridItem _gridItem;
 
     // Start is called before the first frame update
     void Start()
@@ -13,11 +13,11 @@ public class PlayerItens : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("ItemTag"))
+        if (other.gameObject.CompareTag("ItemTag"))
         {
-           ItemControlInventario _itemObj = collision.GetComponent<ItemControlInventario>();
+           ItemControlInventario _itemObj = other.GetComponent<ItemControlInventario>();
 
             for (int i = 0; i < _gridItem._itemArmas.Count; i++)
             {
@@ -37,6 +37,8 @@ public class PlayerItens : MonoBehaviour
             Debug.Log(_itemObj._itemInventario._nome);
         }
     }
+
+   
 }
 
 
