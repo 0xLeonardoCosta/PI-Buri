@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerItens : MonoBehaviour
 {
-    public GridItem _gridItem;
+    public InventarioControl _control;
 
     // Start is called before the first frame update
     void Start()
     {
-        _gridItem = Camera.main.GetComponent<GridItem>(); //dfdf
+        _control = Camera.main.GetComponent<InventarioControl>(); //dfdf
 
     }
 
@@ -17,24 +17,21 @@ public class PlayerItens : MonoBehaviour
     {
         if (other.gameObject.CompareTag("ItemTag"))
         {
-           ItemControlInventario _itemObj = other.GetComponent<ItemControlInventario>();
+           ItemControlInventario _itemcontrol = other.GetComponent<ItemControlInventario>();
 
-            for (int i = 0; i < _gridItem._itemArmas.Count; i++)
+            for (int i = 0; i < _control._SlotArmas.Count; i++)
             {
 
                 {
-                   if (_gridItem._itemArmas[i].GetComponent<SlotItem>()._ocupado == false)
+                   if (_control._SlotArmas[i].GetComponent<SlotItem>()._ocupado == false)
                     {
-                       _gridItem._itemArmas[i].sprite = _itemObj._itemInventario._img;
-                      _gridItem._itemArmas[i].GetComponent<SlotItem>()._ocupado = true;
+                        _control._SlotArmas[i].CheckSlot = true;
+                        _control._SlotArmas[i].ImageSlot(_itemcontrol._itemInventario.ImageItem);
+                        _control._SlotArmas[i].ItemInventarioSlot(_itemcontrol._itemInventario);
                         break;
                     }
                 }
             }
-
-
-            Debug.Log("Dei");
-            Debug.Log(_itemObj._itemInventario._nome);
         }
     }
 
