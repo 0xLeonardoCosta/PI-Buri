@@ -49,15 +49,15 @@ public class SlotControl : MonoBehaviour
             if (on == true)
             {
                 _btSlot.enabled = false;
-                //_bts[i].transform.DOScale(1, .25f);
-                //_bts[i].enabled = true;
+                _bts[i].transform.DOScale(1, .25f);
+                _bts[i].enabled = true;
             }
 
             else
             {
                 _btSlot.enabled = true;
-                //_bts[i].transform.DOScale(0, .25f);
-               // _bts[i].enabled = false;
+                _bts[i].transform.DOScale(0, .25f);
+               _bts[i].enabled = false;
             }
         }
     }
