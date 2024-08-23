@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ public class SlotControl : MonoBehaviour
 {
     [SerializeField] bool _checkSlot;//oioiogbghgh
     [SerializeField] Image _imgItem;
-    ItemIventario _itemInventario;
+    public ItemDados _itemDados;
     Button _btSlot;
     [SerializeField] List<Button> _bts;
 
@@ -35,9 +36,9 @@ public class SlotControl : MonoBehaviour
         _imgItem.sprite = image;
     }
 
-    public void ItemInventarioSlot(ItemIventario ItemInventariodados)
+    public void DadosSlot(ItemDados _dados)
     {
-        _itemInventario = ItemInventariodados;
+        _itemDados = _dados;
     }
 
     public void BtsOn(bool on)
@@ -57,7 +58,7 @@ public class SlotControl : MonoBehaviour
             {
                 _btSlot.enabled = true;
                 _bts[i].transform.DOScale(0, .25f);
-               _bts[i].enabled = false;
+                _bts[i].enabled = false;
             }
         }
     }

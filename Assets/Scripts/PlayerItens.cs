@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerItens : MonoBehaviour
 {
     public InventarioControl _control;
+    public ItemDados _itemDados;
+    public SpriteRenderer _spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +19,7 @@ public class PlayerItens : MonoBehaviour
     {
         if (other.gameObject.CompareTag("ItemTag"))
         {
-           ItemControlInventario _itemcontrol = other.GetComponent<ItemControlInventario>();
+           ItemControl itemcontrol = other.GetComponent<ItemControl>();
 
             for (int i = 0; i < _control._SlotArmas.Count; i++)
             {
@@ -26,8 +28,8 @@ public class PlayerItens : MonoBehaviour
                    if (_control._SlotArmas[i].GetComponent<SlotItem>()._ocupado == false)
                     {
                         _control._SlotArmas[i].CheckSlot = true;
-                        _control._SlotArmas[i].ImageSlot(_itemcontrol._itemInventario.ImageItem);
-                        _control._SlotArmas[i].ItemInventarioSlot(_itemcontrol._itemInventario);
+                        _control._SlotArmas[i].ImageSlot(itemcontrol._itemDados.ImageItem);
+                        _control._SlotArmas[i].DadosSlot(itemcontrol._itemDados);
                         break;
                     }
                 }
