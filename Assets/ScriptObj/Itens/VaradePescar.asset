@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: VaradePescar
   m_EditorClassIdentifier: 
   _nome: VaradePescar
-  _tipo: 2
-  _img: {fileID: 721872664, guid: 186b72906e85a71409a9e889456d1dbc, type: 3}
+  _tipo: 0
+  _imageItem: {fileID: 271279263, guid: c6affee40ae71ce4fb44a8ae571c6fba, type: 3}
   _dano: 0

@@ -7,6 +7,7 @@ public class PlayerItens : MonoBehaviour
     public InventarioControl _control;
     public ItemDados _itemDados;
     public SpriteRenderer _spriteRenderer;
+    public GameObject _arm;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class PlayerItens : MonoBehaviour
             {
 
                 {
-                   if (_control._SlotArmas[i].GetComponent<SlotItem>()._ocupado == false)
+                   if (_control._SlotArmas[i].CheckSlot == false)
                     {
                         _control._SlotArmas[i].CheckSlot = true;
                         _control._SlotArmas[i].ImageSlot(itemcontrol._itemDados.ImageItem);

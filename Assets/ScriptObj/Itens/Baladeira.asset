@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nome: Baladeira
   _tipo: 1
-  _img: {fileID: 1378800092, guid: 186b72906e85a71409a9e889456d1dbc, type: 3}
+  _imageItem: {fileID: 191326635, guid: c6affee40ae71ce4fb44a8ae571c6fba, type: 3}
   _dano: 1
