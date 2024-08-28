@@ -10,8 +10,8 @@ public class ItemControl: MonoBehaviour
 
     void Start()
     {
-        _image = GetComponent<SpriteRenderer>();
-        _image.sprite = _itemDados.ImageItem;
+       // _image = GetComponent<SpriteRenderer>();
+       // _image.sprite = _itemDados.ImageItem;
     }
 
 

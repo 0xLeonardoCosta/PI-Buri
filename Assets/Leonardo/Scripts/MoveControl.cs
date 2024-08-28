@@ -156,7 +156,7 @@ public class MoveControl : MonoBehaviour
             Gravity();
             CheckPulo();// Checa se está encostando no chão e função de timer para normalizar pulo
             VidaCheck();
-            ReativarBaladeira();
+          //  ReativarBaladeira();
             BaladeiraCheck();
             CanoaCheck();
            
@@ -333,7 +333,7 @@ public class MoveControl : MonoBehaviour
         }
         else
         {
-            _baladeira.SetActive(true);
+            //_baladeira.SetActive(true);
             VerificarSpeed();
             _botaoCorrerAndar.SetActive(true);
         }
