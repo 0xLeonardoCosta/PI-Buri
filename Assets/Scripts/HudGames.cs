@@ -45,6 +45,7 @@ public class HudGames : MonoBehaviour
     {
         // _iconVida[2].DOScale(0, 0.5f);
         _tamV = _iconVida[0].localScale.x;
+       // _Reiniciar.Select();
     }
     void Update()
     {
