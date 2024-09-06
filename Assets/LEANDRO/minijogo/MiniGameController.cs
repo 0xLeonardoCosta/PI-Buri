@@ -1,3 +1,5 @@
+using DG.Tweening;
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -16,6 +18,10 @@ public class MiniGameController : MonoBehaviour
     public List<Transform> _posNumeros;
     public List<Transform> _numeros;
 
+    public int _scoreAcerto;
+
+    [SerializeField] Transform _parabens;
+
 
 
 
@@ -26,7 +32,9 @@ public class MiniGameController : MonoBehaviour
         Shuffle(_problemas);
         Shuffle2(_numeros);
         ChamarQuest();
-          Invoke("CaiNumero", 2);
+        Invoke("CaiNumero", 2);
+
+       // Debug.Log(_numeros.Count);
     }
 
     void CaiNumero()
@@ -37,13 +45,28 @@ public class MiniGameController : MonoBehaviour
         _numeros[_numbQuant].GetComponent<HitNumeros>()._particula.Stop();
         _numeros[_numbQuant].GetComponent<HitNumeros>().Textura.enabled = true;
         _numbQuant++;
-        if (_numbQuant >= _numeros.Count)
+        if(_numbQuant>= _numeros.Count)
         {
             _numbQuant = 0;
             Shuffle2(_numeros);
+        }
+
+        if (_scoreAcerto >= _problemas.Count)
+        {
+            // _numbQuant = 0;
+            //  Shuffle2(_numeros);
+            Debug.Log("Fim de game");
+            CheckParabens();
+
+
+
 
         }
-        Invoke("CaiNumero", 2);
+        else
+        {
+            Invoke("CaiNumero", 2);
+        }
+       
     }
 
 
@@ -62,20 +85,22 @@ public class MiniGameController : MonoBehaviour
 
     public void ChamarQuest()
     {
-        // _problemas[_numbProblemas].gameObject.SetActive(false);
-        // Debug.Log("desativar "+ _problemas[_numbProblemas].gameObject.name);
+       
+            // _problemas[_numbProblemas].gameObject.SetActive(false);
+            // Debug.Log("desativar "+ _problemas[_numbProblemas].gameObject.name);
 
-        for (int i = 0; i < _problemas.Count; i++)
-        {
-            _problemas[i].gameObject.SetActive(false);
-        }
-        _problemas[_numbProblemas].gameObject.SetActive(true);
-        _numbProblemas++;
-        if (_numbProblemas >= _problemas.Count)
-        {
-            _numbProblemas = 0;
-            Shuffle(_problemas);
-        }
+            for (int i = 0; i < _problemas.Count; i++)
+            {
+                _problemas[i].gameObject.SetActive(false);
+            }
+            _problemas[_numbProblemas].gameObject.SetActive(true);
+            _numbProblemas++;
+            if (_numbProblemas >= _problemas.Count)
+            {
+                _numbProblemas = 0;
+                Shuffle(_problemas);
+            }
+        
 
     }
 
@@ -99,4 +124,11 @@ public class MiniGameController : MonoBehaviour
             lists[rnd] = temp;
         }
     }
+    public void CheckParabens()
+    {
+        
+            _parabens.DOScale(1, 0.5f);
+        
+    }
+    
 }

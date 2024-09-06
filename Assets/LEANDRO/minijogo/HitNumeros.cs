@@ -10,15 +10,14 @@ public class HitNumeros : projetil
 
 
 
-    /*public override void DestroyItem()
-    {
-        StartCoroutine(DestruirTime());
-    }*/
+   public MiniGameController _controller;
 
+   
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        _controller = Camera.main.GetComponent<MiniGameController>();
         if (collision.gameObject.CompareTag("bala2d"))
         {
            // StartCoroutine(DestruirTime());
@@ -56,7 +55,7 @@ public class HitNumeros : projetil
         _miniGameController.ChamarQuest();
         Textura.enabled = false;
         PartSaida.GetComponent<ParticleSystem>().Play();
-       // PartSaida.SetActive(true);
+        _controller._scoreAcerto++;
         yield return new WaitForSeconds(3f);
      
         gameObject.SetActive(false);
