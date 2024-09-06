@@ -93,6 +93,7 @@ public class PauseMenu : MonoBehaviour
     IEnumerator AbrirMenuOpcoes() // Abrir opcoes do game
     {
         _pauseMenu.SetActive(false);
+        _mapa.SetActive(false);
         _opcoesMenu.SetActive(true);
         _BtVoltarAoJogo.SetActive(true);
         _BtVoltarAoJogo.transform.DOScale(1f, 0.2f);
@@ -105,6 +106,7 @@ public class PauseMenu : MonoBehaviour
     IEnumerator VoltarAoMenuPause() // Voltar ao menu a partir do opcoes
     {
         _pauseMenu.SetActive(true);
+        _mapa.SetActive(false);
         //_BtPause.transform.DOScale(0f, 0.3f);
         _pauseMenu.transform.DOScale(1.3f, 0.2f);
         yield return new WaitForSeconds(0.5f);
