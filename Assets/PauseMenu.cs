@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject _pauseMenu;
     [SerializeField] GameObject _opcoesMenu;
     [SerializeField] GameObject _inventarioMenu;
+    [SerializeField] GameObject _mapa; // Criado por Fernanda
 
     [SerializeField] Sprite[] _spriteBTVoltarAoJogo;
 
@@ -23,9 +24,11 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField] Transform _posForaPause, _posForaInventario;
     [SerializeField] Transform _posOriginPause, _posOriginInventario;
+    [SerializeField] Transform _posMapa; // Referência para a posição do mapa (Criado por Fernanda)
 
     [SerializeField] Transform _posBaixo, _posCima;
     [SerializeField] Transform _posOriginBaixo, _posOriginCima;
+    [SerializeField] Transform _posMapaOrigin;
 
     void Start()
     {
@@ -131,6 +134,8 @@ public class PauseMenu : MonoBehaviour
         _pauseMenu.transform.DOScale(0f, 0.15f);
         _opcoesMenu.transform.DOScale(0f, 0.15f);
         _inventarioMenu.transform.DOScale(0f, 0.15f);
+        ///_mapa.transform.DOScale(0f, 0.15f);
+
         //_BtPause.transform.DOScale(1f, 0.3f);
         //yield return new WaitForSeconds(0.5f);
 
@@ -139,6 +144,11 @@ public class PauseMenu : MonoBehaviour
 
         _BtPause.transform.DOMove(_posOriginPause.position, 0.15f);
         _BtInventario.transform.DOMove(_posOriginInventario.position, 0.15f);
+
+        // Reativar o mapa ao fechar o menu
+        _mapa.SetActive(true);
+
+        yield return new WaitForSeconds(0f);
 
         //_BtPause.SetActive(false);
     }
@@ -168,10 +178,13 @@ public class PauseMenu : MonoBehaviour
 
         _pauseMenu.SetActive(false);
         _opcoesMenu.SetActive(false);
+        _mapa.SetActive(false); // Aqui desativamos o mapa
 
         _inventarioMenu.transform.DOScale(1.3f, 0.2f);
         yield return new WaitForSeconds(0.5f);
         _inventarioMenu.transform.DOScale(1f, 0.2f);
+
+        _mapa.transform.position = _posMapa.position; // Defina a posição do mapa
 
         yield return new WaitForSeconds(0f);
     }
