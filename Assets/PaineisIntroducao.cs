@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,8 @@ public class PaineisIntroducao : MonoBehaviour
     [SerializeField] GameObject _telaMapa, _painelLiso3, _letreiroMapa;
 
     [SerializeField] Transform _pos;
+
+    [SerializeField] Button[] _bts;
 
     void Start()
     {
@@ -29,12 +32,14 @@ public class PaineisIntroducao : MonoBehaviour
         StartCoroutine("Animacao1", 0f);
         _telaControle.SetActive(true);
         _painelLiso1.SetActive(false);
+        _bts[1].Select();
     }
     public void Clicou2()
     {
         StartCoroutine("Animacao2", 0f);
         _telaMapa.SetActive(true);
         _painelLiso2.SetActive(false);
+        _bts[2].Select();
     }
     public void Clicou3()
     {
