@@ -2,6 +2,7 @@ using DG.Tweening;
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine;
 
@@ -21,6 +22,7 @@ public class MiniGameController : MonoBehaviour
     public int _scoreAcerto;
 
     [SerializeField] Transform _parabens;
+    [SerializeField] Transform _botaoVoltarPraXimba;
 
 
 
@@ -127,8 +129,14 @@ public class MiniGameController : MonoBehaviour
     public void CheckParabens()
     {
         
-            _parabens.DOScale(1, 0.5f);
-        
+            _parabens.DOScale(70, 0.5f);
+            _botaoVoltarPraXimba.DOScale(70, 0.5f);
+
     }
-    
+
+    public void VoltarXimba()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
+
 }
