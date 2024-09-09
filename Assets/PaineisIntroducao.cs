@@ -45,6 +45,7 @@ public class PaineisIntroducao : MonoBehaviour
     {
         StartCoroutine("Animacao3", 0f);
         _painelLiso3.SetActive(false);
+        _bts[0].Select();
     }
     IEnumerator Animacao1()
     {
