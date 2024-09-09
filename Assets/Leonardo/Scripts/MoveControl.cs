@@ -84,6 +84,8 @@ public class MoveControl : MonoBehaviour
 
     [SerializeField] TutorControl _textoControl;
     [SerializeField] Button _BTinventario, _BTpause;
+    bool _abriuInventario, _abriuPause;
+    [SerializeField] PauseMenu _pauseMenu;
 
     //------------------Canoa---------------------
 
@@ -532,11 +534,21 @@ public class MoveControl : MonoBehaviour
     }
     public void SetInventario(InputAction.CallbackContext value) //Botao Select
     {
-        _BTinventario.onClick.Invoke();
+        if (_abriuInventario==false) 
+        {
+            _BTinventario.onClick.Invoke();
+            _abriuInventario = true;
+        }
+        else
+        {
+            _pauseMenu.FecharMenu();
+            _abriuInventario=false;
+        }
+        
     }
     public void SetPause(InputAction.CallbackContext value) //Botao Start
     {
-        _BTpause.onClick.Invoke();
+        _BTpause.onClick.Invoke(); //VOLTAR DAQUI SEU BUCETO
     }
     public void SetCameraAnalogico(InputAction.CallbackContext value) //Pulo: true ou false
     {
