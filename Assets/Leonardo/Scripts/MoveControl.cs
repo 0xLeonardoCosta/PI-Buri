@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class MoveControl : MonoBehaviour
 {
@@ -82,6 +83,7 @@ public class MoveControl : MonoBehaviour
     [SerializeField] GameObject _canoa;
 
     [SerializeField] TutorControl _textoControl;
+    [SerializeField] Button _BTinventario, _BTpause;
 
     //------------------Canoa---------------------
 
@@ -527,6 +529,14 @@ public class MoveControl : MonoBehaviour
         }
      //   if(_speed)
 
+    }
+    public void SetInventario(InputAction.CallbackContext value) //Botao Select
+    {
+        _BTinventario.onClick.Invoke();
+    }
+    public void SetPause(InputAction.CallbackContext value) //Botao Start
+    {
+        _BTpause.onClick.Invoke();
     }
     public void SetCameraAnalogico(InputAction.CallbackContext value) //Pulo: true ou false
     {

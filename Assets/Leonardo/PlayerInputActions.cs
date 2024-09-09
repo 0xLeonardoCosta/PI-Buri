@@ -80,6 +80,24 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""5aa425b2-bc47-47e3-8992-62a8f1b60090"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Inventario"",
+                    ""type"": ""Button"",
+                    ""id"": ""fb723410-8744-491c-990e-b9bc8043d160"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -511,6 +529,72 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""UsarCanoa"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b88923e8-0c56-4775-b5dc-adc562dbf512"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""22391bdd-7652-4099-b2c3-35ce86dbc7fb"",
+                    ""path"": ""<XInputController>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ab47849c-d8c1-49c0-885e-085fcd31b61a"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""29677210-ee1e-4648-b362-afa0c2843a0c"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Inventario"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e965ae7c-b589-42d6-8c1b-1cc26577a503"",
+                    ""path"": ""<XInputController>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Inventario"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b1f2fe1e-9b61-4d7e-97ec-909a5b146af6"",
+                    ""path"": ""<Keyboard>/alt"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Inventario"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -525,6 +609,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Buri_UsarBaladeira = m_Buri.FindAction("UsarBaladeira", throwIfNotFound: true);
         m_Buri_EstaCorrendo = m_Buri.FindAction("EstaCorrendo", throwIfNotFound: true);
         m_Buri_UsarCanoa = m_Buri.FindAction("UsarCanoa", throwIfNotFound: true);
+        m_Buri_Pause = m_Buri.FindAction("Pause", throwIfNotFound: true);
+        m_Buri_Inventario = m_Buri.FindAction("Inventario", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -592,6 +678,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Buri_UsarBaladeira;
     private readonly InputAction m_Buri_EstaCorrendo;
     private readonly InputAction m_Buri_UsarCanoa;
+    private readonly InputAction m_Buri_Pause;
+    private readonly InputAction m_Buri_Inventario;
     public struct BuriActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -602,6 +690,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @UsarBaladeira => m_Wrapper.m_Buri_UsarBaladeira;
         public InputAction @EstaCorrendo => m_Wrapper.m_Buri_EstaCorrendo;
         public InputAction @UsarCanoa => m_Wrapper.m_Buri_UsarCanoa;
+        public InputAction @Pause => m_Wrapper.m_Buri_Pause;
+        public InputAction @Inventario => m_Wrapper.m_Buri_Inventario;
         public InputActionMap Get() { return m_Wrapper.m_Buri; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -629,6 +719,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @UsarCanoa.started += instance.OnUsarCanoa;
             @UsarCanoa.performed += instance.OnUsarCanoa;
             @UsarCanoa.canceled += instance.OnUsarCanoa;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
+            @Inventario.started += instance.OnInventario;
+            @Inventario.performed += instance.OnInventario;
+            @Inventario.canceled += instance.OnInventario;
         }
 
         private void UnregisterCallbacks(IBuriActions instance)
@@ -651,6 +747,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @UsarCanoa.started -= instance.OnUsarCanoa;
             @UsarCanoa.performed -= instance.OnUsarCanoa;
             @UsarCanoa.canceled -= instance.OnUsarCanoa;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
+            @Inventario.started -= instance.OnInventario;
+            @Inventario.performed -= instance.OnInventario;
+            @Inventario.canceled -= instance.OnInventario;
         }
 
         public void RemoveCallbacks(IBuriActions instance)
@@ -676,5 +778,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnUsarBaladeira(InputAction.CallbackContext context);
         void OnEstaCorrendo(InputAction.CallbackContext context);
         void OnUsarCanoa(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
+        void OnInventario(InputAction.CallbackContext context);
     }
 }
