@@ -12,6 +12,8 @@ public class SlotControl : MonoBehaviour
     Button _btSlot;
     [SerializeField] List<Button> _bts;
 
+ 
+
 
 
     private void Start()
@@ -44,7 +46,7 @@ public class SlotControl : MonoBehaviour
     public void BtsOn(bool on)
     {
 
-
+/*
         for (int i = 0; i < _bts.Count; i++)
         {
             if (on == true)
@@ -61,5 +63,6 @@ public class SlotControl : MonoBehaviour
                 _bts[i].enabled = false;
             }
         }
+*/
     }
 }

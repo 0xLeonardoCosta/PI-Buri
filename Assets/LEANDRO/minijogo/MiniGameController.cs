@@ -129,14 +129,14 @@ public class MiniGameController : MonoBehaviour
     public void CheckParabens()
     {
         
-            _parabens.DOScale(70, 0.5f);
-            _botaoVoltarPraXimba.DOScale(70, 0.5f);
+            _parabens.DOScale(20, 0.5f);
+            _botaoVoltarPraXimba.DOScale(18, 0.9f);
 
     }
 
     public void VoltarXimba()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("BuriXimba");
     }
 
 }
