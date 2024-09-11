@@ -46,13 +46,13 @@ public class SlotControl : MonoBehaviour
     public void BtsOn(bool on)
     {
 
-/*
+
         for (int i = 0; i < _bts.Count; i++)
         {
             if (on == true)
             {
                 _btSlot.enabled = false;
-                _bts[i].transform.DOScale(1, .25f);
+                _bts[i].transform.DOScale(2, .25f);
                 _bts[i].enabled = true;
             }
 
@@ -63,6 +63,6 @@ public class SlotControl : MonoBehaviour
                 _bts[i].enabled = false;
             }
         }
-*/
+
     }
 }

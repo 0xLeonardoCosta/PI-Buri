@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,13 +37,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -52,9 +52,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -108,18 +108,172 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: MUGUSTAOEMEUOVAO_0
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 8093
+        width: 1812
+        height: 1812
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7360763ec161bba43872b4e07e44b3f9
+      internalID: 1427060143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MUGUSTAOEMEUOVAO_1
+      rect:
+        serializedVersion: 2
+        x: 2444
+        y: 8093
+        width: 1313
+        height: 1660
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83aa0df7eb8956b4fa426be35d6c1134
+      internalID: 2054200536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MUGUSTAOEMEUOVAO_2
+      rect:
+        serializedVersion: 2
+        x: 4094
+        y: 8093
+        width: 1714
+        height: 1812
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb84efad2b79ad0499b055ce50c28461
+      internalID: -857989579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MUGUSTAOEMEUOVAO_3
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 6296
+        width: 1011
+        height: 1011
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d98f320ceb1195448bd0ac497d5ab75e
+      internalID: -476585840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MUGUSTAOEMEUOVAO_4
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 6092
+        width: 1011
+        height: 1415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d457c7b76ed05942a85b488a1fa88b5
+      internalID: 177986049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MUGUSTAOEMEUOVAO_5
+      rect:
+        serializedVersion: 2
+        x: 2595
+        y: 5945
+        width: 1511
+        height: 1713
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a4b1e95fc6756e489302d44b5cbeb4f
+      internalID: 780565028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MUGUSTAOEMEUOVAO_6
+      rect:
+        serializedVersion: 2
+        x: 4392
+        y: 5945
+        width: 2915
+        height: 1308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8656c4111898f2a4d90c044f89add031
+      internalID: 357078672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 37da8fbe49f7ee6458cff69c03b4f195
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MUGUSTAOEMEUOVAO_0: 1427060143
+      MUGUSTAOEMEUOVAO_1: 2054200536
+      MUGUSTAOEMEUOVAO_2: -857989579
+      MUGUSTAOEMEUOVAO_3: -476585840
+      MUGUSTAOEMEUOVAO_4: 177986049
+      MUGUSTAOEMEUOVAO_5: 780565028
+      MUGUSTAOEMEUOVAO_6: 357078672
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
