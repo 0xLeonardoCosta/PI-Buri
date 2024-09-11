@@ -22,6 +22,7 @@ public class MiniGameController : MonoBehaviour
     public int _scoreAcerto;
 
     [SerializeField] Transform _parabens;
+    [SerializeField] Transform _brasao;
     [SerializeField] Transform _botaoVoltarPraXimba;
 
 
@@ -130,7 +131,8 @@ public class MiniGameController : MonoBehaviour
     {
         
             _parabens.DOScale(20, 0.5f);
-            _botaoVoltarPraXimba.DOScale(18, 0.9f);
+            _brasao.DOScale(5, 0.6f);
+            _botaoVoltarPraXimba.DOScale(3, 0.7f);
 
     }
 
