@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MiniGameController : MonoBehaviour
 {
@@ -25,6 +26,11 @@ public class MiniGameController : MonoBehaviour
     [SerializeField] Transform _brasao;
     [SerializeField] Transform _botaoVoltarPraXimba;
 
+    [SerializeField] private Slider _barraDeProgresso;
+
+    [SerializeField] private TextMeshProUGUI _mensagemTexto;
+
+
 
 
 
@@ -38,6 +44,8 @@ public class MiniGameController : MonoBehaviour
         Invoke("CaiNumero", 2);
 
        // Debug.Log(_numeros.Count);
+
+        this._barraDeProgresso.gameObject.SetActive(false);
     }
 
     void CaiNumero()
@@ -138,7 +146,25 @@ public class MiniGameController : MonoBehaviour
 
     public void VoltarXimba()
     {
-        SceneManager.LoadScene("BuriXimba");
+        this._parabens.gameObject.SetActive(false);
+        this._brasao.gameObject.SetActive(false);
+        this._botaoVoltarPraXimba.gameObject.SetActive(false);
+        this._barraDeProgresso.gameObject.SetActive(true);
+        this._mensagemTexto.text = "Carregando...";
+        
+        StartCoroutine(CarregarCena());
+
+    }
+
+    private IEnumerator CarregarCena()
+    {
+        AsyncOperation asynOperation = SceneManager.LoadSceneAsync("BuriXimba");
+        while (!asynOperation.isDone) 
+        {
+            this._barraDeProgresso.value = asynOperation.progress;
+            yield return null;
+        }
+
     }
 
 }
