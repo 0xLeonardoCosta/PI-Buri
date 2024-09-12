@@ -25,6 +25,7 @@ public class MiniGameController : MonoBehaviour
     [SerializeField] Transform _parabens;
     [SerializeField] Transform _brasao;
     [SerializeField] Transform _botaoVoltarPraXimba;
+    [SerializeField] Transform _hudCarregamento;
 
     [SerializeField] private Slider _barraDeProgresso;
 
@@ -46,6 +47,7 @@ public class MiniGameController : MonoBehaviour
        // Debug.Log(_numeros.Count);
 
         this._barraDeProgresso.gameObject.SetActive(false);
+        this._hudCarregamento.gameObject.SetActive(false);
     }
 
     void CaiNumero()
@@ -149,6 +151,7 @@ public class MiniGameController : MonoBehaviour
         this._parabens.gameObject.SetActive(false);
         this._brasao.gameObject.SetActive(false);
         this._botaoVoltarPraXimba.gameObject.SetActive(false);
+        this._hudCarregamento.gameObject.SetActive(true);
         this._barraDeProgresso.gameObject.SetActive(true);
         this._mensagemTexto.text = "Carregando...";
         
