@@ -35,6 +35,8 @@ public class CanoaMove : MonoBehaviour
     GaaameController _gaaameController;
     bool _dentroCanoa;
 
+    [SerializeField] Transform _hudInforMini;
+
     void Start()
     {
         _gaaameController = Camera.main.GetComponent<GaaameController>();
@@ -138,6 +140,7 @@ public class CanoaMove : MonoBehaviour
         if (other.gameObject.CompareTag("MiniGame"))
         {
             _gaaameController._btMiniGame.SetActive(true);
+            this._hudInforMini.gameObject.SetActive(true);
         }
 
     }
@@ -154,6 +157,7 @@ public class CanoaMove : MonoBehaviour
             if (other.gameObject.CompareTag("MiniGame"))
             {
                 _gaaameController._btMiniGame.SetActive(false);
+                
             }
 
         }
