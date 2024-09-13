@@ -27,15 +27,15 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _Density: 28.8
+    - _Density: 602.4
     - _Noise: 0
-    - _Power: 6.2
+    - _Power: 3.7
     - _Speed: 3
     - _SpeedOlas: 0.01
     m_Colors:
-    - _ColorOlas: {r: 0.99056596, g: 0.7979069, b: 0.29436627, a: 0}
+    - _ColorOlas: {r: 0.7075472, g: 0.5119633, b: 0.34376115, a: 0}
     - _Tiling: {r: 0.1, g: 0.1, b: 0, a: 0}
-    - _WaterColor: {r: 0.4528302, g: 0.3534292, b: 0.091847636, a: 1}
+    - _WaterColor: {r: 0.5471698, g: 0.42549458, b: 0.2761659, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &4606839297737463042
 MonoBehaviour:

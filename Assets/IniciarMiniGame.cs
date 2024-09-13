@@ -10,6 +10,7 @@ public class IniciarMiniGame : MonoBehaviour
     [SerializeField] Transform _buriproMini;
     [SerializeField] Transform _canoaproMini;
     [SerializeField] Transform _detritosproMini;
+    [SerializeField] Transform _cenarioProMini;
     [SerializeField] Transform _hudCarregamentoMinijogo1;
     [SerializeField] Transform _hudCimaMini;
     [SerializeField] Transform _hudBaixoMini;
@@ -29,6 +30,7 @@ public class IniciarMiniGame : MonoBehaviour
         this._buriproMini.gameObject.SetActive(false);
         this._canoaproMini.gameObject.SetActive(false);
         this._detritosproMini.gameObject.SetActive(false);
+        this._cenarioProMini.gameObject.SetActive(false);
         this._hudtexto1AvisoSairdaCanoamini.gameObject.SetActive(false);
         this._hudtexto2AvisoSairdaCanoamini.gameObject.SetActive(false);
         this._textoVoados.gameObject.SetActive(false);
