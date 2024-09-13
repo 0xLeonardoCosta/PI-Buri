@@ -21,6 +21,7 @@ public class IniciarMiniGame : MonoBehaviour
     [SerializeField] Transform _textoVoados;
     [SerializeField] Transform _btMiniTexto;
     [SerializeField] Transform _imagemBt;
+    
     public void IniciarMiniGome()
     {
         
@@ -45,7 +46,11 @@ public class IniciarMiniGame : MonoBehaviour
 
     private IEnumerator CarregarCenaMiniJogo1()
     {
+       
+
         AsyncOperation asynOperation = SceneManager.LoadSceneAsync("minijogoleandro");
+
+
         while (!asynOperation.isDone)
         {
             this._barraDeProgressoMinijogo1.value = asynOperation.progress;
