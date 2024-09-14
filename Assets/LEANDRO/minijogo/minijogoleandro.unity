@@ -330,15 +330,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8177509736139064636, guid: 21c7f6ae70045584380fac58bf0c3321, type: 3}
       propertyPath: m_LocalScale.x
-      value: 312.3
+      value: 7147.9995
       objectReference: {fileID: 0}
     - target: {fileID: 8177509736139064636, guid: 21c7f6ae70045584380fac58bf0c3321, type: 3}
       propertyPath: m_LocalScale.y
-      value: 312.3
+      value: 7147.9995
       objectReference: {fileID: 0}
     - target: {fileID: 8177509736139064636, guid: 21c7f6ae70045584380fac58bf0c3321, type: 3}
       propertyPath: m_LocalScale.z
-      value: 312.3
+      value: 7147.9995
       objectReference: {fileID: 0}
     - target: {fileID: 8177509736139064636, guid: 21c7f6ae70045584380fac58bf0c3321, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3725,15 +3725,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4062706541940016556, guid: 1b2315236c39eed47a8a1f93d205724e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5250559756905060621, guid: 1b2315236c39eed47a8a1f93d205724e, type: 3}
       propertyPath: m_Name
       value: Barra-de-progresso
       objectReference: {fileID: 0}
+    - target: {fileID: 5250559756905060621, guid: 1b2315236c39eed47a8a1f93d205724e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9083177587845924891, guid: 1b2315236c39eed47a8a1f93d205724e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3791,6 +3795,10 @@ PrefabInstance:
     - target: {fileID: 2498292281743542093, guid: 452e074a81b31c64c81a59021c0f8592, type: 3}
       propertyPath: m_Name
       value: hudCarregamento
+      objectReference: {fileID: 0}
+    - target: {fileID: 2498292281743542093, guid: 452e074a81b31c64c81a59021c0f8592, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
