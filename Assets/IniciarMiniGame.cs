@@ -21,13 +21,15 @@ public class IniciarMiniGame : MonoBehaviour
     [SerializeField] Transform _textoVoados;
     [SerializeField] Transform _btMiniTexto;
     [SerializeField] Transform _imagemBt;
-    
+    [SerializeField] Transform _hudInfoMini;
+
     public void IniciarMiniGome()
     {
         
         this._imagemBt.GetComponent<Image>().enabled = false;
         this._hud1AvisoSairdaCanoamini.GetComponent<Image>().enabled = false;
         this._hud2AvisoSairdaCanoamini.GetComponent<Image>().enabled = false;
+        this._hudInfoMini.gameObject.SetActive(false);
         this._buriproMini.gameObject.SetActive(false);
         this._canoaproMini.gameObject.SetActive(false);
         this._detritosproMini.gameObject.SetActive(false);

@@ -16,6 +16,8 @@ public class GameManagerBuri : MonoBehaviour
     [SerializeField] List<string> _TextoTutoral;
     [SerializeField] Text textTutor;
 
+    public GameObject _hudInfoMiniJ;
+
     void Start()
     {
         if (PlayerPrefs.GetInt("StartSave") == 0)
