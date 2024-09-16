@@ -24,7 +24,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -84,7 +84,7 @@ ModelImporter:
     bakeAxisConversion: 0
     preserveHierarchy: 0
     skinWeightsMode: 0
-    maxBonesPerVertex: 4
+    maxBonesPerVertex: 2
     minBoneWeight: 0.001
     optimizeBones: 1
     meshOptimizationFlags: -1
@@ -111,7 +111,207 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: Idle(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: "JANA\xCDNA"
+      parentName: Idle(Clone)
+      position: {x: -0.06250064, y: 2.2500007, z: 0.13}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.125, y: 0.12500001, z: 0.125}
+    - name: Armature - Janaina
+      parentName: Idle(Clone)
+      position: {x: 0.0021036118, y: 1.8490378, z: 0.010700666}
+      rotation: {x: -0.7265488, y: -0.040753163, z: 0.07586764, w: 0.6816966}
+      scale: {x: 40.823208, y: 42.17139, z: 44.05867}
+    - name: lowback
+      parentName: Armature - Janaina
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.68200445, y: 0.045467295, z: -0.0731399, w: 0.72625977}
+      scale: {x: 0.9977616, y: 1.0014905, z: 1.0006177}
+    - name: Chest
+      parentName: lowback
+      position: {x: -0, y: 0.010817434, z: 1.4901161e-10}
+      rotation: {x: 0.10556418, y: -0.00000012852252, z: -0.000000067055225, w: 0.99441254}
+      scale: {x: 1.001902, y: 0.9979108, z: 1.0003381}
+    - name: neck
+      parentName: Chest
+      position: {x: 7.680442e-17, y: 0.009190739, z: 2.2351741e-10}
+      rotation: {x: -0.010766848, y: 0.00000012296182, z: 0.000000018304133, w: 0.9999421}
+      scale: {x: 1.0000197, y: 0.9991126, z: 1.0009041}
+    - name: head
+      parentName: neck
+      position: {x: -1.6984357e-17, y: 0.005099461, z: -1.3038516e-10}
+      rotation: {x: -0.031734765, y: 0.000000011819777, z: -9.0752783e-10, w: 0.9994964}
+      scale: {x: 1.0002962, y: 0.99923736, z: 1.0005054}
+    - name: head_end
+      parentName: head
+      position: {x: -0, y: 0.019746399, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: clavicle.R
+      parentName: Chest
+      position: {x: 7.680442e-17, y: 0.009190739, z: 2.2351741e-10}
+      rotation: {x: -0.04069069, y: -0.0030818598, z: -0.67525375, w: 0.7364559}
+      scale: {x: 0.9940019, y: 1.0060097, z: 1.0004395}
+    - name: humerus.R
+      parentName: clavicle.R
+      position: {x: -4.9592924e-10, y: 0.012318568, z: -1.862645e-10}
+      rotation: {x: -0.011092318, y: 0.010161061, z: -0.02549831, w: 0.9995617}
+      scale: {x: 0.94798446, y: 1.0553964, z: 0.9999239}
+    - name: Radio.R
+      parentName: humerus.R
+      position: {x: 0.0000000022910536, y: 0.0131768305, z: 2.6077032e-10}
+      rotation: {x: 0.08084091, y: -0.011794916, z: -0.011307957, w: 0.9965931}
+      scale: {x: 1.0001944, y: 0.9953145, z: 1.0046114}
+    - name: Radio.R_end
+      parentName: Radio.R
+      position: {x: -0, y: 0.015733836, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: clavicle.L
+      parentName: Chest
+      position: {x: 7.680442e-17, y: 0.009190739, z: 2.2351741e-10}
+      rotation: {x: -0.040690374, y: 0.0030822207, z: 0.6752538, w: 0.7364559}
+      scale: {x: 1.0020138, y: 0.9970088, z: 1.0008171}
+    - name: humerus.L
+      parentName: clavicle.L
+      position: {x: 1.1641532e-10, y: 0.01231857, z: 1.11758706e-10}
+      rotation: {x: -0.0070611066, y: -0.010301864, z: 0.03133209, w: 0.9994311}
+      scale: {x: 0.93154955, y: 1.0728045, z: 1.0007839}
+    - name: Radio.L
+      parentName: humerus.L
+      position: {x: -0.0000000034086405, y: 0.013176838, z: -2.4214386e-10}
+      rotation: {x: 0.077138, y: 0.011979991, z: 0.013354853, w: 0.996859}
+      scale: {x: 0.99914396, y: 0.9993277, z: 1.0015196}
+    - name: Radio.L_end
+      parentName: Radio.L
+      position: {x: -0, y: 0.015733836, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Pelvis.R
+      parentName: lowback
+      position: {x: 3.5527136e-17, y: -0.0000000011920929, z: -8.470329e-24}
+      rotation: {x: 0.54545945, y: 0.3775542, z: 0.5978734, w: -0.44997147}
+      scale: {x: 1.0008284, y: 0.99160755, z: 1.0072081}
+    - name: Femur.R
+      parentName: Pelvis.R
+      position: {x: 7.105427e-17, y: 0.0046147695, z: -6.2983056e-11}
+      rotation: {x: -0.58616316, y: -0.013734867, z: -0.018977337, w: 0.8098543}
+      scale: {x: 0.9999121, y: 0.98585945, z: 1.0155386}
+    - name: Tibia.R
+      parentName: Femur.R
+      position: {x: -1.3490187e-12, y: 0.014540712, z: -3.3714936e-10}
+      rotation: {x: 0.000010728833, y: 0.0000005029141, z: 0.037057377, w: 0.9993131}
+      scale: {x: 1.0021658, y: 0.997638, z: 1.0002811}
+    - name: Foot.R
+      parentName: Tibia.R
+      position: {x: -1.4645991e-11, y: 0.024975227, z: -1.6807979e-10}
+      rotation: {x: -0.0000049259384, y: -0.0000057938146, z: -0.7166838, w: 0.6973982}
+      scale: {x: 0.99904263, y: 1.0008718, z: 1.0001181}
+    - name: Foot.R_end
+      parentName: Foot.R
+      position: {x: -0, y: 0.009010849, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Pelvis.L
+      parentName: lowback
+      position: {x: 3.5527136e-17, y: -0.0000000011920929, z: -8.470329e-24}
+      rotation: {x: 0.5454592, y: -0.37755436, z: -0.5978735, w: -0.44997135}
+      scale: {x: 1.0008291, y: 1.0067159, z: 0.9929798}
+    - name: Femur.L
+      parentName: Pelvis.L
+      position: {x: -1.4210854e-16, y: 0.004614769, z: 8.602842e-11}
+      rotation: {x: 0.58616, y: -0.01373482, z: -0.018977335, w: -0.80985653}
+      scale: {x: 1.0037076, y: 0.9818302, z: 1.0155703}
+    - name: Tibia.L
+      parentName: Femur.L
+      position: {x: 3.8819082e-12, y: 0.014540708, z: -1.9867047e-11}
+      rotation: {x: 0.00000011920929, y: -0.00000040605664, z: -0.03705729, w: 0.9993132}
+      scale: {x: 1.0040728, y: 0.9955966, z: 1.0003992}
+    - name: foot.L
+      parentName: Tibia.L
+      position: {x: 6.8553162e-12, y: 0.024975216, z: -1.6190965e-10}
+      rotation: {x: 0.0000002895271, y: 0.0000010189348, z: 0.7166839, w: 0.6973982}
+      scale: {x: 0.9995159, y: 1.0004524, z: 1.0000349}
+    - name: foot.L_end
+      parentName: foot.L
+      position: {x: -0, y: 0.009010849, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ik.hand.R
+      parentName: Armature - Janaina
+      position: {x: 0.044091336, y: 0.0011856378, z: 0.02221442}
+      rotation: {x: 0.4904835, y: 0.54699653, z: -0.5305992, w: 0.42271185}
+      scale: {x: 1.0022314, y: 0.9977617, z: 0.9998456}
+    - name: ik.hand.R_end
+      parentName: ik.hand.R
+      position: {x: -0, y: 0.0041643, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ik.hand.L
+      parentName: Armature - Janaina
+      position: {x: -0.044091336, y: 0.0011856378, z: 0.02221442}
+      rotation: {x: 0.54699653, y: -0.4904834, z: 0.4227117, w: 0.53059924}
+      scale: {x: 1.0022316, y: 0.9977617, z: 0.99984586}
+    - name: ik.hand.L_end
+      parentName: ik.hand.L
+      position: {x: -0, y: 0.0041643, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pole.R
+      parentName: Armature - Janaina
+      position: {x: 0.0044092564, y: -0.009485103, z: -0.015887905}
+      rotation: {x: 0.76243293, y: -0.039983317, z: 0.6458125, w: -0.0048688594}
+      scale: {x: 1.0021415, y: 0.9999399, z: 0.99776185}
+    - name: ik.foot.R
+      parentName: pole.R
+      position: {x: -0.02950611, y: -0.009485103, z: -0.000000016430032}
+      rotation: {x: -0, y: -0, z: -0.0000000018626449, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 0.9999999}
+    - name: ik.foot.R_end
+      parentName: ik.foot.R
+      position: {x: -0, y: 0.009010849, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pole.L
+      parentName: Armature - Janaina
+      position: {x: -0.0044092564, y: -0.009485103, z: -0.015887905}
+      rotation: {x: -0.6458121, y: -0.0048688776, z: 0.7624333, w: 0.039983336}
+      scale: {x: 1.0021414, y: 0.9999397, z: 0.99776185}
+    - name: ik.foot.L
+      parentName: pole.L
+      position: {x: 0.02950611, y: -0.009485103, z: -0.000000016430032}
+      rotation: {x: 0.0000000037252899, y: -0, z: -0.0000000025611369, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.9999999}
+    - name: ik.foot.L_end
+      parentName: ik.foot.L
+      position: {x: -0, y: 0.009010849, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pole.hand.R
+      parentName: Armature - Janaina
+      position: {x: 0.02533913, y: 0.021469168, z: 0.021778004}
+      rotation: {x: 0.03997609, y: 0.7633995, z: 0.0049288273, w: 0.64466965}
+      scale: {x: 1.0022125, y: 0.99993944, z: 0.9976852}
+    - name: pole.hand.R_end
+      parentName: pole.hand.R
+      position: {x: -0, y: 0.009485104, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pole.hand.L
+      parentName: Armature - Janaina
+      position: {x: -0.02533913, y: 0.021469168, z: 0.021778004}
+      rotation: {x: 0.0048089325, y: -0.6469534, z: -0.039990544, w: 0.761465}
+      scale: {x: 1.0020696, y: 0.9999393, z: 0.99783826}
+    - name: pole.hand.L_end
+      parentName: pole.hand.L
+      position: {x: -0, y: 0.009485104, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -122,13 +322,13 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
