@@ -23,6 +23,20 @@ public class IniciarMiniGame : MonoBehaviour
     [SerializeField] Transform _imagemBt;
     [SerializeField] Transform _hudInfoMini;
 
+    /*[SerializeField] public bool _painelResolverActive;
+
+    void Update()
+    {
+        if (gameObject.SetActive(true) == true)
+        {
+            _painelResolverActive = true;
+        }
+        else
+        {
+            _painelResolverActive = false;
+        }
+    }*/
+
     public void IniciarMiniGome()
     {
         

@@ -98,6 +98,24 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SairMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""6485191a-0235-4865-9ae0-d0d701245ed4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interagir"",
+                    ""type"": ""Button"",
+                    ""id"": ""cf45f25d-9559-4ecf-924b-05276755df0c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -595,6 +613,72 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Inventario"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ace7ca48-57eb-4037-9348-f336768599a3"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SairMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5f3baf05-d24c-4d46-b454-d86cfc48d441"",
+                    ""path"": ""<XInputController>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SairMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""de6d2b82-a015-4ef9-b63b-5fad76184f9f"",
+                    ""path"": ""<Keyboard>/delete"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SairMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6f6ed439-d124-43a3-bd45-c52bcb072415"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interagir"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bcacb4e0-e551-4e54-bfc7-fec863a295a3"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interagir"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a612f53a-7eb5-4529-ae04-a63f7e34bce8"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interagir"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -611,6 +695,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Buri_UsarCanoa = m_Buri.FindAction("UsarCanoa", throwIfNotFound: true);
         m_Buri_Pause = m_Buri.FindAction("Pause", throwIfNotFound: true);
         m_Buri_Inventario = m_Buri.FindAction("Inventario", throwIfNotFound: true);
+        m_Buri_SairMenu = m_Buri.FindAction("SairMenu", throwIfNotFound: true);
+        m_Buri_Interagir = m_Buri.FindAction("Interagir", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -680,6 +766,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Buri_UsarCanoa;
     private readonly InputAction m_Buri_Pause;
     private readonly InputAction m_Buri_Inventario;
+    private readonly InputAction m_Buri_SairMenu;
+    private readonly InputAction m_Buri_Interagir;
     public struct BuriActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -692,6 +780,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @UsarCanoa => m_Wrapper.m_Buri_UsarCanoa;
         public InputAction @Pause => m_Wrapper.m_Buri_Pause;
         public InputAction @Inventario => m_Wrapper.m_Buri_Inventario;
+        public InputAction @SairMenu => m_Wrapper.m_Buri_SairMenu;
+        public InputAction @Interagir => m_Wrapper.m_Buri_Interagir;
         public InputActionMap Get() { return m_Wrapper.m_Buri; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -725,6 +815,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Inventario.started += instance.OnInventario;
             @Inventario.performed += instance.OnInventario;
             @Inventario.canceled += instance.OnInventario;
+            @SairMenu.started += instance.OnSairMenu;
+            @SairMenu.performed += instance.OnSairMenu;
+            @SairMenu.canceled += instance.OnSairMenu;
+            @Interagir.started += instance.OnInteragir;
+            @Interagir.performed += instance.OnInteragir;
+            @Interagir.canceled += instance.OnInteragir;
         }
 
         private void UnregisterCallbacks(IBuriActions instance)
@@ -753,6 +849,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Inventario.started -= instance.OnInventario;
             @Inventario.performed -= instance.OnInventario;
             @Inventario.canceled -= instance.OnInventario;
+            @SairMenu.started -= instance.OnSairMenu;
+            @SairMenu.performed -= instance.OnSairMenu;
+            @SairMenu.canceled -= instance.OnSairMenu;
+            @Interagir.started -= instance.OnInteragir;
+            @Interagir.performed -= instance.OnInteragir;
+            @Interagir.canceled -= instance.OnInteragir;
         }
 
         public void RemoveCallbacks(IBuriActions instance)
@@ -780,5 +882,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnUsarCanoa(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnInventario(InputAction.CallbackContext context);
+        void OnSairMenu(InputAction.CallbackContext context);
+        void OnInteragir(InputAction.CallbackContext context);
     }
 }

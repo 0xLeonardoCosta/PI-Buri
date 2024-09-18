@@ -24,14 +24,14 @@ public class MiniGameController : MonoBehaviour
 
     [SerializeField] Transform _parabens;
     [SerializeField] Transform _brasao;
-    [SerializeField] Transform _botaoVoltarPraXimba;
+    [SerializeField] public Transform _botaoVoltarPraXimba;
     [SerializeField] Transform _hudCarregamento;
 
     [SerializeField] private Slider _barraDeProgresso;
 
     [SerializeField] private TextMeshProUGUI _mensagemTexto;
 
-
+    public bool _podeSair;
 
 
 
@@ -143,6 +143,8 @@ public class MiniGameController : MonoBehaviour
             _parabens.DOScale(20, 0.5f);
             _brasao.DOScale(5, 0.6f);
             _botaoVoltarPraXimba.DOScale(3, 0.7f);
+
+            _podeSair = true;
 
     }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2288,6 +2288,7 @@ MonoBehaviour:
   _timer: 0.69
   _timerValue: 0.5
   _speed: 200
+  _botaoVoltarPraXimba: {fileID: 1256802594}
 --- !u!114 &1479559295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2369,6 +2370,26 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: fb723410-8744-491c-990e-b9bc8043d160
     m_ActionName: Buri/Inventario[/Keyboard/alt]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6485191a-0235-4865-9ae0-d0d701245ed4
+    m_ActionName: Buri/SairMenu[/XInputControllerWindows/buttonEast,/Keyboard/delete]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1479559294}
+        m_TargetAssemblyTypeName: MoveFloatBuri, Assembly-CSharp
+        m_MethodName: SetInteragir
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: cf45f25d-9559-4ecf-924b-05276755df0c
+    m_ActionName: Buri/Interagir[/XInputControllerWindows/buttonSouth,/Keyboard/enter]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Buri
@@ -2892,6 +2913,7 @@ MonoBehaviour:
   _hudCarregamento: {fileID: 586096226}
   _barraDeProgresso: {fileID: 1572334802}
   _mensagemTexto: {fileID: 1704549632}
+  _podeSair: 0
 --- !u!1001 &1818601582
 PrefabInstance:
   m_ObjectHideFlags: 0

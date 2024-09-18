@@ -24,6 +24,9 @@ public class MoveFloatBuri : MonoBehaviour
     private bool _flipX = false; //vai ser o nosso novo flip
     [SerializeField] float _timer, _timerValue, _speed;
 
+    [SerializeField] UnityEngine.UI.Button _botaoVoltarPraXimba;
+
+
     Animator _anim;
 
     bool _isBala;
@@ -97,6 +100,14 @@ public class MoveFloatBuri : MonoBehaviour
         }
        
 
+    }
+
+    public void SetInteragir(InputAction.CallbackContext value) //Abrir Minigame
+    {
+        if (Camera.main.GetComponent<MiniGameController>()._podeSair == true)
+        {
+            _botaoVoltarPraXimba.onClick.Invoke();
+        }
     }
 
     void TimeTiro()

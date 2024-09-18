@@ -84,8 +84,12 @@ public class MoveControl : MonoBehaviour
 
     [SerializeField] TutorControl _textoControl;
     [SerializeField] Button _BTinventario, _BTpause;
+    [SerializeField] Button[] _BTsair; //botoes X nos menus - fechar
+    [SerializeField] Button[] _BTinteragir; //Botoes Interagir, tipo aquele do interagir no minigame
     bool _abriuInventario, _abriuPause;
     [SerializeField] PauseMenu _pauseMenu;
+
+    [SerializeField] GameObject _painelResolver;
 
     //------------------Canoa---------------------
 
@@ -549,6 +553,23 @@ public class MoveControl : MonoBehaviour
     public void SetPause(InputAction.CallbackContext value) //Botao Start
     {
         _BTpause.onClick.Invoke(); //VOLTAR DAQUI SEU BUCETO
+    }
+    public void SetSairMenu(InputAction.CallbackContext value) //Fechar Menus
+    {
+        for (int i = 0; i < _BTsair.Length; i++)
+        {
+            _BTsair[i].onClick.Invoke(); 
+        }
+    }
+    public void SetInteragir(InputAction.CallbackContext value) //Abrir Minigame
+    {
+        if (_painelResolver.activeSelf)
+        {
+            for (int i = 0; i < _BTinteragir.Length; i++)
+            {
+                _BTinteragir[i].onClick.Invoke();
+            }
+        }
     }
     public void SetCameraAnalogico(InputAction.CallbackContext value) //Pulo: true ou false
     {
