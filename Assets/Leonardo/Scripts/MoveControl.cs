@@ -516,6 +516,14 @@ public class MoveControl : MonoBehaviour
     public void UsarCanoa(InputAction.CallbackContext value)
     {
         _canoa.GetComponent<CanoaMove>().PressionarBotao();
+        if (_checkPoint[2] == true)
+        {
+            _pontoDaMissao[0].SetActive(false); // xanaina
+            _pontoDaMissao[1].SetActive(false); // canoa
+            _pontoDaMissao[2].SetActive(true); // detritos
+                                               //_textoControl.valor = 2;
+            _textoControl.TextTutorOM(1);
+        }
     }
     public void SetEstaCorrendo(InputAction.CallbackContext value)
     {
@@ -614,20 +622,30 @@ public class MoveControl : MonoBehaviour
         {
             if (_checkPoint[0] == true)
             {
+                for (int i = 0; i < _checkPoint.Length; i++)
+                {
+                    _checkPoint[i] = false;
+                }
                 _checkPoint[1] = true;
-                _checkPoint[0] = false;
+             
                 //_textoControl._spriteExclamatIVO.SetActive(false);
             }
             else if (_checkPoint[1] ==  true)
             {
+                for (int i = 0; i < _checkPoint.Length; i++)
+                {
+                    _checkPoint[i] = false;
+                }
                 _checkPoint[2] = true;
-                _checkPoint[1] = false;
-                
+
             }
             else if (_checkPoint[2] ==  true)
             {
+                for (int i = 0; i < _checkPoint.Length; i++)
+                {
+                    _checkPoint[i] = false;
+                }
                 _checkPoint[3] = true;
-                _checkPoint[2] = false;
             }
             
             if (_checkPoint[0]==true)
@@ -635,6 +653,7 @@ public class MoveControl : MonoBehaviour
                 _pontoDaMissao[0].SetActive(true); // xanaina
                 _pontoDaMissao[1].SetActive(false); // canoa
                 _pontoDaMissao[2].SetActive(false); // detritos
+                _pontoDaMissao[3].SetActive(false); 
                 //_textoControl.valor = 0;
                 _textoControl.TextTutorOM(0);
             }
@@ -646,14 +665,7 @@ public class MoveControl : MonoBehaviour
                 //_textoControl.valor = 1;
                 _textoControl.TextTutorOM(0);
             }
-            else if (_checkPoint[2] == true)
-            {
-                _pontoDaMissao[0].SetActive(false); // xanaina
-                _pontoDaMissao[1].SetActive(false); // canoa
-                _pontoDaMissao[2].SetActive (true); // detritos
-                //_textoControl.valor = 2;
-                _textoControl.TextTutorOM(1);
-            }
+           
             else if (_checkPoint[3] == true)
             {
                 _textoControl.TextTutorOM(2);
