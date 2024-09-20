@@ -1155,6 +1155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1085003910}
   - component: {fileID: 1085003911}
+  - component: {fileID: 1085003912}
   m_Layer: 0
   m_Name: canoapngg
   m_TagString: Untagged
@@ -1171,7 +1172,7 @@ Transform:
   m_GameObject: {fileID: 1085003909}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.29, y: 6.53, z: -407.55298}
+  m_LocalPosition: {x: 0.29, y: 6.53, z: -407.553}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1229,6 +1230,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1085003912
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085003909}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2e8222e0558cf948a1292ce05c08ebc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1125768767
 GameObject:
   m_ObjectHideFlags: 0
@@ -2289,6 +2311,7 @@ MonoBehaviour:
   _timerValue: 0.5
   _speed: 200
   _botaoVoltarPraXimba: {fileID: 1256802594}
+  _canoa: {fileID: 1085003909}
 --- !u!114 &1479559295
 MonoBehaviour:
   m_ObjectHideFlags: 0

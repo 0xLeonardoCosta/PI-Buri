@@ -26,6 +26,8 @@ public class MoveFloatBuri : MonoBehaviour
 
     [SerializeField] UnityEngine.UI.Button _botaoVoltarPraXimba;
 
+    [SerializeField] GameObject _canoa;
+
 
     Animator _anim;
 
@@ -36,6 +38,7 @@ public class MoveFloatBuri : MonoBehaviour
     {
         _timer = _timerValue;
         _anim = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -49,6 +52,28 @@ public class MoveFloatBuri : MonoBehaviour
         //new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, _deslocamentoY, transform.position.z); //position
         //_tiro = Input.GetButtonDown("Fire1");//espaço
 
+        if (_input != Vector3.zero)
+        {
+            _canoa.GetComponent<Animator>().speed = 1;
+            _canoa.GetComponent<Animator>().Play("canoa xonga");
+        }
+        else
+        {
+            _canoa.GetComponent<Animator>().speed = 0;
+        }
+
+        if (transform.position.x <= -7.5f)
+        {
+            //Debug.Log("To gravido");
+            Vector3 posicao = transform.position;
+            transform.position = new Vector3(-7.5f, posicao.y, posicao.z);
+        }
+        if (transform.position.x >= 7.5f)
+        {
+            //Debug.Log("To gravido");
+            Vector3 posicao = transform.position;
+            transform.position = new Vector3(7.5f, posicao.y, posicao.z);
+        }
 
         if (_atirar == true)
         {
