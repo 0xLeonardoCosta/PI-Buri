@@ -123,6 +123,8 @@ public class MoveControl : MonoBehaviour
     public Transform _hudGameBaixo;
     GameManagerBuri _GameManagerBuri;
 
+    bool _usandoCanoaTutor;
+
     void Start()
     {
         _GameManagerBuri = Camera.main.GetComponent<GameManagerBuri>();
@@ -615,11 +617,12 @@ public class MoveControl : MonoBehaviour
             other.GetComponent<CanoaMove>()._moveBuri = gameObject.GetComponent<MoveControl>();
             other.GetComponent<CanoaMove>()._botaoCanoa.SetActive(true);
             _GameManagerBuri.Tutorial(0,true);
-           // other.GetComponent<CanoaMove>()._textoSubirCanoa.SetActive(true);
+            //other.GetComponent<CanoaMove>()._textoSubirCanoa.SetActive(true);
         }
 
         if (other.gameObject.CompareTag("Missao"))
         {
+          
             if (_checkPoint[0] == true)
             {
                 for (int i = 0; i < _checkPoint.Length; i++)
@@ -637,6 +640,8 @@ public class MoveControl : MonoBehaviour
                     _checkPoint[i] = false;
                 }
                 _checkPoint[2] = true;
+                //_gaaameController._canoa.GetComponent<BoxCollider>().enabled = false;
+
 
             }
             else if (_checkPoint[2] ==  true)
@@ -645,6 +650,7 @@ public class MoveControl : MonoBehaviour
                 {
                     _checkPoint[i] = false;
                 }
+               // _gaaameController._canoa.GetComponent<BoxCollider>().enabled = false;
                 _checkPoint[3] = true;
             }
             
@@ -659,6 +665,7 @@ public class MoveControl : MonoBehaviour
             }
             else if (_checkPoint[1] == true)
             {
+                _gaaameController._canoa.GetComponent<BoxCollider>().enabled = true;
                 _pontoDaMissao[0].SetActive(false); // xanaina
                 _pontoDaMissao[1].SetActive(true); // canoa
                 _pontoDaMissao[2].SetActive(false); // detritos
@@ -668,6 +675,9 @@ public class MoveControl : MonoBehaviour
            
             else if (_checkPoint[3] == true)
             {
+                //_gaaameController._checkpoint2.tag = "Untagged";
+                Debug.Log(other.gameObject.name + " 2");
+                _usandoCanoaTutor = true;
                 _textoControl.TextTutorOM(2);
             }
         }

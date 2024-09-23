@@ -11,6 +11,8 @@ public class GaaameController : MonoBehaviour
     public Transform _posBuriCanoa;
     public GameObject _btMiniGame;
     public Canvas _canvasHud;
+    public GameObject _canoa;
+    public GameObject _checkpoint2;
 
     public List<AudioSource> _listaAudioHUD, _listaAudioGames, _listaAudioMusica;
     [SerializeField] bool _muteHUD, _muteGame, _muteMusica;
