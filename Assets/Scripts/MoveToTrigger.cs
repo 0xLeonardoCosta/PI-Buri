@@ -15,17 +15,23 @@ public class MoveToTrigger : MonoBehaviour
     {
         if (_iniciar) // Supondo que o movimento é iniciado com um clique do mouse
         {
-            agent.SetDestination(destination.position);
+          
             if (agent.remainingDistance < 1 && !_outrodest)
             {
                 _outrodest = true;
                 agentMovement._startRot = true;
+                agent.isStopped = true;
+              //  _iniciar=false;
                 Invoke("OutroDestido", parada);
+            }
+            else
+            {
+                agent.SetDestination(destination.position);
             }
         }
         else
         {
-            agent.isStopped = true;
+            //agent.isStopped = true;
         }
 
       
@@ -39,5 +45,7 @@ public class MoveToTrigger : MonoBehaviour
     {
         destination = destination2;
         agentMovement._startRot = false;
+        agent.isStopped = false;
+       // _iniciar = true;
     }
 }
