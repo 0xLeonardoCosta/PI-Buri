@@ -37,7 +37,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: Andar
+    m_ConditionEvent: Andando
     m_EventTreshold: 1
   - m_ConditionMode: 2
     m_ConditionEvent: Correndo
@@ -177,7 +177,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: Andar
+    m_ConditionEvent: Andando
     m_EventTreshold: 1
   - m_ConditionMode: 2
     m_ConditionEvent: Correndo
