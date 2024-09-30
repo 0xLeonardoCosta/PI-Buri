@@ -622,7 +622,7 @@ public class MoveControl : MonoBehaviour
 
         if (other.gameObject.CompareTag("Missao"))
         {
-          
+            Debug.Log("BrocaBrocaBroca");
             if (_checkPoint[0] == true)
             {
                 for (int i = 0; i < _checkPoint.Length; i++)
