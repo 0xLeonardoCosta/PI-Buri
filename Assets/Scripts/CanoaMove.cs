@@ -37,12 +37,15 @@ public class CanoaMove : MonoBehaviour
 
     [SerializeField] Transform _hudInforMini;
 
+    TutorControl _tutorControl;
+
     void Start()
     {
         _gaaameController = Camera.main.GetComponent<GaaameController>();
         _player = Camera.main.GetComponent<GaaameController>()._player;
         _managerBuri =Camera.main.GetComponent<GameManagerBuri>();
         _rb = GetComponent<Rigidbody>();
+        _tutorControl = Camera.main.GetComponent<GaaameController>()._canvasHud.GetComponent<TutorControl>();
     }
 
     void Update()
@@ -142,7 +145,10 @@ public class CanoaMove : MonoBehaviour
             _gaaameController._btMiniGame.SetActive(true);
             this._hudInforMini.gameObject.SetActive(true);
         }
-
+        if (other.gameObject.CompareTag("Missao"))
+        {
+           // _tutorControl.TextTutorOM(2);
+        }
     }
     void OnTriggerExit(Collider other)
     {

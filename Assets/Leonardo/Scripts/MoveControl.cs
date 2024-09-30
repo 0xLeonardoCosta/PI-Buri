@@ -78,7 +78,7 @@ public class MoveControl : MonoBehaviour
     [SerializeField] List<GameObject>  _pontoDaMissao;
     [SerializeField] GameObject _buriCabessote;
 
-    [SerializeField] bool[] _checkPoint;
+    [SerializeField] public bool[] _checkPoint;
 
     [SerializeField] GameObject _canoa;
 
@@ -141,6 +141,7 @@ public class MoveControl : MonoBehaviour
         _hudGames = _gaaameController._canvasHud.GetComponent<HudGames>();
         _playerPontos = Camera.main.GetComponent<Playpontos>();
         _textoControl = Camera.main.GetComponent<GaaameController>()._canvasHud.GetComponent<TutorControl>();
+        _pontoDaMissao[0].SetActive(true); // xanaina
 
 
     }
@@ -622,64 +623,82 @@ public class MoveControl : MonoBehaviour
 
         if (other.gameObject.CompareTag("Missao"))
         {
-            Debug.Log("BrocaBrocaBroca");
-            if (_checkPoint[0] == true)
+      
+            GPS _gPS = other.gameObject.GetComponent<GPS>();
+          
+            if (_gPS._index==1)
             {
+                _textoControl.TextTutorOM(0);
+
                 for (int i = 0; i < _checkPoint.Length; i++)
                 {
                     _checkPoint[i] = false;
                 }
+
+                for (int i = 0; i < _pontoDaMissao.Count; i++)
+                {
+                    _pontoDaMissao[i].SetActive(false);
+                }
+                _pontoDaMissao[1].SetActive(true);
                 _checkPoint[1] = true;
              
                 //_textoControl._spriteExclamatIVO.SetActive(false);
             }
-            else if (_checkPoint[1] ==  true)
-            {
-                for (int i = 0; i < _checkPoint.Length; i++)
-                {
-                    _checkPoint[i] = false;
-                }
-                _checkPoint[2] = true;
-                //_gaaameController._canoa.GetComponent<BoxCollider>().enabled = false;
-
-
-            }
-            else if (_checkPoint[2] ==  true)
-            {
-                for (int i = 0; i < _checkPoint.Length; i++)
-                {
-                    _checkPoint[i] = false;
-                }
-               // _gaaameController._canoa.GetComponent<BoxCollider>().enabled = false;
-                _checkPoint[3] = true;
-            }
-            
-            if (_checkPoint[0]==true)
-            {
-                _pontoDaMissao[0].SetActive(true); // xanaina
-                _pontoDaMissao[1].SetActive(false); // canoa
-                _pontoDaMissao[2].SetActive(false); // detritos
-                _pontoDaMissao[3].SetActive(false); 
-                //_textoControl.valor = 0;
-                _textoControl.TextTutorOM(0);
-            }
-            else if (_checkPoint[1] == true)
-            {
-                _gaaameController._canoa.GetComponent<BoxCollider>().enabled = true;
-                _pontoDaMissao[0].SetActive(false); // xanaina
-                _pontoDaMissao[1].SetActive(true); // canoa
-                _pontoDaMissao[2].SetActive(false); // detritos
-                //_textoControl.valor = 1;
-                _textoControl.TextTutorOM(0);
-            }
            
-            else if (_checkPoint[3] == true)
+            else if(_gPS._index == 2)
             {
-                //_gaaameController._checkpoint2.tag = "Untagged";
-                Debug.Log(other.gameObject.name + " 2");
-                _usandoCanoaTutor = true;
-                _textoControl.TextTutorOM(2);
+                _textoControl.TextTutorOM(1);
+
+                for (int i = 0; i < _checkPoint.Length; i++)
+                {
+                    _checkPoint[i] = false;
+                }
+
+                for (int i = 0; i < _pontoDaMissao.Count; i++)
+                {
+                    _pontoDaMissao[i].SetActive(false);
+                }
+                _pontoDaMissao[2].SetActive(true);
+                _checkPoint[2] = true;
             }
+            /*
+           else if (_gPS._index == 3)
+           {
+               for (int i = 0; i < _checkPoint.Length; i++)
+               {
+                   _checkPoint[i] = false;
+               }
+               // _gaaameController._canoa.GetComponent<BoxCollider>().enabled = false;
+               Debug.Log("_gPS._index == 3");
+               _checkPoint[3] = true;
+           }
+
+           if (_gPS._index == 1)
+           {
+               _pontoDaMissao[0].SetActive(false); // xanaina
+               _pontoDaMissao[1].SetActive(true); // canoa
+               _pontoDaMissao[2].SetActive(false); // detritos
+               //_pontoDaMissao[3].SetActive(false); 
+               //_textoControl.valor = 0;
+               _textoControl.TextTutorOM(0);
+           }
+           else if (_gPS._index == 2)
+           {
+               _gaaameController._canoa.GetComponent<BoxCollider>().enabled = true;
+               _pontoDaMissao[0].SetActive(false); // xanaina
+               _pontoDaMissao[1].SetActive(true); // canoa
+               _pontoDaMissao[2].SetActive(false); // detritos
+               //_textoControl.valor = 1;
+               _textoControl.TextTutorOM(0);
+           }
+
+           else if (_gPS._index == 3)
+           {
+               //_gaaameController._checkpoint2.tag = "Untagged";
+
+               _usandoCanoaTutor = true;
+               _textoControl.TextTutorOM(2);
+           }*/
         }
     }
     private void OnTriggerExit(Collider other)

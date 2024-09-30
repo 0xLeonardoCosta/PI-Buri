@@ -8,6 +8,7 @@ public class GPS : MonoBehaviour
     public float _minimapSize;
     public Vector3 _tempV3;
     public GaaameController _controller;
+    public int _index;
 
     void Start()
     {
