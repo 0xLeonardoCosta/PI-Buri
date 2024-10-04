@@ -581,11 +581,15 @@ public class MoveControl : MonoBehaviour
     }
     public void SetSairMenu(InputAction.CallbackContext value) //Fechar Menus
     {
-        for (int i = 0; i < _BTsair.Length; i++)
+        if (_gaaameController._pauseGame)
         {
-            _BTsair[i].onClick.Invoke(); 
+            for (int i = 0; i < _BTsair.Length; i++)
+            {
+                _BTsair[i].onClick.Invoke();
+            }
+            _gaaameController._pauseGame = false;
         }
-        _gaaameController._pauseGame = false;
+       
     }
     public void SetInteragir(InputAction.CallbackContext value) //Abrir Minigame
     {
