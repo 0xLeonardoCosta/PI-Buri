@@ -16,6 +16,9 @@ public class MoveFloatBuri : MonoBehaviour
     public Vector3 _input;
     //public int _score = 0;
 
+    public AudioClip _tiroSom;  // Arraste o arquivo de som aqui no Inspector
+    private AudioSource _audioSource;
+
 
     public GameObject _balaProjetil; // vai ser a nossa bala
     public Transform _arma; // posicao de onde vai sair nosso tiro
@@ -38,6 +41,7 @@ public class MoveFloatBuri : MonoBehaviour
     {
         _timer = _timerValue;
         _anim = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -103,6 +107,7 @@ public class MoveFloatBuri : MonoBehaviour
         GameObject _temp = Instantiate(_balaProjetil);
         _temp.transform.position = _arma.position;
         _temp.GetComponent<Rigidbody2D>().velocity = new Vector2(_forcadoTiro, 0);
+        _audioSource.PlayOneShot(_tiroSom);
         Destroy(_temp.gameObject, 3f);
         
         
