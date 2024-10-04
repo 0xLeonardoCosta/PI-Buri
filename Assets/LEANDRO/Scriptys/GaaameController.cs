@@ -16,6 +16,12 @@ public class GaaameController : MonoBehaviour
 
     public List<AudioSource> _listaAudioHUD, _listaAudioGames, _listaAudioMusica;
     [SerializeField] bool _muteHUD, _muteGame, _muteMusica;
+    public bool _pauseGame;
+
+    private void Start()
+    {
+        _pauseGame=true;
+    }
 
     void Update()
     {
@@ -31,5 +37,10 @@ public class GaaameController : MonoBehaviour
         {
             _listaAudioMusica[i].mute = _muteMusica;
         }
+    }
+
+    public void CheckPause(bool value)
+    {
+        _pauseGame = value;
     }
 }

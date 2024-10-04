@@ -125,6 +125,10 @@ public class MoveControl : MonoBehaviour
 
     bool _usandoCanoaTutor;
 
+    public Button _btStartIni;
+
+  
+
     void Start()
     {
         _GameManagerBuri = Camera.main.GetComponent<GameManagerBuri>();
@@ -148,40 +152,43 @@ public class MoveControl : MonoBehaviour
 
     void Update()
     {
-        if (!_usandoCanoa)
+        if (!_gaaameController._pauseGame)
         {
-            if (_hudGameBaixo.gameObject.activeInHierarchy)
+            if (!_usandoCanoa)
             {
-                EstaCorrendoCelular();
+                if (_hudGameBaixo.gameObject.activeInHierarchy)
+                {
+                    EstaCorrendoCelular();
+                }
+                else
+                {
+                    EstaCorrendo();
+                }
+
+
+                Move();
+                //LookAtMovementDirection();// pausar na mira
+                RotIni();// so quando mirar
+                Dano();
+                Gravity();
+                CheckPulo();// Checa se está encostando no chão e função de timer para normalizar pulo
+                VidaCheck();
+                //  ReativarBaladeira();
+                BaladeiraCheck();
+                CanoaCheck();
+
+                NaAguaCheck();
+                _anim.SetLayerWeight(1, 1);
             }
             else
             {
-                EstaCorrendo();
+                MoveCanoa();
             }
-           
-
-            Move();
-            //LookAtMovementDirection();// pausar na mira
-            RotIni();// so quando mirar
-            Dano();
-            Gravity();
-            CheckPulo();// Checa se está encostando no chão e função de timer para normalizar pulo
-            VidaCheck();
-          //  ReativarBaladeira();
-            BaladeiraCheck();
-            CanoaCheck();
-           
-            NaAguaCheck();
-            _anim.SetLayerWeight(1, 1);
+            CheckPointsOrientacao();
+            //CameraControl();
+            _variacaoAltura = _controller.velocity.y;
+            _anim.SetBool("EstaCorrendo", _estaCorrendo);
         }
-        else
-        {
-            MoveCanoa();
-        }
-        CheckPointsOrientacao();
-        //CameraControl();
-        _variacaoAltura = _controller.velocity.y;
-        _anim.SetBool("EstaCorrendo", _estaCorrendo);
     }
 
 
@@ -485,7 +492,7 @@ public class MoveControl : MonoBehaviour
     {
         _inputBaladeira = true;
         _anim.SetBool("TiroBaladeira", true);
-        Debug.Log(_inputBaladeira + " TiroBaladeira");
+     //   Debug.Log(_inputBaladeira + " TiroBaladeira");
         //timer
     }
     void CheckPointsOrientacao()
@@ -563,7 +570,14 @@ public class MoveControl : MonoBehaviour
     }
     public void SetPause(InputAction.CallbackContext value) //Botao Start
     {
-        _BTpause.onClick.Invoke(); //VOLTAR DAQUI SEU BUCETO
+        if (!_gaaameController._pauseGame)
+        {
+            _BTpause.onClick.Invoke(); //VOLTAR DAQUI SEU BUCETO
+            _btStartIni.Select();
+            _gaaameController._pauseGame = true;
+        }
+      
+
     }
     public void SetSairMenu(InputAction.CallbackContext value) //Fechar Menus
     {
@@ -571,6 +585,7 @@ public class MoveControl : MonoBehaviour
         {
             _BTsair[i].onClick.Invoke(); 
         }
+        _gaaameController._pauseGame = false;
     }
     public void SetInteragir(InputAction.CallbackContext value) //Abrir Minigame
     {
