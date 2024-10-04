@@ -29,12 +29,15 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] Transform _posBaixo, _posCima;
     [SerializeField] Transform _posOriginBaixo, _posOriginCima;
     [SerializeField] Transform _posMapaOrigin;
+    [SerializeField] GaaameController _gaaameController;
 
     void Start()
     {
         _pauseMenu.transform.localScale = Vector3.zero;    
         _opcoesMenu.transform.localScale = Vector3.zero;    
         _inventarioMenu.transform.localScale = Vector3.zero;    
+         _gaaameController = Camera.main.GetComponent<GaaameController>();
+
     }
     public void Pause()
     {
@@ -42,11 +45,17 @@ public class PauseMenu : MonoBehaviour
     }
     public void Opcoes()
     {
-        StartCoroutine(AbrirMenuOpcoes());
+        if (_gaaameController._pauseGame)
+        {
+            StartCoroutine(AbrirMenuOpcoes());
+        }
     }
     public void Voltar()
     {
-        StartCoroutine(VoltarAoMenuPause());
+        if (_gaaameController._pauseGame)
+        {
+            StartCoroutine(VoltarAoMenuPause());
+        }
     }
     public void FecharMenu()
     {
@@ -63,11 +72,16 @@ public class PauseMenu : MonoBehaviour
     public void VoltarMenuPrincipaaaau() // Voltar ao menu
     {
         //Time.timeScale = 1f;
-        SceneManager.LoadScene("MenuBuriLusca");
+        if (_gaaameController._pauseGame)
+        {
+            SceneManager.LoadScene("MenuBuriLusca");
+        }
     }
 
     IEnumerator AbrirMenuPause() // Dar pause no game
     {
+        if (!_gaaameController._pauseGame) {
+            _gaaameController._pauseGame = true;
         _pauseMenu.SetActive(true);
 
         _BtPause.transform.DOMove(_posForaPause.position, 0.3f);
@@ -88,6 +102,7 @@ public class PauseMenu : MonoBehaviour
         }
         yield return new WaitForSeconds(0.5f);
         //Time.timeScale = 0.01f;
+        }
     }
 
     IEnumerator AbrirMenuOpcoes() // Abrir opcoes do game
