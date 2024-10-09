@@ -33,6 +33,9 @@ public class MiniGameController : MonoBehaviour
 
     public bool _podeSair;
 
+    public AudioClip _somMorte;  // Som da morte (vinculado no Inspector)
+    private AudioSource _audioSource;
+
 
 
 
@@ -48,6 +51,8 @@ public class MiniGameController : MonoBehaviour
 
         this._barraDeProgresso.gameObject.SetActive(false);
         this._hudCarregamento.gameObject.SetActive(false);
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void CaiNumero()
@@ -92,7 +97,9 @@ public class MiniGameController : MonoBehaviour
         _pontos.text = Camera.main.GetComponent<MiniGameController>()._score + "Pontos";*/
         _score++;
         _pontos.text = "Pontos: " + _score;
+        
         collision.GetComponent<projetil>().DestroyItem();
+        
         //Destroy(col.gameObject);
     }
 
