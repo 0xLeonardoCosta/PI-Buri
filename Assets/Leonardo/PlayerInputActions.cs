@@ -116,6 +116,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""move"",
+                    ""type"": ""Value"",
+                    ""id"": ""9a5a15b4-fb01-4698-920e-2468d60b640e"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -679,6 +688,116 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Interagir"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""3D Vector"",
+                    ""id"": ""fc4d5bee-12ad-4a7d-8654-d1c4ddae04da"",
+                    ""path"": ""3DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""bf2fbfbe-6ca8-43bd-89ce-6cd7bda463ef"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""4af7d390-a818-4abe-aa5b-4ea2a3cfdd16"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""fad798ea-3920-4d6b-9101-103f081881a6"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""1b1670ea-cab8-4a07-b5d0-89845c22173c"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""3D Vector"",
+                    ""id"": ""f7c7cd56-9c06-4878-924c-a947f0511d03"",
+                    ""path"": ""3DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""de61e8a9-0bb4-4b22-bca2-8b7033190728"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""01cba771-d199-4beb-857f-cffe84061ad2"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""c52c6a29-55ba-4103-9ab8-37a657069306"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""decfcfbe-953b-4a18-88dd-69df9e435995"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -697,6 +816,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Buri_Inventario = m_Buri.FindAction("Inventario", throwIfNotFound: true);
         m_Buri_SairMenu = m_Buri.FindAction("SairMenu", throwIfNotFound: true);
         m_Buri_Interagir = m_Buri.FindAction("Interagir", throwIfNotFound: true);
+        m_Buri_move = m_Buri.FindAction("move", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -768,6 +888,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Buri_Inventario;
     private readonly InputAction m_Buri_SairMenu;
     private readonly InputAction m_Buri_Interagir;
+    private readonly InputAction m_Buri_move;
     public struct BuriActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -782,6 +903,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Inventario => m_Wrapper.m_Buri_Inventario;
         public InputAction @SairMenu => m_Wrapper.m_Buri_SairMenu;
         public InputAction @Interagir => m_Wrapper.m_Buri_Interagir;
+        public InputAction @move => m_Wrapper.m_Buri_move;
         public InputActionMap Get() { return m_Wrapper.m_Buri; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -821,6 +943,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Interagir.started += instance.OnInteragir;
             @Interagir.performed += instance.OnInteragir;
             @Interagir.canceled += instance.OnInteragir;
+            @move.started += instance.OnMove;
+            @move.performed += instance.OnMove;
+            @move.canceled += instance.OnMove;
         }
 
         private void UnregisterCallbacks(IBuriActions instance)
@@ -855,6 +980,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Interagir.started -= instance.OnInteragir;
             @Interagir.performed -= instance.OnInteragir;
             @Interagir.canceled -= instance.OnInteragir;
+            @move.started -= instance.OnMove;
+            @move.performed -= instance.OnMove;
+            @move.canceled -= instance.OnMove;
         }
 
         public void RemoveCallbacks(IBuriActions instance)
@@ -884,5 +1012,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnInventario(InputAction.CallbackContext context);
         void OnSairMenu(InputAction.CallbackContext context);
         void OnInteragir(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
     }
 }
