@@ -26,6 +26,7 @@ TagManager:
   - MiniGame
   - ItemTag
   - player2D
+  - bloco
   layers:
   - Default
   - TransparentFX
