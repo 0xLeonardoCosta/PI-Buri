@@ -11,6 +11,7 @@ public class moveleandro : MonoBehaviour
     Rigidbody2D _rigidboody2;
     public TextMeshPro _textPlayer;
     public bloboNumero _blocoNumero;
+    public ContaLeandro _contaLeandro;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,20 @@ public class moveleandro : MonoBehaviour
         {
             _blocoNumero = collision.gameObject.GetComponent<bloboNumero>();
             _textPlayer.text = "" + _blocoNumero._numeroBloco;
+        }
+
+        if (collision.gameObject.CompareTag("contaleandro"))
+        {
+            _contaLeandro = collision.gameObject.GetComponent<ContaLeandro>();
+            if(_contaLeandro._resp== _blocoNumero._numeroBloco)
+            {
+                Debug.Log("Tcholou"); // acertou
+                _contaLeandro.ContaSetLeandro("" + _blocoNumero._numeroBloco);
+            }
+            else
+            {
+                Debug.Log("Destcholou"); // errou
+            }
         }
     }
 }
