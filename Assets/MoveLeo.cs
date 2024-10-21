@@ -11,6 +11,7 @@ public class MoveLeo : MonoBehaviour
     Rigidbody _rb;
     public TextMeshPro _textPlayer;
     public BlocoNumero _blocoNumero;
+    public ContaLeo _conta;
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -31,6 +32,18 @@ public class MoveLeo : MonoBehaviour
         {
             _blocoNumero = other.gameObject.GetComponent<BlocoNumero>();
             _textPlayer.text = "" + other.gameObject.GetComponent<BlocoNumero>()._numeroBloco;
+        }
+        if (other.gameObject.CompareTag("Conta"))
+        {
+            _conta = other.GetComponent<ContaLeo>();
+            if (_conta._resp == _blocoNumero._numeroBloco)
+            {
+                Debug.Log("Acertou");
+            }
+            else
+            {
+                Debug.Log("Errou");
+            }
         }
     }
 }

@@ -4,44 +4,23 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - AtaquePlayer
-  - Item
-  - FxTemporaire
-  - AtaqueIni
-  - Inimigo
-  - BuriTriguuer
-  - Canoa
-  - HUD
-  - Ground
-  - AtracaCanoa
-  - NPC
-  - Agua
-  - bala2d
-  - CheckPoint
-  - Casa
-  - Camera
-  - Missao
-  - Walking-NPC-Janaina
-  - Walking-NPC-Buri
-  - MiniGame
-  - ItemTag
-  - player2D
-  - bloco
+  - Bloco
+  - Conta
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
-  - Canoa
-  - Ximba1
-  - Casas
-  - Ground
-  - _minicamera
-  - Walking-NPC-Janaina
-  - NPC
-  - Walking-NPC-Buri
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -63,10 +42,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: player2D
-    uniqueID: 1562469539
-    locked: 0
-  - name: New Layer 2
-    uniqueID: 2787899987
     locked: 0
