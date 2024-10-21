@@ -4,8 +4,35 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< Updated upstream
   - Bloco
   - Conta
+=======
+  - AtaquePlayer
+  - Item
+  - FxTemporaire
+  - AtaqueIni
+  - Inimigo
+  - BuriTriguuer
+  - Canoa
+  - HUD
+  - Ground
+  - AtracaCanoa
+  - NPC
+  - Agua
+  - bala2d
+  - CheckPoint
+  - Casa
+  - Camera
+  - Missao
+  - Walking-NPC-Janaina
+  - Walking-NPC-Buri
+  - MiniGame
+  - ItemTag
+  - player2D
+  - bloco
+  - contaLuska
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
