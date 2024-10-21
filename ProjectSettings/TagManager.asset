@@ -27,6 +27,7 @@ TagManager:
   - ItemTag
   - player2D
   - bloco
+  - contaleandro
   layers:
   - Default
   - TransparentFX
