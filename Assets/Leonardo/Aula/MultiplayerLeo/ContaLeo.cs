@@ -14,7 +14,7 @@ public class ContaLeo : MonoBehaviour
     {
         _resp = _numb1 + _numb2;
         ContaSet("?");
-        _textResp.text = _conta;
+       
 
         _contaControl = Camera.main.GetComponent<GameContaControlLeo>();
         
@@ -22,9 +22,10 @@ public class ContaLeo : MonoBehaviour
         Invoke("NumbEnviar", r);
     }
 
-    void ContaSet(string conta)
+    public void ContaSet(string conta)
     {
         _conta = _numb1 + " + " + _numb2 + " = " + conta;
+        _textResp.text = _conta;
     }
 
     void NumbEnviar()

@@ -38,7 +38,7 @@ public class MoveLeo : MonoBehaviour
             _conta = other.GetComponent<ContaLeo>();
             if (_conta._resp == _blocoNumero._numeroBloco)
             {
-                Debug.Log("Acertou");
+                _conta.ContaSet(""+_blocoNumero._numeroBloco);
             }
             else
             {

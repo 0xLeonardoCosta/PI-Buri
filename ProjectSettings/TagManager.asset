@@ -3,7 +3,24 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - HUD
+  - Ground
+  - Missao
+  - CheckPoint
+  - AtaqueIni
+  - NPC
+  - AtaquePlayer
+  - BuriTriguuer
+  - MiniGame
+  - Inimigo
+  - Item
+  - FxTemporaire
+  - Agua
+  - Casa
+  - Canoa
+  - ItemTag
+  - LimiteMapa
   layers:
   - Default
   - TransparentFX

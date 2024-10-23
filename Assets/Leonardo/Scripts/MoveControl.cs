@@ -608,6 +608,14 @@ public class MoveControl : MonoBehaviour
           //  _pivotCamera
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("LimiteMapa"))
+        {
+            Debug.Log("SaindoDaMissao");
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Item") && !_hitFruta)

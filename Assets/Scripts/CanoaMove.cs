@@ -132,6 +132,21 @@ public class CanoaMove : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("LimiteMapa"))
+        {
+            Debug.Log("SaindoDaMissao");
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("LimiteMapa"))
+        {
+            Debug.Log("VoltandoPraMissao");
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))

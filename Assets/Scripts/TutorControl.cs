@@ -42,6 +42,18 @@ public class TutorControl : MonoBehaviour
         _baixoMeio.SetActive(false);
         _btInventario.SetActive(false);
 
+        //Invoke("FecharAuto", 3f);
+        StartCoroutine("FecharAuto", 0f);
+    }
+    IEnumerator FecharAuto()
+    {
+        yield return new WaitForSeconds(5f);
+        _panelTutor.DOScale(0, .25f);
+        _spriteExclamatIVO.SetActive(true);
+        minimizado = true;
+        _baixoMeio.SetActive(true);
+        _btInventario.SetActive(true);
+        yield return null;
     }
     public void TextTutoOFF()
     {
