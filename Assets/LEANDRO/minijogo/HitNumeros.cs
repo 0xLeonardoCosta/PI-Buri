@@ -22,12 +22,22 @@ public class HitNumeros : projetil
         _controller = Camera.main.GetComponent<MiniGameController>();
         if (collision.gameObject.CompareTag("bala2d"))
         {
-           // StartCoroutine(DestruirTime());
-
-            if(_resultado == _miniGameController._resultadoContaReal)
+            // StartCoroutine(DestruirTime());
+            projetil _projetil = collision.gameObject.GetComponent<projetil>();
+            if (_resultado == _miniGameController._resultadoContaReal)
             {
                 Debug.Log("Certo");
-                
+                if (_projetil.playerNbala == 1)
+                {
+                    _controller.player1pontos++;
+                    _controller._textMeshpontos[0].text = "Pontos " + _controller.player1pontos;
+
+                }
+                else
+                {
+                    _controller.player2Pontos++;
+                    _controller._textMeshpontos[1].text = "Pontos " + _controller.player2Pontos;
+                }
                 StartCoroutine(DestruirTimeCerto());
                 // StartCoroutine(DestruirTimeCerto());
 

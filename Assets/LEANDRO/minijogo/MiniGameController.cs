@@ -36,6 +36,11 @@ public class MiniGameController : MonoBehaviour
     public AudioClip _somMorte;  // Som da morte (vinculado no Inspector)
     private AudioSource _audioSource;
 
+    public int playerN;
+    public int player1pontos;
+    public int player2Pontos;
+
+    public TextMeshProUGUI[] _textMeshpontos;
 
 
 

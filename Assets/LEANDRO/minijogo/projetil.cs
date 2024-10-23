@@ -12,8 +12,9 @@ public class projetil : MonoBehaviour
     [SerializeField] GameObject _partSaida;
     [SerializeField] Collider2D _Collider2D;
     protected MiniGameController _miniGameController;
+    public int playerNbala;
 
-   
+
 
     // Start is called before the first frame update
     protected virtual void Start()

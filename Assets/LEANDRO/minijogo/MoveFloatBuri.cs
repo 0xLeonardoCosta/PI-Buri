@@ -36,12 +36,21 @@ public class MoveFloatBuri : MonoBehaviour
 
     bool _isBala;
 
+    public int player;
+
+    MiniGameController _MiniGameController;
+
     // Start is called before the first frame update
     void Start()
     {
         _timer = _timerValue;
         _anim = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
+        _MiniGameController = Camera.main.GetComponent<MiniGameController>();
+        _MiniGameController.playerN++;
+        player = _MiniGameController.playerN;
+
+
 
     }
 
@@ -106,6 +115,7 @@ public class MoveFloatBuri : MonoBehaviour
         _atirar = true;
         GameObject _temp = Instantiate(_balaProjetil);
         _temp.transform.position = _arma.position;
+        _temp.GetComponent<projetil>().playerNbala = player;
         _temp.GetComponent<Rigidbody2D>().velocity = new Vector2(_forcadoTiro, 0);
         _audioSource.PlayOneShot(_tiroSom);
         Destroy(_temp.gameObject, 3f);
