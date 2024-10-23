@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ControleSom : MonoBehaviour
 {
@@ -18,6 +19,16 @@ public class ControleSom : MonoBehaviour
     [SerializeField] bool _somGameMute;
     [SerializeField] TextMeshProUGUI _textSomGame;
 
+
+    [SerializeField] Sprite _imageMenuMute;
+    [SerializeField] Sprite _imageMenuSom;
+
+    [SerializeField] Sprite _imageMusicMute;
+    [SerializeField] Sprite _imageMusicSom;
+
+    [SerializeField] Button _btSomMenu;
+
+
     void Start()
     {
 
@@ -28,12 +39,12 @@ public class ControleSom : MonoBehaviour
         _somMenuMute = !_somMenuMute;
         if (_somMenuMute)
         {
-            _textSomMenu.text = "Som Menu";
+            _btSomMenu.GetComponent<Image>().sprite = _imageMenuMute;
 
         }
         else
         {
-            _textSomMenu.text = "Mute Menu";
+            _btSomMenu.GetComponent<Image>().sprite = _imageMenuSom;
         }
 
         for (int i = 0; i < _sonsMenu.Count; i++)
@@ -48,7 +59,7 @@ public class ControleSom : MonoBehaviour
         _somMusicMute = !_somMusicMute;
         if (_somMusicMute)
         {
-            _textSomMusic.text = "Som Music";
+            _btSomMenu.GetComponent<Image>().sprite = _imageMusicMute;
             for (int i = 0; i < _sonsMusic.Count; i++)
             {
                 _sonsMusic[i].Stop();
@@ -57,7 +68,7 @@ public class ControleSom : MonoBehaviour
         }
         else
         {
-            _textSomMusic.text = "Mute Music";
+            _btSomMenu.GetComponent<Image>().sprite = _imageMusicSom;
             for (int i = 0; i < _sonsMusic.Count; i++)
             {
                 _sonsMusic[i].Play();

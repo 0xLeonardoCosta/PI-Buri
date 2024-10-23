@@ -451,10 +451,10 @@ TextureImporter:
       name: gui-interno-oficial_14
       rect:
         serializedVersion: 2
-        x: 8246
-        y: 593
-        width: 257
-        height: 313
+        x: 8297
+        y: 551
+        width: 554
+        height: 401
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -469,54 +469,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gui-interno-oficial_16
-      rect:
-        serializedVersion: 2
-        x: 8543
-        y: 544
-        width: 312
-        height: 411
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 942daffe7c3ae3945b3514c2d1c05c27
-      internalID: 624524142
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: som-audio
-      rect:
-        serializedVersion: 2
-        x: 8893
-        y: 593
-        width: 264
-        height: 313
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 605e57b0e1b58ee428a407377d2c66f5
-      internalID: -1876001859
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: som
       rect:
         serializedVersion: 2
-        x: 9192
+        x: 8948
         y: 544
-        width: 312
+        width: 556
         height: 411
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -535,10 +493,10 @@ TextureImporter:
       name: gui-interno-oficial_22
       rect:
         serializedVersion: 2
-        x: 8245
-        y: 193
-        width: 258
-        height: 263
+        x: 8250
+        y: 99
+        width: 602
+        height: 401
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -553,55 +511,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: gui-interno-oficial_23
-      rect:
-        serializedVersion: 2
-        x: 8543
-        y: 95
-        width: 312
-        height: 410
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 74e1d04b76967774dbf3f02991a31e29
-      internalID: 696842660
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sem-audio
-      rect:
-        serializedVersion: 2
-        x: 8894
-        y: 193
-        width: 264
-        height: 263
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c7a9c4ac26444c34289bc93d4761876f
-      internalID: 605168304
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: gui-interno-oficial_25
       rect:
         serializedVersion: 2
-        x: 9192
-        y: 95
-        width: 312
-        height: 410
+        x: 8897
+        y: 98
+        width: 605
+        height: 404
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -626,34 +542,34 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      configuracao: -1908717827
-      gui-interno-oficial_0: -1930991050
-      gui-interno-oficial_10: 814140620
-      gui-interno-oficial_12: 697406199
-      gui-interno-oficial_14: -1180821778
-      gui-interno-oficial_15: 2061178983
-      gui-interno-oficial_16: 624524142
-      gui-interno-oficial_18: -1122943591
-      gui-interno-oficial_20: 1385781156
-      gui-interno-oficial_21: 1520181858
-      gui-interno-oficial_22: 2035236064
-      gui-interno-oficial_23: 696842660
-      gui-interno-oficial_25: 344473032
-      gui-interno-oficial_26: -4437684
-      gui-interno-oficial_27: 148084604
-      gui-interno-oficial_3: -188241288
-      inventario-azul: 409421179
-      inventario-cinza: 990172031
-      inventario-colorido: -1349721623
-      menu-cinza: -927886873
-      negativo: -1222554376
-      pausa: -423736750
-      play: -131926463
-      positivo-azul: -56512435
-      positivo-verde: 295107669
-      sem-audio: 605168304
-      som: -902990441
-      som-audio: -1876001859
+      configuracao: -1930991050
+      gui-interno-oficial_0: -1928922872
+      gui-interno-oficial_10: -782036515
+      gui-interno-oficial_12: -188241288
+      gui-interno-oficial_14: -435730937
+      gui-interno-oficial_15: -1965828229
+      gui-interno-oficial_16: 2136269191
+      gui-interno-oficial_18: 1243225123
+      gui-interno-oficial_20: 29387867
+      gui-interno-oficial_21: -1336722034
+      gui-interno-oficial_22: 814140620
+      gui-interno-oficial_23: -106077052
+      gui-interno-oficial_25: 697406199
+      gui-interno-oficial_26: 780183416
+      gui-interno-oficial_27: -1180821778
+      gui-interno-oficial_3: 2061178983
+      inventario-azul: 624524142
+      inventario-cinza: -1190574915
+      inventario-colorido: -1122943591
+      menu-cinza: 885343080
+      negativo: 1385781156
+      pausa: 1520181858
+      play: 2035236064
+      positivo-azul: 696842660
+      positivo-verde: 1672355662
+      sem-audio: 344473032
+      som: -4437684
+      som-audio: 148084604
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

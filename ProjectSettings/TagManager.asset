@@ -3,6 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< Updated upstream
   tags:
   - HUD
   - Ground
@@ -21,6 +22,9 @@ TagManager:
   - Canoa
   - ItemTag
   - LimiteMapa
+=======
+  tags: []
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
