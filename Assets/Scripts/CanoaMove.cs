@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class CanoaMove : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class CanoaMove : MonoBehaviour
     public GameObject _textoSubirCanoa;
     
     [SerializeField] GameObject _rio;
+
+    [SerializeField] GameObject _tutoralSairCanoa1, _tutoralSairCanoa2;
 
     [SerializeField] Transform _player;
     
@@ -82,6 +86,7 @@ public class CanoaMove : MonoBehaviour
         {
             _managerBuri._tutoral.SetActive(false);
             _managerBuri.TutoralSairCanoa(true);
+            StartCoroutine("FecharFazendoFade", 4f);
             _rio.GetComponent<MeshCollider>().isTrigger = false;
             _moveBuri._usandoCanoa = true;
             _moveBuri._pivotCamera = transform;
@@ -128,6 +133,7 @@ public class CanoaMove : MonoBehaviour
             _moveBuri._checkGround = _moveBuri._controller.isGrounded;
             _moveBuri._checkMover = true;
             _moveBuri._buriTriguer.GetComponent<CapsuleCollider>().enabled = true;
+            _moveBuri._remo.SetActive(false);
             _player.SetParent(null);
         }
     }
@@ -182,5 +188,15 @@ public class CanoaMove : MonoBehaviour
             }
 
         }
+    }
+
+    IEnumerator FecharFazendoFade()
+    {
+        yield return new WaitForSeconds(5f);
+        //Debug.Log("Sumir");
+        _tutoralSairCanoa1.GetComponent<Image>().DOFade(0, 4f);
+        _tutoralSairCanoa1.GetComponentInChildren<Text>().gameObject.SetActive(false);
+        _tutoralSairCanoa2.GetComponent<Image>().DOFade(0, 4f);
+        _tutoralSairCanoa2.GetComponentInChildren<Text>().gameObject.SetActive(false);
     }
 }

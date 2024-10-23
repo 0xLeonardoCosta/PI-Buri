@@ -112,7 +112,7 @@ public class MoveControl : MonoBehaviour
     [Header("Objetos Carregados")]
     [SerializeField] GameObject _baladeira;
     [SerializeField] GameObject _varaPesca;
-    [SerializeField] GameObject _remo;
+    [SerializeField] public GameObject _remo;
     [SerializeField] float rotation;
 
     public bool _checkCorrendo;

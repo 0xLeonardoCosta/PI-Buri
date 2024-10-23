@@ -1,4 +1,4 @@
-using DG.Tweening;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -54,7 +54,7 @@ public class GameManagerBuri : MonoBehaviour
     {
         _tutoral.SetActive(on);
         textTutor.text = _TextoTutoral[value];
-        //StartCoroutine("FecharFazendoFade", 0f);// NAO SEI SE ESTA FUNCIONANDO
+        //StartCoroutine("FecharFazendoFade", 0f);// NAO ESTA FUNCIONANDO
     }
 
     public void FecharTutorial(int value)
@@ -73,10 +73,5 @@ public class GameManagerBuri : MonoBehaviour
         _tutoralSairCanoa.SetActive(value);
         
     }
-    IEnumerator FecharFazendoFade()
-    {
-        yield return new WaitForSeconds(5f);
-        //Debug.Log("Sumir");
-        _tutoralSairCanoa.GetComponent<Image>().DOFade(0, 4f);
-    }
+    
 }
