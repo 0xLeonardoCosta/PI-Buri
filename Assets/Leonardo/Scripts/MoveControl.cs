@@ -433,7 +433,7 @@ public class MoveControl : MonoBehaviour
         {
             _checkMover = false;
             _anim.SetBool("hit", _recebeuDano);
-            Invoke("DanoTime", 3f);
+            Invoke("DanoTime", 0.1f);
             //_vidaControler.RecebeuDano();
             _hudGames.RecebeuDano();
             //Debug.Log("RecebeuDano");
