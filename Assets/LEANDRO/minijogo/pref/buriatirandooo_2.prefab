@@ -135,6 +135,8 @@ MonoBehaviour:
   _speed: 200
   _botaoVoltarPraXimba: {fileID: 0}
   _canoa: {fileID: 6049342599089124136}
+  player: 0
+  _spriteRenderer: {fileID: 6488192447318805858}
 --- !u!114 &8391386714757534473
 MonoBehaviour:
   m_ObjectHideFlags: 0

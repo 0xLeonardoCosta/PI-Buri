@@ -41,6 +41,7 @@ public class MiniGameController : MonoBehaviour
     public int player2Pontos;
 
     public TextMeshProUGUI[] _textMeshpontos;
+    public Color[] _color;
 
 
 

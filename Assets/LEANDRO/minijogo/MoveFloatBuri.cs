@@ -40,15 +40,26 @@ public class MoveFloatBuri : MonoBehaviour
 
     MiniGameController _MiniGameController;
 
+    public SpriteRenderer _spriteRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
         _timer = _timerValue;
+      
         _anim = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
         _MiniGameController = Camera.main.GetComponent<MiniGameController>();
         _MiniGameController.playerN++;
         player = _MiniGameController.playerN;
+        if (player == 1)
+        {
+            _spriteRenderer.color = _MiniGameController._color[0];
+        }
+        else
+        {
+            _spriteRenderer.color = _MiniGameController._color[1];
+        }
 
 
 
