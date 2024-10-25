@@ -3,28 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< Updated upstream
-  tags:
-  - HUD
-  - Ground
-  - Missao
-  - CheckPoint
-  - AtaqueIni
-  - NPC
-  - AtaquePlayer
-  - BuriTriguuer
-  - MiniGame
-  - Inimigo
-  - Item
-  - FxTemporaire
-  - Agua
-  - Casa
-  - Canoa
-  - ItemTag
-  - LimiteMapa
-=======
   tags: []
->>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
