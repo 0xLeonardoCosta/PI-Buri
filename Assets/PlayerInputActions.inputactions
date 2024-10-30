@@ -515,6 +515,28 @@
                 },
                 {
                     "name": "",
+                    "id": "f0da9d7b-b919-4ba1-a867-ce62e6cab3c1",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EstaCorrendo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a665da03-7fba-451e-bd89-f398b06af7ee",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "EstaCorrendo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "fecaf910-c7bb-4435-aa2b-f9744bc87703",
                     "path": "<Keyboard>/e",
                     "interactions": "",
@@ -598,28 +620,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Inventario",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ace7ca48-57eb-4037-9348-f336768599a3",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SairMenu",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5f3baf05-d24c-4d46-b454-d86cfc48d441",
-                    "path": "<XInputController>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SairMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
