@@ -18,9 +18,18 @@ public class GaaameController : MonoBehaviour
     [SerializeField] bool _muteHUD, _muteGame, _muteMusica;
     public bool _pauseGame;
 
+    MoveControl _moveControl;
+
+    [Header("Gatilhos de status")]
+    public bool _estaNadando;
+
+    [Header("Gatilhos para HUD")]
+    public bool _HUDnaTela;
+
     private void Start()
     {
         _pauseGame=true;
+        _moveControl = _player.GetComponent<MoveControl>();
     }
 
     void Update()
@@ -36,6 +45,14 @@ public class GaaameController : MonoBehaviour
         for (int i = 0; i < _listaAudioMusica.Count; i++)
         {
             _listaAudioMusica[i].mute = _muteMusica;
+        }
+    }
+
+    public void CheckStatus(int value)
+    {
+        if (value == 1)
+        {
+            //_player.GetComponent<>
         }
     }
 

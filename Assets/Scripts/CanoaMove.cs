@@ -32,6 +32,7 @@ public class CanoaMove : MonoBehaviour
     [SerializeField] bool _utilizandoCanoa;
 
     [SerializeField] Rigidbody _rb;
+    [SerializeField] BoxCollider _col;
 
     [SerializeField] float _velocidadeCurva;
     [SerializeField] float _velocidade;
@@ -50,6 +51,7 @@ public class CanoaMove : MonoBehaviour
         _managerBuri =Camera.main.GetComponent<GameManagerBuri>();
         _rb = GetComponent<Rigidbody>();
         _tutorControl = Camera.main.GetComponent<GaaameController>()._canvasHud.GetComponent<TutorControl>();
+        _col = GetComponent<BoxCollider>();
     }
 
     void Update()
@@ -95,6 +97,8 @@ public class CanoaMove : MonoBehaviour
             _moveBuri._checkGround = false;
             _moveBuri._checkMover = false;
             _moveBuri._buriTriguer.GetComponent<CapsuleCollider>().enabled = false;
+            _col.isTrigger = false;
+            _col.size = new Vector3(3.4f, 11.02f, 4.4f);
 
             //Botar o Buri Sentado na canoa
             _player.SetParent(_buriPosCanoa);
@@ -134,6 +138,8 @@ public class CanoaMove : MonoBehaviour
             _moveBuri._checkMover = true;
             _moveBuri._buriTriguer.GetComponent<CapsuleCollider>().enabled = true;
             _moveBuri._remo.SetActive(false);
+            _col.isTrigger = true;
+            _col.size = new Vector3(11,15,5);
             _player.SetParent(null);
         }
     }
