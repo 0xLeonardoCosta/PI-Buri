@@ -536,6 +536,7 @@ public class MoveControl : MonoBehaviour
     }
     public void SetEstaCorrendo(InputAction.CallbackContext value)
     {
+        _checkCorrendoBT = !_checkCorrendoBT;
         if (_correndoAtivo)
         {
             _checkCorrendo = value.performed;

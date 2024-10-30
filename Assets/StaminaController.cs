@@ -36,7 +36,6 @@ public class StaminaController : MonoBehaviour
             {
                 isRunning = 2;
             }
-
         }
         if (isRunning==1) // ativar contagem regressiva
         {
@@ -58,14 +57,13 @@ public class StaminaController : MonoBehaviour
 
         else if (isRunning == 2)
         {
-            _buriScript._estaminaValue += Time.deltaTime;
+            _buriScript._estaminaValue += Time.deltaTime * 7;
             _slider.value = _buriScript._estaminaValue;
             if (_slider.value >= _slider.maxValue) // Estamina cheia
             {
                 isRunning = 0;
             }
         }
-
     }
 
     IEnumerator TimeEstamina()
@@ -74,7 +72,5 @@ public class StaminaController : MonoBehaviour
         isTime = true;
         _buriScript._correndoAtivo = true;
         _buriScript._checkCorrendo = false;
-
     }
-
 }
