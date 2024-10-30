@@ -15,6 +15,7 @@ public class CanoaMove : MonoBehaviour
     [SerializeField] GameObject _rio;
 
     [SerializeField] GameObject _tutoralSairCanoa1, _tutoralSairCanoa2;
+    [SerializeField] GameObject _saindoMissao;
 
     [SerializeField] Transform _player;
     
@@ -148,15 +149,30 @@ public class CanoaMove : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("LimiteMapa"))
         {
-            Debug.Log("SaindoDaMissao");
+            //Debug.Log("SaindoDaMissao");
+            //_saindoMissao.SetActive(true);
+            StartCoroutine("DialogoSaindoDaMissao", 0f);
         }
     }
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("LimiteMapa"))
         {
-            Debug.Log("VoltandoPraMissao");
+            //Debug.Log("VoltandoPraMissao");
+            StartCoroutine("DialogoVoltandoMissao", 0f);
         }
+    }
+    IEnumerator DialogoSaindoDaMissao()
+    {
+        yield return new WaitForSeconds(0f);
+        _saindoMissao.GetComponent<Image>().DOFade(1, .25f);
+        _saindoMissao.GetComponentInChildren<Text>().DOFade(1, .25f);
+    }
+    IEnumerator DialogoVoltandoMissao()
+    {
+        yield return new WaitForSeconds(2f);
+        _saindoMissao.GetComponent<Image>().DOFade(0, .25f);
+        _saindoMissao.GetComponentInChildren<Text>().DOFade(0, .25f);
     }
 
     void OnTriggerEnter(Collider other)
