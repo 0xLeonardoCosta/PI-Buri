@@ -25,6 +25,7 @@ public class MiniGameController : MonoBehaviour
     [SerializeField] Transform _parabens;
     [SerializeField] Transform _brasao;
     [SerializeField] public Transform _botaoVoltarPraXimba;
+    [SerializeField] public Transform _botaoVoltarMiniJogo;
     [SerializeField] Transform _hudCarregamento;
 
     [SerializeField] private Slider _barraDeProgresso;
@@ -156,8 +157,9 @@ public class MiniGameController : MonoBehaviour
             _parabens.DOScale(20, 0.5f);
             _brasao.DOScale(5, 0.6f);
             _botaoVoltarPraXimba.DOScale(3, 0.7f);
+            _botaoVoltarMiniJogo.DOScale(3, 0.7f);
 
-            _podeSair = true;
+        _podeSair = true;
 
     }
 
@@ -166,12 +168,26 @@ public class MiniGameController : MonoBehaviour
         this._parabens.gameObject.SetActive(false);
         this._brasao.gameObject.SetActive(false);
         this._botaoVoltarPraXimba.gameObject.SetActive(false);
+        this._botaoVoltarMiniJogo.gameObject.SetActive(false);
         this._hudCarregamento.gameObject.SetActive(true);
         this._barraDeProgresso.gameObject.SetActive(true);
         this._mensagemTexto.text = "Carregando...";
         
         StartCoroutine(CarregarCena());
 
+    }
+
+    public void VoltarMiniJogo()
+    {
+        this._parabens.gameObject.SetActive(false);
+        this._brasao.gameObject.SetActive(false);
+        this._botaoVoltarPraXimba.gameObject.SetActive(false);
+        this._botaoVoltarMiniJogo.gameObject.SetActive(false);
+        this._hudCarregamento.gameObject.SetActive(true);
+        this._barraDeProgresso.gameObject.SetActive(true);
+        this._mensagemTexto.text = "Carregando...";
+
+        StartCoroutine(CarregarMiniJogoLL());
     }
 
     private IEnumerator CarregarCena()
@@ -185,4 +201,14 @@ public class MiniGameController : MonoBehaviour
 
     }
 
-}
+    private IEnumerator CarregarMiniJogoLL()
+    {
+        AsyncOperation asynOperation = SceneManager.LoadSceneAsync("minijogoleandro");
+        while (!asynOperation.isDone)
+        {
+            this._barraDeProgresso.value = asynOperation.progress;
+            yield return null;
+        }
+    }
+
+    }
