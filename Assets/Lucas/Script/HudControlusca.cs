@@ -76,9 +76,36 @@ public class HudControlusca : MonoBehaviour
         Application.Quit();
     }
 
+    public void MinigameDireto()
+    {
+        this._personagensMenu.gameObject.SetActive(false);
+        this._logoBuriMenu.gameObject.SetActive(false);
+        this._logoKidMenu.gameObject.SetActive(false);
+        this._canoaMenu.gameObject.SetActive(false);
+        this._gpMenu.gameObject.SetActive(false);
+        this._aqueleTextoMenu.gameObject.SetActive(false);
+
+        this._hudCarregamentoMenu.gameObject.SetActive(true);
+        this._barraDeProgressoInicio.gameObject.SetActive(true);
+
+
+        StartCoroutine(CarregarMinijogodireto());
+    }
+
     private IEnumerator CarregarCenaInicio()
     {
         AsyncOperation asynOperation = SceneManager.LoadSceneAsync("BuriXimba");
+        while (!asynOperation.isDone)
+        {
+            this._barraDeProgressoInicio.value = asynOperation.progress;
+            yield return null;
+        }
+
+    }
+
+    private IEnumerator CarregarMinijogodireto()
+    {
+        AsyncOperation asynOperation = SceneManager.LoadSceneAsync("minijogoleandro");
         while (!asynOperation.isDone)
         {
             this._barraDeProgressoInicio.value = asynOperation.progress;
