@@ -32,6 +32,8 @@ public class CanoaMove : MonoBehaviour
     [SerializeField] public bool _utilizarCanoa;
     [SerializeField] bool _utilizandoCanoa;
 
+    public bool coletouBaladeira;
+
     [SerializeField] Rigidbody _rb;
     [SerializeField] BoxCollider _col;
 
@@ -142,6 +144,10 @@ public class CanoaMove : MonoBehaviour
             _col.isTrigger = true;
             _col.size = new Vector3(11,15,5);
             _player.SetParent(null);
+            if (coletouBaladeira == true)
+            {
+                _moveBuri.ReativarBaladeira();
+            }
         }
     }
 
@@ -191,6 +197,13 @@ public class CanoaMove : MonoBehaviour
         if (other.gameObject.CompareTag("Missao"))
         {
            // _tutorControl.TextTutorOM(2);
+        }
+        if (other.gameObject.CompareTag("baladeira"))
+        {
+            Debug.Log("coletouBaladeira");
+            coletouBaladeira = true;
+            
+
         }
     }
     void OnTriggerExit(Collider other)

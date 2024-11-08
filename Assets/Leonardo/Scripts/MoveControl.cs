@@ -21,6 +21,8 @@ public class MoveControl : MonoBehaviour
     [SerializeField] Vector3 _playerVelocity;
     [SerializeField] private Vector3 _movement;
 
+    public bool _coletouBaladeira;
+
     public CharacterController _controller;
     private Animator _anim;
 
@@ -229,7 +231,7 @@ public class MoveControl : MonoBehaviour
         _anim.SetFloat("RemarCanoa", _variacaoVelocidadeCanoa);
         _anim.SetBool("UsandoCanoa", _usandoCanoa);
     }
-    void ReativarBaladeira()
+    public void ReativarBaladeira()
     {
         _baladeira.SetActive(true);
         _varaPesca.SetActive(false);
@@ -504,7 +506,10 @@ public class MoveControl : MonoBehaviour
 
     public void Atirar()
     {
-        _projetilBala.Lancar();
+        if (_coletouBaladeira == true)
+        {
+            _projetilBala.Lancar();
+        }
     } 
 
     public void SetMove(InputAction.CallbackContext value) //Input direcional X e Z (Input System)

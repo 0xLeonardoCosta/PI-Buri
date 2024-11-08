@@ -158,7 +158,7 @@ public class MiniGameController : MonoBehaviour
             _brasao.DOScale(5, 0.6f);
             _botaoVoltarPraXimba.DOScale(3, 0.7f);
             _botaoVoltarMiniJogo.DOScale(3, 0.7f);
-
+        _botaoVoltarPraXimba.GetComponent<Button>().Select();
         _podeSair = true;
 
     }
