@@ -22,6 +22,9 @@ public class MiniGameController : MonoBehaviour
 
     public int _scoreAcerto;
 
+    [SerializeField] public Transform _tutorial;
+    [SerializeField] public Image _mascara;
+    [SerializeField] public Transform _btComecar;
     [SerializeField] Transform _parabens;
     [SerializeField] Transform _brasao;
     [SerializeField] public Transform _botaoVoltarPraXimba;
@@ -60,6 +63,9 @@ public class MiniGameController : MonoBehaviour
         this._hudCarregamento.gameObject.SetActive(false);
 
         _audioSource = GetComponent<AudioSource>();
+        
+        _tutorial.localScale = new Vector3(0.9f, 0.9f, 0.9f);
+        _btComecar.GetComponent<Button>().Select();
     }
 
     void CaiNumero()
@@ -161,6 +167,14 @@ public class MiniGameController : MonoBehaviour
         _botaoVoltarPraXimba.GetComponent<Button>().Select();
         _podeSair = true;
 
+    }
+
+    public void TutorialFechar()
+    {
+        _mascara.DOFade(0, 1f);
+        _tutorial.DOScale(1.6f, 0.5f);
+        _tutorial.DOScale(0, 0.5f);
+        _btComecar.DOMoveY(-439, 5f);
     }
 
     public void VoltarXimba()

@@ -165,6 +165,15 @@ public class MoveFloatBuri : MonoBehaviour
     {
         _isBala = false;
     }
+    public void AtirarPeloTouch()
+    {
+        if (!_isBala)
+        {
+            _isBala = true;
+            Invoke("TimeTiro", 0.5f);
+            Atirar();
+        }
+    }
 }
 
 
