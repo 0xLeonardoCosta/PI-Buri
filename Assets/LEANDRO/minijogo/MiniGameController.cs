@@ -25,6 +25,8 @@ public class MiniGameController : MonoBehaviour
     [SerializeField] public Transform _tutorial;
     [SerializeField] public Image _mascara;
     [SerializeField] public Transform _btComecar;
+    [SerializeField] GameObject _tutorialPai;
+
     [SerializeField] Transform _parabens;
     [SerializeField] Transform _brasao;
     [SerializeField] public Transform _botaoVoltarPraXimba;
@@ -175,6 +177,7 @@ public class MiniGameController : MonoBehaviour
         _tutorial.DOScale(1.6f, 0.5f);
         _tutorial.DOScale(0, 0.5f);
         _btComecar.DOMoveY(-439, 5f);
+        _tutorialPai.SetActive(false);
     }
 
     public void VoltarXimba()
